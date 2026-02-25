@@ -117,11 +117,7 @@ class _SplashscreenappState extends State<Splashscreenapp>
                     ],
                   ),
                   child: Center(
-                    child: Icon(
-                      Icons.menu_book,
-                      size: 64,
-                      color: AppColors.primaryForeground,
-                    ),
+                    child: Image.asset("assets/images/iconapp.png"),
                   ),
                 ),
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
+import 'package:quranteacher/students/bottomnavi.dart';
+import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Roleselector extends StatefulWidget {
   const Roleselector({super.key});
@@ -48,6 +50,11 @@ class _RoleselectorState extends State<Roleselector> {
                   height: height * 0.16,
                   width: width * 0.96,
                   child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Bottomnavi()),
+                      );
+                    },
                     onTapDown: (details) {
                       setState(() {
                         isstudentpressed = true;
@@ -165,12 +172,19 @@ class _RoleselectorState extends State<Roleselector> {
                   height: height * 0.16,
                   width: width * 0.96,
                   child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Bottomnaviteacher(),
+                        ),
+                      );
+                    },
                     onTapDown: (details) {
                       setState(() {
                         isteacherpressed = true;
                       });
                     },
-                    onTap: () {
+                    onTapUp: (details) {
                       setState(() {
                         isteacherpressed = false;
                       });
