@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/teacher/assignwork_feature/presentation/pages/assignwork.dart';
 
 class Leastitems extends StatefulWidget {
   const Leastitems({super.key});
@@ -32,6 +33,7 @@ class _LeastitemsState extends State<Leastitems> {
                 "Manage Students",
                 AppColors.secondary,
                 AppColors.islamicGreen,
+                () {},
               ),
 
               clickcontistd(
@@ -43,6 +45,11 @@ class _LeastitemsState extends State<Leastitems> {
                 "create homework",
                 AppColors.pink500,
                 AppColors.pink700,
+                () {
+                  Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute(builder: (context) => Assignwork()));
+                },
               ),
             ],
           ),
@@ -61,6 +68,7 @@ class _LeastitemsState extends State<Leastitems> {
                 "Manage Lessons",
                 Colors.orangeAccent,
                 Colors.orange,
+                () {},
               ),
 
               clickcontistd(
@@ -72,6 +80,7 @@ class _LeastitemsState extends State<Leastitems> {
                 "View Income",
                 AppColors.islamicNavy500,
                 AppColors.islamicNavy600,
+                () {},
               ),
             ],
           ),
@@ -89,10 +98,12 @@ class _LeastitemsState extends State<Leastitems> {
     String subtitles,
     Color topcolor,
     Color bottomcolor,
+    VoidCallback onTabFunction,
   ) {
     bool isPressed = pressedIndex == index;
 
     return GestureDetector(
+      onTap: onTabFunction,
       onTapDown: (_) {
         setState(() {
           pressedIndex = index;

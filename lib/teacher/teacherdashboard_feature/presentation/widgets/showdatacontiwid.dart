@@ -44,7 +44,7 @@ class Showdatacontiwid extends StatelessWidget {
               deisgndata(
                 width * 0.46,
                 height * 0.17,
-                Icons.attach_money,
+                Icons.videocam_outlined,
                 "The Month ",
                 "2,450",
                 Colors.orange,

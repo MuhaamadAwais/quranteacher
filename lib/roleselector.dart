@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
 import 'package:quranteacher/students/bottomnavi.dart';
@@ -298,9 +299,11 @@ class _RoleselectorState extends State<Roleselector> {
                       });
                     },
                     onTap: () {
-                      setState(() {
-                        isadminpressed = false;
-                      });
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Bottomnavigationadmin(),
+                        ),
+                      );
                     },
                     onTapCancel: () {
                       setState(() {

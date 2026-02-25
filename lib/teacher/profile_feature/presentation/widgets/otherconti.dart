@@ -33,7 +33,7 @@ class _OthercontiState extends State<Otherconti> {
             width,
             height * 0.1,
             Colors.red,
-            Icons.batch_prediction,
+            Icons.verified_outlined,
             "Certifications",
           ),
           SizedBox(height: 10),
@@ -94,7 +94,7 @@ class _OthercontiState extends State<Otherconti> {
                     shape: BoxShape.circle,
                     color: AppColors.switchBackground,
                   ),
-                  child: Center(child: Icon(icons, color: iconcolor,size: 38,)),
+                  child: Center(child: Icon(icons, color: iconcolor, size: 38)),
                 ),
               ),
 
