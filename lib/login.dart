@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/register.dart';
+import 'package:quranteacher/roleselector.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -16,7 +17,7 @@ class Login extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: height * 0.1),
+                SizedBox(height: height * 0.03),
                 Container(
                   height: height * 0.1,
                   width: height * 0.1,
@@ -119,37 +120,45 @@ class Login extends StatelessWidget {
                           ],
                         ),
 
-                        Container(
-                          height: height * 0.07,
-                          width: width,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color(0xFF059669), // emerald-600
-                                Color(0xFF10B981), // emerald-500
-                                Color(0xFF0D9488),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => Roleselector()),
+                            );
+                          },
+                          child: Container(
+                            height: height * 0.07,
+                            width: width,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color(0xFF059669), // emerald-600
+                                  Color(0xFF10B981), // emerald-500
+                                  Color(0xFF0D9488),
+                                ],
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.white.withOpacity(0.4),
+                                  offset: Offset(0, 6),
+                                  blurRadius: 12,
+                                  spreadRadius: 1,
+                                ),
                               ],
                             ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white.withOpacity(0.4),
-                                offset: Offset(0, 6),
-                                blurRadius: 12,
-                                spreadRadius: 1,
-                              ),
-                            ],
-                          ),
 
-                          child: Center(
-                            child: Text(
-                              "Sign In",
-                              style: TextStyle(
-                                color: AppColors.textWhite,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                            child: Center(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                  color: AppColors.textWhite,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
@@ -240,8 +249,8 @@ class Login extends StatelessWidget {
                       ),
 
                       TextSpan(
-                        text: "Sign Up",
-                        style: TextStyle(color: AppColors.accentForeground),
+                        text: " register now",
+                        style: TextStyle(color: AppColors.islamicNavy),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.of(context).push(
