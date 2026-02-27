@@ -23,7 +23,9 @@ class Register extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     color: AppColors.backgroundStart,
                   ),
-                  child: Icon(Icons.menu_book),
+                  child: Center(
+                    child: Image.asset("assets/images/iconapp.png"),
+                  ),
                 ),
                 SizedBox(height: height * 0.02),
                 Text(
