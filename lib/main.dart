@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/feature/lesson_feature/presentation_layer/screens/lessonscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Lessonscreen(),
     );
   }
 }
@@ -58,74 +59,82 @@ class _HoverLiftCardState extends State<HoverLiftCard> {
     // Total lift: Hover OR Pressed
     double lift = (isHovering || isPressed) ? -10 : 0;
 
-    return MouseRegion(
-      onEnter: (_) => setState(() => isHovering = true),
-      onExit: (_) => setState(() => isHovering = false),
-      child: GestureDetector(
-        onTapDown: (_) => setState(() => isPressed = true),
-        onTapUp: (_) {
-          setState(() => isPressed = false);
-          // Navigate or action
-          // Navigator.push(context, MaterialPageRoute(builder: (_) => StudentDashboard()));
-        },
-        onTapCancel: () => setState(() => isPressed = false),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
-          curve: Curves.easeOut,
-          transform: Matrix4.translationValues(0, lift, 0), // ONLY up/down
-          height: height * 0.16,
-          width: width * 0.96,
-          child: Card(
-            color: AppColors.islamicEmerald,
-            elevation: 8,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              child: Row(
-                children: [
-                  Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: AppColors.backgroundStart,
+    return Scaffold(
+      body: MouseRegion(
+        onEnter: (_) => setState(() => isHovering = true),
+        onExit: (_) => setState(() => isHovering = false),
+        child: GestureDetector(
+          onTapDown: (_) => setState(() => isPressed = true),
+          onTapUp: (_) {
+            setState(() => isPressed = false);
+            // Navigate or action
+            // Navigator.push(context, MaterialPageRoute(builder: (_) => StudentDashboard()));
+          },
+          onTapCancel: () => setState(() => isPressed = false),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 150),
+            curve: Curves.easeOut,
+            transform: Matrix4.translationValues(0, lift, 0), // ONLY up/down
+            height: height * 0.16,
+            width: width * 0.96,
+            child: Card(
+              color: AppColors.islamicEmerald,
+              elevation: 8,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 12,
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: AppColors.backgroundStart,
+                      ),
+                      child: const Icon(
+                        Icons.school,
+                        color: Colors.white,
+                        size: 30,
+                      ),
                     ),
-                    child: const Icon(
-                      Icons.school,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                  ),
-                  const SizedBox(width: 15),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          "Student",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
+                    const SizedBox(width: 15),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Student",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          "Learn Quran with expert teacher",
-                          style: TextStyle(color: Colors.white70, fontSize: 14),
-                        ),
-                      ],
+                          SizedBox(height: 4),
+                          Text(
+                            "Learn Quran with expert teacher",
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                    size: 18,
-                  ),
-                ],
+                    const Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
