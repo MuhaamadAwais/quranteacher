@@ -63,7 +63,7 @@ class _LeastitemsState extends State<Leastitems> {
                 2,
                 width * 0.43,
                 height * 0.2,
-                Icons.camera_outlined,
+                Icons.videocam_outlined,
                 "Lessons",
                 "Manage Lessons",
                 Colors.orangeAccent,

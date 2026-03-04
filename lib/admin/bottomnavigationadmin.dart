@@ -5,9 +5,6 @@ import 'package:quranteacher/admin/report_feature/presentation/pages/reportadmin
 import 'package:quranteacher/admin/teacher_feature/presentation/pages/teacheradminpage.dart';
 import 'package:quranteacher/admin/user_feature/presentation/pages/useradminpage.dart';
 import 'package:quranteacher/appcolors.dart';
-void main(){
-  runApp(MaterialApp(home: Bottomnavigationadmin(),));
-}
 
 class Bottomnavigationadmin extends StatefulWidget {
   const Bottomnavigationadmin({super.key});
