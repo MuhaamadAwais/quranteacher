@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/admindashboardcontwid.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/adminoperationwid.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/calculationconti.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/nameadminwid.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/recentactivitywid.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/userswid.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/todayoverwid.dart';
+
+void main() {
+  runApp(MaterialApp(home: Dashboardadmin()));
+}
 
 class Dashboardadmin extends StatefulWidget {
   const Dashboardadmin({super.key});
@@ -12,7 +23,38 @@ class _DashboardadminState extends State<Dashboardadmin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(child: Column(children: [])),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Admindashboardcontwid(),
+                  Positioned(
+                    left: 20,
+                    right: 20,
+                    top: 20,
+                    child: Nameadminwid(),
+                  ),
+                  Positioned(
+                    top: 110,
+                    left: 20,
+                    right: 20,
+                    child: Adminoperationwid(),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Calculationconti(),
+              SizedBox(height: 10),
+              Todayoverwid(),
+              SizedBox(height: 10),
+              Recentactivitywid(),
+              SizedBox(height: 10),
+              Userswid(),
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
       ),
     );
   }
