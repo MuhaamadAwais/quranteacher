@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/topcontistd.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/qurannotificationscreen.dart';
 
 class Namestd extends StatelessWidget {
   const Namestd({super.key});
@@ -48,9 +48,19 @@ class Namestd extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  child: Icon(
-                    Icons.notifications_outlined,
-                    color: AppColors.textWhite,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const QuranNotificationScreen(),
+                        ),
+                      );
+                    },
+                    child: Icon(
+                      Icons.notifications_outlined,
+                      color: AppColors.textWhite,
+                    ),
                   ),
                 ),
               ),

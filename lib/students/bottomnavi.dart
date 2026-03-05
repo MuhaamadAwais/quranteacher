@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/hadits/presentation/pages/haditspage.dart';
+import 'package:quranteacher/students/lesson_feature/presentation_layer/screens/lessonscreen.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/screens/profilescreen.dart';
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/pages/studentdashboardpage.dart';
 
@@ -25,6 +27,8 @@ class _BottomnaviState extends State<Bottomnavi> {
     Studentdashboardpage(),
     Quranwid(),
     Haditspage(),
+    Lessonscreen(),
+    Profilescreen(),
   ];
   @override
   Widget build(BuildContext context) {

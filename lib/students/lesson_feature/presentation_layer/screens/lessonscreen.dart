@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/feature/lesson_feature/presentation_layer/widgets/lastcontainer.dart';
-import 'package:quranteacher/feature/lesson_feature/presentation_layer/widgets/listcontaierdesign.dart';
-import 'package:quranteacher/feature/lesson_feature/presentation_layer/widgets/topcontainer.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/screens/profilescreen.dart';
+import 'package:quranteacher/students/lesson_feature/presentation_layer/widgets/lastcontainer.dart';
+import 'package:quranteacher/students/lesson_feature/presentation_layer/widgets/listcontaierdesign.dart';
+import 'package:quranteacher/students/lesson_feature/presentation_layer/widgets/topcontainer.dart';
 
 class Lessonscreen extends StatefulWidget {
   const Lessonscreen({super.key});
@@ -112,15 +111,7 @@ class _LessonscreenState extends State<Lessonscreen>
                     ),
                   );
                 },
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => Profilescreen()),
-                    );
-                  },
-                  child: Lastcontainer(size: size),
-                ),
+                child: Lastcontainer(size: size),
               ),
 
               SizedBox(height: height * 0.05),

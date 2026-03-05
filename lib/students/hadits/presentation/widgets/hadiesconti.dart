@@ -17,6 +17,38 @@ class Hadiesconti extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           color: AppColors.textWhite.withOpacity(0.15),
         ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 15),
+              child: Text(
+                "قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم : الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ",
+                style: TextStyle(
+                  color: AppColors.textWhite,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(height: height * 0.01),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "   The Prophet (ﷺ) said, A Muslim is the one who avoids harming Muslims with his tongue and hands.",
+                style: TextStyle(
+                  color: AppColors.textWhite,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(height: height * 0.01),
+            Text(
+              "Sahih Bukhari - 6011",
+              style: TextStyle(color: AppColors.textWhite),
+            ),
+          ],
+        ),
       ),
     );
   }

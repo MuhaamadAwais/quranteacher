@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-
-
-
+import 'package:quranteacher/students/hadits/presentation/pages/haditspage.dart';
+import 'package:quranteacher/students/lesson_feature/presentation_layer/screens/lessonscreen.dart';
+import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studenthomeworkscreen.dart';
 
 class Quickaccesconti extends StatefulWidget {
   const Quickaccesconti({super.key});
@@ -26,35 +27,59 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              clickcontistd(0, width * 0.43, height * 0.2,
-                  "assets/images/quran.png", "Quran", "Read & Learn",
-                  AppColors.secondary, AppColors.islamicGreen),
-
-              clickcontistd(1, width * 0.43, height * 0.2,
-                  "assets/images/book.png", "Hadith", "Daily Wisdom",
-                  AppColors.islamicNavy500, AppColors.islamicNavy600),
+              clickcontistd(
+                0,
+                width * 0.43,
+                height * 0.2,
+                "assets/images/quran.png",
+                "Quran",
+                "Read & Learn",
+                AppColors.secondary,
+                AppColors.islamicGreen,
+              ),
+              clickcontistd(
+                1,
+                width * 0.43,
+                height * 0.2,
+                "assets/images/book.png",
+                "Hadith",
+                "Daily Wisdom",
+                AppColors.islamicNavy500,
+                AppColors.islamicNavy600,
+              ),
             ],
           ),
-
-          SizedBox(height: 10),
-
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              clickcontistd(2, width * 0.43, height * 0.2,
-                  "assets/images/star.png", "Lessons", "Islamic Studies",
-                  AppColors.pink500, AppColors.pink700),
-
-              clickcontistd(3, width * 0.43, height * 0.2,
-                  "assets/images/homework.png", "HomeWork", "2 Pending",
-                  Colors.orangeAccent, Colors.orange),
+              clickcontistd(
+                2,
+                width * 0.43,
+                height * 0.2,
+                "assets/images/star.png",
+                "Lessons",
+                "Islamic Studies",
+                AppColors.pink500,
+                AppColors.pink700,
+              ),
+              clickcontistd(
+                3,
+                width * 0.43,
+                height * 0.2,
+                "assets/images/homework.png",
+                "HomeWork",
+                "2 Pending",
+                Colors.orangeAccent,
+                Colors.orange,
+              ),
             ],
           ),
         ],
       ),
     );
   }
- 
+
   Widget clickcontistd(
     int index,
     double width,
@@ -68,6 +93,31 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
     bool isPressed = pressedIndex == index;
 
     return GestureDetector(
+      onTap: () {
+        if (index == 0) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Quranwid()),
+          );
+        } else if (index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Haditspage()),
+          );
+        } else if (index == 2) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Lessonscreen()),
+          );
+        } else if (index == 3) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const StudentHomeworkScreen(),
+            ),
+          );
+        }
+      },
       onTapDown: (_) {
         setState(() {
           pressedIndex = index;
@@ -84,7 +134,7 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
         });
       },
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 150),
+        duration: const Duration(milliseconds: 150),
         transform: Matrix4.translationValues(0, isPressed ? -18 : 0, 0),
         width: width,
         height: height,
@@ -115,29 +165,23 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
                   shape: BoxShape.circle,
                   color: AppColors.textWhite.withOpacity(0.15),
                 ),
-                child: Center(
-                  // child: Icon(icon, color: AppColors.textWhite),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Image.asset(image),
-                  ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset(image),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 name,
-                style: TextStyle(
-                  color: AppColors.textWhite,
+                style: const TextStyle(
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
               Text(
                 subtitles,
-                style: TextStyle(
-                  color: AppColors.textWhite,
-                  fontSize: 15,
-                ),
+                style: const TextStyle(color: Colors.white, fontSize: 15),
               ),
             ],
           ),

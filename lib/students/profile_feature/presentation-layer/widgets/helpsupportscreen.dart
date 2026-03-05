@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/help&support_inner_screen/howtotakequizscreen.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/help&support_inner_screen/memorizationtipsscreen.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/help&support_inner_screen/tajweedrulesscreen.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/howtotakequizscreen.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/memorizationtipsscreen.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/tajweedrulesscreen.dart';
 
 class HelpSupportScreen extends StatelessWidget {
   @override

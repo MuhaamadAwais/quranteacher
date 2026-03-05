@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/videocallscreen.dart';
+
 class Maincontstd extends StatelessWidget {
   const Maincontstd({super.key});
 
@@ -35,7 +37,7 @@ class Maincontstd extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 10,),
+            SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -75,32 +77,45 @@ class Maincontstd extends StatelessWidget {
                 Row(
                   children: [
                     Icon(Icons.lock_clock, color: AppColors.textWhite),
-                    Text("4:00PM - 5:00 PM",
-                  style: TextStyle(
-                    color: AppColors.textWhite,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 15,
-                  ),),
+                    Text(
+                      "4:00PM - 5:00 PM",
+                      style: TextStyle(
+                        color: AppColors.textWhite,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 15,
+                      ),
+                    ),
                   ],
                 ),
               ],
             ),
             Column(
               children: [
-                Container(
-                  height: 35,
-                  width: width*0.25,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                   color: AppColors.textWhite
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Join Now",
-                      style: TextStyle(
-                        color: AppColors.backgroundStart,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            Videocallscreen(height: heigth, width: width),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 35,
+                    width: width * 0.25,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: AppColors.textWhite,
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Join Now",
+                        style: TextStyle(
+                          color: AppColors.backgroundStart,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
                       ),
                     ),
                   ),

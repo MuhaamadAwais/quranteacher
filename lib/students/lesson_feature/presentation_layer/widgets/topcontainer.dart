@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/bottomnavi.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/pages/studentdashboardpage.dart';
 
 class Topcontainer extends StatelessWidget {
   const Topcontainer({super.key, required this.size});
@@ -33,10 +35,18 @@ class Topcontainer extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20),
             child: Row(
               children: [
-                CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.white38,
-                  child: Icon(Icons.arrow_back, color: Colors.white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => Bottomnavi()),
+                    );
+                  },
+                  child: CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.white38,
+                    child: Icon(Icons.arrow_back, color: Colors.white),
+                  ),
                 ),
                 SizedBox(width: width * 0.05),
                 Text(

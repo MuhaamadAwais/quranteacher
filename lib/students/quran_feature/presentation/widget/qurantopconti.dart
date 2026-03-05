@@ -10,7 +10,7 @@ class Qurantopconti extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: height * 0.23,
+      height: height * 0.22,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),

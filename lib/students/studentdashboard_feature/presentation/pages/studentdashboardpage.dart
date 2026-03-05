@@ -13,7 +13,7 @@ void main() {
 
 class Studentdashboardpage extends StatefulWidget {
   const Studentdashboardpage({super.key});
-
+  static String routeName = '/studentdashboardpage';
   @override
   State<Studentdashboardpage> createState() => _StudentdashboardpageState();
 }

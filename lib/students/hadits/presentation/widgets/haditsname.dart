@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/bottomnavi.dart';
 
 class Haditsname extends StatelessWidget {
   const Haditsname({super.key});
@@ -17,14 +18,22 @@ class Haditsname extends StatelessWidget {
             shape: BoxShape.circle,
             color: AppColors.textWhite.withOpacity(0.15),
           ),
-          child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Bottomnavi()),
+              );
+            },
+            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+          ),
         ),
-        SizedBox(width: 5),
+        SizedBox(width: width * 0.05),
         Text(
           "Hadith",
           style: TextStyle(
             color: AppColors.textWhite,
-            fontSize: 20,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
         ),

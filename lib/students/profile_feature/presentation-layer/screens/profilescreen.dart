@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/widgets/achieventscontainer.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/widgets/helpsupportscreen.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/widgets/privacysecurityscreen.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/widgets/profilecateg.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/widgets/profileditbottomsheet.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/widgets/qurannotificationscreen.dart';
-import 'package:quranteacher/feature/profile_feature/presentation-layer/widgets/topcontainer.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/achieventscontainer.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/helpsupportscreen.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/privacysecurityscreen.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/profilecateg.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/profileditbottomsheet.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/qurannotificationscreen.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/topcontainer.dart';
 
 class Profilescreen extends StatefulWidget {
   const Profilescreen({super.key});
@@ -84,6 +84,12 @@ class _ProfilescreenState extends State<Profilescreen>
     controller.forward();
     controller.repeat(reverse: true);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   // edit profile bottom sheet function
