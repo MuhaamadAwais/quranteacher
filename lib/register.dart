@@ -1,9 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
+import 'package:quranteacher/students/appanimations.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
   const Register({super.key});
+
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> registerAnimation;
+  late Animation<Offset> scale;
+
+  @override
+  void initState() {
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 600),
+    );
+    final anicontroller = AppAnimations(_controller);
+    registerAnimation = anicontroller.simplefade(
+      begin: 0.0,
+      end: 1.0,
+      curve: Curves.easeInOut,
+    );
+
+    scale = anicontroller.simpleslide(
+      begin: Offset(0, 1),
+      end: Offset.zero,
+      curve: Curves.easeInOut,
+    );
+
+    _controller.forward();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,213 +46,347 @@ class Register extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: height * 0.08),
-                Container(
-                  height: height * 0.1,
-                  width: height * 0.1,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: AppColors.backgroundStart,
-                  ),
-                  child: Center(
-                    child: Image.asset("assets/images/iconapp.png"),
-                  ),
-                ),
-                SizedBox(height: height * 0.02),
-                Text(
-                  "Create Account",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
-                ),
-
-                SizedBox(height: height * 0.01),
-                Text(
-                  "join our learning community",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 20,
-                  ),
-                ),
-
-                SizedBox(height: height * 0.02),
-                Card(
-                  elevation: 8,
-                  child: Container(
-                    width: width * 0.9,
-                    height: height * 0.6,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: AppColors.textWhite,
+          child: Container(
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  AppColors.backgroundStart,
+                  AppColors.backgroundVia,
+                  AppColors.backgroundEnd,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: height * 0.05),
+                  // SizedBox(height: height * 0.05),
+                  ScaleTransition(
+                    scale: registerAnimation,
+                    child: Container(
+                      height: height * 0.12,
+                      width: height * 0.12,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          colors: [
+                            AppColors.backgroundVia,
+                            AppColors.islamicNavy200,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                      ),
+                      child: Center(
+                        child: Image.asset("assets/images/iconapp.png"),
+                      ),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Full Name"),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: AppColors.switchBackground,
-                            ),
-                            child: Center(
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  prefixIcon: Icon(Icons.account_circle),
-                                  hint: Text("John Doe"),
+                  ),
+                  SizedBox(height: height * 0.01),
+                  ScaleTransition(
+                    scale: registerAnimation,
+                    child: Text(
+                      "Create Account",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+
+                  //SizedBox(height: height * 0.01),
+                  ScaleTransition(
+                    scale: registerAnimation,
+                    child: Text(
+                      "join our learning community",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: height * 0.02),
+                  ScaleTransition(
+                    scale: registerAnimation,
+                    child: Container(
+                      width: width * 0.9,
+                      height: height * 0.72,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          colors: [
+                            AppColors.backgroundEnd,
+                            AppColors.backgroundStart,
+                            AppColors.backgroundVia,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.white,
+                            blurRadius: 1,
+                            spreadRadius: 1,
+                            offset: Offset(0, 0),
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: height * 0.01),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                "Full Name",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
-                          ),
-
-                          Text("Email Address"),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: AppColors.switchBackground,
-                            ),
-                            child: Center(
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  prefixIcon: Icon(Icons.email),
-                                  hint: Text("your.email@example.com"),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: height * 0.08,
+                                width: width * 0.8,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: AppColors.textWhite,
                                 ),
-                              ),
-                            ),
-                          ),
-
-                          Text("Password"),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: AppColors.switchBackground,
-                            ),
-                            child: Center(
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  prefixIcon: Icon(Icons.lock_outline),
-                                  hint: Text("........"),
-                                ),
-                              ),
-                            ),
-                          ),
-
-                          Text("Confirm Password"),
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: AppColors.switchBackground,
-                            ),
-                            child: Center(
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  prefixIcon: Icon(Icons.lock_outline),
-                                  hint: Text("........"),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Checkbox(value: false, onChanged: (value) {}),
-
-                              RichText(
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: "I agree to the ",
-                                      style: TextStyle(
-                                        color: AppColors.switchBackground,
-                                      ),
+                                child: Center(
+                                  child: TextField(
+                                    // autofocus: true,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      prefixIcon: Icon(Icons.account_circle),
+                                      hint: Text("John Doe"),
                                     ),
-
-                                    TextSpan(
-                                      text: "Terms of Service ",
-                                      style: TextStyle(
-                                        color: AppColors.backgroundStart,
-                                      ),
-                                    ),
-
-                                    TextSpan(
-                                      text: " and ",
-                                      style: TextStyle(
-                                        color: AppColors.switchBackground,
-                                      ),
-                                    ),
-
-                                    TextSpan(
-                                      text: "\n Privacy policy ",
-                                      style: TextStyle(
-                                        color: AppColors.backgroundStart,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => Login(),
-                                ),
-                              );
-                            },
-                            child: Container(
-                              height: height * 0.07,
-                              width: width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    Color(0xFF059669), // emerald-600
-                                    Color(0xFF10B981), // emerald-500
-                                    Color(0xFF0D9488),
-                                  ],
-                                ),
-                              ),
-
-                              child: Center(
-                                child: Text(
-                                  "Create Account",
-                                  style: TextStyle(
-                                    color: AppColors.textWhite,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                "Email Address",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: height * 0.08,
+                                width: width * 0.8,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: AppColors.textWhite,
+                                ),
+                                child: Center(
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      prefixIcon: Icon(Icons.email),
+                                      hint: Text("your.email@example.com"),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                "Password",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: height * 0.08,
+                                width: width * 0.8,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: AppColors.textWhite,
+                                ),
+                                child: Center(
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      prefixIcon: Icon(Icons.lock_outline),
+                                      hint: Text("........"),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                "Confirm Password",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                height: height * 0.08,
+                                width: width * 0.8,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: AppColors.textWhite,
+                                ),
+                                child: Center(
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      prefixIcon: Icon(Icons.lock_outline),
+                                      hint: Text("........"),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Checkbox(value: false, onChanged: (value) {}),
+
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: "I agree to the ",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+
+                                      TextSpan(
+                                        text: "Terms of Service ",
+                                        style: TextStyle(
+                                          color: Colors.orangeAccent,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+
+                                      TextSpan(
+                                        text: " and ",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+
+                                      TextSpan(
+                                        text: "\n Privacy policy ",
+                                        style: TextStyle(
+                                          color: Colors.orangeAccent,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: height * 0.01),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Login(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: height * 0.07,
+                                width: width,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [
+                                      Color.fromARGB(
+                                        255,
+                                        5,
+                                        121,
+                                        150,
+                                      ), // emerald-600
+                                      Color.fromARGB(
+                                        255,
+                                        16,
+                                        185,
+                                        182,
+                                      ), // emerald-500
+                                      Color.fromARGB(255, 13, 105, 148),
+                                    ],
+                                  ),
+                                ),
+
+                                child: Center(
+                                  child: Text(
+                                    "Create Account",
+                                    style: TextStyle(
+                                      color: AppColors.textWhite,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: height * 0.015),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
 
-                SizedBox(height: height * 0.03),
+                  SizedBox(height: height * 0.03),
 
-                Padding(
-                  padding: const EdgeInsets.only(left: 70),
-                  child: Row(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Already have an account?"),
+                      Text(
+                        "Already have an account?",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
                       GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(
@@ -236,16 +404,16 @@ class Register extends StatelessWidget {
                             style: TextStyle(
                               color: AppColors.islamicNavy,
                               fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontSize: 17,
                             ),
                           ),
                         ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(height: height * 0.04),
-              ],
+                  SizedBox(height: height * 0.04),
+                ],
+              ),
             ),
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/appanimations.dart';
 
 class Videocallscreen extends StatefulWidget {
   const Videocallscreen({super.key, required this.height, required this.width});
@@ -9,11 +10,40 @@ class Videocallscreen extends StatefulWidget {
   State<Videocallscreen> createState() => _VideocallscreenState();
 }
 
-class _VideocallscreenState extends State<Videocallscreen> {
+class _VideocallscreenState extends State<Videocallscreen>
+    with TickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _simpllefade;
+
   bool isMicOn = false;
   bool isVideoOn = false;
   bool isHandRaised = false;
   bool isParticipantVisible = false;
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    final controller = AppAnimations(_animationController);
+
+    _simpllefade = controller.simplefade(
+      begin: 0.8,
+      end: 1.0,
+      curve: Curves.easeInOut,
+    );
+
+    _animationController.repeat(reverse: true);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   void showMessage(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -86,26 +116,29 @@ class _VideocallscreenState extends State<Videocallscreen> {
                       ),
                       //const SizedBox(width: 20),
                       // show red color
-                      Container(
-                        height: height * 0.04,
-                        width: width * 0.09,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(142, 255, 82, 82),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Stack(
-                          children: [
-                            Center(
-                              child: Container(
-                                height: height * 0.015,
-                                width: width * 0.03,
-                                decoration: BoxDecoration(
-                                  color: Colors.redAccent,
-                                  borderRadius: BorderRadius.circular(20),
+                      ScaleTransition(
+                        scale: _simpllefade,
+                        child: Container(
+                          height: height * 0.04,
+                          width: width * 0.09,
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(142, 255, 82, 82),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Stack(
+                            children: [
+                              Center(
+                                child: Container(
+                                  height: height * 0.015,
+                                  width: width * 0.03,
+                                  decoration: BoxDecoration(
+                                    color: Colors.redAccent,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],

@@ -5,19 +5,7 @@ import 'package:quranteacher/students/quran_feature/presentation/widget/qurantex
 import 'package:quranteacher/students/quran_feature/presentation/widget/qurantopconti.dart';
 import 'package:quranteacher/students/quran_feature/presentation/widget/searchquran.dart';
 
-void main() {
-  runApp(MaterialApp(home: Quranwid()));
-}
-
 final List<Quranapimodel> quranapimodel = [
-  Quranapimodel(
-    surahNo: 1,
-    engName: "Al-Fatihah",
-    urduName: "الفاتحة",
-    WhichCity: "Mecca",
-    totalVerses: 7,
-    Complete: 70,
-  ),
   Quranapimodel(
     surahNo: 1,
     engName: "Al-Fatihah",
@@ -90,25 +78,91 @@ class Quranwid extends StatefulWidget {
   State<Quranwid> createState() => _QuranwidState();
 }
 
-class _QuranwidState extends State<Quranwid> {
+class _QuranwidState extends State<Quranwid>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<Offset> _slideAnimation;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1), // Same as LessonScreen
+    );
+
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 0.08),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+
+    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(_controller);
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Stack(
+        body: FadeTransition(
+          opacity: _fadeAnimation, // 🔥 Main Fade (LessonScreen same)
+          child: SlideTransition(
+            position: _slideAnimation, // 🔥 Main Slide (LessonScreen same)
+            child: SingleChildScrollView(
+              child: Column(
                 children: [
-                  Qurantopconti(),
-                  Positioned(top: 40, left: 20, child: Qurantex()),
-      
-                  Positioned(top: 80, left: 10,right: 10, child: Searchquran()),
+                  // 🔥 1. Header Stack (Natural flow with main animation)
+                  Stack(
+                    children: [
+                      Qurantopconti(),
+                      Positioned(top: 40, left: 20, child: Qurantex()),
+                      Positioned(
+                        top: 80,
+                        left: 10,
+                        right: 10,
+                        child: Searchquran(),
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: 10),
+
+                  // 🔥 2. Quran List - Staggered Animation (index * 150ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(
+                      milliseconds: 700,
+                    ), // Slightly longer for list
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.scale(
+                          scale: 0.95 + (0.05 * value), // Scale effect
+                          child: Transform.translate(
+                            offset: Offset(0, 30 * (1 - value)), // Slide up
+                            child: child,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Quranlist(quranapimodel: quranapimodel),
+                  ),
+
+                  SizedBox(height: 20),
                 ],
               ),
-      
-               Quranlist(quranapimodel: quranapimodel),
-            ],
+            ),
           ),
         ),
       ),

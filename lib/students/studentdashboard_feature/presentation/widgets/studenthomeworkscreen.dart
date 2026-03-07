@@ -7,7 +7,8 @@ class StudentHomeworkScreen extends StatefulWidget {
   State<StudentHomeworkScreen> createState() => _StudentHomeworkScreenState();
 }
 
-class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
+class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
+    with SingleTickerProviderStateMixin {
   List<Map<String, dynamic>> homework = [
     {
       'title': 'Memorize Surah Al-Fatihah',
@@ -39,6 +40,31 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
     },
   ];
 
+  late AnimationController _controller;
+  late Animation<Offset> _slideAnimation;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1), // LessonScreen same
+    );
+    _slideAnimation = Tween<Offset>(
+      begin: Offset(0, 0.08),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(_controller);
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     int pendingCount = homework.where((h) => !h['completed']).length;
@@ -46,7 +72,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           '📚 My Homework',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -57,8 +83,8 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
           Stack(
             children: [
               IconButton(
-                icon: const Icon(Icons.picture_as_pdf),
-                onPressed: () {}, // Empty function
+                icon: Icon(Icons.picture_as_pdf),
+                onPressed: () {},
                 tooltip: 'Export Report',
               ),
               if (pendingCount > 0)
@@ -66,18 +92,15 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                   right: 11,
                   top: 11,
                   child: Container(
-                    padding: const EdgeInsets.all(2),
+                    padding: EdgeInsets.all(2),
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    constraints: const BoxConstraints(
-                      minWidth: 12,
-                      minHeight: 12,
-                    ),
+                    constraints: BoxConstraints(minWidth: 12, minHeight: 12),
                     child: Text(
                       '$pendingCount',
-                      style: const TextStyle(color: Colors.white, fontSize: 10),
+                      style: TextStyle(color: Colors.white, fontSize: 10),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -86,86 +109,141 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
           ),
         ],
       ),
-
-      body: Column(
-        children: [
-          // Stats Header
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.blue[400]!,
-                  Colors.blue[300]!,
-                  Colors.blue[100]!,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+      body: FadeTransition(
+        opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
+        child: SlideTransition(
+          position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
+          child: Column(
+            children: [
+              // 🔥 1. Stats Header (400ms)
+              TweenAnimationBuilder<double>(
+                duration: Duration(milliseconds: 400),
+                tween: Tween(begin: 0, end: 1),
+                curve: Curves.easeOut,
+                builder: (context, value, child) => Opacity(
+                  opacity: value,
+                  child: Transform.translate(
+                    offset: Offset(0, 20 * (1 - value)),
+                    child: child,
+                  ),
+                ),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.blue[400]!,
+                        Colors.blue[300]!,
+                        Colors.blue[100]!,
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _buildStatCard(
+                        'Pending',
+                        '$pendingCount',
+                        Icons.pending_actions,
+                        Colors.orange,
+                      ),
+                      _buildStatCard(
+                        'Completed',
+                        '${4 - pendingCount}',
+                        Icons.check_circle,
+                        Colors.green,
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildStatCard(
-                  'Pending',
-                  '$pendingCount',
-                  Icons.pending_actions,
-                  Colors.orange,
-                ),
-                _buildStatCard(
-                  'Completed',
-                  '${4 - pendingCount}',
-                  Icons.check_circle,
-                  Colors.green,
-                ),
-              ],
-            ),
-          ),
 
-          // Homework List
-          Expanded(
-            child: ListView.separated(
-              padding: const EdgeInsets.all(20),
-              itemCount: homework.length,
-              separatorBuilder: (context, index) => const SizedBox(height: 12),
-              itemBuilder: (context, index) {
-                final task = homework[index];
-                return _buildHomeworkCard(task, index);
-              },
-            ),
-          ),
-        ],
-      ),
-
-      floatingActionButton: Container(
-        decoration: BoxDecoration(
-          color: Colors.blue[600],
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: FloatingActionButton.extended(
-          onPressed: () {}, // Empty
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          label: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: const [
-              Icon(Icons.download, color: Colors.white),
-              SizedBox(width: 8),
-              Text(
-                'Export',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+              // 🔥 2. Homework List (staggered index * 150ms)
+              Expanded(
+                child: TweenAnimationBuilder<double>(
+                  duration: Duration(milliseconds: 700),
+                  tween: Tween(begin: 0, end: 1),
+                  curve: Curves.easeOut,
+                  builder: (context, value, child) => Opacity(
+                    opacity: value,
+                    child: Transform.scale(
+                      scale: 0.95 + (0.05 * value),
+                      child: child,
+                    ),
+                  ),
+                  child: ListView.separated(
+                    padding: EdgeInsets.all(20),
+                    itemCount: homework.length,
+                    separatorBuilder: (context, index) => SizedBox(height: 12),
+                    itemBuilder: (context, index) {
+                      final task = homework[index];
+                      return TweenAnimationBuilder<double>(
+                        duration: Duration(
+                          milliseconds: 400 + (index * 150),
+                        ), // 🔥 Staggered!
+                        tween: Tween(begin: 0, end: 1),
+                        curve: Curves.easeOut,
+                        builder: (context, value, child) => Opacity(
+                          opacity: value,
+                          child: Transform.translate(
+                            offset: Offset(0, 20 * (1 - value)),
+                            child: child,
+                          ),
+                        ),
+                        child: _buildHomeworkCard(task, index),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],
           ),
         ),
       ),
+      floatingActionButton: TweenAnimationBuilder<double>(
+        duration: Duration(milliseconds: 1000),
+        tween: Tween(begin: 0, end: 1),
+        curve: Curves.easeOut,
+        builder: (context, value, child) => Opacity(
+          opacity: value,
+          child: Transform.translate(
+            offset: Offset(0, 20 * (1 - value)),
+            child: child,
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.blue[600],
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: FloatingActionButton.extended(
+            onPressed: () {},
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            label: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.download, color: Colors.white),
+                SizedBox(width: 8),
+                Text(
+                  'Export',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 
+  // Same methods unchanged
   Widget _buildStatCard(
     String label,
     String count,
@@ -173,7 +251,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
     Color color,
   ) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -181,14 +259,14 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
-            offset: const Offset(0, 4),
+            offset: Offset(0, 4),
           ),
         ],
       ),
       child: Column(
         children: [
           Icon(icon, size: 32, color: color),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           Text(
             count,
             style: TextStyle(
@@ -219,7 +297,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
           BoxShadow(
             color: Colors.black.withOpacity(0.08),
             blurRadius: 15,
-            offset: const Offset(0, 4),
+            offset: Offset(0, 4),
           ),
         ],
       ),
@@ -227,12 +305,11 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
-          onTap: () {}, // Empty
+          onTap: () {},
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             child: Row(
               children: [
-                // Number Circle
                 Container(
                   width: 50,
                   height: 50,
@@ -255,10 +332,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                     ),
                   ),
                 ),
-
-                const SizedBox(width: 16),
-
-                // Content
+                SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -273,11 +347,11 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                               : null,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4),
                       Row(
                         children: [
                           Icon(Icons.book, size: 16, color: Colors.grey[600]),
-                          const SizedBox(width: 4),
+                          SizedBox(width: 4),
                           Text(
                             task['subject'],
                             style: TextStyle(
@@ -287,7 +361,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8),
                       Row(
                         children: [
                           Icon(
@@ -295,7 +369,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                             size: 16,
                             color: Colors.red[400],
                           ),
-                          const SizedBox(width: 4),
+                          SizedBox(width: 4),
                           Text(
                             'Due: ${task['due']}',
                             style: TextStyle(
@@ -305,7 +379,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 12),
+                      SizedBox(height: 12),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: LinearProgressIndicator(
@@ -316,20 +390,20 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             '${task['progress']}% Complete',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           if (!task['completed'])
                             Container(
-                              padding: const EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                 horizontal: 12,
                                 vertical: 6,
                               ),
@@ -337,7 +411,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen> {
                                 color: Colors.blue[50],
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              child: const Text(
+                              child: Text(
                                 'Mark Complete',
                                 style: TextStyle(
                                   color: Colors.blue,

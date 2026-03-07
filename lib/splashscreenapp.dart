@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
+import 'package:quranteacher/roleselector.dart';
 
 void main() {
   runApp(MaterialApp(home: Splashscreenapp()));
@@ -62,7 +63,7 @@ class _SplashscreenappState extends State<Splashscreenapp>
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => Login()),
+          MaterialPageRoute(builder: (context) => Roleselector()),
         );
       }
     });
