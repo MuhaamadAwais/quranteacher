@@ -4,6 +4,8 @@ import 'package:quranteacher/feature/profile_feature/presentation-layer/help&sup
 import 'package:quranteacher/feature/profile_feature/presentation-layer/help&support_inner_screen/tajweedrulesscreen.dart';
 
 class HelpSupportScreen extends StatelessWidget {
+  const HelpSupportScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

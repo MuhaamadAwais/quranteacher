@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/topcontistd.dart';
 
 class Namestd extends StatelessWidget {
   const Namestd({super.key});

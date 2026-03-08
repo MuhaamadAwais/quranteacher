@@ -17,7 +17,7 @@ class Stackbackcontiwid extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [AppColors.backgroundStart, AppColors.backgroundEnd],
+          colors: [AppColors.islamicNavy500, AppColors.islamicNavy600],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

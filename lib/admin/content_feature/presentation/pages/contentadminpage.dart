@@ -29,8 +29,8 @@ class _ContentadminpageState extends State<Contentadminpage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: width * 0.9,
-                height: height * 0.06,
+                width: width,
+                height: height * 0.07,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: AppColors.islamicEmerald,
@@ -51,7 +51,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.home),
-                          SizedBox(width: 6),
+                          SizedBox(width: 4),
                           Text("Quran"),
                         ],
                       ),
@@ -61,7 +61,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.book_outlined),
-                          SizedBox(width: 6),
+                          SizedBox(width: 4),
                           Text("Hadith"),
                         ],
                       ),
@@ -71,7 +71,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.school_outlined),
-                          SizedBox(width: 6),
+                          SizedBox(width: 4),
                           Text("Lessons"),
                         ],
                       ),
@@ -99,36 +99,36 @@ class _ContentadminpageState extends State<Contentadminpage> {
                         contidesigncontents(
                           1,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
 
                         contidesigncontents(
-                          1,
+                          2,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
 
                         contidesigncontents(
-                          1,
+                          3,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
 
                         contidesigncontents(
-                          1,
+                          4,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
                       ],
@@ -150,27 +150,36 @@ class _ContentadminpageState extends State<Contentadminpage> {
                         contidesigncontents(
                           1,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
 
                         contidesigncontents(
-                          1,
+                          2,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
 
                         contidesigncontents(
-                          1,
+                          3,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
+                          "412 views",
+                        ),
+
+                        contidesigncontents(
+                          4,
+                          width,
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
                       ],
@@ -192,27 +201,36 @@ class _ContentadminpageState extends State<Contentadminpage> {
                         contidesigncontents(
                           1,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
 
                         contidesigncontents(
-                          1,
+                          2,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
 
                         contidesigncontents(
-                          1,
+                          3,
                           width,
-                          height * 0.15,
-                          "Prayer Guide",
-                          "Interactive",
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
+                          "412 views",
+                        ),
+
+                        contidesigncontents(
+                          4,
+                          width,
+                          height * 0.17,
+                          "Surah AL-Fatihah",
+                          "Complete",
                           "412 views",
                         ),
                       ],
@@ -338,7 +356,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                       subjectpurpose,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 18,
+                        fontSize: 17,
                         fontWeight: FontWeight.normal,
                       ),
                     ),
@@ -346,10 +364,10 @@ class _ContentadminpageState extends State<Contentadminpage> {
                     Row(
                       children: [
                         Text(
-                          "$studentsview Students",
+                          "$studentsview ",
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: 15,
                             fontWeight: FontWeight.normal,
                           ),
                         ),

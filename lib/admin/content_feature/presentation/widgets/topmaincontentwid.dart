@@ -12,8 +12,7 @@ class Topmaincontentwid extends StatelessWidget {
       children: [
         Stackmaincontentwid(),
         Positioned(top: 20, left: 20, right: 20, child: Contenttextwid()),
-
-        Positioned(top: 120, left: 20, right: 20, child: Dataforstackwid()),
+        Positioned(top: 100, left: 20, right: 20, child: Dataforstackwid()),
       ],
     );
   }

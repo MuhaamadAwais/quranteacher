@@ -6,11 +6,8 @@ class Textforuserwid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.only(left: 3),
       child: Row(
         children: [
           Container(
@@ -27,7 +24,7 @@ class Textforuserwid extends StatelessWidget {
             "User Managment",
             style: TextStyle(
               color: AppColors.textWhite,
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
           ),

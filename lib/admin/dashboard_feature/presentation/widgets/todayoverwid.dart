@@ -25,7 +25,11 @@ class Todayoverwid extends StatelessWidget {
               padding: const EdgeInsets.only(left: 15, top: 10),
               child: Row(
                 children: [
-                  Icon(Icons.start, color: AppColors.backgroundStart),
+                  Icon(
+                    Icons.trending_up,
+                    color: AppColors.backgroundStart,
+                    size: 30,
+                  ),
                   Text(
                     "Today's Overview",
                     style: TextStyle(

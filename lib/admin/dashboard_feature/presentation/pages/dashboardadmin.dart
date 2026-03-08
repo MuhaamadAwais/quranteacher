@@ -18,7 +18,31 @@ class Dashboardadmin extends StatefulWidget {
   State<Dashboardadmin> createState() => _DashboardadminState();
 }
 
-class _DashboardadminState extends State<Dashboardadmin> {
+class _DashboardadminState extends State<Dashboardadmin>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _fadeanimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+    _fadeanimation = Tween<double>(
+      begin: 0.45,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _animationController, curve: Curves.bounceIn));
+    _animationController.repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _animationController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,7 +63,7 @@ class _DashboardadminState extends State<Dashboardadmin> {
                     top: 110,
                     left: 20,
                     right: 20,
-                    child: Adminoperationwid(),
+                    child: Adminoperationwid(opacityanim: _fadeanimation),
                   ),
                 ],
               ),

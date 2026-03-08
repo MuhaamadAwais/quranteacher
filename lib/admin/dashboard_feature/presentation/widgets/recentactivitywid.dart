@@ -10,47 +10,55 @@ class Recentactivitywid extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return SizedBox(
       width: width,
-      height: height * 0.6,
+      height: height * 0.65,
       child: Card(
         elevation: 5,
         color: AppColors.textWhite,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Container(
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              actvityconti(
-                width,
-                height * 0.12,
-                "Ahmaed Hassan",
-                "Joined the platform",
-                "12 mins ago",
-              ),
-              actvityconti(
-                width,
-                height * 0.12,
-                "Sheikh Abdullah ",
-                "pending approval",
-                "12 mins ago",
-              ),
-
-              actvityconti(
-                width,
-                height * 0.12,
-                "Shiekh Muhammad ",
-                "Started a live class",
-                "25 mins ago",
-              ),
-
-              actvityconti(
-                width,
-                height * 0.12,
-                "Fatima Ali",
-                "Completed Payment",
-                "1 hour ago",
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  "Recent Activity",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                ),
+                actvityconti(
+                  width,
+                  height * 0.12,
+                  "Ahmaed Hassan",
+                  "Joined the platform",
+                  "12 mins ago",
+                ),
+                actvityconti(
+                  width,
+                  height * 0.12,
+                  "Sheikh Abdullah ",
+                  "pending approval",
+                  "12 mins ago",
+                ),
+            
+                actvityconti(
+                  width,
+                  height * 0.12,
+                  "Shiekh Muhammad ",
+                  "Started a live class",
+                  "25 mins ago",
+                ),
+            
+                actvityconti(
+                  width,
+                  height * 0.12,
+                  "Fatima Ali",
+                  "Completed Payment",
+                  "1 hour ago",
+                ),
+              ],
+            ),
           ),
         ),
       ),

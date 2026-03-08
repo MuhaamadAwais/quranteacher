@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 
 class Adminoperationwid extends StatelessWidget {
-  const Adminoperationwid({super.key});
-
+  const Adminoperationwid({super.key,required this.opacityanim});
+ final Animation<double> opacityanim;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -32,7 +32,7 @@ class Adminoperationwid extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: const Icon(
-                  Icons.add_comment_rounded,
+                  Icons.show_chart,
                   color: Colors.white,
                 ),
               ),
@@ -60,12 +60,15 @@ class Adminoperationwid extends StatelessWidget {
             ],
           ),
 
-          Container(
-            width: 14,
-            height: 14,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.backgroundStart,
+          FadeTransition(
+            opacity: opacityanim,
+            child: Container(
+              width: 16,
+              height: 16,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.islamicGreen,
+              ),
             ),
           ),
         ],

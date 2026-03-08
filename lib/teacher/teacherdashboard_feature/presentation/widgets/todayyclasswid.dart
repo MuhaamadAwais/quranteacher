@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/classcontiwid.dart';
 
 class Todayyclasswid extends StatelessWidget {
   const Todayyclasswid({super.key});

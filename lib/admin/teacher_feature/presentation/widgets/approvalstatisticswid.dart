@@ -26,6 +26,7 @@ class Approvalstatisticswid extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(Icons.group_outlined, color: AppColors.backgroundStart),
+                  SizedBox(width: 10,),
                   Text(
                     "Approval Statistics",
                     style: TextStyle(
@@ -50,7 +51,7 @@ class Approvalstatisticswid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 25,
                         ),
                       ),
 
@@ -72,7 +73,7 @@ class Approvalstatisticswid extends StatelessWidget {
                         style: TextStyle(
                           color: AppColors.destructive,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 25,
                         ),
                       ),
 
@@ -94,7 +95,7 @@ class Approvalstatisticswid extends StatelessWidget {
                         style: TextStyle(
                           color: AppColors.destructive,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 25,
                         ),
                       ),
 

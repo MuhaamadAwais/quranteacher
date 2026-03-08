@@ -13,7 +13,7 @@ class Mainapprovalwid extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-        height: height * 0.45,
+        height: height * 0.52,
         child: Card(
           elevation: 5,
           shape: RoundedRectangleBorder(
@@ -44,8 +44,9 @@ class Mainapprovalwid extends StatelessWidget {
                           color: AppColors.islamicNavy,
                         ),
                       ),
-                  
+
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -66,13 +67,13 @@ class Mainapprovalwid extends StatelessWidget {
                           ),
                         ],
                       ),
-                  
+
                       Container(
                         width: 100,
-                        height: 40,
+                        height: 30,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.amber,
+                          color: Colors.amber.withOpacity(0.3),
                         ),
                         child: Center(
                           child: Text(
@@ -80,7 +81,7 @@ class Mainapprovalwid extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.orange,
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 18,
                             ),
                           ),
                         ),
@@ -124,6 +125,7 @@ class Mainapprovalwid extends StatelessWidget {
                         "Qualification",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
+                      SizedBox(height: 3),
                       const Text("Ijazah in Quran, 10 years experience"),
 
                       const SizedBox(height: 10),
@@ -133,6 +135,7 @@ class Mainapprovalwid extends StatelessWidget {
                         "Applied Date",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
+                      SizedBox(height: 3),
                       const Text("Feb 15, 2024"),
 
                       const SizedBox(height: 15),
@@ -153,13 +156,25 @@ class Mainapprovalwid extends StatelessWidget {
                                 color: AppColors.secondary,
                               ),
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.check, color: AppColors.primary),
-                                const SizedBox(width: 5),
-                                const Text("Approve"),
-                              ],
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                                  children: [
+                                    Icon(Icons.check, color: AppColors.primary),
+                                    const SizedBox(width: 10),
+                                    const Text(
+                                      "Approve",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
 
@@ -175,16 +190,28 @@ class Mainapprovalwid extends StatelessWidget {
                                 color: AppColors.destructive,
                               ),
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.cancel_outlined,
-                                  color: AppColors.destructive,
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                                  children: [
+                                    Icon(
+                                      Icons.cancel_outlined,
+                                      color: AppColors.destructive,
+                                    ),
+                                    const SizedBox(width: 10),
+                                    const Text(
+                                      "Reject",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                const SizedBox(width: 5),
-                                const Text("Reject"),
-                              ],
+                              ),
                             ),
                           ),
                         ],
@@ -198,10 +225,16 @@ class Mainapprovalwid extends StatelessWidget {
                         height: height * 0.055,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.switchBackground,
+                          color: AppColors.switchBackground.withOpacity(0.2),
                         ),
                         child: const Center(
-                          child: Text("View Full Application"),
+                          child: Text(
+                            "View Full Application",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
                         ),
                       ),
                     ],
