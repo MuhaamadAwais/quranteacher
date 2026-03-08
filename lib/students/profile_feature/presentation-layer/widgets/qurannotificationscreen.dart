@@ -9,7 +9,8 @@ class QuranNotificationScreen extends StatefulWidget {
       _QuranNotificationScreenState();
 }
 
-class _QuranNotificationScreenState extends State<QuranNotificationScreen> {
+class _QuranNotificationScreenState extends State<QuranNotificationScreen>
+    with SingleTickerProviderStateMixin {
   List<Map<String, dynamic>> notifications = [
     {
       'icon': Icons.bookmark,
@@ -58,6 +59,31 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen> {
     },
   ];
 
+  late AnimationController _controller;
+  late Animation<Offset> _slideAnimation;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1), // LessonScreen same
+    );
+    _slideAnimation = Tween<Offset>(
+      begin: Offset(0, 0.08),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(_controller);
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final unreadCount = notifications.where((n) => !n['isRead']).length;
@@ -104,45 +130,98 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          // Quick Actions
-          Container(
-            padding: EdgeInsets.all(16),
-            child: Row(
-              children: [
-                Expanded(
-                  child: _buildActionButton(
-                    icon: Icons.play_lesson,
-                    label: 'Continue Learning',
-                    color: Color(0xFF4CAF50),
+      body: FadeTransition(
+        opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
+        child: SlideTransition(
+          position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
+          child: Column(
+            children: [
+              // 🔥 1. Quick Actions (400ms)
+              TweenAnimationBuilder<double>(
+                duration: Duration(milliseconds: 400),
+                tween: Tween(begin: 0, end: 1),
+                curve: Curves.easeOut,
+                builder: (context, value, child) {
+                  return Opacity(
+                    opacity: value,
+                    child: Transform.translate(
+                      offset: Offset(0, 20 * (1 - value)),
+                      child: child,
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.all(16),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: _buildActionButton(
+                          icon: Icons.play_lesson,
+                          label: 'Continue Learning',
+                          color: Color(0xFF4CAF50),
+                        ),
+                      ),
+                      SizedBox(width: 12),
+                      Expanded(
+                        child: _buildActionButton(
+                          icon: Icons.quiz,
+                          label: 'Take Quiz',
+                          color: Color(0xFFFF9800),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(width: 12),
-                Expanded(
-                  child: _buildActionButton(
-                    icon: Icons.quiz,
-                    label: 'Take Quiz',
-                    color: Color(0xFFFF9800),
+              ),
+
+              // 🔥 2. Notifications List (staggered index * 150ms)
+              Expanded(
+                child: TweenAnimationBuilder<double>(
+                  duration: Duration(milliseconds: 700),
+                  tween: Tween(begin: 0, end: 1),
+                  curve: Curves.easeOut,
+                  builder: (context, value, child) {
+                    return Opacity(
+                      opacity: value,
+                      child: Transform.scale(
+                        scale: 0.95 + (0.05 * value),
+                        child: child,
+                      ),
+                    );
+                  },
+                  child: ListView.builder(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    itemCount: notifications.length,
+                    itemBuilder: (context, index) {
+                      return TweenAnimationBuilder<double>(
+                        duration: Duration(
+                          milliseconds: 400 + (index * 150),
+                        ), // 🔥 Staggered!
+                        tween: Tween(begin: 0, end: 1),
+                        curve: Curves.easeOut,
+                        builder: (context, value, child) {
+                          return Opacity(
+                            opacity: value,
+                            child: Transform.translate(
+                              offset: Offset(0, 20 * (1 - value)),
+                              child: child,
+                            ),
+                          );
+                        },
+                        child: _buildQuranNotification(notifications[index]),
+                      );
+                    },
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              itemCount: notifications.length,
-              itemBuilder: (context, index) {
-                return _buildQuranNotification(notifications[index]);
-              },
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 
+  // بाकی methods same رہیں گے...
   Widget _buildActionButton({
     required IconData icon,
     required String label,
@@ -269,18 +348,13 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen> {
   }
 
   void _handleNotificationTap(Map<String, dynamic> notification) {
-    setState(() {
-      notification['isRead'] = true;
-    });
-    // Navigate to specific screen
+    setState(() => notification['isRead'] = true);
     print('Tapped: ${notification['title']}');
   }
 
   void _markAllRead() {
     setState(() {
-      for (var notification in notifications) {
-        notification['isRead'] = true;
-      }
+      for (var notification in notifications) notification['isRead'] = true;
     });
   }
 }

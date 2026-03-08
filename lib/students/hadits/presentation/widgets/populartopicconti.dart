@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/hadits/presentation/widgets/charitypage.dart';
+import 'package:quranteacher/students/hadits/presentation/widgets/faithpage.dart';
+import 'package:quranteacher/students/hadits/presentation/widgets/familypage.dart';
+import 'package:quranteacher/students/hadits/presentation/widgets/knowledgepage.dart';
+import 'package:quranteacher/students/hadits/presentation/widgets/mannerspage.dart';
+import 'package:quranteacher/students/hadits/presentation/widgets/prayerpage.dart';
 
 class Populartopicconti extends StatefulWidget {
   const Populartopicconti({super.key});
@@ -21,22 +27,38 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Popularconti(
-                "assets/images/faith.png",
-                "Faith",
-                width * 0.43,
-                height * 0.2,
-                AppColors.secondary,
-                AppColors.primary,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const FaithPage()),
+                  );
+                },
+                child: Popularconti(
+                  "assets/images/faith.png",
+                  "Faith",
+                  width * 0.43,
+                  height * 0.2,
+                  AppColors.secondary,
+                  AppColors.primary,
+                ),
               ),
 
-              Popularconti(
-                "assets/images/prayer.png",
-                "Prayer",
-                width * 0.43,
-                height * 0.2,
-                AppColors.islamicNavy500,
-                AppColors.islamicNavy600,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const PrayerPage()),
+                  );
+                },
+                child: Popularconti(
+                  "assets/images/prayer.png",
+                  "Prayer",
+                  width * 0.43,
+                  height * 0.2,
+                  AppColors.islamicNavy500,
+                  AppColors.islamicNavy600,
+                ),
               ),
             ],
           ),
@@ -44,22 +66,38 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Popularconti(
-              "assets/images/charity.png",
-              "Charity",
-              width * 0.43,
-              height * 0.2,
-              Colors.purple,
-              Colors.purpleAccent,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CharityPage()),
+                );
+              },
+              child: Popularconti(
+                "assets/images/charity.png",
+                "Charity",
+                width * 0.43,
+                height * 0.2,
+                Colors.purple,
+                Colors.purpleAccent,
+              ),
             ),
 
-            Popularconti(
-              "assets/images/manner.png",
-              "Manners",
-              width * 0.43,
-              height * 0.2,
-              Colors.orange,
-              Colors.orangeAccent,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MannersPage()),
+                );
+              },
+              child: Popularconti(
+                "assets/images/manner.png",
+                "Manners",
+                width * 0.43,
+                height * 0.2,
+                Colors.orange,
+                Colors.orangeAccent,
+              ),
             ),
           ],
         ),
@@ -67,22 +105,40 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Popularconti(
-              "assets/images/family.png",
-              "Family",
-              width * 0.43,
-              height * 0.2,
-              Colors.red,
-              Colors.redAccent,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FamilyPage()),
+                );
+              },
+              child: Popularconti(
+                "assets/images/family.png",
+                "Family",
+                width * 0.43,
+                height * 0.2,
+                Colors.red,
+                Colors.redAccent,
+              ),
             ),
 
-            Popularconti(
-              "assets/images/knowledge.png",
-              "Knowledge",
-              width * 0.43,
-              height * 0.2,
-              Colors.blue,
-              Colors.blueAccent,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const KnowledgePage(),
+                  ),
+                );
+              },
+              child: Popularconti(
+                "assets/images/knowledge.png",
+                "Knowledge",
+                width * 0.43,
+                height * 0.2,
+                Colors.blue,
+                Colors.blueAccent,
+              ),
             ),
           ],
         ),
@@ -115,11 +171,7 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset(
-              image,
-              width: width * 0.4,
-              fit: BoxFit.cover,
-            ),
+            Image.asset(image, width: width * 0.4, fit: BoxFit.cover),
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: Text(

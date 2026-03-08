@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/bottomnavi.dart';
 
 class Qurantex extends StatelessWidget {
   const Qurantex({super.key});
@@ -17,14 +18,22 @@ class Qurantex extends StatelessWidget {
             shape: BoxShape.circle,
             color: AppColors.textWhite.withOpacity(0.15),
           ),
-          child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Bottomnavi()),
+              );
+            },
+            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+          ),
         ),
-        SizedBox(width: 5),
+        SizedBox(width: width * 0.03),
         Text(
           "Quran",
           style: TextStyle(
             color: AppColors.textWhite,
-            fontSize: 20,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),

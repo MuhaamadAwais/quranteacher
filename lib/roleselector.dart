@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
-import 'package:quranteacher/students/bottomnavi.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Roleselector extends StatefulWidget {
@@ -12,415 +11,399 @@ class Roleselector extends StatefulWidget {
   State<Roleselector> createState() => _RoleselectorState();
 }
 
-class _RoleselectorState extends State<Roleselector> {
+class _RoleselectorState extends State<Roleselector>
+    with TickerProviderStateMixin {
   bool isstudentpressed = false;
   bool isteacherpressed = false;
   bool isadminpressed = false;
+
+  late AnimationController _controller;
+  late Animation<double> _headerAnimation;
+  late Animation<double> _forall;
+  late Animation<double> _studentcontainerAnimation;
+  late Animation<double> _teachercontainerAnimation;
+  late Animation<double> _admincontainerAnimation;
+  // late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 1000),
+      vsync: this,
+    );
+    _forall = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
+    _headerAnimation = Tween<double>(begin: 0.4, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Interval(0.0, 0.25, curve: Curves.easeOut),
+      ),
+    );
+
+    // for student
+    _studentcontainerAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Interval(0.25, 0.5, curve: Curves.easeOut),
+      ),
+    );
+    _controller.forward();
+    //for teacher
+    _teachercontainerAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Interval(0.50, 0.75, curve: Curves.easeOut),
+      ),
+    );
+    // for admin
+    _admincontainerAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Interval(0.75, 1.0, curve: Curves.easeOut),
+      ),
+    );
+  }
+
+  // for teacher
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                SizedBox(height: height * 0.05),
-                Text(
-                  "Select Your Role",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
-                ),
 
-                SizedBox(height: height * 0.02),
-                Text(
-                  "Choose how you want to continue",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 20,
-                  ),
-                ),
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              AppColors.backgroundStart,
+              AppColors.backgroundVia,
+              AppColors.backgroundEnd,
+            ],
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: height * 0.08),
 
-                SizedBox(height: height * 0.04),
-                SizedBox(
-                  height: height * 0.16,
-                  width: width * 0.96,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Bottomnavi()),
-                      );
-                    },
-                    onTapDown: (details) {
-                      setState(() {
-                        isstudentpressed = true;
-                      });
-                    },
-                    onTapUp: (details) {
-                      setState(() {
-                        isstudentpressed = false;
-                      });
-                    },
-                    onTapCancel: () {
-                      setState(() {
-                        isstudentpressed = false;
-                      });
-                    },
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
-                      transform: Matrix4.translationValues(
-                        0,
-                        isstudentpressed ? -12 : 0,
-                        0,
+              // ✨ Premium Title Section
+              ScaleTransition(
+                scale: _headerAnimation,
+                child: FadeTransition(
+                  opacity: _headerAnimation,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 24),
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 24),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          AppColors.islamicEmerald.withOpacity(0.25),
+                          AppColors.islamicLightGreen.withOpacity(0.15),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
-                      child: Card(
-                        color: AppColors.islamicEmerald,
-                        elevation: isstudentpressed ? 18 : 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(32),
+                      border: Border.all(color: AppColors.glowBorder, width: 1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.islamicEmerald.withOpacity(0.4),
+                          blurRadius: 25,
+                          spreadRadius: 0,
+                          offset: Offset(0, 12),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 12,
-                          ),
-                          child: Row(
-                            children: [
-                              // Icon Container with its own animation
-                              AnimatedContainer(
-                                duration: const Duration(milliseconds: 150),
-                                transform: Matrix4.translationValues(
-                                  0,
-                                  isstudentpressed
-                                      ? -6
-                                      : 0, // Thoda sa lift icon container ko
-                                  0,
-                                ),
-                                child: Container(
-                                  height: 60,
-                                  width: 60,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    color: AppColors.backgroundStart,
-                                  ),
-                                  child: const Icon(
-                                    Icons.school,
-                                    color: Colors.white,
-                                    size: 30,
-                                  ),
-                                ),
-                              ),
-
-                              const SizedBox(width: 15),
-
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      "Student",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 22,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      "Learn Quran with expert teacher",
-                                      style: TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              // Arrow Icon with its own animation
-                              AnimatedContainer(
-                                duration: const Duration(milliseconds: 150),
-                                transform: Matrix4.translationValues(
-                                  0,
-                                  isstudentpressed
-                                      ? -6
-                                      : 0, // Thoda sa lift arrow icon ko
-                                  0,
-                                ),
-                                child: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                  size: 18,
-                                ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Select Your Role",
+                          style: TextStyle(
+                            color: AppColors.textWhite,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 32,
+                            height: 1.2,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black45,
+                                offset: Offset(2, 2),
+                                blurRadius: 8,
                               ),
                             ],
                           ),
                         ),
-                      ),
+                        SizedBox(height: 8),
+                        Text(
+                          "Choose how you want to continue",
+                          style: TextStyle(
+                            color: AppColors.textWhite70,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
+              ),
 
-                // teacher
-                SizedBox(height: height * 0.02),
-                SizedBox(
-                  height: height * 0.16,
-                  width: width * 0.96,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => Bottomnaviteacher(),
-                        ),
-                      );
-                    },
-                    onTapDown: (details) {
-                      setState(() {
-                        isteacherpressed = true;
-                      });
-                    },
-                    onTapUp: (details) {
-                      setState(() {
-                        isteacherpressed = false;
-                      });
-                    },
-                    onTapCancel: () {
-                      setState(() {
-                        isteacherpressed = false;
-                      });
-                    },
+              SizedBox(height: height * 0.06),
 
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 150),
-                      transform: Matrix4.translationValues(
-                        0,
-                        isteacherpressed ? -12 : 0,
-                        0,
-                      ),
-                      child: Card(
-                        color: AppColors.islamicNavy500,
-
-                        elevation: isteacherpressed ? 18 : 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 12,
-                          ),
-                          child: Row(
-                            children: [
-                              // 🔹 Icon Box
-                              AnimatedContainer(
-                                height: 60,
-                                width: 60,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: AppColors.islamicNavy700,
-                                ),
-                                duration: Duration(milliseconds: 150),
-                                transform: Matrix4.translationValues(
-                                  0,
-                                  isteacherpressed ? -6 : 0,
-                                  0,
-                                ),
-                                child: const Icon(
-                                  Icons.supervisor_account,
-                                  color: Colors.white,
-                                  size: 30,
-                                ),
-                              ),
-
-                              const SizedBox(width: 15),
-
-                              // 🔹 Text Section
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      "Teacher",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 22,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      "Teach and inspire students",
-                                      style: TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              AnimatedContainer(
-                                duration: Duration(milliseconds: 150),
-                                transform: Matrix4.translationValues(
-                                  0,
-                                  isteacherpressed ? -6 : 0,
-                                  0,
-                                ),
-                                child: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                  size: 18,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                // admin
-                SizedBox(height: height * 0.02),
-                SizedBox(
-                  height: height * 0.16,
-                  width: width * 0.96,
-                  child: GestureDetector(
-                    onTapDown: (details) {
-                      setState(() {
-                        isadminpressed = true;
-                      });
-                    },
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => Bottomnavigationadmin(),
-                        ),
-                      );
-                    },
-                    onTapCancel: () {
-                      setState(() {
-                        isadminpressed = false;
-                      });
-                    },
-
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 150),
-                      transform: Matrix4.translationValues(
-                        0,
-                        isadminpressed ? -12 : 0,
-                        0,
-                      ),
-                      child: Card(
-                        color: AppColors.pink500,
-                        elevation: isadminpressed ? 18 : 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 12,
-                          ),
-                          child: Row(
-                            children: [
-                              // 🔹 Icon Box
-                              AnimatedContainer(
-                                height: 60,
-                                width: 60,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: AppColors.pink700,
-                                ),
-                                duration: Duration(milliseconds: 150),
-                                transform: Matrix4.translationValues(
-                                  0,
-                                  isadminpressed ? -6 : 0,
-                                  0,
-                                ),
-                                child: const Icon(
-                                  Icons.admin_panel_settings_outlined,
-                                  color: Colors.white,
-                                  size: 30,
-                                ),
-                              ),
-
-                              const SizedBox(width: 15),
-
-                              // 🔹 Text Section
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      "Admin",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 22,
-                                      ),
-                                    ),
-                                    SizedBox(height: 4),
-                                    Text(
-                                      "Manage platform and users",
-                                      style: TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              AnimatedContainer(
-                                duration: Duration(milliseconds: 150),
-                                transform: Matrix4.translationValues(
-                                  0,
-                                  isadminpressed ? -6 : 0,
-                                  0,
-                                ),
-                                child: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                  size: 18,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: height * 0.16),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(
+              // 🎓 Student Card
+              ScaleTransition(
+                scale: _studentcontainerAnimation,
+                child: FadeTransition(
+                  opacity: _studentcontainerAnimation,
+                  child: _buildRoleCard(
+                    context,
+                    width: width * 0.92,
+                    height: height * 0.18,
+                    isPressed: isstudentpressed,
+                    gradientColors: [
+                      AppColors.islamicEmerald,
+                      AppColors.islamicGreen,
+                    ],
+                    iconColor: AppColors.textWhite,
+                    icon: Icons.school_outlined,
+                    title: "Student",
+                    subtitle: "Learn Quran with expert teacher",
+                    onTap: () => Navigator.push(
                       context,
-                    ).push(MaterialPageRoute(builder: (context) => Login()));
-                  },
-                  child: Row(
+                      MaterialPageRoute(builder: (_) => Login()),
+                    ),
+                    onTapDown: () => setState(() => isstudentpressed = true),
+                    onTapUp: () => setState(() => isstudentpressed = false),
+                    onTapCancel: () => setState(() => isstudentpressed = false),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: height * 0.025),
+
+              // 👨‍🏫 Teacher Card
+              FadeTransition(
+                opacity: _teachercontainerAnimation,
+                child: ScaleTransition(
+                  scale: _teachercontainerAnimation,
+                  child: FadeTransition(
+                    opacity: _teachercontainerAnimation,
+                    child: _buildRoleCard(
+                      context,
+                      width: width * 0.92,
+                      height: height * 0.18,
+                      isPressed: isteacherpressed,
+                      gradientColors: [
+                        AppColors.islamicNavy500,
+                        AppColors.islamicNavy600,
+                      ],
+                      iconBgColor: AppColors.islamicNavy700,
+                      iconColor: AppColors.textWhite,
+                      icon: Icons.supervisor_account_outlined,
+                      title: "Teacher",
+                      subtitle: "Teach and inspire students",
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => Bottomnaviteacher()),
+                      ),
+                      onTapDown: () => setState(() => isteacherpressed = true),
+                      onTapUp: () => setState(() => isteacherpressed = false),
+                      onTapCancel: () =>
+                          setState(() => isteacherpressed = false),
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: height * 0.025),
+
+              // ⚙️ Admin Card
+              ScaleTransition(
+                scale: _admincontainerAnimation,
+
+                child: FadeTransition(
+                  opacity: _admincontainerAnimation,
+                  child: _buildRoleCard(
+                    context,
+                    width: width * 0.92,
+                    height: height * 0.18,
+                    isPressed: isadminpressed,
+                    gradientColors: [AppColors.pink500, AppColors.pink700],
+                    iconBgColor: AppColors.pink700,
+                    iconColor: AppColors.textWhite,
+                    icon: Icons.admin_panel_settings_outlined,
+                    title: "Admin",
+                    subtitle: "Manage platform and users",
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => Bottomnavigationadmin(),
+                      ),
+                    ),
+                    onTapDown: () => setState(() => isadminpressed = true),
+                    onTapUp: () => setState(() => isadminpressed = false),
+                    onTapCancel: () => setState(() => isadminpressed = false),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: height * 0.08),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRoleCard(
+    BuildContext context, {
+    required double width,
+    required double height,
+    required bool isPressed,
+    required List<Color> gradientColors,
+    Color? iconBgColor,
+    required Color iconColor,
+    required IconData icon,
+    required String title,
+    required String subtitle,
+    required VoidCallback onTap,
+    required VoidCallback onTapDown,
+    required VoidCallback onTapUp,
+    required VoidCallback onTapCancel,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      onTapDown: (_) => onTapDown(),
+      onTapUp: (_) => onTapUp(),
+      onTapCancel: onTapCancel,
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 250),
+        curve: Curves.easeInOut,
+        transform: Matrix4.translationValues(0, isPressed ? -18 : 0, 0)
+          ..scale(isPressed ? 1.03 : 1.0),
+        child: Container(
+          width: width,
+          height: height,
+          margin: EdgeInsets.symmetric(horizontal: 12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(28),
+            gradient: LinearGradient(
+              colors: [
+                gradientColors[0].withOpacity(isPressed ? 0.95 : 0.85),
+                gradientColors[1].withOpacity(isPressed ? 0.75 : 0.65),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: gradientColors[0].withOpacity(isPressed ? 0.7 : 0.4),
+                blurRadius: isPressed ? 35 : 20,
+                spreadRadius: isPressed ? 3 : 1,
+                offset: Offset(0, isPressed ? 25 : 12),
+              ),
+              BoxShadow(
+                color: Colors.black.withOpacity(0.25),
+                blurRadius: 15,
+                offset: Offset(0, 8),
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(24),
+            child: Row(
+              children: [
+                // ✨ Animated Icon Container
+                AnimatedContainer(
+                  duration: Duration(milliseconds: 250),
+                  curve: Curves.elasticOut,
+                  transform: Matrix4.translationValues(
+                    0,
+                    isPressed ? -10 : 0,
+                    0,
+                  )..scale(isPressed ? 1.15 : 1.0),
+                  padding: EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.glowCircle,
+                        AppColors.glowBorder.withOpacity(0.5),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(24),
+                    border: Border.all(color: AppColors.glowBorder, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                        color: gradientColors[0].withOpacity(0.3),
+                        blurRadius: 20,
+                        offset: Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: Icon(icon, color: iconColor, size: 30),
+                ),
+
+                SizedBox(width: 24),
+
+                // 📝 Text Section
+                Expanded(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.arrow_back, color: AppColors.backgroundStart),
                       Text(
-                        "Back to Login",
+                        title,
                         style: TextStyle(
-                          color: AppColors.backgroundStart,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                          color: AppColors.textWhite,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 26,
+                          height: 1.2,
+                          shadows: [
+                            Shadow(
+                              color: Colors.black54,
+                              offset: Offset(2, 2),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        subtitle,
+                        style: TextStyle(
+                          color: AppColors.textWhite70,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          height: 1.4,
                         ),
                       ),
                     ],
+                  ),
+                ),
+
+                //    ➡️ Animated Arrow
+                AnimatedContainer(
+                  duration: Duration(milliseconds: 250),
+                  curve: Curves.easeOut,
+                  transform: Matrix4.translationValues(
+                    isPressed ? 12 : 0,
+                    isPressed ? -10 : 0,
+                    0,
+                  )..rotateZ(isPressed ? 0.1 : 0),
+                  child: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: AppColors.textWhite90,
+                    size: 22,
                   ),
                 ),
               ],

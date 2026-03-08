@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/feature/lesson_feature/presentation_layer/screens/lessonscreen.dart';
+import 'package:quranteacher/splashscreenapp.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Lessonscreen(),
+      home: Splashscreenapp(),
     );
   }
 }
