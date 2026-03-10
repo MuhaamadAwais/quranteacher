@@ -32,7 +32,7 @@ class _ReportadminpageState extends State<Reportadminpage> {
                     child: Stacktextreport(),
                   ),
                   Positioned(
-                    top: 110,
+                    top: 100,
                     left: 20,
                     right: 20,
                     child: Fullexportreport(),

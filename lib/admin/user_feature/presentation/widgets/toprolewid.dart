@@ -11,8 +11,14 @@ class Toprolewid extends StatelessWidget {
     return Stack(
       children: [
         Topcontiwid(),
-        Positioned(top: 20, left: 20, bottom: 20, child: Textforuserwid()),
-        Positioned(left: 20, bottom: 20, child: Searchuserswid()),
+        Positioned(left: 20,
+        right: 20,
+         top: 20, child: Textforuserwid()),
+        Positioned(
+          top: 100,
+          left: 20,
+          right: 20,
+           child: Searchuserswid()),
       ],
     );
   }

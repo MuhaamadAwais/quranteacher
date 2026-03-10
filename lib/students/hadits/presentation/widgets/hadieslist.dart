@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/students/hadits/presentation/pages/hadiesmodelapi.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/contidesignhadies.dart';
-import 'package:quranteacher/students/hadits/presentation/widgets/hadiesconti.dart';
 
 class Hadieslist extends StatelessWidget {
   const Hadieslist({super.key, required this.hadiesmodelapi});

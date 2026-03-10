@@ -12,7 +12,7 @@ class Platformprofence extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-        height: height * 0.35,
+        height: height * 0.38,
         child: Card(
           elevation: 5,
           child: Container(
@@ -23,7 +23,9 @@ class Platformprofence extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 10),
                   Text(
                     "Platform Performance",
                     style: TextStyle(
@@ -32,6 +34,7 @@ class Platformprofence extends StatelessWidget {
                       fontSize: 25,
                     ),
                   ),
+                  SizedBox(height: 10),
 
                   // students satifications
                   Row(
@@ -55,7 +58,14 @@ class Platformprofence extends StatelessWidget {
                       ),
                     ],
                   ),
-                  LinearProgressIndicator(color: AppColors.backgroundEnd),
+                  LinearProgressIndicator(
+                    minHeight: 8,
+                    backgroundColor: Colors.white,
+                    value: 0.8,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      AppColors.backgroundStart,
+                    ),
+                  ),
                   SizedBox(height: 10),
                   // teacher rating
                   Row(
@@ -79,7 +89,15 @@ class Platformprofence extends StatelessWidget {
                       ),
                     ],
                   ),
-                  LinearProgressIndicator(color: AppColors.backgroundEnd),
+
+                  LinearProgressIndicator(
+                    minHeight: 8,
+                    backgroundColor: Colors.white,
+                    value: 0.8,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      AppColors.backgroundStart,
+                    ),
+                  ),
                   // class
                   SizedBox(height: 10),
                   Row(
@@ -103,7 +121,15 @@ class Platformprofence extends StatelessWidget {
                       ),
                     ],
                   ),
-                  LinearProgressIndicator(color: AppColors.backgroundEnd),
+
+                  LinearProgressIndicator(
+                    minHeight: 8,
+                    backgroundColor: Colors.white,
+                    value: 0.8,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      AppColors.backgroundStart,
+                    ),
+                  ),
                   SizedBox(height: 10),
                   Row(
                     children: [
@@ -126,7 +152,15 @@ class Platformprofence extends StatelessWidget {
                       ),
                     ],
                   ),
-                  LinearProgressIndicator(color: AppColors.backgroundEnd),
+
+                  LinearProgressIndicator(
+                    minHeight: 8,
+                    backgroundColor: Colors.white,
+                    value: 0.8,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      AppColors.backgroundStart,
+                    ),
+                  ),
                 ],
               ),
             ),

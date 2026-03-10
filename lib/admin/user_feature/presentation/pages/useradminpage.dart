@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/user_feature/presentation/widgets/toprolewid.dart';
 import 'package:quranteacher/appcolors.dart';
 
-void main() {
-  runApp(MaterialApp(home: Useradminpage()));
-}
-
 class Useradminpage extends StatefulWidget {
   const Useradminpage({super.key});
 
@@ -24,15 +20,14 @@ class _UseradminpageState extends State<Useradminpage> {
         child: Scaffold(
           body: Column(
             children: [
-              SizedBox(height: 10),
               Toprolewid(),
-
+              SizedBox(height: 20),
               // TAB BAR
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   width: width * 0.9,
-                  height: height * 0.06,
+                  height: height * 0.07,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: AppColors.islamicEmerald,
@@ -189,9 +184,9 @@ class _UseradminpageState extends State<Useradminpage> {
                         ],
                       ),
 
-                      SizedBox(width: 30),
+                      SizedBox(width: 10),
                       Container(
-                        width: 50,
+                        width: 55,
                         height: 20,
                         decoration: BoxDecoration(
                           color: AppColors.backgroundStart,
@@ -200,7 +195,7 @@ class _UseradminpageState extends State<Useradminpage> {
                         child: Center(
                           child: Text(
                             "active",
-                            style: TextStyle(color: AppColors.primary),
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
@@ -212,12 +207,12 @@ class _UseradminpageState extends State<Useradminpage> {
                     children: [
                       Text(
                         "joined 1/15/2026",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
                       Spacer(),
                       Text(
                         "42 Classes",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
                     ],
                   ),
@@ -230,25 +225,29 @@ class _UseradminpageState extends State<Useradminpage> {
                         height: heightmin,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.islamicNavy400,
+                          color: AppColors.islamicNavy400.withOpacity(0.35),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.admin_panel_settings_outlined,
-                              size: 35,
-                              color: AppColors.islamicNavy600,
-                            ),
-
-                            Text(
-                              "View",
-                              style: TextStyle(
-                                fontSize: 20,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.security_outlined,
+                                size: 35,
                                 color: AppColors.islamicNavy600,
                               ),
-                            ),
-                          ],
+                              SizedBox(width: 10),
+                              Text(
+                                textAlign: TextAlign.center,
+                                "View",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: AppColors.islamicNavy600,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       Spacer(),
@@ -257,24 +256,28 @@ class _UseradminpageState extends State<Useradminpage> {
                         height: heightmin,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.red,
+                          color: Colors.red.withOpacity(0.35),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              size: 35,
-                              Icons.admin_panel_settings_outlined,
-                              color: AppColors.destructive,
-                            ),
-                            Text(
-                              "Suspened",
-                              style: TextStyle(
-                                fontSize: 20,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                size: 35,
+                                Icons.block,
                                 color: AppColors.destructive,
                               ),
-                            ),
-                          ],
+                              SizedBox(width: 5),
+                              Text(
+                                "Suspened",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: AppColors.destructive,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],

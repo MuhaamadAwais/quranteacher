@@ -21,7 +21,7 @@ class Growthchart extends StatelessWidget {
               color: AppColors.textWhite,
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 children: [
                   Row(
@@ -74,18 +74,21 @@ class Growthchart extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: "Total growth",
-                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          style: TextStyle(color:
+                           Colors.black, fontSize: 15),
                         ),
                         TextSpan(
                           text: " + 114%",
                           style: TextStyle(
                             color: AppColors.backgroundStart,
                             fontSize: 20,
+                            fontWeight: FontWeight.bold
                           ),
                         ),
                         TextSpan(
-                          text: "over six months",
-                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          text: " over six months",
+                          style: TextStyle(color: Colors.black,
+                           fontSize: 15),
                         ),
                       ],
                     ),

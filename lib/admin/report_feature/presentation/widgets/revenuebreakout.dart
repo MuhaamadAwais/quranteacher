@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class Revenuebreakout extends StatelessWidget {
   const Revenuebreakout({super.key});
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -24,6 +23,8 @@ class Revenuebreakout extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.monetization_on, color: Colors.orange),
+
+                  SizedBox(width: 10),
                   Text(
                     "Revenue Breakdown",
                     style: TextStyle(
@@ -56,12 +57,14 @@ class Revenuebreakout extends StatelessWidget {
                   ),
                 ],
               ),
-          
+
               LinearProgressIndicator(
-                backgroundColor: Colors.orange,
-                stopIndicatorColor: Colors.white,
+                value: 0.8,
+                backgroundColor: Colors.white,
+                minHeight: 8,
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
               ),
-          
+
               // teacher commissions
               SizedBox(height: 20),
               Row(
@@ -85,16 +88,19 @@ class Revenuebreakout extends StatelessWidget {
                   ),
                 ],
               ),
-          
+
               LinearProgressIndicator(
-                backgroundColor: Colors.orange,
-                stopIndicatorColor: Colors.white,
+                minHeight: 8,
+                value: 0.7,
+                backgroundColor: Colors.white,
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
               ),
-          
+
               // premium features
               SizedBox(height: 20),
               Row(
                 children: [
+
                   Text(
                     "premium features",
                     style: TextStyle(
@@ -114,9 +120,12 @@ class Revenuebreakout extends StatelessWidget {
                   ),
                 ],
               ),
-          
+
               LinearProgressIndicator(
-                backgroundColor: Colors.orange,
+                value: 0.3,
+                backgroundColor: Colors.white,
+                minHeight: 8,
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
                 stopIndicatorColor: Colors.white,
               ),
             ],
