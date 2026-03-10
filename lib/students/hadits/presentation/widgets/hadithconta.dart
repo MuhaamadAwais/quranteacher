@@ -2,52 +2,52 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
-import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/appanimations.dart';
 
-class Currentsurah extends StatefulWidget {
-  const Currentsurah({super.key});
+class Hadithconta extends StatefulWidget {
+  const Hadithconta({super.key});
 
   @override
-  State<Currentsurah> createState() => _CurrentsurahState();
+  State<Hadithconta> createState() => _CurrentsurahState();
 }
 
-class _CurrentsurahState extends State<Currentsurah>
+class _CurrentsurahState extends State<Hadithconta>
     with SingleTickerProviderStateMixin {
   final GestureFlipCardController gestureController =
       GestureFlipCardController();
+  Timer? _flipTimer;
 
   late AnimationController _animationController;
   late Animation<double> _simpllefade;
-  Timer? _flipTimer;
 
+  @override
   void initState() {
+    super.initState();
+
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 4),
     );
-
     final controller = AppAnimations(_animationController);
-
+    _animationController.forward();
+    _animationController.repeat(reverse: true);
     _simpllefade = controller.simplefade(
-      begin: 0.9,
+      begin: 0.95,
       end: 1.0,
       curve: Curves.easeInOut,
     );
-
-    _animationController.repeat(reverse: true);
-    _flipTimer = Timer.periodic(Duration(seconds: 10), (timer) {
+    _flipTimer = Timer.periodic(Duration(seconds: 15), (timer) {
       if (mounted) {
         gestureController.flipcard();
       }
     });
-    super.initState();
   }
 
   @override
   void dispose() {
-    _flipTimer?.cancel();
     _animationController.dispose();
+    _flipTimer?.cancel();
+
     super.dispose();
   }
 
@@ -59,8 +59,8 @@ class _CurrentsurahState extends State<Currentsurah>
     return Padding(
       padding: const EdgeInsets.all(0.0),
       child: SizedBox(
-        height: height * 0.25,
-        width: width * 0.93,
+        height: height * 0.41,
+        width: width * 0.7,
         // 🔥 GestureFlipCard - Tap to flip automatically!
         child: ScaleTransition(
           scale: _simpllefade,
@@ -68,13 +68,13 @@ class _CurrentsurahState extends State<Currentsurah>
             controller: gestureController,
             enableController: true,
             axis: FlipAxis.vertical, // Left/Right flip
-            animationDuration: const Duration(milliseconds: 600),
+            animationDuration: const Duration(milliseconds: 900),
 
             // 🔥 FRONT: Current Surah info (original design)
             frontWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: AppColors.backgroundVia,
+                color: Colors.black26,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
@@ -82,6 +82,7 @@ class _CurrentsurahState extends State<Currentsurah>
                     offset: const Offset(0, 5),
                   ),
                 ],
+                border: Border.all(color: Colors.white, width: 2),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -90,7 +91,7 @@ class _CurrentsurahState extends State<Currentsurah>
                   children: [
                     SizedBox(height: height * 0.01),
                     Text(
-                      "هُوَ الَّذِيْ جَعَلَ لَكُمُ الْأَرْضَ ذَلُوْلًا فَامْشُوْا فِيْ مَنَاكِبِهَا وَكُلُوْا مِنْ رِزْقِهِ ۖ وَإِلَيْهِ النُّشُوْرُ",
+                      "«افترقتِ اليهودُ على إحدى وسبعين فرقة، وافترقتِ النصارى على اثنتين وسبعين فرقة، وستفترقُ أمتي على ثلاثٍ وسبعين فرقة، كلُّها في النار إلا واحدة»  \n قيل: مَن هي يا رسولَ الله؟ \n  قال: «ما أنا عليه وأصحابي",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -102,11 +103,11 @@ class _CurrentsurahState extends State<Currentsurah>
 
                     Center(
                       child: const Text(
-                        "سورۃ الملک، آیت 15",
+                        "Jami' at-Tirmidhi حدیث نمبر: 2641",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 16,
                         ),
                       ),
                     ),
@@ -118,7 +119,7 @@ class _CurrentsurahState extends State<Currentsurah>
             backWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: AppColors.islamicGold,
+                color: Colors.white10,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
@@ -126,6 +127,7 @@ class _CurrentsurahState extends State<Currentsurah>
                     offset: const Offset(0, 5),
                   ),
                 ],
+                border: Border.all(color: Colors.black, width: 2),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -134,11 +136,11 @@ class _CurrentsurahState extends State<Currentsurah>
                   children: [
                     SizedBox(height: height * 0.01),
                     Text(
-                      "وہی ہے جس نے تمہارے لیے زمین کو نرم و مسخر کر دیا، سو تم اس کے راستوں میں چلو پھرو، اور اس کے (دیئے ہوئے) رزق میں سے کھاؤ، اور اسی کی طرف (مرنے کے بعد) اٹھ کر جانا ہے۔",
+                      "رسول اللہ ﷺ نے فرمایا کہ میری امت 73 فرقوں میں تقسیم ہو جائے گی، سب جہنم میں ہوں گے سوائے ایک کے۔ صحابہؓ نے پوچھا وہ کون ہیں؟ آپ ﷺ نے فرمایا: جو میرے اور میرے صحابہ کے طریقے پر ہوں گے۔",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: 21,
                         //textBaseline: TextBaseline.alphabetic,
                       ),
                     ),
@@ -146,11 +148,11 @@ class _CurrentsurahState extends State<Currentsurah>
 
                     Center(
                       child: const Text(
-                        "اردو ترجمہ (مولانا فتح محمد جالندھری)",
+                        "Jami' at-Tirmidhi حدیث نمبر: 2641",
                         style: TextStyle(
-                          color: Colors.tealAccent,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -164,74 +166,3 @@ class _CurrentsurahState extends State<Currentsurah>
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-// previws code of surat 
-
-// Padding(
-//       padding: const EdgeInsets.all(8.0),
-//       child: SizedBox(
-//         height: height * 0.25,
-//         width: width,
-//         child: Card(
-//           color: AppColors.islamicNavy400.withOpacity(0.65),
-//           elevation: 20,
-//           child: Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//               children: [
-//                 Row(
-//                   children: [
-//                     Icon(Icons.book),
-//                     Text(
-//                       "Current Surah",
-//                       style: TextStyle(
-//                         color: Colors.black,
-//                         fontWeight: FontWeight.bold,
-//                         fontSize: 20,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//                 Container(
-//                   height: height * 0.1,
-//                   decoration: BoxDecoration(
-//                     borderRadius: BorderRadius.circular(20),
-//                     color: AppColors.textWhite,
-//                   ),
-//                   child: Padding(
-//                     padding: const EdgeInsets.all(8.0),
-//                     child: Column(
-//                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Row(
-//                           children: [
-//                             Text("Surah Al-Mulk"),
-//                             Spacer(),
-//                             Text("Surah 67"),
-//                           ],
-//                         ),
-//                         Text("Ayyah 15 of 30"),
-//                         LinearProgressIndicator(
-//                           color: AppColors.backgroundStart,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//     );

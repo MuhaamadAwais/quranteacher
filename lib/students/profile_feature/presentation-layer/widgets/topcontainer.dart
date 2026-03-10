@@ -1,13 +1,34 @@
 import 'package:flutter/material.dart';
 
-class Topcontainer extends StatelessWidget {
+class Topcontainer extends StatefulWidget {
   const Topcontainer({super.key, required this.size});
   final Size size;
 
   @override
+  State<Topcontainer> createState() => _TopcontainerState();
+}
+
+class _TopcontainerState extends State<Topcontainer>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    );
+    _fadeAnimation = Tween<double>(begin: 0.4, end: 1).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+    );
+    _animationController.forward();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final height = size.height;
-    final width = size.width;
+    final height = widget.size.height;
+    final width = widget.size.width;
     return Container(
       height: height * 0.56,
       width: width,
@@ -122,132 +143,153 @@ class Topcontainer extends StatelessWidget {
               children: [
                 SizedBox(width: width * 0.02),
                 //first container in row
-                Container(
-                  height: height * 0.15,
-                  width: width * 0.28,
-                  decoration: BoxDecoration(
-                    color: Colors.white38,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white60),
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(height: height * 0.02),
-                      Container(
-                        height: height * 0.05,
-                        width: width * 0.1,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(60, 52, 233, 169),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Icon(Icons.menu_book, color: Colors.white),
+                FadeTransition(
+                  opacity: _fadeAnimation,
+                  child: RotationTransition(
+                    turns: _fadeAnimation,
+                    child: Container(
+                      height: height * 0.15,
+                      width: width * 0.28,
+                      decoration: BoxDecoration(
+                        color: Colors.white38,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.white60),
                       ),
-                      Text(
-                        "completed",
-                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      child: Column(
+                        children: [
+                          SizedBox(height: height * 0.02),
+                          Container(
+                            height: height * 0.05,
+                            width: width * 0.1,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(60, 52, 233, 169),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(Icons.menu_book, color: Colors.white),
+                          ),
+                          Text(
+                            "completed",
+                            style: TextStyle(color: Colors.white, fontSize: 14),
+                          ),
+                          Text(
+                            "42 Classes",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "42 Classes",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
                 SizedBox(width: width * 0.02),
 
                 //second container in row
-                Container(
-                  height: height * 0.15,
-                  width: width * 0.28,
-                  decoration: BoxDecoration(
-                    color: Colors.white38,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white60),
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(height: height * 0.02),
-                      Container(
-                        height: height * 0.05,
-                        width: width * 0.1,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              const Color.fromARGB(255, 245, 130, 94),
-                              Colors.deepOrange,
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
+                FadeTransition(
+                  opacity: _fadeAnimation,
+                  child: RotationTransition(
+                    turns: _fadeAnimation,
+                    child: Container(
+                      height: height * 0.15,
+                      width: width * 0.28,
+                      decoration: BoxDecoration(
+                        color: Colors.white38,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.white60),
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(height: height * 0.02),
+                          Container(
+                            height: height * 0.05,
+                            width: width * 0.1,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  const Color.fromARGB(255, 245, 130, 94),
+                                  Colors.deepOrange,
+                                ],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              Icons.military_tech,
+                              color: Colors.white,
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Icon(Icons.military_tech, color: Colors.white),
+                          Text(
+                            "Achievements",
+                            style: TextStyle(color: Colors.white, fontSize: 14),
+                          ),
+                          Text(
+                            "18 Badges",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Achievements",
-                        style: TextStyle(color: Colors.white, fontSize: 14),
-                      ),
-                      Text(
-                        "18 Badges",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
                 SizedBox(width: width * 0.02),
 
                 //third container in row
-                Container(
-                  height: height * 0.15,
-                  width: width * 0.28,
-                  decoration: BoxDecoration(
-                    color: Colors.white38,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.white60),
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(height: height * 0.02),
-                      Container(
-                        height: height * 0.05,
-                        width: width * 0.1,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              const Color.fromARGB(255, 94, 134, 245),
-                              const Color.fromARGB(255, 44, 33, 243),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
+                FadeTransition(
+                  opacity: _fadeAnimation,
+                  child: RotationTransition(
+                    turns: _fadeAnimation,
+                    child: Container(
+                      height: height * 0.15,
+                      width: width * 0.28,
+                      decoration: BoxDecoration(
+                        color: Colors.white38,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.white60),
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(height: height * 0.02),
+                          Container(
+                            height: height * 0.05,
+                            width: width * 0.1,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  const Color.fromARGB(255, 94, 134, 245),
+                                  const Color.fromARGB(255, 44, 33, 243),
+                                ],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              Icons.calendar_month_sharp,
+                              color: Colors.white,
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Icon(
-                          Icons.calendar_month_sharp,
-                          color: Colors.white,
-                        ),
+                          Text(
+                            "Streak",
+                            style: TextStyle(color: Colors.white, fontSize: 14),
+                          ),
+                          Text(
+                            "15 days",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Streak",
-                        style: TextStyle(color: Colors.white, fontSize: 14),
-                      ),
-                      Text(
-                        "15 days",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ],

@@ -3,10 +3,12 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/hadits/presentation/pages/hadiesmodelapi.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/hadiesconti.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/hadieslist.dart';
+import 'package:quranteacher/students/hadits/presentation/widgets/hadithconta.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/haditsname.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/haditssearch.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/populartopicconti.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/tophadits.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/currentsurah.dart';
 
 final List<Hadiesmodelapi> hadiesmodelapi = [
   Hadiesmodelapi(
@@ -59,11 +61,12 @@ class Haditspage extends StatefulWidget {
   State<Haditspage> createState() => _HaditspageState();
 }
 
-class _HaditspageState extends State<Haditspage>
-    with SingleTickerProviderStateMixin {
+class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
   late AnimationController _controller;
+  late AnimationController _animationController;
   late Animation<Offset> _slideAnimation;
   late Animation<double> _fadeAnimation;
+  late Animation<double> _firstzomm;
 
   @override
   void initState() {
@@ -72,158 +75,126 @@ class _HaditspageState extends State<Haditspage>
       vsync: this,
       duration: const Duration(seconds: 1),
     );
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 700),
+    );
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, 0.08),
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
     _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(_controller);
+    _firstzomm = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.fastOutSlowIn,
+      ),
+    );
+
+    _animationController.forward();
     _controller.forward();
   }
 
   @override
   void dispose() {
+    _animationController.dispose();
     _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final height = size.height;
+    final width = size.width;
     return SafeArea(
       child: Scaffold(
-        body: FadeTransition(
-          opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen جیسا)
-          child: SlideTransition(
-            position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen جیسا)
-            child: SingleChildScrollView(
-              child: Column(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              // 🔥 1. Header Stack (Natural main animation)
+              Stack(
                 children: [
-                  // 🔥 1. Header Stack (Natural main animation)
-                  Stack(
-                    children: [
-                      Tophadits(),
-                      Positioned(top: 20, left: 20, child: Haditsname()),
-                      Positioned(
-                        top: 70,
-                        left: 20,
-                        right: 20,
-                        child: Haditssearch(),
+                  Tophadits(),
+                  Positioned(top: 20, left: 20, child: Haditsname()),
+                  Positioned(
+                    top: 70,
+                    left: 20,
+                    right: 20,
+                    child: Haditssearch(),
+                  ),
+                  Positioned(
+                    top: 150,
+                    left: 20,
+                    right: 20,
+                    child: ScaleTransition(
+                      scale: _firstzomm,
+                      child: Hadithconta(),
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 10),
+
+              // 🔥 2. "Collection" Title
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Collection",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
                       ),
-                      Positioned(
-                        top: 150,
-                        left: 20,
-                        right: 20,
-                        child: Hadiesconti(),
+                    ),
+                  ],
+                ),
+              ),
+
+              // 🔥 3. Hadith List (index * 150ms stagger جیسے LessonScreen)
+              Hadieslist(hadiesmodelapi: hadiesmodelapi),
+
+              // 🔥 4. "Popular Topic" Title
+              TweenAnimationBuilder<double>(
+                duration: const Duration(milliseconds: 550),
+                tween: Tween(begin: 0, end: 1),
+                curve: Curves.easeOut,
+                builder: (context, value, child) {
+                  return Opacity(
+                    opacity: value,
+                    child: Transform.translate(
+                      offset: Offset(0, 20 * (1 - value)),
+                      child: child,
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Popular Topic",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                        ),
                       ),
                     ],
                   ),
-
-                  SizedBox(height: 10),
-
-                  // 🔥 2. "Collection" Title
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(milliseconds: 400),
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.translate(
-                          offset: Offset(0, 20 * (1 - value)),
-                          child: child,
-                        ),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Collection",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  // 🔥 3. Hadith List (index * 150ms stagger جیسے LessonScreen)
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(milliseconds: 700),
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.scale(
-                          scale: 0.95 + (0.05 * value),
-                          child: Transform.translate(
-                            offset: Offset(0, 30 * (1 - value)),
-                            child: child,
-                          ),
-                        ),
-                      );
-                    },
-                    child: Hadieslist(hadiesmodelapi: hadiesmodelapi),
-                  ),
-
-                  // 🔥 4. "Popular Topic" Title
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(milliseconds: 550),
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.translate(
-                          offset: Offset(0, 20 * (1 - value)),
-                          child: child,
-                        ),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Popular Topic",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  // 🔥 5. Popular Topics (Last item scale effect)
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(milliseconds: 800),
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.scale(
-                          scale: 0.95 + (0.05 * value),
-                          child: child,
-                        ),
-                      );
-                    },
-                    child: Populartopicconti(),
-                  ),
-
-                  SizedBox(height: 30),
-                ],
+                ),
               ),
-            ),
+
+              // 🔥 5. Popular Topics (Last item scale effect)
+              Populartopicconti(),
+
+              SizedBox(height: 30),
+            ],
           ),
         ),
       ),

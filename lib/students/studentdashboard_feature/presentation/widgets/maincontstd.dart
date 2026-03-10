@@ -1,9 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/pages/studentdashboardpage.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/videocallscreen.dart';
 
-class Maincontstd extends StatelessWidget {
+class Maincontstd extends StatefulWidget {
   const Maincontstd({super.key});
+
+  @override
+  State<Maincontstd> createState() => _MaincontstdState();
+}
+
+class _MaincontstdState extends State<Maincontstd>
+    with TickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2), // LessonScreen same
+    );
+    _fadeAnimation = Tween<double>(begin: 0.9, end: 1).animate(_controller);
+    _controller.forward();
+    _controller.repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +43,7 @@ class Maincontstd extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.15),
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white30, width: 1),
       ),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -101,20 +130,23 @@ class Maincontstd extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Container(
-                    height: 35,
-                    width: width * 0.25,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: AppColors.textWhite,
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Join Now",
-                        style: TextStyle(
-                          color: AppColors.backgroundStart,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                  child: ScaleTransition(
+                    scale: _fadeAnimation,
+                    child: Container(
+                      height: 35,
+                      width: width * 0.25,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: AppColors.textWhite,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Join Now",
+                          style: TextStyle(
+                            color: AppColors.backgroundStart,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
                     ),

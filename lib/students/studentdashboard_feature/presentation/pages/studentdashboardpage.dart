@@ -21,22 +21,22 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
   late Animation<double> _fadeAnimation;
+  late Animation<double> _buttonscale;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1), // Same as LessonScreen
+      duration: const Duration(seconds: 1),
     );
 
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0.08), // Exact same as LessonScreen
+      begin: const Offset(0, 0.08),
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
-
     _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(_controller);
-
+    _buttonscale = Tween<double>(begin: 0.8, end: 1).animate(_controller);
     _controller.forward();
   }
 
@@ -53,13 +53,12 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
     return SafeArea(
       child: Scaffold(
         body: FadeTransition(
-          opacity: _fadeAnimation, //  Main Fade (same as LessonScreen)
+          opacity: _fadeAnimation,
           child: SlideTransition(
-            position: _slideAnimation, //  Main Slide (same as LessonScreen)
+            position: _slideAnimation,
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  //  1. Header Stack (No extra animation - natural flow)
                   Stack(
                     children: [
                       Topcontistd(),
@@ -79,7 +78,6 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                   ),
                   SizedBox(height: 10),
 
-                  //  2. Progress - TweenAnimationBuilder (150ms delay)
                   TweenAnimationBuilder<double>(
                     duration: const Duration(milliseconds: 400 + (0 * 150)),
                     tween: Tween(begin: 0, end: 1),
@@ -98,7 +96,6 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
 
                   SizedBox(height: 10),
 
-                  //  3. Current Surah (300ms delay)
                   TweenAnimationBuilder<double>(
                     duration: const Duration(milliseconds: 400 + (1 * 150)),
                     tween: Tween(begin: 0, end: 1),

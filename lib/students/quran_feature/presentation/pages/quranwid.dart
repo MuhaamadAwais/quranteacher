@@ -116,52 +116,30 @@ class _QuranwidState extends State<Quranwid>
       child: Scaffold(
         body: FadeTransition(
           opacity: _fadeAnimation, // 🔥 Main Fade (LessonScreen same)
-          child: SlideTransition(
-            position: _slideAnimation, // 🔥 Main Slide (LessonScreen same)
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  // 🔥 1. Header Stack (Natural flow with main animation)
-                  Stack(
-                    children: [
-                      Qurantopconti(),
-                      Positioned(top: 40, left: 20, child: Qurantex()),
-                      Positioned(
-                        top: 80,
-                        left: 10,
-                        right: 10,
-                        child: Searchquran(),
-                      ),
-                    ],
-                  ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // 🔥 1. Header Stack (Natural flow with main animation)
+                Stack(
+                  children: [
+                    Qurantopconti(),
+                    Positioned(top: 40, left: 20, child: Qurantex()),
+                    Positioned(
+                      top: 80,
+                      left: 10,
+                      right: 10,
+                      child: Searchquran(),
+                    ),
+                  ],
+                ),
 
-                  SizedBox(height: 10),
+                SizedBox(height: 10),
 
-                  // 🔥 2. Quran List - Staggered Animation (index * 150ms)
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(
-                      milliseconds: 700,
-                    ), // Slightly longer for list
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.scale(
-                          scale: 0.95 + (0.05 * value), // Scale effect
-                          child: Transform.translate(
-                            offset: Offset(0, 30 * (1 - value)), // Slide up
-                            child: child,
-                          ),
-                        ),
-                      );
-                    },
-                    child: Quranlist(quranapimodel: quranapimodel),
-                  ),
+                // 🔥 2. Quran List - Staggered Animation (index * 150ms)
+                Quranlist(quranapimodel: quranapimodel),
 
-                  SizedBox(height: 20),
-                ],
-              ),
+                SizedBox(height: 20),
+              ],
             ),
           ),
         ),
