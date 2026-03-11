@@ -23,11 +23,12 @@ class Showdatacontiwid extends StatelessWidget {
                 "48",
                 AppColors.backgroundStart,
                 AppColors.backgroundEnd,
+                "+5",
               ),
               deisgndata(
                 width * 0.46,
                 height * 0.17,
-                Icons.group,
+                Icons.videocam_outlined,
                 "Classes Today",
                 "3",
                 AppColors.islamicNavy600,
@@ -44,11 +45,12 @@ class Showdatacontiwid extends StatelessWidget {
               deisgndata(
                 width * 0.46,
                 height * 0.17,
-                Icons.videocam_outlined,
+                Icons.attach_money_outlined,
                 "The Month ",
                 "2,450",
                 Colors.orange,
                 Colors.deepOrangeAccent,
+                "+12 %",
               ),
               deisgndata(
                 width * 0.46,
@@ -58,6 +60,7 @@ class Showdatacontiwid extends StatelessWidget {
                 "4.9",
                 Colors.purple,
                 Colors.pink,
+                "+0.2 ",
               ),
             ],
           ),
@@ -73,8 +76,9 @@ class Showdatacontiwid extends StatelessWidget {
     String title,
     String count,
     Color startcolor,
-    Color endcolor,
-  ) {
+    Color endcolor, [
+    String? pointnum,
+  ]) {
     return SizedBox(
       height: height,
       width: width,
@@ -123,13 +127,38 @@ class Showdatacontiwid extends StatelessWidget {
                   ),
                 ),
 
-                Text(
-                  count,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: count,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+
+                          TextSpan(
+                            text: " ", // simple space
+                            style: TextStyle(
+                              fontSize: 25,
+                            ), // optional chhota space
+                          ),
+                          TextSpan(
+                            text: pointnum,
+                            style: TextStyle(
+                              color: AppColors.backgroundStart,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

@@ -3,7 +3,6 @@ import 'package:quranteacher/appcolors.dart';
 
 class Topcontiitems extends StatelessWidget {
   const Topcontiitems({super.key});
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -14,14 +13,17 @@ class Topcontiitems extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          SizedBox(height: 10),
           Container(
-            height: height * 0.1,
-            width: height * 0.1,
+            height: height * 0.12,
+            width: height * 0.12,
             decoration: BoxDecoration(
               color: AppColors.textWhite,
               shape: BoxShape.circle,
             ),
-            child: Center(child: Icon(Icons.propane)),
+            child: Center(
+              child: Icon(Icons.people_outline, color: Colors.black, size: 50),
+            ),
           ),
 
           Text(
@@ -43,8 +45,8 @@ class Topcontiitems extends StatelessWidget {
           ),
 
           Container(
-            width: width * 0.37,
-            height: height * 0.08,
+            width: width * 0.43,
+            height: height * 0.07,
             decoration: BoxDecoration(
               color: AppColors.textWhite.withOpacity(0.15),
               borderRadius: BorderRadius.circular(30),

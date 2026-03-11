@@ -1,12 +1,15 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/register.dart';
 import 'package:quranteacher/students/appanimations.dart';
 import 'package:quranteacher/students/bottomnavi.dart';
+import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  final String role;
+  const Login({super.key, required this.role});
 
   @override
   State<Login> createState() => _LoginState();
@@ -235,13 +238,32 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
 
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Bottomnavi(),
-                                ),
-                                (route) => false,
-                              );
+                              if (widget.role == "student") {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Bottomnavi(),
+                                  ),
+                                  (route) => false,
+                                );
+                              } else if (widget.role == "teacher") {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Bottomnaviteacher(),
+                                  ),
+                                  (route) => false,
+                                );
+                              } else if (widget.role == "admin") {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        Bottomnavigationadmin(),
+                                  ),
+                                  (route) => false,
+                                );
+                              }
                             },
                             child: Container(
                               height: height * 0.07,
@@ -393,7 +415,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                           ..onTap = () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => Register(),
+                                builder: (context) => Register(role: widget.role,),
                               ),
                             );
                           },

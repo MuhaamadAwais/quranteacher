@@ -53,11 +53,11 @@ class Classcontiwid extends StatelessWidget {
                 children: [
                   Text(
                     "Start Live Class",
-                    style: TextStyle(color: AppColors.textWhite, fontSize: 20),
+                    style: TextStyle(color: AppColors.textWhite, fontSize: 18,fontWeight: FontWeight.bold),
                   ),
                   Text(
                     "Begin teaching now",
-                    style: TextStyle(color: AppColors.textWhite, fontSize: 15),
+                    style: TextStyle(color: AppColors.textWhite, fontSize: 14),
                   ),
                 ],
               ),

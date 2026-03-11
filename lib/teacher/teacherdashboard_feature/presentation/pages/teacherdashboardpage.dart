@@ -42,7 +42,7 @@ class _TeacherdashboardpageState extends State<Teacherdashboardpage> {
               Showdatacontiwid(),
               Todayyclasswid(),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 15,top: 5),
                 child: Row(
                   children: [
                     Text(
@@ -58,6 +58,8 @@ class _TeacherdashboardpageState extends State<Teacherdashboardpage> {
               ),
               SizedBox(height: 10),
               Leastitems(),
+              
+              SizedBox(height: 50),
             ],
           ),
         ),

@@ -22,6 +22,7 @@ class Nametextwid extends StatelessWidget {
         Row(
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Sheikh Muhammad",
@@ -31,12 +32,12 @@ class Nametextwid extends StatelessWidget {
                     color: AppColors.textWhite,
                   ),
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: 4),
                 Text(
-                  "Tajweed && Quran Expert",
+                  "Tajweed & Quran Expert",
                   style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
                     color: AppColors.textWhite,
                   ),
                 ),
