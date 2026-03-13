@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Contenttextwid extends StatelessWidget {
   const Contenttextwid({super.key});
@@ -9,17 +11,29 @@ class Contenttextwid extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.only(left: 0, top: 25),
       child: Row(
         children: [
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.textWhite.withOpacity(0.15),
+          GestureDetector(
+            onTap: () {
+              selectedIndexadmin = 0;
+
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Bottomnavigationadmin(),
+                ),
+              );
+            },
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.textWhite.withOpacity(0.15),
+              ),
+              child: Icon(Icons.arrow_back, color: AppColors.textWhite),
             ),
-            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
           ),
           SizedBox(width: 5),
           Text(

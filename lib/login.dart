@@ -415,7 +415,8 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                           ..onTap = () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => Register(role: widget.role,),
+                                builder: (context) =>
+                                    Register(role: widget.role),
                               ),
                             );
                           },

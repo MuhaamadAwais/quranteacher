@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/content_feature/presentation/pages/contentadminpage.dart';
+import 'package:quranteacher/admin/user_feature/presentation/pages/useradminpage.dart';
 import 'package:quranteacher/appcolors.dart';
 
 class Userswid extends StatelessWidget {
@@ -21,40 +23,53 @@ class Userswid extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [AppColors.islamicNavy600, AppColors.islamicNavy700],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Contentadminpage(),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      AppColors.islamicNavy600,
+                      AppColors.islamicNavy700,
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.content_copy, color: AppColors.textWhite),
-                    SizedBox(height: 5),
-                    Text(
-                      "Content",
-                      style: TextStyle(
-                        color: AppColors.textWhite,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(Icons.content_copy, color: AppColors.textWhite),
+                      SizedBox(height: 5),
+                      Text(
+                        "Content",
+                        style: TextStyle(
+                          color: AppColors.textWhite,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
 
-                    Text(
-                      "Manage Content",
-                      style: TextStyle(
-                        color: AppColors.textWhite,
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal,
+                      Text(
+                        "Manage Content",
+                        style: TextStyle(
+                          color: AppColors.textWhite,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -69,39 +84,52 @@ class Userswid extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [AppColors.backgroundStart, AppColors.backgroundEnd],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Useradminpage(),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      AppColors.backgroundStart,
+                      AppColors.backgroundEnd,
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.group_outlined, color: AppColors.textWhite),
-                    Text(
-                      "Users",
-                      style: TextStyle(
-                        color: AppColors.textWhite,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(Icons.group_outlined, color: AppColors.textWhite),
+                      Text(
+                        "Users",
+                        style: TextStyle(
+                          color: AppColors.textWhite,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      "Manage Users",
-                      style: TextStyle(
-                        color: AppColors.textWhite,
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal,
+                      SizedBox(height: 5),
+                      Text(
+                        "Manage Users",
+                        style: TextStyle(
+                          color: AppColors.textWhite,
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

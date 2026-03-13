@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/admin_notification.dart';
 import 'package:quranteacher/appcolors.dart' show AppColors;
 
 class Nameadminwid extends StatelessWidget {
@@ -47,9 +48,19 @@ class Nameadminwid extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Center(
-                  child: Icon(
-                    Icons.notifications_outlined,
-                    color: AppColors.textWhite,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AdminNotification(),
+                        ),
+                      );
+                    },
+                    child: Icon(
+                      Icons.notifications_outlined,
+                      color: AppColors.textWhite,
+                    ),
                   ),
                 ),
               ),
