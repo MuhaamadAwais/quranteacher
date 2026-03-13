@@ -12,7 +12,7 @@ class Recenttranstion extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-        height: height * 0.58,
+        height: height * 0.65,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(20),
@@ -39,12 +39,35 @@ class Recenttranstion extends StatelessWidget {
                       ),
                       Spacer(),
                       ElevatedButton(
-                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.textWhite,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        onPressed: () {
+                          // Export action
+                        },
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisSize: MainAxisSize
+                              .min, // Button size content ke hisab se
                           children: [
-                            Icon(Icons.logout_outlined),
-                            Text("Export"),
+                            Icon(
+                              Icons.logout_outlined,
+                              color: AppColors.backgroundStart,
+                            ),
+                            SizedBox(width: 8), // Icon aur Text ke beech space
+                            Text(
+                              "Export",
+                              style: TextStyle(
+                                color: AppColors.backgroundStart,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -52,10 +75,69 @@ class Recenttranstion extends StatelessWidget {
                   ),
                 ),
 
-                transactiondesign(width, height * 0.1, 1, 'fed 15,2025', 650),
-                transactiondesign(width, height * 0.1, 1, 'fed 15,2025', 650),
-                transactiondesign(width, height * 0.1, 1, 'fed 15,2025', 650),
-                transactiondesign(width, height * 0.1, 1, 'fed 15,2025', 650),
+                Expanded(
+                  child: ListView(
+                    children: [
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+                      transactiondesign(
+                        width,
+                        height * 0.11,
+                        1,
+                        'fed 15,2025',
+                        650,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -78,7 +160,7 @@ class Recenttranstion extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.switchBackground,
+          color: AppColors.switchBackground.withOpacity(0.15),
         ),
         child: Row(
           children: [
@@ -111,7 +193,11 @@ class Recenttranstion extends StatelessWidget {
                 children: [
                   Text(
                     "CLasses Payyment -",
-                    style: TextStyle(color: Colors.black, fontSize: 12),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     "Week $week",
@@ -123,7 +209,7 @@ class Recenttranstion extends StatelessWidget {
                   ),
                   Text(
                     date,
-                    style: TextStyle(color: AppColors.textWhite, fontSize: 15),
+                    style: TextStyle(color: Colors.grey, fontSize: 15),
                   ),
                 ],
               ),
@@ -135,16 +221,17 @@ class Recenttranstion extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    amount.toString(),
+                    "\$" + amount.toString(),
                     style: TextStyle(
                       color: AppColors.backgroundStart,
                       fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
 
                   Text(
                     "Completed",
-                    style: TextStyle(color: AppColors.textWhite, fontSize: 15),
+                    style: TextStyle(color: Colors.grey, fontSize: 15),
                   ),
                 ],
               ),

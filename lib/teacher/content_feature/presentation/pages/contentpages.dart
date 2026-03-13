@@ -22,17 +22,16 @@ class _ContentpagesState extends State<Contentpages> {
           children: [
             Topcontent(),
             SizedBox(height: 10),
-            Padding(
+                       Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: width*0.9,
-                height: height * 0.06,
+                width: width,
+                height: height * 0.07,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: AppColors.islamicEmerald,
                 ),
                 child: TabBar(
-                  
                   indicatorSize: TabBarIndicatorSize.tab,
                   isScrollable: false,
                   indicator: BoxDecoration(
@@ -48,7 +47,7 @@ class _ContentpagesState extends State<Contentpages> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.home),
-                          SizedBox(width: 6),
+                          SizedBox(width: 4),
                           Text("Quran"),
                         ],
                       ),
@@ -58,7 +57,7 @@ class _ContentpagesState extends State<Contentpages> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.book_outlined),
-                          SizedBox(width: 6),
+                          SizedBox(width: 4),
                           Text("Hadith"),
                         ],
                       ),
@@ -68,7 +67,7 @@ class _ContentpagesState extends State<Contentpages> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.school_outlined),
-                          SizedBox(width: 6),
+                          SizedBox(width: 4),
                           Text("Lessons"),
                         ],
                       ),
@@ -96,7 +95,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           1,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -105,7 +104,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           2,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -114,7 +113,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           3,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -123,7 +122,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           4,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -148,7 +147,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           1,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -157,7 +156,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           2,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -166,7 +165,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           3,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -191,7 +190,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           1,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",
@@ -200,7 +199,7 @@ class _ContentpagesState extends State<Contentpages> {
                         contidesigncontents(
                           2,
                           width,
-                          height * 0.15,
+                          height * 0.17,
                           "Surah AL -Fathia",
                           "Audio + Translation",
                           "48",

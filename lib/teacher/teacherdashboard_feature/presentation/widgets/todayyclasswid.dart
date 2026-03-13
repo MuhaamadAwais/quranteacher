@@ -23,40 +23,41 @@ class Todayyclasswid extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               children: [
                 SizedBox(height: 5),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_month_outlined,
-                      color: AppColors.islamicNavy800,
-                    ),
-                    Text(
-                      "Today's Classes",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.only(left: 5, right: 5),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.calendar_month_outlined,
+                        color: AppColors.islamicNavy800,
                       ),
-                    ),
-                    Spacer(),
-                    Text(
-                      "3 classes",
-                      style: TextStyle(fontSize: 15, color: Colors.black),
-                    ),
-                  ],
+                      Text(
+                        "Today's Classes",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Spacer(),
+                      Text(
+                        "3 classes",
+                        style: TextStyle(fontSize: 15, color: Colors.black),
+                      ),
+                    ],
+                  ),
                 ),
 
-
                 SizedBox(height: 30),
-                classconti(width, height * 0.12),
+                classconti(width, height * 0.13),
                 SizedBox(height: 10),
-                classconti(width, height * 0.12),
+                classconti(width, height * 0.13),
                 SizedBox(height: 10),
-                classconti(width, height * 0.12),
+                classconti(width, height * 0.13),
                 SizedBox(height: 10),
               ],
             ),
@@ -93,9 +94,9 @@ class Todayyclasswid extends StatelessWidget {
                 Spacer(),
                 Container(
                   height: 30,
-                  width: 130,
+                  width: 120,
                   decoration: BoxDecoration(
-                    color: AppColors.islamicNavy500,
+                    color: AppColors.islamicNavy500.withOpacity(0.25),
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
                   child: Center(
@@ -114,11 +115,17 @@ class Todayyclasswid extends StatelessWidget {
 
             Row(
               children: [
-                Icon(Icons.watch, color: AppColors.switchBackground),
-                Text("10:00 AM"),
+                Icon(Icons.access_time, color:  Colors.grey),
+                Text(
+                  "10:00 AM",
+                  style: TextStyle(color:  Colors.grey),
+                ),
                 SizedBox(width: 20),
-                Icon(Icons.group_outlined, color: AppColors.switchBackground),
-                Text("6 Students"),
+                Icon(Icons.group_outlined, color:  Colors.grey),
+                Text(
+                  "6 Students",
+                  style: TextStyle(color: Colors.grey),
+                ),
               ],
             ),
           ],

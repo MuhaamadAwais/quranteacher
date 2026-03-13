@@ -1,9 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/teacher/students_feature/presentation/pages/studentmodelprogress.dart';
+import 'package:quranteacher/teacher/students_feature/presentation/widgets/listforstudents.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/multicontistd.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/searchstd.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/studentdesign.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/textstudent.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/topstd.dart';
+
+List<Studentmodelprogress> studentmodelprogress = [
+  Studentmodelprogress(
+    studentName: "Hassan Ahmad",
+    totalClassess: 42,
+    teacherRating: 45,
+    progressActualtext: 85,
+    progressActual: 0.85,
+    progressAttendancetext: 97,
+    progressAttendance: 0.97,
+  ),
+
+  Studentmodelprogress(
+    studentName: "Hassan Ahmad",
+    totalClassess: 42,
+    teacherRating: 45,
+    progressActualtext: 85,
+    progressActual: 0.85,
+    progressAttendancetext: 97,
+    progressAttendance: 0.97,
+  ),
+  Studentmodelprogress(
+    studentName: "Hassan Ahmad",
+    totalClassess: 42,
+    teacherRating: 45,
+    progressActualtext: 85,
+    progressActual: 0.85,
+    progressAttendancetext: 97,
+    progressAttendance: 0.97,
+  ),
+  Studentmodelprogress(
+    studentName: "Hassan Ahmad",
+    totalClassess: 42,
+    teacherRating: 45,
+    progressActualtext: 85,
+    progressActual: 0.85,
+    progressAttendancetext: 97,
+    progressAttendance: 0.97,
+  ),
+];
 
 class Studentspages extends StatefulWidget {
   const Studentspages({super.key});
@@ -29,7 +71,7 @@ class _StudentspagesState extends State<Studentspages> {
                     right: 20,
                     child: Textstudent(),
                   ),
-                  Positioned(left: 20, top: 70, right: 20, child: Searchstd()),
+                  Positioned(left: 20, top: 80, right: 20, child: Searchstd()),
                   Positioned(
                     left: 20,
                     top: 160,
@@ -38,9 +80,10 @@ class _StudentspagesState extends State<Studentspages> {
                   ),
                 ],
               ),
-              Studentdesign(),
-              Studentdesign(),
-              Studentdesign(),
+              SizedBox(height: 10),
+              Listforstudents(studentmodelprogress: studentmodelprogress),
+
+              SizedBox(height: 30),
             ],
           ),
         ),

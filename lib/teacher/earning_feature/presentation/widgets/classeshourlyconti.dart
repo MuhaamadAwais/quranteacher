@@ -30,17 +30,15 @@ class Classeshourlyconti extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
-                      fontSize: 20,
+                      fontSize: 15,
                     ),
                   ),
-
-                  SizedBox(height: 8),
                   Text(
                     "42",
                     style: TextStyle(
                       color: AppColors.backgroundStart,
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 35,
                     ),
                   ),
                 ],
@@ -68,17 +66,16 @@ class Classeshourlyconti extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
-                      fontSize: 20,
+                      fontSize: 15,
                     ),
                   ),
 
-                  SizedBox(height: 8),
                   Text(
                     "58",
                     style: TextStyle(
                       color: AppColors.islamicNavy800,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 35,
                     ),
                   ),
                 ],

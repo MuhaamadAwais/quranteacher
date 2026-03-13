@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/teacher/accountsetting_feature/presentation/pages/accountsettings.dart';
+import 'package:quranteacher/teacher/certifications_features/presentation/pages/certificationsteacher.dart';
+import 'package:quranteacher/teacher/review_rating_feature/presentation/pages/review_rating.dart';
 
 class Otherconti extends StatefulWidget {
   const Otherconti({super.key});
@@ -18,32 +21,54 @@ class _OthercontiState extends State<Otherconti> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          contineroption(
-            0,
-            width,
-            height * 0.1,
-            Colors.black,
-            Icons.settings_outlined,
-            "Account Settings",
-          ),
+          
           SizedBox(height: 10),
 
           contineroption(
             1,
             width,
             height * 0.1,
+            Colors.black,
+            Icons.settings_outlined,
+            "Account Settings",
+            () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => Accountsettings()),
+              );
+            },
+          ),
+          SizedBox(height: 10),
+
+          contineroption(
+            2,
+            width,
+            height * 0.1,
             Colors.red,
             Icons.verified_outlined,
             "Certifications",
+            () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Certificationsteacher(),
+                ),
+              );
+            },
           ),
           SizedBox(height: 10),
           contineroption(
-            2,
+            3,
             width,
             height * 0.1,
             AppColors.islamicNavy,
             Icons.star_border_outlined,
             "Review & Ratings",
+            () {
+                Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ReviewRating(),
+                ),
+              );
+            },
           ),
           SizedBox(height: 10),
         ],
@@ -58,8 +83,10 @@ class _OthercontiState extends State<Otherconti> {
     Color iconcolor,
     IconData icons,
     String textname,
+    VoidCallback onTabfun,
   ) {
     return GestureDetector(
+      onTap: onTabfun,
       onTapUp: (details) {
         setState(() {
           selectedindex = index;

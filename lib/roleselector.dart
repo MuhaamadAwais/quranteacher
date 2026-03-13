@@ -180,7 +180,7 @@ class _RoleselectorState extends State<Roleselector>
                     subtitle: "Learn Quran with expert teacher",
                     onTap: () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => Login()),
+                      MaterialPageRoute(builder: (_) => Login(role: "student")),
                     ),
                     onTapDown: () => setState(() => isstudentpressed = true),
                     onTapUp: () => setState(() => isstudentpressed = false),
@@ -214,7 +214,7 @@ class _RoleselectorState extends State<Roleselector>
                       subtitle: "Teach and inspire students",
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => Bottomnaviteacher()),
+                        MaterialPageRoute(builder: (_) => Login(role:"teacher")),
                       ),
                       onTapDown: () => setState(() => isteacherpressed = true),
                       onTapUp: () => setState(() => isteacherpressed = false),
@@ -247,7 +247,7 @@ class _RoleselectorState extends State<Roleselector>
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => Bottomnavigationadmin(),
+                        builder: (_) => Login(role: "admin"),
                       ),
                     ),
                     onTapDown: () => setState(() => isadminpressed = true),

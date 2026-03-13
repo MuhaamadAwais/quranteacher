@@ -190,7 +190,7 @@ class _SplashscreenappState extends State<Splashscreenapp>
   }
 }
 
-// Add this helper method in your State class
+
 Widget _buildDot(Animation<double> animation) {
   return AnimatedBuilder(
     animation: animation,

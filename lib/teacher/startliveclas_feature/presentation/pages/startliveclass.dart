@@ -21,7 +21,7 @@ class Startliveclass extends StatelessWidget {
               Options(),
               SizedBox(height: 20),
               Btnstartclass(),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
             ],
           ),
         ),

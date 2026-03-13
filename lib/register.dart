@@ -4,7 +4,8 @@ import 'package:quranteacher/login.dart';
 import 'package:quranteacher/students/appanimations.dart';
 
 class Register extends StatefulWidget {
-  const Register({super.key});
+  final String role;
+  const Register({super.key,required this.role});
 
   @override
   State<Register> createState() => _RegisterState();
@@ -325,7 +326,7 @@ class _RegisterState extends State<Register>
                               onTap: () {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
-                                    builder: (context) => Login(),
+                                    builder: (context) => Login(role: widget.role,),
                                   ),
                                 );
                               },
@@ -390,13 +391,13 @@ class _RegisterState extends State<Register>
                       GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Login()),
+                            MaterialPageRoute(builder: (context) => Login(role: widget.role,)),
                           );
                         },
                         child: GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => Login()),
+                              MaterialPageRoute(builder: (context) => Login(role: widget.role,)),
                             );
                           },
                           child: Text(

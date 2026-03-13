@@ -6,6 +6,7 @@ import 'package:quranteacher/teacher/earning_feature/presentation/widgets/recent
 import 'package:quranteacher/teacher/earning_feature/presentation/widgets/textearning.dart';
 import 'package:quranteacher/teacher/earning_feature/presentation/widgets/topearingconti.dart';
 
+
 class Earningpages extends StatefulWidget {
   const Earningpages({super.key});
 
@@ -33,7 +34,7 @@ class _EarningpagesState extends State<Earningpages> {
                   Positioned(
                     left: 20,
                     right: 20,
-                    top: 80,
+                    top: 100,
                     child: Earningmainconti(),
                   ),
                 ],
@@ -44,7 +45,7 @@ class _EarningpagesState extends State<Earningpages> {
               Recenttranstion(),
               SizedBox(height: 10),
               Classeshourlyconti(),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
             ],
           ),
         ),

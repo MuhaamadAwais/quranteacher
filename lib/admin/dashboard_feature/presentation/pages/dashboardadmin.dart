@@ -30,10 +30,9 @@ class _DashboardadminState extends State<Dashboardadmin>
       vsync: this,
       duration: Duration(seconds: 2),
     );
-    _fadeanimation = Tween<double>(
-      begin: 0.45,
-      end: 1.0,
-    ).animate(CurvedAnimation(parent: _animationController, curve: Curves.bounceIn));
+    _fadeanimation = Tween<double>(begin: 0.45, end: 1.0).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.bounceIn),
+    );
     _animationController.repeat(reverse: true);
   }
 

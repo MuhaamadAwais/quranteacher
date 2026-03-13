@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-
-
+import 'package:quranteacher/teacher/students_feature/presentation/pages/studentmodelprogress.dart';
 
 class Studentdesign extends StatelessWidget {
-  const Studentdesign({super.key});
+final Studentmodelprogress studentmodelprogress;
+  const Studentdesign({super.key,required this.studentmodelprogress});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Studentdesign extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-        height: height * 0.3,
+        height: height * 0.32,
         child: Card(
           elevation: 10,
           color: AppColors.textWhite,
@@ -38,9 +38,12 @@ class Studentdesign extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: AppColors.backgroundStart,
                           ),
-                          child: Icon(
-                            Icons.admin_panel_settings,
-                            color: AppColors.textWhite,
+                          child: Center(
+                            child: Icon(
+                              Icons.person,
+                              color: AppColors.textWhite,
+                              size: 45,
+                            ),
                           ),
                         ),
                       ),
@@ -50,14 +53,14 @@ class Studentdesign extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Ahmad Hassan"),
+                            Text(studentmodelprogress.studentName),
                             Row(
                               children: [
                                 Icon(Icons.trending_up),
-                                Text("42 Classes"),
+                                Text("${studentmodelprogress.totalClassess} Classes"),
                                 SizedBox(width: 10),
                                 Icon(Icons.star, color: AppColors.accent),
-                                Text("4.8"),
+                                Text(studentmodelprogress.teacherRating.toString()),
                               ],
                             ),
                           ],
@@ -74,7 +77,7 @@ class Studentdesign extends StatelessWidget {
                           ),
                           child: Center(
                             child: Icon(
-                              Icons.message,
+                              Icons.chat_bubble_outline,
                               color: AppColors.islamicNavy700,
                             ),
                           ),
@@ -92,7 +95,7 @@ class Studentdesign extends StatelessWidget {
                       ),
                       Spacer(),
                       Text(
-                        "85%",
+                        "${studentmodelprogress.progressActualtext}%",
                         style: TextStyle(
                           color: AppColors.backgroundStart,
                           fontSize: 15,
@@ -102,8 +105,10 @@ class Studentdesign extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   LinearProgressIndicator(
-                    backgroundColor: AppColors.backgroundVia,
-                    value: 85,
+                    backgroundColor: AppColors.islamicNavy500.withOpacity(0.25),
+                    color: AppColors.backgroundStart,
+                    value: studentmodelprogress.progressActual,
+                    minHeight: 10,
                   ),
 
                   SizedBox(height: 15),
@@ -115,7 +120,7 @@ class Studentdesign extends StatelessWidget {
                       ),
                       Spacer(),
                       Text(
-                        "95%",
+                        "${studentmodelprogress.progressAttendancetext} %",
                         style: TextStyle(
                           color: AppColors.islamicNavy500,
                           fontSize: 15,
@@ -125,8 +130,10 @@ class Studentdesign extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   LinearProgressIndicator(
-                    backgroundColor: AppColors.islamicNavy500,
-                    value: 95,
+                    color: AppColors.backgroundStart,
+                    backgroundColor: AppColors.islamicNavy500.withOpacity(0.25),
+                    value: studentmodelprogress.progressAttendance,
+                    minHeight: 10,
                   ),
                 ],
               ),

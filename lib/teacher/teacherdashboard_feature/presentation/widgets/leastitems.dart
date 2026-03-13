@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/assignwork_feature/presentation/pages/assignwork.dart';
+import 'package:quranteacher/teacher/earning_feature/presentation/pages/earningpages.dart';
+import 'package:quranteacher/teacher/students_feature/presentation/pages/studentspages.dart';
 
 class Leastitems extends StatefulWidget {
   const Leastitems({super.key});
@@ -33,7 +35,11 @@ class _LeastitemsState extends State<Leastitems> {
                 "Manage Students",
                 AppColors.secondary,
                 AppColors.islamicGreen,
-                () {},
+                () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Studentspages()),
+                  );
+                },
               ),
 
               clickcontistd(
@@ -54,7 +60,7 @@ class _LeastitemsState extends State<Leastitems> {
             ],
           ),
 
-          SizedBox(height: 10),
+          SizedBox(height: 20),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -66,9 +72,14 @@ class _LeastitemsState extends State<Leastitems> {
                 Icons.videocam_outlined,
                 "Lessons",
                 "Manage Lessons",
-                Colors.orangeAccent,
+
                 Colors.orange,
-                () {},
+                Colors.deepOrangeAccent,
+                () {
+                   Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Studentspages()),
+                  );
+                },
               ),
 
               clickcontistd(
@@ -80,7 +91,11 @@ class _LeastitemsState extends State<Leastitems> {
                 "View Income",
                 AppColors.islamicNavy500,
                 AppColors.islamicNavy600,
-                () {},
+                () {
+                   Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Earningpages()),
+                  );
+                },
               ),
             ],
           ),
@@ -121,7 +136,7 @@ class _LeastitemsState extends State<Leastitems> {
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 150),
-        transform: Matrix4.translationValues(0, isPressed ? -18 : 0, 0),
+        transform: Matrix4.translationValues(0, isPressed ? -25 : 0, 0),
         width: width,
         height: height,
         decoration: BoxDecoration(
@@ -140,7 +155,7 @@ class _LeastitemsState extends State<Leastitems> {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -165,12 +180,12 @@ class _LeastitemsState extends State<Leastitems> {
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 18,
                 ),
               ),
               Text(
                 subtitles,
-                style: TextStyle(color: AppColors.textWhite, fontSize: 15),
+                style: TextStyle(color: AppColors.textWhite, fontSize: 14),
               ),
             ],
           ),
