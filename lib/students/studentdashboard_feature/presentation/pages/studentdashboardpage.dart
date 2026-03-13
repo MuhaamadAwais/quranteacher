@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/currentsurah.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/maincontstd.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/namestd.dart';
@@ -28,7 +27,7 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 900),
     );
 
     _slideAnimation = Tween<Offset>(
