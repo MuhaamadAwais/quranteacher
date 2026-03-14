@@ -10,14 +10,19 @@ class Textsettting extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Row(
       children: [
-        Container(
-          height: 40,
-          width: 40,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.textWhite.withOpacity(0.15),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.textWhite.withOpacity(0.15),
+            ),
+            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
           ),
-          child: Icon(Icons.arrow_back, color: AppColors.textWhite),
         ),
 
         SizedBox(width: 10),

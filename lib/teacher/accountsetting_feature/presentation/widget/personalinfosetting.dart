@@ -85,7 +85,7 @@ class Personalinfosetting extends StatelessWidget {
                     width,
                     height * 0.075,
                     "Location",
-                    Icons.person_2_outlined,
+                    Icons.location_on_outlined,
                     "Enter the Location",
                   ),
                 ],

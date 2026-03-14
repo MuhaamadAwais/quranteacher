@@ -12,18 +12,23 @@ class Textcertication extends StatelessWidget {
       children: [
         Expanded(
           flex: 2,
-          child: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.textWhite.withOpacity(0.15),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.textWhite.withOpacity(0.15),
+              ),
+              child: Icon(Icons.arrow_back, color: AppColors.textWhite),
             ),
-            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
           ),
         ),
         Expanded(
-          flex: 4,
+          flex: 6,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -49,7 +54,7 @@ class Textcertication extends StatelessWidget {
         ),
 
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Container(
             height: 40,
             width: 40,

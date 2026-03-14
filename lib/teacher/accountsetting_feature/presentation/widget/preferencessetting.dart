@@ -41,7 +41,7 @@ class Preferencessetting extends StatelessWidget {
                         ),
                         child: Center(
                           child: Icon(
-                            Icons.network_cell,
+                            Icons.language,
                             color: AppColors.textWhite,
                           ),
                         ),
@@ -153,7 +153,7 @@ class Preferencessetting extends StatelessWidget {
                         Expanded(
                           flex: 2,
                           child: Icon(
-                            Icons.network_cell,
+                            Icons.language,
                             color: AppColors.switchBackground,
                           ),
                         ),
@@ -161,11 +161,11 @@ class Preferencessetting extends StatelessWidget {
                           flex: 3,
                           child: Text(
                             "English",
-                            style: TextStyle(color: AppColors.switchBackground),
+                            style: TextStyle(color: Colors.black),
                           ),
                         ),
                         Expanded(
-                          flex: 1,
+                          flex: 2,
                           child: Icon(
                             Icons.arrow_drop_down,
                             color: AppColors.switchBackground,

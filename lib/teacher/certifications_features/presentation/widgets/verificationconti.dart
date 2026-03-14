@@ -26,8 +26,8 @@ class Verificationconti extends StatelessWidget {
             children: [
               SizedBox(width: 10),
               Container(
-                width: 40,
-                height: 40,
+                width: 50,
+                height: 50,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColors.islamicNavy600.withOpacity(0.25),
@@ -35,8 +35,9 @@ class Verificationconti extends StatelessWidget {
                 ),
                 child: Center(
                   child: Icon(
-                    Icons.badge_sharp,
+                    Icons.workspace_premium,
                     color: AppColors.islamicNavy500,
+                    size: 32,
                   ),
                 ),
               ),

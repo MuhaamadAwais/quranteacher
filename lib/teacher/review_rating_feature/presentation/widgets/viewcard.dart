@@ -102,6 +102,7 @@ class _ViewcardState extends State<Viewcard> {
                         child: Icon(
                           Icons.person,
                           color: AppColors.islamicNavy500,
+                          size: 32,
                         ),
                       ),
 

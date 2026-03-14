@@ -12,7 +12,7 @@ class Btnstartclass extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       child: Container(
         width: width,
-        height: height * 0.07,
+        height: height * 0.08,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [AppColors.islamicNavy600, AppColors.islamicNavy700],
@@ -24,10 +24,10 @@ class Btnstartclass extends StatelessWidget {
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.camera, color: AppColors.textWhite),
-              SizedBox(width: 20,),
+              Icon(Icons.videocam_outlined, color: AppColors.textWhite,size: 32,),
+              SizedBox(width: 10,),
               Text(
                 "Start Live Class Now",
                 style: TextStyle(

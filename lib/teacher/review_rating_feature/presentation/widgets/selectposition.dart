@@ -39,7 +39,7 @@ class Selectposition extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
-                Icon(Icons.arrow_downward, color: Colors.black, size: 18),
+                Icon(Icons.keyboard_arrow_down, color: Colors.black, size: 18),
               ],
             ),
           ),

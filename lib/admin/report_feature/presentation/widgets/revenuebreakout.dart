@@ -59,6 +59,7 @@ class Revenuebreakout extends StatelessWidget {
               ),
 
               LinearProgressIndicator(
+                borderRadius: BorderRadius.circular(10),
                 value: 0.8,
                 backgroundColor: Colors.white,
                 minHeight: 8,
@@ -90,6 +91,7 @@ class Revenuebreakout extends StatelessWidget {
               ),
 
               LinearProgressIndicator(
+                borderRadius: BorderRadius.circular(10),
                 minHeight: 8,
                 value: 0.7,
                 backgroundColor: Colors.white,
@@ -122,6 +124,7 @@ class Revenuebreakout extends StatelessWidget {
               ),
 
               LinearProgressIndicator(
+                borderRadius: BorderRadius.circular(10),
                 value: 0.3,
                 backgroundColor: Colors.white,
                 minHeight: 8,

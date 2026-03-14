@@ -11,9 +11,9 @@ class Multicontistd extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        design(width * 0.28, height * 0.1, 6, "Students"),
-        design(width * 0.28, height * 0.1, 94, "Avg Progress"),
-        design(width * 0.28, height * 0.1, 4.8, "Avg Rating"),
+        design(width * 0.29, height * 0.1, 6, "Students"),
+        design(width * 0.29, height * 0.1, 94, "Avg Progress"),
+        design(width * 0.29, height * 0.1, 4.8, "Avg Rating"),
       ],
     );
   }

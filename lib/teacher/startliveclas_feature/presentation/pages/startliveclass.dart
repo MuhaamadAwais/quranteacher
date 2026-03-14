@@ -19,7 +19,7 @@ class Startliveclass extends StatelessWidget {
               Mainboard(),
               SizedBox(height: 20),
               Options(),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Btnstartclass(),
               SizedBox(height: 30),
             ],

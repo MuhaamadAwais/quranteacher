@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/main.dart';
 
 class Logout extends StatefulWidget {
   const Logout({super.key});
@@ -18,10 +19,7 @@ class _LogoutState extends State<Logout> {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
-          setState(() {
-            bgcolor=
-          AppColors.destructive;
-          });
+Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApp(),));
         },
         child: Container(
           width: width,

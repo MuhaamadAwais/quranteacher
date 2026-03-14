@@ -156,7 +156,6 @@ class _SplashscreenappState extends State<Splashscreenapp>
                 fontSize: 35,
               ),
             ),
-
             SizedBox(height: height * 0.02),
             Text(
               "Live Learning Platform",
