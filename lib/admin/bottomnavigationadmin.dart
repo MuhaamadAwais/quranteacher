@@ -13,6 +13,7 @@ class Bottomnavigationadmin extends StatefulWidget {
   State<Bottomnavigationadmin> createState() => _BottomnavigationadminState();
 }
 
+int selectedIndexadmin = 0;
 final List<Widget> screens = [
   Dashboardadmin(),
   Useradminpage(),
@@ -20,7 +21,6 @@ final List<Widget> screens = [
   Contentadminpage(),
   Reportadminpage(),
 ];
-int selectedIndexadmin = 0;
 
 class _BottomnavigationadminState extends State<Bottomnavigationadmin> {
   @override

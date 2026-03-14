@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/teachernotificationsscreen.dart';
 
 class Nametextwid extends StatelessWidget {
   const Nametextwid({super.key});
@@ -56,9 +57,20 @@ class Nametextwid extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Center(
-                  child: Icon(
-                    Icons.notifications_outlined,
-                    color: AppColors.textWhite,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              const TeacherNotificationsScreen(),
+                        ),
+                      );
+                    },
+                    child: Icon(
+                      Icons.notifications_outlined,
+                      color: AppColors.textWhite,
+                    ),
                   ),
                 ),
               ),

@@ -39,8 +39,6 @@ class _DashboardadminState extends State<Dashboardadmin>
   @override
   void dispose() {
     _animationController.dispose();
-    super.dispose();
-    
   }
 
   @override
