@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/hadits/presentation/pages/hadiesmodelapi.dart';
-import 'package:quranteacher/students/hadits/presentation/widgets/hadiesconti.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/hadieslist.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/hadithconta.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/haditsname.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/haditssearch.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/populartopicconti.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/tophadits.dart';
-import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/currentsurah.dart';
 
 final List<Hadiesmodelapi> hadiesmodelapi = [
   Hadiesmodelapi(

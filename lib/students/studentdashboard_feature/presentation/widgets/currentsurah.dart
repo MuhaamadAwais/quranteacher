@@ -21,6 +21,7 @@ class _CurrentsurahState extends State<Currentsurah>
   late Animation<double> _simpllefade;
   Timer? _flipTimer;
 
+  @override
   void initState() {
     _animationController = AnimationController(
       vsync: this,

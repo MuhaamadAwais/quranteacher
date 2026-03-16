@@ -221,7 +221,7 @@ class Recenttranstion extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "\$" + amount.toString(),
+                    "\$$amount",
                     style: TextStyle(
                       color: AppColors.backgroundStart,
                       fontSize: 20,

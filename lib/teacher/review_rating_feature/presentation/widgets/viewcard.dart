@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Viewcard extends StatefulWidget {
   const Viewcard({super.key});

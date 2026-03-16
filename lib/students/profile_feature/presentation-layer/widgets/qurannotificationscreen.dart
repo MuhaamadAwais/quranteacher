@@ -354,7 +354,9 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
 
   void _markAllRead() {
     setState(() {
-      for (var notification in notifications) notification['isRead'] = true;
+      for (var notification in notifications) {
+        notification['isRead'] = true;
+      }
     });
   }
 }

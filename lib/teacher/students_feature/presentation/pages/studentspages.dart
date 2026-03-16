@@ -3,7 +3,6 @@ import 'package:quranteacher/teacher/students_feature/presentation/pages/student
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/listforstudents.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/multicontistd.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/searchstd.dart';
-import 'package:quranteacher/teacher/students_feature/presentation/widgets/studentdesign.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/textstudent.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/topstd.dart';
 

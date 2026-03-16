@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Contenttextwid extends StatelessWidget {
   const Contenttextwid({super.key});

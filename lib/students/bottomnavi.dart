@@ -6,13 +6,6 @@ import 'package:quranteacher/students/profile_feature/presentation-layer/screens
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/pages/studentdashboardpage.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(body: Center(child: Bottomnavi())),
-    ),
-  );
-}
 
 class Bottomnavi extends StatefulWidget {
   const Bottomnavi({super.key});

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Roleselector extends StatefulWidget {
   const Roleselector({super.key});

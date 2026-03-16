@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/login.dart';
 import 'package:quranteacher/roleselector.dart';
 
 void main() {
@@ -188,7 +187,6 @@ class _SplashscreenappState extends State<Splashscreenapp>
     );
   }
 }
-
 
 Widget _buildDot(Animation<double> animation) {
   return AnimatedBuilder(

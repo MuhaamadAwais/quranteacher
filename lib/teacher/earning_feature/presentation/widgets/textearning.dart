@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Textearning extends StatelessWidget {
   const Textearning({super.key});
@@ -10,14 +11,19 @@ class Textearning extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Row(
       children: [
-        Container(
-          height: 40,
-          width: 40,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.textWhite.withOpacity(0.15),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Bottomnaviteacher(),));
+          },
+          child: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColors.textWhite.withOpacity(0.15),
+            ),
+            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
           ),
-          child: Icon(Icons.arrow_back, color: AppColors.textWhite),
         ),
         SizedBox(width: 5),
         Text(
