@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class ChildrenTrainingPage extends StatefulWidget {
   const ChildrenTrainingPage({super.key});
@@ -16,116 +18,141 @@ class _ChildrenTrainingPageState extends State<ChildrenTrainingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'Children Training',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.teal[400],
-        foregroundColor: Colors.white,
-      ),
+      // appBar: AppBar(
+      //   iconTheme: const IconThemeData(color: Colors.white),
+      //   title: const Text(
+      //     'Children Training',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontSize: 22,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.teal[400],
+      //   foregroundColor: Colors.white,
+      // ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(0),
         child: Column(
           children: [
+            TopcommonContainer(
+              title: "Children Training",
+              subTitle: "Upbringing: Faith & Character",
+            ),
+
+            const SizedBox(height: 40),
             // Title
             const Text(
-              'اسلام میں بچوں کی تربیت',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              'Child Upbringing in Islam',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                color: AppColors.islamicNavy900,
+              ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 25),
 
             // Container 1 - نماز
-            _buildSimpleContainer(
-              title: 'نماز کی تربیت',
-              icon: Icons.mosque,
-              color: Colors.green,
-              detail: '''بچوں کو 7 سال کی عمر سے نماز کا حکم دیں
-10 سال کی عمر میں نافرمانی پر ہلکی مار جائز ہے
-
-طریقہ:
-• پہلے کھیل میں سکھائیں
-• والدین پہلے خود ادا کریں
-• مسجد لے جائیں
-• انعام دیں (میٹھی چیزیں، تعریف)
-
-: "7 سال میں حکم، 10 سال میں مار"''',
-              isExpanded: _box1Expanded,
-              onTap: () => setState(() => _box1Expanded = !_box1Expanded),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: _buildSimpleContainer(
+                title: 'نماز کی تربیت',
+                icon: Icons.mosque,
+                color: Colors.green,
+                detail: '''بچوں کو 7 سال کی عمر سے نماز کا حکم دیں
+            10 سال کی عمر میں نافرمانی پر ہلکی مار جائز ہے
+            
+            طریقہ:
+            • پہلے کھیل میں سکھائیں
+            • والدین پہلے خود ادا کریں
+            • مسجد لے جائیں
+            • انعام دیں (میٹھی چیزیں، تعریف)
+            
+            : "7 سال میں حکم، 10 سال میں مار"''',
+                isExpanded: _box1Expanded,
+                onTap: () => setState(() => _box1Expanded = !_box1Expanded),
+              ),
             ),
 
             const SizedBox(height: 15),
 
             // Container 2 - اخلاق
-            _buildSimpleContainer(
-              title: 'اخلاق بنائیں',
-              icon: Icons.favorite,
-              color: Colors.orange,
-              detail: '''روزانہ سکھائیں:
-• سچ بولنا 
-• بوڑوں کی عزت
-• دوسروں کی مدد کرنا
-عملی:
-• غلطی معاف کرنا سکھائیں
-• "شکریاادا کرنا 
-• مسکرانا سکھائیں
- ''',
-              isExpanded: _box2Expanded,
-              onTap: () => setState(() => _box2Expanded = !_box2Expanded),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+
+              child: _buildSimpleContainer(
+                title: 'اخلاق بنائیں',
+                icon: Icons.favorite,
+                color: Colors.orange,
+                detail: '''روزانہ سکھائیں:
+            • سچ بولنا 
+            • بوڑوں کی عزت
+            • دوسروں کی مدد کرنا
+            عملی:
+            • غلطی معاف کرنا سکھائیں
+            • "شکریاادا کرنا 
+            • مسکرانا سکھائیں
+             ''',
+                isExpanded: _box2Expanded,
+                onTap: () => setState(() => _box2Expanded = !_box2Expanded),
+              ),
             ),
 
             const SizedBox(height: 15),
 
             // Container 3 - قرآن
-            _buildSimpleContainer(
-              title: 'قرآن سکھائیں',
-              icon: Icons.book,
-              color: Colors.blue,
-              detail: '''عمر 4-5 سال سے شروع کریں
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
 
-پہلے:
-1. سورۃ الفاتحہ
-2. 5 چھوٹی سورتیں  
-3. روزانہ 5 منٹ
-
-اہم:
-• ترجمہ سمجھائیں
-• استاد رکھیں
-• تجوید سیکھیں
-• حافظ بنائیں
-
-فائدہ: 80% قرآن سمجھ آئے گا''',
-              isExpanded: _box3Expanded,
-              onTap: () => setState(() => _box3Expanded = !_box3Expanded),
+              child: _buildSimpleContainer(
+                title: 'قرآن سکھائیں',
+                icon: Icons.book,
+                color: Colors.blue,
+                detail: '''عمر 4-5 سال سے شروع کریں
+            
+            پہلے:
+            1. سورۃ الفاتحہ
+            2. 5 چھوٹی سورتیں  
+            3. روزانہ 5 منٹ
+            
+            اہم:
+            • ترجمہ سمجھائیں
+            • استاد رکھیں
+            • تجوید سیکھیں
+            • حافظ بنائیں
+            
+            فائدہ: 80% قرآن سمجھ آئے گا''',
+                isExpanded: _box3Expanded,
+                onTap: () => setState(() => _box3Expanded = !_box3Expanded),
+              ),
             ),
 
             const SizedBox(height: 15),
 
             // Container 4 - موبائل
-            _buildSimpleContainer(
-              title: 'حضرت محمد ﷺ کی سیرت',
-              icon: Icons.menu_book,
-              color: Colors.lightGreen,
-              detail: '''موضوعات:
-• پیدائش اور ابتدائی زندگی
-• نبوت کا آغاز
-• ہجرت اور مدینہ میں زندگی
-• غزوات اور امن کی کوششیں
-• اخلاق اور معاشرتی اصول
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
 
-اہم سبق:
-• صبر اور استقامت
-• عدل اور انصاف
-• دوسروں کے ساتھ حسن سلوک
-• تعلیم اور علم کی اہمیت
-• اللہ پر توکل اور عبادت کی پابندی''',
-              isExpanded: _box4Expanded,
-              onTap: () => setState(() => _box4Expanded = !_box4Expanded),
+              child: _buildSimpleContainer(
+                title: 'حضرت محمد ﷺ کی سیرت',
+                icon: Icons.menu_book,
+                color: Colors.lightGreen,
+                detail: '''موضوعات:
+            • پیدائش اور ابتدائی زندگی
+            • نبوت کا آغاز
+            • ہجرت اور مدینہ میں زندگی
+            • غزوات اور امن کی کوششیں
+            • اخلاق اور معاشرتی اصول
+            
+            اہم سبق:
+            • صبر اور استقامت
+            • عدل اور انصاف
+            • دوسروں کے ساتھ حسن سلوک
+            • تعلیم اور علم کی اہمیت
+            • اللہ پر توکل اور عبادت کی پابندی''',
+                isExpanded: _box4Expanded,
+                onTap: () => setState(() => _box4Expanded = !_box4Expanded),
+              ),
             ),
             const SizedBox(height: 30),
 

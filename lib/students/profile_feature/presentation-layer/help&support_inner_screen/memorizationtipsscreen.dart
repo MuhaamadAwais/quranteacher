@@ -1,26 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class MemorizationTipsScreen extends StatelessWidget {
   const MemorizationTipsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xFFF8FAFC),
-      appBar: AppBar(
-        title: Text('Memorization Tips', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color(0xFFFF9800),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   title: Text('Memorization Tips', style: TextStyle(color: Colors.white)),
+      //   backgroundColor: Color(0xFFFF9800),
+      //   elevation: 0,
+      // ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(0),
         child: Column(
           children: [
+            TopcommonContainer(title: "Memorization Tips"),
+            SizedBox(height: 24),
             Container(
-              padding: EdgeInsets.all(24),
+              padding: EdgeInsets.all(20),
+              height: height * 0.22,
+              width: width * 0.8,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color(0xFFFF9800), Color(0xFFe68900)],
+                  colors: [
+                    Color.fromARGB(255, 16, 104, 90),
+                    Color.fromARGB(145, 13, 116, 121),
+                  ],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -41,28 +51,61 @@ class MemorizationTipsScreen extends StatelessWidget {
             SizedBox(height: 24),
 
             /// Tips List
-            _buildTipCard(
-              1,
-              'Repeat 7 Times',
-              'Daily repetition is key to Quran Hifz',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildTipCard(
+                1,
+                'Repeat 7 Times',
+                'Daily repetition is key to Quran Hifz',
+              ),
             ),
-            _buildTipCard(
-              2,
-              'Understand Meaning',
-              'Tadabbur increases retention 3x',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildTipCard(
+                2,
+                'Understand Meaning',
+                'Tadabbur increases retention 3x',
+              ),
             ),
-            _buildTipCard(
-              3,
-              'Night Revision',
-              'Revise before sleep - brain processes overnight',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildTipCard(
+                3,
+                'Night Revision',
+                'Revise before sleep - brain processes overnight',
+              ),
             ),
-            _buildTipCard(4, 'Audio Loop', 'Play recitation while working'),
-            _buildTipCard(5, 'Write by Hand', 'Handwriting activates memory'),
-            _buildTipCard(6, 'Teach Others', 'Teaching = 90% retention'),
-            _buildTipCard(
-              7,
-              'Dua Before Study',
-              'Astaghfirullah 100x before memorization',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildTipCard(
+                4,
+                'Audio Loop',
+                'Play recitation while working',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildTipCard(
+                5,
+                'Write by Hand',
+                'Handwriting activates memory',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildTipCard(
+                6,
+                'Teach Others',
+                'Teaching = 90% retention',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildTipCard(
+                7,
+                'Dua Before Study',
+                'Astaghfirullah 100x before memorization',
+              ),
             ),
           ],
         ),
@@ -83,13 +126,14 @@ class MemorizationTipsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CircleAvatar(
-            backgroundColor: Color(0xFFFF9800).withOpacity(0.2),
+            backgroundColor: Color.fromARGB(255, 16, 104, 90),
+
             child: Text(
               '$number',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
-                color: Color(0xFFFF9800),
+                color: Colors.white,
               ),
             ),
           ),

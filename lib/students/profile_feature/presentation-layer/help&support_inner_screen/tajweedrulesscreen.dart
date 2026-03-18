@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class TajweedRulesScreen extends StatelessWidget {
   const TajweedRulesScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xFFF8FAFC),
-      appBar: AppBar(
-        title: Text('Tajweed Rules', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color(0xFFE91E63),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   title: Text('Tajweed Rules', style: TextStyle(color: Colors.white)),
+      //   backgroundColor: Color(0xFFE91E63),
+      //   elevation: 0,
+      // ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(0),
         child: Column(
           children: [
+            TopcommonContainer(title: 'Tajweed Rules'),
+            SizedBox(height: 24),
             Container(
-              padding: EdgeInsets.all(24),
+              padding: EdgeInsets.all(20),
+              height: height * 0.22,
+              width: width * 0.8,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color(0xFFE91E63), Color(0xFFc2185b)],
+                  colors: [
+                    Color.fromARGB(255, 8, 90, 98),
+                    Color.fromARGB(174, 10, 130, 112),
+                  ],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -40,35 +50,50 @@ class TajweedRulesScreen extends StatelessWidget {
             SizedBox(height: 24),
 
             /// Tajweed Rules
-            _buildRuleCard(
-              'نُونْ سَاكِنَةْ',
-              'Noon Saakin',
-              'Manner of Izhar',
-              'Show clearly from throat',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildRuleCard(
+                'نُونْ سَاكِنَةْ',
+                'Noon Saakin',
+                'Manner of Izhar',
+                'Show clearly from throat',
+              ),
             ),
-            _buildRuleCard(
-              'مِيمْ سَاكِنَةْ',
-              'Meem Saakin',
-              'Meem Shaddah',
-              'Double M with ghunnah',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildRuleCard(
+                'مِيمْ سَاكِنَةْ',
+                'Meem Saakin',
+                'Meem Shaddah',
+                'Double M with ghunnah',
+              ),
             ),
-            _buildRuleCard(
-              'قَلْقَلَةْ',
-              'Qalqalah',
-              'Bounce Sound',
-              'Q, T, B, J, D letters',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildRuleCard(
+                'قَلْقَلَةْ',
+                'Qalqalah',
+                'Bounce Sound',
+                'Q, T, B, J, D letters',
+              ),
             ),
-            _buildRuleCard(
-              'إِخْفَاءْ',
-              'Ikhfa',
-              'Hidden',
-              'Noon + Ba/Ta/Ya/Jim/Dal',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildRuleCard(
+                'إِخْفَاءْ',
+                'Ikhfa',
+                'Hidden',
+                'Noon + Ba/Ta/Ya/Jim/Dal',
+              ),
             ),
-            _buildRuleCard(
-              'غُنَّةْ',
-              'Ghunnah',
-              'Nasal Sound',
-              '2.5 seconds on Meem/Noon',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildRuleCard(
+                'غُنَّةْ',
+                'Ghunnah',
+                'Nasal Sound',
+                '2.5 seconds on Meem/Noon',
+              ),
             ),
 
             SizedBox(height: 15),
@@ -100,12 +125,17 @@ class TajweedRulesScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Color(0xFFE91E63).withOpacity(0.1),
+                  color: Color.fromARGB(255, 8, 90, 98),
+
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   arabic,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               SizedBox(width: 12),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class MannersPage extends StatefulWidget {
   const MannersPage({super.key});
@@ -42,28 +44,36 @@ class _MannersPageState extends State<MannersPage>
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'Manners',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.orange[400],
-      ),
+      // appBar: AppBar(
+      //   iconTheme: const IconThemeData(color: Colors.white),
+      //   title: const Text(
+      //     'Manners',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontSize: 22,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.orange[400],
+      // ),
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                TopcommonContainer(
+                  title: 'Manners',
+                  subTitle: "Manners: Respect & Grace",
+                ),
+                const SizedBox(height: 20),
+
                 // 🔥 1. Main Header (400ms)
                 TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 400),
@@ -84,7 +94,7 @@ class _MannersPageState extends State<MannersPage>
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: Colors.orange,
+                        color: AppColors.islamicNavy950,
                       ),
                     ),
                   ),
@@ -105,28 +115,31 @@ class _MannersPageState extends State<MannersPage>
                       ),
                     );
                   },
-                  child: Card(
-                    color: Colors.orange[50],
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-                          const Text(
-                            'سورۃ الحجرات (49:11)',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Card(
+                      color: Colors.orange[50],
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            const Text(
+                              'سورۃ الحجرات (49:11)',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          const Text(
-                            'يَا أَيُّهَا الَّذِينَ آمَنُوا لَا يَسْخَرْ قَوْمٌ مِنْ قَوْمٍ',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                          const Text(
-                            'اے ایمان والو! کوئی قوم کسی دوسری قوم کا مذاق نہ اڑائے...',
-                            style: TextStyle(fontSize: 14),
-                          ),
-                        ],
+                            const Text(
+                              'يَا أَيُّهَا الَّذِينَ آمَنُوا لَا يَسْخَرْ قَوْمٌ مِنْ قَوْمٍ',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            const Text(
+                              'اے ایمان والو! کوئی قوم کسی دوسری قوم کا مذاق نہ اڑائے...',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -148,13 +161,13 @@ class _MannersPageState extends State<MannersPage>
                     );
                   },
                   child: const Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.only(left: 20),
                     child: Text(
                       'Important manners:',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.orange,
+                        color: AppColors.islamicNavy950,
                       ),
                     ),
                   ),
@@ -177,9 +190,13 @@ class _MannersPageState extends State<MannersPage>
                         ),
                       );
                     },
-                    child: _buildMannerCard(index),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: _buildMannerCard(index),
+                    ),
                   ),
                 ),
+                SizedBox(height: height * 0.03),
               ],
             ),
           ),
@@ -250,6 +267,7 @@ class _MannersPageState extends State<MannersPage>
   }) {
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
+      color: Colors.orange[50],
       child: Column(
         children: [
           ListTile(

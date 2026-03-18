@@ -11,7 +11,7 @@ class Lessonscreen extends StatefulWidget {
 }
 
 class _LessonscreenState extends State<Lessonscreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
   late Animation<double> _fadeAnimation;

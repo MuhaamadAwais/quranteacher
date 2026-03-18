@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/appcolors.dart';
+//import 'package:quranteacher/appcolors.dart';
 
 class Topcontistd extends StatelessWidget {
   const Topcontistd({super.key});
@@ -16,7 +16,11 @@ class Topcontistd extends StatelessWidget {
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
         ),
-        color: AppColors.backgroundStart,
+        gradient: LinearGradient(
+          colors: [const Color(0xFF006633), const Color(0xCC054632)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
       ),
     );
   }

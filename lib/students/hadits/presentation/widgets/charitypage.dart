@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class CharityPage extends StatefulWidget {
   const CharityPage({super.key});
@@ -43,28 +45,34 @@ class _CharityPageState extends State<CharityPage>
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'Charity',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.purple[400],
-      ),
+      // appBar: AppBar(
+      //   iconTheme: const IconThemeData(color: Colors.white),
+      //   title: const Text(
+      //     'Charity',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontSize: 22,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.purple[400],
+      // ),
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(0),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  TopcommonContainer(
+                    title: ' Charity',
+                    subTitle: "Charity: Blessings & Joy",
+                  ),
+                  SizedBox(height: 20),
+
                   // 🔥 1. Title (400ms)
                   TweenAnimationBuilder<double>(
                     duration: const Duration(milliseconds: 400),
@@ -85,7 +93,7 @@ class _CharityPageState extends State<CharityPage>
                         style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
-                          color: Colors.purple[400],
+                          color: AppColors.islamicNavy900,
                         ),
                       ),
                     ),
@@ -106,29 +114,36 @@ class _CharityPageState extends State<CharityPage>
                         ),
                       );
                     },
-                    child: Card(
-                      color: Colors.purple[50],
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Column(
-                          children: [
-                            const Text(
-                              'سورۃ البقرہ (2:261)',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.only(
+                        left: width * 0.05,
+                        right: width * 0.05,
+                      ),
+                      child: Card(
+                        color: Colors.purple[50],
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              const Text(
+                                'سورۃ البقرہ (2:261)',
+                                style: TextStyle(
+                                  color: AppColors.islamicNavy900,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            const Text(
-                              'مَّثَلُ الَّذِيْنَ يُنْفِقُوْنَ اَمْوَالَهُمْ فِيْ سَبِيْلِ اللّٰهِ كَمَثَلِ حَبَّةٍ اَنْۢبَتَتْ سَبْعَ سَنَابِلَ فِيْ كُلِّ سُنْۢبُلَةٍ مِّائَةُ حَبَّةٍ ؕ وَاللّٰهُ يُضٰعِفُ لِمَنْ يَّشَآءُ ؕ وَاللّٰهُ وَاسِعٌ عَلِيْمٌ',
-                              style: TextStyle(fontSize: 16),
-                            ),
-                            const SizedBox(height: 10),
-                            const Text(
-                              ' "جو لوگ اپنے مال اللہ کی راہ میں خرچ کرتے ہیں، ان کے خرچ کی مثال اس دانے جیسی ہے جس سے سات بالیں نکلیں اور ہر بال میں سو دانے ہوں، اور اللہ جس کے لیے چاہے (اُسے) بڑھا چڑھا کر دیتا ہے، اور اللہ وسعت والا، سب کچھ جاننے والا ہے۔"',
-                              style: TextStyle(fontSize: 14),
-                            ),
-                          ],
+                              const Text(
+                                'مَّثَلُ الَّذِيْنَ يُنْفِقُوْنَ اَمْوَالَهُمْ فِيْ سَبِيْلِ اللّٰهِ كَمَثَلِ حَبَّةٍ اَنْۢبَتَتْ سَبْعَ سَنَابِلَ فِيْ كُلِّ سُنْۢبُلَةٍ مِّائَةُ حَبَّةٍ ؕ وَاللّٰهُ يُضٰعِفُ لِمَنْ يَّشَآءُ ؕ وَاللّٰهُ وَاسِعٌ عَلِيْمٌ',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              const SizedBox(height: 10),
+                              const Text(
+                                ' "جو لوگ اپنے مال اللہ کی راہ میں خرچ کرتے ہیں، ان کے خرچ کی مثال اس دانے جیسی ہے جس سے سات بالیں نکلیں اور ہر بال میں سو دانے ہوں، اور اللہ جس کے لیے چاہے (اُسے) بڑھا چڑھا کر دیتا ہے، اور اللہ وسعت والا، سب کچھ جاننے والا ہے۔"',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -149,11 +164,15 @@ class _CharityPageState extends State<CharityPage>
                         ),
                       );
                     },
-                    child: const Text(
-                      "Important Notes:",
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: const Text(
+                        "Important Notes:",
+                        style: TextStyle(
+                          color: AppColors.islamicNavy900,
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -173,24 +192,26 @@ class _CharityPageState extends State<CharityPage>
                         ),
                       );
                     },
-                    child: Container(
-                      height: height * 0.17,
-                      width: width * 0.9,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.purple[50],
-                      ),
-                      child: Column(
-                        children: [
-                          SizedBox(height: height * 0.02),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 40),
-                            child: Text(
-                              "نصاب سے زائد دولت کا 2.5٪ حصہ۔\n        ایک قمری سال کے بعد واجب۔\n صرف بالغ اور عاقل مسلمان کے لیے۔\n    مستحق اور اہل افراد کو دیا جائے ",
-                              style: TextStyle(fontSize: 17),
+                    child: Center(
+                      child: Container(
+                        height: height * 0.2,
+                        width: width * 0.8,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.purple[50],
+                        ),
+                        child: Column(
+                          children: [
+                            SizedBox(height: height * 0.02),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 0),
+                              child: Text(
+                                "نصاب سے زائد دولت کا 2.5٪ حصہ۔\n        ایک قمری سال کے بعد واجب۔\n صرف بالغ اور عاقل مسلمان کے لیے۔\n    مستحق اور اہل افراد کو دیا جائے ",
+                                style: TextStyle(fontSize: 17),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -210,11 +231,15 @@ class _CharityPageState extends State<CharityPage>
                         ),
                       );
                     },
-                    child: const Text(
-                      'Calculate Zakat',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.only(left: width * 0.05),
+                      child: const Text(
+                        'Calculate Zakat',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.islamicNavy900,
+                        ),
                       ),
                     ),
                   ),
@@ -234,50 +259,53 @@ class _CharityPageState extends State<CharityPage>
                         ),
                       );
                     },
-                    child: Column(
-                      children: [
-                        TextField(
-                          controller: _wealthController,
-                          keyboardType: TextInputType.number,
-                          enableInteractiveSelection: true,
-                          decoration: const InputDecoration(
-                            labelText: 'total amount (PKR)',
-                            prefixIcon: Icon(Icons.currency_rupee),
-                            border: OutlineInputBorder(),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Column(
+                        children: [
+                          TextField(
+                            controller: _wealthController,
+                            keyboardType: TextInputType.number,
+                            enableInteractiveSelection: true,
+                            decoration: const InputDecoration(
+                              labelText: 'total amount (PKR)',
+                              prefixIcon: Icon(Icons.currency_rupee),
+                              border: OutlineInputBorder(),
+                            ),
+                            onChanged: (value) {
+                              setState(() {
+                                zakatAmount =
+                                    (double.tryParse(value) ?? 0) * 0.025;
+                              });
+                            },
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              zakatAmount =
-                                  (double.tryParse(value) ?? 0) * 0.025;
-                            });
-                          },
-                        ),
-                        const SizedBox(height: 20),
-                        Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(20),
-                            child: Column(
-                              children: [
-                                const Text(
-                                  'Your Zakat Amount',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
+                          const SizedBox(height: 20),
+                          Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(20),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'Your Zakat Amount',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  '${zakatAmount.toStringAsFixed(0)} PKR',
-                                  style: TextStyle(
-                                    fontSize: 32,
-                                    color: Colors.purple[400],
-                                    fontWeight: FontWeight.bold,
+                                  Text(
+                                    '${zakatAmount.toStringAsFixed(0)} PKR',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      color: Colors.purple[400],
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 20),

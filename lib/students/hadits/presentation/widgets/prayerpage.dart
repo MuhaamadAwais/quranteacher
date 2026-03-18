@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class PrayerPage extends StatefulWidget {
   const PrayerPage({super.key});
@@ -40,19 +41,24 @@ class _PrayerPageState extends State<PrayerPage>
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text('Prayer', style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.blue[400],
-      ),
+      // appBar: AppBar(
+      //   iconTheme: const IconThemeData(color: Colors.white),
+      //   title: const Text('Prayer', style: TextStyle(color: Colors.white)),
+      //   backgroundColor: Colors.blue[400],
+      // ),
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(0),
             child: Column(
               children: [
+                TopcommonContainer(
+                  title: 'Prayer',
+                  subTitle: " Prayer:Peace & Connection",
+                ),
+                const SizedBox(height: 20),
                 // 🔥 1. Main Header (400ms)
                 TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 400),
@@ -92,28 +98,31 @@ class _PrayerPageState extends State<PrayerPage>
                       ),
                     );
                   },
-                  child: Card(
-                    color: Colors.blue[50],
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-                          const Text(
-                            'سورۃ البقرہ (2:43)',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Card(
+                      color: Colors.blue[50],
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            const Text(
+                              'سورۃ البقرہ (2:43)',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          const Text(
-                            'وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ',
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          const Text(
-                            'نماز قائم کرو اور زکوٰۃ دو اور رکوع کرنے والوں کے ساتھ رکوع کرو۔',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ],
+                            const Text(
+                              'وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            const Text(
+                              'نماز قائم کرو اور زکوٰۃ دو اور رکوع کرنے والوں کے ساتھ رکوع کرو۔',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -193,7 +202,7 @@ class _PrayerPageState extends State<PrayerPage>
                         width: width * 0.85,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Colors.white12,
+                          color: Colors.blue[50],
                         ),
                         child: Column(
                           children: [
@@ -247,6 +256,7 @@ Widget prayercontainer(String engtext, String urdutext) {
       Card(
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        color: Colors.blue[50],
         child: ListTile(
           hoverColor: Colors.lightGreen,
           title: Text(engtext, style: const TextStyle(fontSize: 20)),

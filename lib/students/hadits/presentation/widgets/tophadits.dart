@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/appcolors.dart';
+//import 'package:quranteacher/appcolors.dart';
 
 class Tophadits extends StatelessWidget {
   const Tophadits({super.key});
@@ -10,10 +10,10 @@ class Tophadits extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: height * 0.63,
+      height: height * 0.58,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [AppColors.islamicNavy600, Colors.deepPurple.shade400],
+          colors: [const Color(0xFF006633), const Color(0xCC054632)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

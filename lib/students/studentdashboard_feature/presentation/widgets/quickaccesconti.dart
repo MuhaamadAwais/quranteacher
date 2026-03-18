@@ -4,6 +4,8 @@ import 'package:quranteacher/students/hadits/presentation/pages/haditspage.dart'
 import 'package:quranteacher/students/lesson_feature/presentation_layer/screens/lessonscreen.dart';
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studenthomeworkscreen.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teachercard.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teacherrequestscreen.dart';
 
 class Quickaccesconti extends StatefulWidget {
   const Quickaccesconti({super.key});
@@ -75,6 +77,17 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
               ),
             ],
           ),
+          const SizedBox(height: 10),
+          clickcontistd(
+            4,
+            width * 0.88,
+            height * 0.2,
+            "assets/images/book.png",
+            "Teacher List",
+            "Select related your course",
+            Colors.blue,
+            Colors.lightBlue,
+          ),
         ],
       ),
     );
@@ -114,6 +127,13 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
             context,
             MaterialPageRoute(
               builder: (context) => const StudentHomeworkScreen(),
+            ),
+          );
+        } else if (index == 4) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const TeacherRequestScreen(),
             ),
           );
         }

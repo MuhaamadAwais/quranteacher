@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class StudentHomeworkScreen extends StatefulWidget {
   const StudentHomeworkScreen({super.key});
@@ -68,53 +70,20 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
   @override
   Widget build(BuildContext context) {
     int pendingCount = homework.where((h) => !h['completed']).length;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: Colors.grey[50],
-      appBar: AppBar(
-        title: Text(
-          '📚 My Homework',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black87,
-        elevation: 0,
-        actions: [
-          Stack(
-            children: [
-              IconButton(
-                icon: Icon(Icons.picture_as_pdf),
-                onPressed: () {},
-                tooltip: 'Export Report',
-              ),
-              if (pendingCount > 0)
-                Positioned(
-                  right: 11,
-                  top: 11,
-                  child: Container(
-                    padding: EdgeInsets.all(2),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    constraints: BoxConstraints(minWidth: 12, minHeight: 12),
-                    child: Text(
-                      '$pendingCount',
-                      style: TextStyle(color: Colors.white, fontSize: 10),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-            ],
-          ),
-        ],
-      ),
+
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: Column(
             children: [
+              // SizedBox(height: height * 0.05),
+              TopcommonContainer(title: "📚 My Homework"),
               // 🔥 1. Stats Header (400ms)
               TweenAnimationBuilder<double>(
                 duration: Duration(milliseconds: 400),
@@ -127,36 +96,41 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                     child: child,
                   ),
                 ),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue[400]!,
-                        Colors.blue[300]!,
-                        Colors.blue[100]!,
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                    width: double.infinity,
+
+                    padding: EdgeInsets.all(24),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.blue[400]!,
+                          Colors.blue[300]!,
+                          Colors.blue[100]!,
+                        ],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
                     ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      _buildStatCard(
-                        'Pending',
-                        '$pendingCount',
-                        Icons.pending_actions,
-                        Colors.orange,
-                      ),
-                      _buildStatCard(
-                        'Completed',
-                        '${4 - pendingCount}',
-                        Icons.check_circle,
-                        Colors.green,
-                      ),
-                    ],
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        _buildStatCard(
+                          'Pending',
+                          '$pendingCount',
+                          Icons.pending_actions,
+                          Colors.orange,
+                        ),
+                        _buildStatCard(
+                          'Completed',
+                          '${4 - pendingCount}',
+                          Icons.check_circle,
+                          Colors.green,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

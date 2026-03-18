@@ -12,16 +12,17 @@ class Namestd extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(width: 5),
             Text(
               "Assalamu Alaikum",
-              style: TextStyle(color: AppColors.textWhite, fontSize: 12),
+              style: TextStyle(color: AppColors.textWhite, fontSize: 16),
             ),
 
             Text(
               "Ahmaed Hassan",
               style: TextStyle(
                 color: AppColors.textWhite,
-                fontSize: 20,
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -42,10 +43,7 @@ class Namestd extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.white.withOpacity(0.15),
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.3),
-                    width: 1.5,
-                  ),
+                  border: Border.all(color: Colors.black26, width: 1.5),
                 ),
                 child: Center(
                   child: GestureDetector(

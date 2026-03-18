@@ -3,6 +3,7 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/assignwork_feature/presentation/pages/assignwork.dart';
 import 'package:quranteacher/teacher/earning_feature/presentation/pages/earningpages.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/pages/studentspages.dart';
+import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/formteacherequestsscreen.dart';
 
 class Leastitems extends StatefulWidget {
   const Leastitems({super.key});
@@ -76,7 +77,7 @@ class _LeastitemsState extends State<Leastitems> {
                 Colors.orange,
                 Colors.deepOrangeAccent,
                 () {
-                   Navigator.of(context).push(
+                  Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Studentspages()),
                   );
                 },
@@ -92,12 +93,31 @@ class _LeastitemsState extends State<Leastitems> {
                 AppColors.islamicNavy500,
                 AppColors.islamicNavy600,
                 () {
-                   Navigator.of(context).push(
+                  Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Earningpages()),
                   );
                 },
               ),
             ],
+          ),
+          SizedBox(height: 20),
+          clickcontistd(
+            4,
+            width * 0.88,
+            height * 0.2,
+            Icons.group_outlined,
+            "Student Request List",
+            "see all students request",
+            Colors.blue,
+            Colors.lightBlue,
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Formteacherequestsscreen(),
+                ),
+              );
+            },
           ),
         ],
       ),

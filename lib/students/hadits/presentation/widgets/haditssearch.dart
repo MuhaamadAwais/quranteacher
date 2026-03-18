@@ -20,9 +20,23 @@ class Haditssearch extends StatelessWidget {
         child: Center(
           child: TextField(
             // textAlign: TextAlign.center,
-             textAlignVertical: TextAlignVertical.center,
+            textAlignVertical: TextAlignVertical.center,
+            style: TextStyle(color: AppColors.primary),
             decoration: InputDecoration(
-              border: InputBorder.none,
+              filled: true,
+              fillColor: Colors.grey.shade200,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(color: AppColors.secondary),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(
+                  color: AppColors.islamicEmerald,
+                  width: 2,
+                ),
+              ),
+              //border: InputBorder.none,
               hint: Text(
                 "Search Hadith...",
                 style: TextStyle(
