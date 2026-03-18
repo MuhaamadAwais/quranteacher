@@ -60,7 +60,7 @@ class Personalinfosetting extends StatelessWidget {
                     width,
                     height * 0.075,
                     "Full Name",
-                    Icons.person_2_outlined,
+                    Icons: Icons.person_2_outlined,
                     "Enter the name",
                   ),
                   SizedBox(height: 5),
@@ -68,7 +68,7 @@ class Personalinfosetting extends StatelessWidget {
                     width,
                     height * 0.075,
                     "Email Address",
-                    Icons.email_outlined,
+                    Icons: Icons.email_outlined,
                     "Enter the email",
                   ),
 
@@ -77,16 +77,16 @@ class Personalinfosetting extends StatelessWidget {
                     width,
                     height * 0.075,
                     "Phone Number",
-                    Icons.phone_outlined,
                     "Enter the phoneno",
+                    Icons: Icons.phone_outlined,
                   ),
                   SizedBox(height: 5),
                   perosnal(
                     width,
                     height * 0.075,
                     "Location",
-                    Icons.person_2_outlined,
                     "Enter the Location",
+                    Icons: Icons.location_on_outlined,
                   ),
                 ],
               ),
@@ -102,9 +102,9 @@ Widget perosnal(
   double width,
   double height,
   String propertyname,
-  IconData Icons,
-  String hintname,
-) {
+  String hintname, {
+  IconData? Icons,
+}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [

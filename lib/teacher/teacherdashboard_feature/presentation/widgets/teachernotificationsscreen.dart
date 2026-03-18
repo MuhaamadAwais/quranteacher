@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/teachernotificationmodel.dart';
 
 class TeacherNotificationsScreen extends StatefulWidget {
-  const TeacherNotificationsScreen({Key? key});
+  const TeacherNotificationsScreen({super.key});
   @override
   _TeacherNotificationsScreenState createState() =>
       _TeacherNotificationsScreenState();

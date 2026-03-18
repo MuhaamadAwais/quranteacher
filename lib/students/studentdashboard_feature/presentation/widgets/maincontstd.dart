@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/students/studentdashboard_feature/presentation/pages/studentdashboardpage.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/videocallscreen.dart';
 
 class Maincontstd extends StatefulWidget {

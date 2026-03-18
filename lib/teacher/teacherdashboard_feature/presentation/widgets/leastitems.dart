@@ -190,7 +190,7 @@ class _LeastitemsState extends State<Leastitems> {
                   // child: Icon(icon, color: AppColors.textWhite),
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(iconsdata, color: AppColors.textWhite),
+                    child: Icon(iconsdata, color: AppColors.textWhite,size: 32,),
                   ),
                 ),
               ),

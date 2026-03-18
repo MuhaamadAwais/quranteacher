@@ -45,7 +45,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
               Mainapprovalwid(),
               Mainapprovalwid(),
               Approvalstatisticswid(),
-              SizedBox(height: 20,),
+              SizedBox(height: 30,),
             ],
           ),
         ),

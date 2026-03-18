@@ -3,7 +3,6 @@ import 'package:quranteacher/teacher/students_feature/presentation/pages/student
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/listforstudents.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/multicontistd.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/searchstd.dart';
-import 'package:quranteacher/teacher/students_feature/presentation/widgets/studentdesign.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/textstudent.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/widgets/topstd.dart';
 
@@ -73,16 +72,15 @@ class _StudentspagesState extends State<Studentspages> {
                   ),
                   Positioned(left: 20, top: 80, right: 20, child: Searchstd()),
                   Positioned(
-                    left: 20,
+                    left: 15,
                     top: 160,
-                    right: 20,
+                    right: 15,
                     child: Multicontistd(),
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               Listforstudents(studentmodelprogress: studentmodelprogress),
-
               SizedBox(height: 30),
             ],
           ),

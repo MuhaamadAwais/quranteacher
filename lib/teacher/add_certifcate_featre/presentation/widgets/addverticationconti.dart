@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 
-class Verificationconti extends StatelessWidget {
-  const Verificationconti({super.key});
+class Addverticationconti extends StatelessWidget {
+  const Addverticationconti({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class Verificationconti extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    "All certifications are verified by our\nadmin team within 24-hours verified\nverified certificates boost your\nprofile cerdibility",
+                    "After submission, our admin team \nwill verify your certificate within 24-\n48 hours. You will receive a \nnotification once the verification is \ncomplete.",
                     style: TextStyle(
                       color: AppColors.islamicNavy600,
                       fontWeight: FontWeight.bold,

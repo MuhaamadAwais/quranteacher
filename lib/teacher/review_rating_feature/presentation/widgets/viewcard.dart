@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Viewcard extends StatefulWidget {
   const Viewcard({super.key});
@@ -102,6 +101,7 @@ class _ViewcardState extends State<Viewcard> {
                         child: Icon(
                           Icons.person,
                           color: AppColors.islamicNavy500,
+                          size: 32,
                         ),
                       ),
 

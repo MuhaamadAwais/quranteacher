@@ -47,6 +47,7 @@ class _ReportadminpageState extends State<Reportadminpage> {
               Revenuebreakout(),
               SizedBox(height: 10),
               Platformprofence(),
+              SizedBox(height: 30),
             ],
           ),
         ),

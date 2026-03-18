@@ -23,8 +23,11 @@ class Savebtnsetting extends StatelessWidget {
         ),
         child: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(Icons.file_copy_outlined, color: AppColors.textWhite),
+              SizedBox(width: 10,),
               Text(
                 "Save Changes",
                 style: TextStyle(

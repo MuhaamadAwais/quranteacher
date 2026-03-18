@@ -42,14 +42,12 @@ class _CertificationsteacherState extends State<Certificationsteacher> {
                   ),
                 ],
               ),
-               Itemsoflist(),
-
+              Itemsoflist(),
               SizedBox(height: 10),
               Addcerticate(),
               SizedBox(height: 10),
               Verificationconti(),
               SizedBox(height: 30),
-
             ],
           ),
         ),

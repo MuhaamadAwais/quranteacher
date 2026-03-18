@@ -131,6 +131,8 @@ class _ContentadminpageState extends State<Contentadminpage> {
                           "Complete",
                           "412 views",
                         ),
+                        
+                        SizedBox(height: 30),
                       ],
                     ),
                   ),
@@ -182,6 +184,8 @@ class _ContentadminpageState extends State<Contentadminpage> {
                           "Complete",
                           "412 views",
                         ),
+                        
+                        SizedBox(height: 30),
                       ],
                     ),
                   ),
@@ -233,6 +237,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                           "Complete",
                           "412 views",
                         ),
+                        SizedBox(height: 30),
                       ],
                     ),
                   ),

@@ -6,7 +6,6 @@ import 'package:quranteacher/teacher/profile_feature/presentation/pages/profilep
 import 'package:quranteacher/teacher/students_feature/presentation/pages/studentspages.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/pages/teacherdashboardpage.dart';
 
-
 class Bottomnaviteacher extends StatefulWidget {
   const Bottomnaviteacher({super.key});
 
@@ -14,16 +13,17 @@ class Bottomnaviteacher extends StatefulWidget {
   State<Bottomnaviteacher> createState() => _BottomnaviteacherState();
 }
 
-final List<Widget> selectitemss = [
-  Teacherdashboardpage(),
-  Studentspages(),
-  Contentpages(),
-  Earningpages(),
-  Profilepages(),
-];
-int selectedIndex = 0;
-
 class _BottomnaviteacherState extends State<Bottomnaviteacher> {
+  int selectedIndex = 0;
+
+  final List<Widget> selectitemss = [
+    Teacherdashboardpage(),
+    Studentspages(),
+    Contentpages(),
+    Earningpages(),
+    Profilepages(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

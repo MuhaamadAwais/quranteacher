@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 
-class Textsettting extends StatelessWidget {
-  const Textsettting({super.key});
+class Btnbacktext extends StatelessWidget {
+  const Btnbacktext({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class Textsettting extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Account Settings",
+              "Add Certificate",
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.bold,
@@ -40,7 +40,7 @@ class Textsettting extends StatelessWidget {
             ),
 
             Text(
-              "Manage your profile information",
+              "Upload your credentials",
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.normal,

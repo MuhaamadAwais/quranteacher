@@ -38,7 +38,7 @@ class _TeacherdashboardpageState extends State<Teacherdashboardpage> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               Showdatacontiwid(),
               Todayyclasswid(),
               Padding(
@@ -59,7 +59,7 @@ class _TeacherdashboardpageState extends State<Teacherdashboardpage> {
               SizedBox(height: 10),
               Leastitems(),
 
-              SizedBox(height: 20),
+              SizedBox(height: 50),
             ],
           ),
         ),

@@ -348,28 +348,33 @@ class _ProfilescreenState extends State<Profilescreen>
                   child: child,
                 ),
               ),
-              child: Container(
-                height: height * 0.06,
-                width: width * 0.8,
-                decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.red, width: 2),
-                ),
-                child: Row(
-                  children: [
-                    SizedBox(width: width * 0.23),
-                    Icon(Icons.logout_outlined, color: Colors.red, size: 32),
-                    SizedBox(width: width * 0.03),
-                    Text(
-                      "Logout",
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: height * 0.07,
+                  width: width ,
+                  decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.pink.shade700
+                         , width: 1.5),
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(width: width * 0.23),
+                      Icon(Icons.logout_outlined, color: Colors.pink.shade700,),
+                      SizedBox(width: width * 0.03),
+                      Text(
+                        "Logout",
+                        style: TextStyle(
+                          color: Colors.pink.shade700
+                          ,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

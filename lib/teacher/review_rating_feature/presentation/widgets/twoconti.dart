@@ -12,7 +12,7 @@ class Twoconti extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _contides(width, height, Icons.trending_up, 0.2, "This Month"),
-        _contides(width, height, Icons.message_outlined, 15, "New Reviews"),
+        _contides(width, height, Icons.chat_bubble_outline, 15, "New Reviews"),
       ],
     );
   }

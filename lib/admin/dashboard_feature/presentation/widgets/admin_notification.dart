@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/notificationmodel.dart';
 
 class AdminNotification extends StatefulWidget {
-  AdminNotification({Key? key}) : super(key: key);
+  const AdminNotification({super.key});
   @override
   AdminNotificationsScreenUIState createState() =>
       AdminNotificationsScreenUIState();
@@ -115,7 +115,7 @@ class AdminNotificationsScreenUIState extends State<AdminNotification> {
                       children: [
                         Expanded(
                           child: DropdownButtonFormField<String>(
-                            value: _selectedTarget,
+                            initialValue: _selectedTarget,
                             decoration: InputDecoration(
                               labelText: 'Target',
                               border: OutlineInputBorder(),

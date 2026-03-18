@@ -59,8 +59,9 @@ class Platformprofence extends StatelessWidget {
                     ],
                   ),
                   LinearProgressIndicator(
+                    borderRadius: BorderRadius.circular(10),
                     minHeight: 8,
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
                       AppColors.backgroundStart,
@@ -91,8 +92,9 @@ class Platformprofence extends StatelessWidget {
                   ),
 
                   LinearProgressIndicator(
+                    borderRadius: BorderRadius.circular(10),
                     minHeight: 8,
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
                       AppColors.backgroundStart,
@@ -123,8 +125,9 @@ class Platformprofence extends StatelessWidget {
                   ),
 
                   LinearProgressIndicator(
+                    borderRadius: BorderRadius.circular(10),
                     minHeight: 8,
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
                       AppColors.backgroundStart,
@@ -154,8 +157,9 @@ class Platformprofence extends StatelessWidget {
                   ),
 
                   LinearProgressIndicator(
+                    borderRadius: BorderRadius.circular(10),
                     minHeight: 8,
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
                       AppColors.backgroundStart,

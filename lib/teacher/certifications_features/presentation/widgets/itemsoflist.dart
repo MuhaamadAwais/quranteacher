@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 
-void main() {
-  runApp(MaterialApp(home: Scaffold(body: Itemsoflist())));
-}
 
 class Itemsoflist extends StatelessWidget {
   const Itemsoflist({super.key});
@@ -150,7 +147,7 @@ Widget contidesigncertification(double width, double height) {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.file_copy,
+                            Icons.description,
                             color: AppColors.switchBackground,
                           ),
                           SizedBox(width: 5),

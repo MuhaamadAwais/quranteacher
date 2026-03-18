@@ -19,7 +19,7 @@ class Dashboardadmin extends StatefulWidget {
 }
 
 class _DashboardadminState extends State<Dashboardadmin>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeanimation;
 
@@ -39,7 +39,6 @@ class _DashboardadminState extends State<Dashboardadmin>
   @override
   void dispose() {
     _animationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -74,7 +73,7 @@ class _DashboardadminState extends State<Dashboardadmin>
               Recentactivitywid(),
               SizedBox(height: 10),
               Userswid(),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
             ],
           ),
         ),
