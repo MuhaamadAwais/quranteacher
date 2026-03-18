@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 import 'package:quranteacher/teacher/content_feature/presentation/widgets/topcontent.dart';
@@ -22,7 +23,7 @@ class _ContentpagesState extends State<Contentpages> {
           children: [
             Topcontent(),
             SizedBox(height: 10),
-                       Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 width: width,
@@ -131,7 +132,6 @@ class _ContentpagesState extends State<Contentpages> {
                     ),
                   ),
 
-
                   SingleChildScrollView(
                     child: Column(
                       children: [
@@ -174,8 +174,6 @@ class _ContentpagesState extends State<Contentpages> {
                     ),
                   ),
 
-
-                  
                   SingleChildScrollView(
                     child: Column(
                       children: [
@@ -272,11 +270,11 @@ class _ContentpagesState extends State<Contentpages> {
         child: GestureDetector(
           onTap: () {
             setState(() {
-              selectedIndex = index;
+              selectedIndexadmin = index;
             });
           },
           child: Card(
-            elevation: selectedIndex == index ? 10 : 5,
+            elevation: selectedIndexadmin == index ? 10 : 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),

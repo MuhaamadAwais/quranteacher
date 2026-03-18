@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/admin/content_feature/presentation/widgets/topmaincontentwid.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
@@ -131,7 +132,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                           "Complete",
                           "412 views",
                         ),
-                        
+
                         SizedBox(height: 30),
                       ],
                     ),
@@ -184,7 +185,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                           "Complete",
                           "412 views",
                         ),
-                        
+
                         SizedBox(height: 30),
                       ],
                     ),
@@ -306,11 +307,11 @@ class _ContentadminpageState extends State<Contentadminpage> {
         child: GestureDetector(
           onTap: () {
             setState(() {
-              selectedIndex = index;
+              selectedIndexadmin = index;
             });
           },
           child: Card(
-            elevation: selectedIndex == index ? 10 : 5,
+            elevation: selectedIndexadmin == index ? 10 : 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),
