@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/howtotakequizscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/memorizationtipsscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/tajweedrulesscreen.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class HelpSupportScreen extends StatefulWidget {
   const HelpSupportScreen({super.key});
@@ -41,37 +43,40 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF8FAFC),
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Row(
-          children: [
-            const Icon(Icons.help_outline, color: Colors.white),
-            const SizedBox(width: 12),
-            const Text(
-              'Help & Support',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: const Color(0xFF40C4FF),
-        elevation: 0,
-      ),
+      // // appBar: AppBar(
+      // //   leading: IconButton(
+      // //     icon: const Icon(Icons.arrow_back, color: Colors.white),
+      // //     onPressed: () => Navigator.pop(context),
+      // //   ),
+      // //   title: Row(
+      // //     children: [
+      // //       const Icon(Icons.help_outline, color: Colors.white),
+      // //       const SizedBox(width: 12),
+      // //       const Text(
+      // //         'Help & Support',
+      // //         style: TextStyle(
+      // //           color: Colors.white,
+      // //           fontWeight: FontWeight.w700,
+      // //           fontSize: 18,
+      // //         ),
+      // //       ),
+      // //     ],
+      // //   ),
+      // //   backgroundColor: const Color(0xFF40C4FF),
+      //   elevation: 0,
+      // ),
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                TopcommonContainer(title: "Help & Support"),
+
+                const SizedBox(height: 30),
                 // 🔥 1. Welcome Card (400ms)
                 TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 400),
@@ -86,7 +91,10 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
                       ),
                     );
                   },
-                  child: _buildWelcomeCard(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 24, right: 24),
+                    child: _buildWelcomeCard(),
+                  ),
                 ),
                 const SizedBox(height: 24),
 
@@ -104,7 +112,10 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
                       ),
                     );
                   },
-                  child: _buildQuickHelpSection(context),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 24, right: 24),
+                    child: _buildQuickHelpSection(context),
+                  ),
                 ),
                 const SizedBox(height: 24),
 
@@ -122,7 +133,10 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
                       ),
                     );
                   },
-                  child: _buildFaqSection(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 24, right: 24),
+                    child: _buildFaqSection(),
+                  ),
                 ),
               ],
             ),
@@ -138,7 +152,10 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
     padding: const EdgeInsets.all(24),
     decoration: BoxDecoration(
       gradient: const LinearGradient(
-        colors: [Color(0xFF40C4FF), Color(0xFF2196F3)],
+        colors: [
+          Color.fromARGB(255, 1, 71, 50),
+          Color.fromARGB(158, 1, 62, 45),
+        ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
@@ -180,19 +197,19 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
       const Text(
         'Quick Help',
         style: TextStyle(
-          fontSize: 20,
+          fontSize: 24,
           fontWeight: FontWeight.w700,
-          color: Colors.black87,
+          color: AppColors.islamicNavy900,
         ),
       ),
-      const SizedBox(height: 16),
+      //const SizedBox(height: 2),
       GridView.count(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 1.2,
+        crossAxisSpacing: 14,
+        mainAxisSpacing: 14,
+        childAspectRatio: 1.1,
         children: [
           _buildQuickHelpButton(
             icon: Icons.menu_book_sharp,
@@ -249,7 +266,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
             const SizedBox(width: 12),
             const Text(
               'Frequently Asked Questions',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
             ),
           ],
         ),

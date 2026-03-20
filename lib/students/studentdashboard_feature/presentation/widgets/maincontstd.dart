@@ -40,9 +40,9 @@ class _MaincontstdState extends State<Maincontstd>
       height: heigth * 0.25,
       width: width,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.15),
+        color: Colors.white12,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white30, width: 1),
+        border: Border.all(color: Colors.white54, width: 1.5),
       ),
       child: Padding(
         padding: const EdgeInsets.all(15.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class QuranNotificationScreen extends StatefulWidget {
   const QuranNotificationScreen({super.key});
@@ -90,52 +91,57 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
 
     return Scaffold(
       backgroundColor: Color(0xFFF5F7FA),
-      appBar: AppBar(
-        shape: BeveledRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(10),
-            bottomLeft: Radius.circular(10),
-          ),
-        ),
-        title: Row(
-          children: [
-            Icon(Icons.notifications_none, color: Colors.white),
-            SizedBox(width: 12),
-            Text('Notifications', style: TextStyle(color: Colors.white)),
-            Spacer(),
-            if (unreadCount > 0)
-              Container(
-                padding: EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: Text(
-                  '$unreadCount',
-                  style: TextStyle(
-                    color: Color(0xFF40C4FF),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-          ],
-        ),
-        backgroundColor: Color(0xFF40C4FF),
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.mark_chat_read, color: Colors.white),
-            onPressed: _markAllRead,
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   shape: BeveledRectangleBorder(
+      //     borderRadius: BorderRadius.only(
+      //       bottomRight: Radius.circular(10),
+      //       bottomLeft: Radius.circular(10),
+      //     ),
+      //   ),
+      //   title: Row(
+      //     children: [
+      //       Icon(Icons.notifications_none, color: Colors.white),
+      //       SizedBox(width: 12),
+      //       Text('Notifications', style: TextStyle(color: Colors.white)),
+      //       Spacer(),
+      //       if (unreadCount > 0)
+      //         Container(
+      //           padding: EdgeInsets.all(6),
+      //           decoration: BoxDecoration(
+      //             color: Colors.white,
+      //             shape: BoxShape.circle,
+      //           ),
+      //           child: Text(
+      //             '$unreadCount',
+      //             style: TextStyle(
+      //               color: Color(0xFF40C4FF),
+      //               fontWeight: FontWeight.bold,
+      //               fontSize: 12,
+      //             ),
+      //           ),
+      //         ),
+      //     ],
+      //   ),
+      //   backgroundColor: Color(0xFF40C4FF),
+      //   elevation: 0,
+      //   actions: [
+      //     IconButton(
+      //       icon: Icon(Icons.mark_chat_read, color: Colors.white),
+      //       onPressed: _markAllRead,
+      //     ),
+      //   ],
+      // ),
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: Column(
             children: [
+              TopcommonContainer(
+                title: " Notifications",
+                subTitle: "Update Notifications : ${unreadCount.toString()}",
+              ),
+              const SizedBox(height: 20),
               // 🔥 1. Quick Actions (400ms)
               TweenAnimationBuilder<double>(
                 duration: Duration(milliseconds: 400),

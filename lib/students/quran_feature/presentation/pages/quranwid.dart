@@ -125,7 +125,7 @@ class _QuranwidState extends State<Quranwid>
                     Qurantopconti(),
                     Positioned(top: 40, left: 20, child: Qurantex()),
                     Positioned(
-                      top: 80,
+                      top: 90,
                       left: 10,
                       right: 10,
                       child: Searchquran(),

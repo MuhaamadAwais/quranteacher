@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class Topcontainer extends StatefulWidget {
   const Topcontainer({super.key, required this.size});
@@ -33,7 +34,11 @@ class _TopcontainerState extends State<Topcontainer>
       height: height * 0.56,
       width: width,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 51, 164, 138),
+        gradient: LinearGradient(
+          colors: [const Color(0xFF006633), const Color(0xCC054632)],
+          begin: AlignmentGeometry.topCenter,
+          end: AlignmentGeometry.bottomCenter,
+        ),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),
@@ -151,9 +156,9 @@ class _TopcontainerState extends State<Topcontainer>
                       height: height * 0.15,
                       width: width * 0.28,
                       decoration: BoxDecoration(
-                        color: Colors.white38,
+                        color: Colors.white24,
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white60),
+                        border: Border.all(color: Colors.grey, width: 1.5),
                       ),
                       child: Column(
                         children: [
@@ -164,6 +169,10 @@ class _TopcontainerState extends State<Topcontainer>
                             decoration: BoxDecoration(
                               color: const Color.fromARGB(60, 52, 233, 169),
                               borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 1.5,
+                              ),
                             ),
                             child: Icon(Icons.menu_book, color: Colors.white),
                           ),
@@ -197,7 +206,7 @@ class _TopcontainerState extends State<Topcontainer>
                       decoration: BoxDecoration(
                         color: Colors.white38,
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white60),
+                        border: Border.all(color: Colors.grey, width: 1.5),
                       ),
                       child: Column(
                         children: [
@@ -215,6 +224,10 @@ class _TopcontainerState extends State<Topcontainer>
                                 end: Alignment.bottomRight,
                               ),
                               borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 1.5,
+                              ),
                             ),
                             child: Icon(
                               Icons.military_tech,
@@ -251,7 +264,7 @@ class _TopcontainerState extends State<Topcontainer>
                       decoration: BoxDecoration(
                         color: Colors.white38,
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.white60),
+                        border: Border.all(color: Colors.grey, width: 1.5),
                       ),
                       child: Column(
                         children: [
@@ -269,6 +282,10 @@ class _TopcontainerState extends State<Topcontainer>
                                 end: Alignment.bottomRight,
                               ),
                               borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 1.5,
+                              ),
                             ),
                             child: Icon(
                               Icons.calendar_month_sharp,

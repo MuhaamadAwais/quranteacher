@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/childrentrainingpage.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class FamilyPage extends StatefulWidget {
   const FamilyPage({super.key});
@@ -41,27 +43,32 @@ class _FamilyPageState extends State<FamilyPage>
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'Family',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.red[400],
-      ),
+      // appBar: AppBar(
+      //   iconTheme: const IconThemeData(color: Colors.white),
+      //   title: const Text(
+      //     'Family',
+      //     style: TextStyle(
+      //       color: Colors.white,
+      //       fontSize: 22,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.red[400],
+      // ),
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                TopcommonContainer(
+                  title: 'Family',
+                  subTitle: "Family: Love & Blessings",
+                ),
+                const SizedBox(height: 20),
+
                 // 🔥 1. Title (400ms)
                 TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 400),
@@ -77,13 +84,13 @@ class _FamilyPageState extends State<FamilyPage>
                     );
                   },
                   child: const Padding(
-                    padding: EdgeInsets.only(left: 15),
+                    padding: EdgeInsets.only(left: 25),
                     child: Text(
                       'Islam Say About Family',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: Colors.redAccent,
+                        color: AppColors.islamicNavy900,
                       ),
                     ),
                   ),
@@ -104,36 +111,39 @@ class _FamilyPageState extends State<FamilyPage>
                       ),
                     );
                   },
-                  child: Card(
-                    color: Colors.red[50],
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Center(
-                            child: Text(
-                              'سورۃ الاسراء (17:23)',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 25, right: 25),
+                    child: Card(
+                      color: Colors.red[50],
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Center(
+                              child: Text(
+                                'سورۃ الاسراء (17:23)',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
+                            const SizedBox(height: 10),
+                            const Text(
+                              'وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'اور تیرے رب نے فیصلہ فرما دیا کہ اس کے سوا کسی کی عبادت نہ کرو اور ماں باپ کے ساتھ احسان کرو۔',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ],
+                            const SizedBox(height: 10),
+                            const Text(
+                              'اور تیرے رب نے فیصلہ فرما دیا کہ اس کے سوا کسی کی عبادت نہ کرو اور ماں باپ کے ساتھ احسان کرو۔',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -154,12 +164,15 @@ class _FamilyPageState extends State<FamilyPage>
                       ),
                     );
                   },
-                  child: const Text(
-                    'Family rights:',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.redAccent,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: const Text(
+                      'Family rights:',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.islamicNavy900,
+                      ),
                     ),
                   ),
                 ),

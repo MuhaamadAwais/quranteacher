@@ -149,7 +149,7 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                     child: Quickaccesconti(),
                   ),
 
-                  SizedBox(height: 50),
+                  SizedBox(height: 30),
                 ],
               ),
             ),

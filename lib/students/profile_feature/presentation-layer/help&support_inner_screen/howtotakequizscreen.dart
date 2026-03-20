@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class HowToTakeQuizScreen extends StatelessWidget {
   const HowToTakeQuizScreen({super.key});
@@ -7,21 +8,27 @@ class HowToTakeQuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF8FAFC),
-      appBar: AppBar(
-        title: Text('Learn Quran Guide', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color(0xFF4CAF50),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   title: Text('Learn Quran Guide', style: TextStyle(color: Colors.white)),
+      //   backgroundColor: Color(0xFF4CAF50),
+      //   elevation: 0,
+      // ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(0),
         child: Column(
           children: [
+            TopcommonContainer(title: 'Learn Quran Guide'),
+            SizedBox(height: 24),
+
             /// Header
             Container(
-              padding: EdgeInsets.all(24),
+              padding: EdgeInsets.all(40),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Color(0xFF4CAF50), Color(0xFF45a049)],
+                  colors: [
+                    Color.fromARGB(255, 16, 104, 90),
+                    Color.fromARGB(145, 13, 116, 121),
+                  ],
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -43,25 +50,37 @@ class HowToTakeQuizScreen extends StatelessWidget {
             SizedBox(height: 24),
 
             /// Steps
-            _buildStepCard(
-              Icons.timer,
-              '1. Start with Intention',
-              'Start with Intention & Focus and applying it in life.',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildStepCard(
+                Icons.timer,
+                '1. Start with Intention',
+                'Start with Intention & Focus and applying it in life.',
+              ),
             ),
-            _buildStepCard(
-              Icons.check_circle,
-              '2. and applying it in life.',
-              'Even 5-10 minutes a day consistently is better than long',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildStepCard(
+                Icons.check_circle,
+                '2. and applying it in life.',
+                'Even 5-10 minutes a day consistently is better than long',
+              ),
             ),
-            _buildStepCard(
-              Icons.stars,
-              '3. Understand the Meaning ',
-              'Learn the translation of verses in your language.',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildStepCard(
+                Icons.stars,
+                '3. Understand the Meaning ',
+                'Learn the translation of verses in your language.',
+              ),
             ),
-            _buildStepCard(
-              Icons.repeat,
-              '4. Repeat and Revise',
-              'Repeat what you’ve learned every day.',
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: _buildStepCard(
+                Icons.repeat,
+                '4. Repeat and Revise',
+                'Repeat what you’ve learned every day.',
+              ),
             ),
 
             SizedBox(height: 24),

@@ -114,15 +114,10 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
               Stack(
                 children: [
                   Tophadits(),
-                  Positioned(top: 20, left: 20, child: Haditsname()),
+                  Positioned(top: 25, left: 20, child: Haditsname()),
+
                   Positioned(
-                    top: 70,
-                    left: 20,
-                    right: 20,
-                    child: Haditssearch(),
-                  ),
-                  Positioned(
-                    top: 150,
+                    top: 90,
                     left: 20,
                     right: 20,
                     child: ScaleTransition(
@@ -133,6 +128,8 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
                 ],
               ),
 
+              SizedBox(height: 10),
+              Haditssearch(),
               SizedBox(height: 10),
 
               // 🔥 2. "Collection" Title

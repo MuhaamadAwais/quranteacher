@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
+import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/appanimations.dart';
 
 class Hadithconta extends StatefulWidget {
@@ -74,15 +75,18 @@ class _CurrentsurahState extends State<Hadithconta>
             frontWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.black26,
+                color: Colors.transparent,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black26,
+                    color: const Color.fromARGB(19, 251, 252, 254),
                     blurRadius: 10,
                     offset: const Offset(0, 5),
                   ),
                 ],
-                border: Border.all(color: Colors.white, width: 2),
+                border: BoxBorder.fromLTRB(
+                  left: BorderSide(width: 4, color: AppColors.textWhite),
+                  right: BorderSide(width: 4, color: AppColors.textWhite),
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -119,15 +123,18 @@ class _CurrentsurahState extends State<Hadithconta>
             backWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.white10,
+                color: Colors.transparent,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black26,
+                    color: const Color.fromARGB(28, 237, 233, 233),
                     blurRadius: 10,
                     offset: const Offset(0, 5),
                   ),
                 ],
-                border: Border.all(color: Colors.black, width: 2),
+                border: BoxBorder.fromLTRB(
+                  left: BorderSide(width: 4, color: AppColors.textWhite),
+                  right: BorderSide(width: 4, color: AppColors.textWhite),
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),

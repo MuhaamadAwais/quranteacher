@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class PrivacySecurityScreen extends StatefulWidget {
   const PrivacySecurityScreen({super.key});
@@ -38,37 +39,39 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF8FAFC),
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Row(
-          children: [
-            const Icon(Icons.security, color: Colors.white),
-            const SizedBox(width: 12),
-            Text(
-              'Privacy & Security',
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: const Color(0xFF40C4FF),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   leading: IconButton(
+      //     icon: const Icon(Icons.arrow_back, color: Colors.white),
+      //     onPressed: () => Navigator.pop(context),
+      //   ),
+      //   title: Row(
+      //     children: [
+      //       const Icon(Icons.security, color: Colors.white),
+      //       const SizedBox(width: 12),
+      //       Text(
+      //         'Privacy & Security',
+      //         style: const TextStyle(
+      //           color: Colors.white,
+      //           fontWeight: FontWeight.w700,
+      //           fontSize: 18,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      //   backgroundColor: const Color(0xFF40C4FF),
+      //   elevation: 0,
+      // ),
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                TopcommonContainer(title: "Privacy & Security"),
+                const SizedBox(height: 24),
                 // 🔥 1. Header Card (400ms)
                 TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 400),
@@ -83,7 +86,10 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
                       ),
                     );
                   },
-                  child: _buildHeaderCard(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: _buildHeaderCard(),
+                  ),
                 ),
                 const SizedBox(height: 24),
 
@@ -101,7 +107,10 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
                       ),
                     );
                   },
-                  child: _buildSecurityStatus(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: _buildSecurityStatus(),
+                  ),
                 ),
                 const SizedBox(height: 24),
 
@@ -119,7 +128,10 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
                       ),
                     );
                   },
-                  child: _buildPrivacySection(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: _buildPrivacySection(),
+                  ),
                 ),
                 const SizedBox(height: 24),
 
@@ -137,7 +149,10 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
                       ),
                     );
                   },
-                  child: _buildDataUsageSection(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: _buildDataUsageSection(),
+                  ),
                 ),
                 const SizedBox(height: 24),
 
@@ -155,8 +170,12 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
                       ),
                     );
                   },
-                  child: _buildLegalLinks(),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16),
+                    child: _buildLegalLinks(),
+                  ),
                 ),
+                SizedBox(height: 30),
               ],
             ),
           ),
@@ -171,7 +190,10 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
     padding: const EdgeInsets.all(24),
     decoration: BoxDecoration(
       gradient: const LinearGradient(
-        colors: [Color(0xFF40C4FF), Color(0xFF2196F3)],
+        colors: [
+          Color.fromARGB(255, 1, 71, 50),
+          Color.fromARGB(158, 1, 62, 45),
+        ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),

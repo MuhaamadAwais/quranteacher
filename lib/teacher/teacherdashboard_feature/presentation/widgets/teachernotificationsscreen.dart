@@ -111,6 +111,7 @@ class _TeacherNotificationsScreenState
             ),
             child: Row(
               children: [
+                SizedBox(width: width * 0.1),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,7 +121,7 @@ class _TeacherNotificationsScreenState
                         style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                       ),
                       Text(
-                        '${notifications.length}',
+                        '     ${notifications.length}',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -130,6 +131,7 @@ class _TeacherNotificationsScreenState
                     ],
                   ),
                 ),
+                SizedBox(width: width * 0.13),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,7 +141,7 @@ class _TeacherNotificationsScreenState
                         style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                       ),
                       Text(
-                        '${notifications.where((n) => !n.isRead).length}',
+                        '  ${notifications.where((n) => !n.isRead).length}',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,

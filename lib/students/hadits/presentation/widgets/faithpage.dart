@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class FaithPage extends StatefulWidget {
   const FaithPage({super.key});
@@ -37,27 +38,22 @@ class _FaithPageState extends State<FaithPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'Faith',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.green[400],
-      ),
+      // appBar: a
       body: FadeTransition(
         opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(01),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                TopcommonContainer(
+                  title: ' Faith',
+                  subTitle: "Faith: Peace & Strength",
+                ),
+                SizedBox(height: 20),
+
                 // 🔥 1. Title (400ms)
                 TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 400),
@@ -99,34 +95,37 @@ class _FaithPageState extends State<FaithPage>
                       ),
                     );
                   },
-                  child: Card(
-                    color: Colors.green[50],
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'سورۃ الاخلاص (112:1-4)',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Card(
+                      color: Colors.green[50],
+                      child: Padding(
+                        padding: const EdgeInsets.all(25),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'سورۃ الاخلاص (112:1-4)',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'قُلْ هُوَ اللّهُ أَحَدٌ ۝ اللّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ۝',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
+                            const SizedBox(height: 10),
+                            const Text(
+                              'قُلْ هُوَ اللّهُ أَحَدٌ ۝ اللّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ۝',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'ترجمہ: کہو! وہ اللہ ایک ہے۔ اللہ بےنیاز ہے۔ نہ اس نے کسی کو جنا اور نہ وہ پیدا کیا گیا۔ اور نہ اس کا کوئی ہمسر ہے۔',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ],
+                            const SizedBox(height: 10),
+                            const Text(
+                              'ترجمہ: کہو! وہ اللہ ایک ہے۔ اللہ بےنیاز ہے۔ نہ اس نے کسی کو جنا اور نہ وہ پیدا کیا گیا۔ اور نہ اس کا کوئی ہمسر ہے۔',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -147,9 +146,15 @@ class _FaithPageState extends State<FaithPage>
                       ),
                     );
                   },
-                  child: const Text(
-                    'Five Foundations of Faith',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: const Text(
+                      'Five Foundations of Faith',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -170,21 +175,24 @@ class _FaithPageState extends State<FaithPage>
                         ),
                       );
                     },
-                    child: _buildFaithPoint(
-                      [
-                        Icons.account_balance,
-                        Icons.menu_book,
-                        Icons.library_books,
-                        Icons.history,
-                        Icons.event,
-                      ][index],
-                      [
-                        'اللہ پر ایمان',
-                        'فرشتوں پر ایمان',
-                        'کتابوں پر ایمان',
-                        'رسولوں پر ایمان',
-                        'آخرت پر ایمان',
-                      ][index],
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 18, right: 18),
+                      child: _buildFaithPoint(
+                        [
+                          Icons.account_balance,
+                          Icons.menu_book,
+                          Icons.library_books,
+                          Icons.history,
+                          Icons.event,
+                        ][index],
+                        [
+                          'اللہ پر ایمان',
+                          'فرشتوں پر ایمان',
+                          'کتابوں پر ایمان',
+                          'رسولوں پر ایمان',
+                          'آخرت پر ایمان',
+                        ][index],
+                      ),
                     ),
                   ),
                 ),
@@ -200,6 +208,7 @@ class _FaithPageState extends State<FaithPage>
   Widget _buildFaithPoint(IconData icon, String text) {
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
+      color: Colors.green[50],
       child: ListTile(
         leading: Icon(icon, color: Colors.green[400]),
         title: Text(text, style: const TextStyle(fontWeight: FontWeight.w600)),

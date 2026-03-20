@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/admin/content_feature/presentation/widgets/topmaincontentwid.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
@@ -12,7 +13,7 @@ class Contentadminpage extends StatefulWidget {
 }
 
 class _ContentadminpageState extends State<Contentadminpage> {
-  int selectedInde=-1;
+  int selectedIndex=-1;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -129,7 +130,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                           "Complete",
                           "412 views",
                         ),
-                        
+
                         SizedBox(height: 30),
                       ],
                     ),
@@ -182,7 +183,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
                           "Complete",
                           "412 views",
                         ),
-                        
+
                         SizedBox(height: 30),
                       ],
                     ),
@@ -304,11 +305,11 @@ class _ContentadminpageState extends State<Contentadminpage> {
         child: GestureDetector(
           onTap: () {
             setState(() {
-              selectedInde = index;
+              selectedIndex = index;
             });
           },
           child: Card(
-            elevation: selectedInde == index ? 10 : 5,
+            elevation: selectedIndex == index ? 10 : 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),
