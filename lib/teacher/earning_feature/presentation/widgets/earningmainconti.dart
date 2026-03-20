@@ -40,11 +40,11 @@ class Earningmainconti extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 10),
-                Icon(Icons.trending_up, color: AppColors.backgroundStart),
+                Icon(Icons.trending_up, color: AppColors.textWhite),
                 Text(
                   "+12% this \n month",
                   style: TextStyle(
-                    color: AppColors.backgroundStart,
+                    color: AppColors.textWhite,
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
