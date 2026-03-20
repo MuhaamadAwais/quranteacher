@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/accountsetting_feature/presentation/widget/personalinfosetting.dart';
 
 class Certificatedetails extends StatelessWidget {
   const Certificatedetails({super.key});
