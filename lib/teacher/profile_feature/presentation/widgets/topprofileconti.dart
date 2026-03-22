@@ -17,7 +17,7 @@ class Topprofileconti extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [AppColors.islamicNavy500, Colors.deepPurple.shade400],
+           colors: [const Color(0xFF006633), const Color(0xCC054632)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

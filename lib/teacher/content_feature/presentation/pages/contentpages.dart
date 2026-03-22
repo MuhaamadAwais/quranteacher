@@ -12,6 +12,7 @@ class Contentpages extends StatefulWidget {
 }
 
 class _ContentpagesState extends State<Contentpages> {
+  int selectedIndex=-1;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

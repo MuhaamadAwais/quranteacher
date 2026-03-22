@@ -4,10 +4,6 @@ import 'package:quranteacher/admin/content_feature/presentation/widgets/showCont
 import 'package:quranteacher/admin/content_feature/presentation/widgets/topmaincontentwid.dart';
 import 'package:quranteacher/appcolors.dart';
 
-void main() {
-  runApp(MaterialApp(home: Contentadminpage()));
-}
-
 class Contentadminpage extends StatefulWidget {
   const Contentadminpage({super.key});
 
@@ -16,6 +12,7 @@ class Contentadminpage extends StatefulWidget {
 }
 
 class _ContentadminpageState extends State<Contentadminpage> {
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -264,10 +261,12 @@ class _ContentadminpageState extends State<Contentadminpage> {
             // setState(() {
             //   selectedIndexadmin = index;
             // });
+            setState(() {
+              selectedIndex = index;
+            });
           },
           child: Card(
-            elevation: 4,
-            // elevation: selectedIndexadmin == index ? 10 : 5,
+            elevation: selectedIndex == index ? 10 : 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),

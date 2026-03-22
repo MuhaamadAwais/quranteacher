@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/forgetpassword_feature/presentation/pages/forgotpasswordpage.dart';
 import 'package:quranteacher/register.dart';
 import 'package:quranteacher/students/appanimations.dart';
 import 'package:quranteacher/students/bottomnavi.dart';
@@ -227,11 +228,16 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 ),
                               ),
                               Spacer(),
-                              Text(
-                                "Forget Password?",
-                                style: TextStyle(
-                                  color: AppColors.destructive,
-                                  fontWeight: FontWeight.bold,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Forgotpasswordpage(),));
+                                },
+                                child: Text(
+                                  "Forget Password?",
+                                  style: TextStyle(
+                                    color: AppColors.destructive,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ],

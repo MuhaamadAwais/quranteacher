@@ -95,13 +95,11 @@ class _SplashscreenappState extends State<Splashscreenapp>
           ),
         ),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: height * 0.2),
             Stack(
               clipBehavior: Clip.none,
               children: [
-                // Glow behind book
                 Container(
                   width: height * 0.2,
                   height: height * 0.2,

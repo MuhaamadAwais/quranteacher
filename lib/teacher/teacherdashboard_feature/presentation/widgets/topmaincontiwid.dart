@@ -17,8 +17,7 @@ class Topmaincontiwid extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [AppColors.islamicNavy600, AppColors.islamicNavy700],
-          begin: Alignment.topLeft,
+           colors: [const Color(0xFF006633), const Color(0xCC054632)],          begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
       ),
