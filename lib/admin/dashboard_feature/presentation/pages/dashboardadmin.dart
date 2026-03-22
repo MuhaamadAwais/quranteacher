@@ -22,6 +22,7 @@ class _DashboardadminState extends State<Dashboardadmin>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeanimation;
+  late Animation<double> _fadeanimation2;
 
   @override
   void initState() {
@@ -33,6 +34,10 @@ class _DashboardadminState extends State<Dashboardadmin>
     _fadeanimation = Tween<double>(begin: 0.45, end: 1.0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.bounceIn),
     );
+    _fadeanimation2 = Tween<double>(begin: 0.95, end: 1.0).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.bounceIn),
+    );
+    _animationController.forward();
     _animationController.repeat(reverse: true);
   }
 
@@ -62,7 +67,10 @@ class _DashboardadminState extends State<Dashboardadmin>
                     top: 110,
                     left: 20,
                     right: 20,
-                    child: Adminoperationwid(opacityanim: _fadeanimation),
+                    child: Adminoperationwid(
+                      opacityanim: _fadeanimation,
+                      maincontainer: _fadeanimation2,
+                    ),
                   ),
                 ],
               ),

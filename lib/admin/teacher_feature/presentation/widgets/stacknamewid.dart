@@ -15,7 +15,7 @@ class Stacknamewid extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              selectedIndexadmin = 0;
+              indexscreen = 0;
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(

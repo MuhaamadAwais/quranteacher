@@ -5,6 +5,7 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/register.dart';
 import 'package:quranteacher/students/appanimations.dart';
 import 'package:quranteacher/students/bottomnavi.dart';
+import 'package:quranteacher/students/studentdetailform.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Login extends StatefulWidget {
@@ -242,7 +243,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Bottomnavi(),
+                                    builder: (context) => StudentDetailForm(),
                                   ),
                                   (route) => false,
                                 );
@@ -424,7 +425,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
-                SizedBox(height: height * 0.03),
+                SizedBox(height: height * 0.05),
               ],
             ),
           ),

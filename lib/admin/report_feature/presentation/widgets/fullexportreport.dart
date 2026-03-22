@@ -11,11 +11,16 @@ class Fullexportreport extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: width,
+        width: width * 0.8,
         height: height * 0.08,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.textWhite.withOpacity(0.25),
+          gradient: LinearGradient(
+            colors: [
+              const Color.fromARGB(255, 5, 98, 68),
+              AppColors.backgroundVia,
+            ],
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

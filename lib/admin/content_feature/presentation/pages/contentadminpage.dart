@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/admin/bottomnavigationadmin.dart';
+import 'package:quranteacher/admin/content_feature/presentation/widgets/QuranAyatCard.dart';
+import 'package:quranteacher/admin/content_feature/presentation/widgets/showContentBottomSheet.dart';
 import 'package:quranteacher/admin/content_feature/presentation/widgets/topmaincontentwid.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 void main() {
   runApp(MaterialApp(home: Contentadminpage()));
@@ -21,7 +21,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         body: Column(
           children: [
@@ -41,6 +41,10 @@ class _ContentadminpageState extends State<Contentadminpage> {
                   isScrollable: false,
                   indicator: BoxDecoration(
                     color: Colors.white, // Selected tab background
+                    border: Border.all(
+                      color: AppColors.islamicEmerald,
+                      width: 4,
+                    ),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   labelColor: Colors.black, // Selected text color
@@ -67,16 +71,6 @@ class _ContentadminpageState extends State<Contentadminpage> {
                         ],
                       ),
                     ),
-                    Tab(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.school_outlined),
-                          SizedBox(width: 4),
-                          Text("Lessons"),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -89,101 +83,46 @@ class _ContentadminpageState extends State<Contentadminpage> {
                     child: Column(
                       children: [
                         SizedBox(height: 10),
-                        addconti(
-                          width,
-                          height * 0.07,
-                          "Add Quran Content",
-                          AppColors.backgroundStart,
-                          AppColors.backgroundStart,
+                        GestureDetector(
+                          onTap: () {
+                            showContentBottomSheet(context, type: "quran");
+                          },
+                          child: addconti(
+                            width,
+                            height * 0.07,
+                            "Add Quran Content",
+                            AppColors.backgroundStart,
+                            AppColors.backgroundStart,
+                          ),
                         ),
 
-                        contidesigncontents(
-                          1,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
+                        QuranAyatCard(
+                          quranData: {
+                            "title": "الفاتحة",
+                            "arabic":
+                                "هُوَ الَّذِيْ جَعَلَ لَكُمُ الْأَرْضَ ذَلُوْلًا فَامْشُوْا فِيْ مَنَاكِبِهَا وَكُلُوْا مِنْ رِزْقِهِ ۖ وَإِلَيْهِ النُّشُوْرُ",
+                            "translation":
+                                "وہی ہے جس نے تمہارے لیے زمین کو نرم و مسخر کر دیا، سو تم اس کے راستوں میں چلو پھرو، اور اس کے (دیئے ہوئے) رزق میں سے کھاؤ، اور اسی کی طرف (مرنے کے بعد) اٹھ کر جانا ہے۔",
+                            "reference": "الفاتحة",
+                          },
                         ),
 
-                        contidesigncontents(
-                          2,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
+                        QuranAyatCard(
+                          quranData: {
+                            "title": "الفاتحة",
+                            "arabic": "Surah AL-Fatihah",
+                            "translation": "The Opening",
+                            "reference": "الفاتحة",
+                          },
                         ),
 
-                        contidesigncontents(
-                          3,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
-
-                        contidesigncontents(
-                          4,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
-
-                        SizedBox(height: 30),
-                      ],
-                    ),
-                  ),
-
-                  SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10),
-                        addconti(
-                          width,
-                          height * 0.07,
-                          "Add Hadith Content",
-                          Colors.blueAccent,
-                          Colors.deepPurple,
-                        ),
-
-                        contidesigncontents(
-                          1,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
-
-                        contidesigncontents(
-                          2,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
-
-                        contidesigncontents(
-                          3,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
-
-                        contidesigncontents(
-                          4,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
+                        QuranAyatCard(
+                          quranData: {
+                            "title": "الفاتحة",
+                            "arabic": "Surah AL-Fatihah",
+                            "translation": "The Opening",
+                            "reference": "الفاتحة",
+                          },
                         ),
 
                         SizedBox(height: 30),
@@ -195,48 +134,64 @@ class _ContentadminpageState extends State<Contentadminpage> {
                     child: Column(
                       children: [
                         SizedBox(height: 10),
-                        addconti(
-                          width,
-                          height * 0.07,
-                          "Add Lesson",
-                          Colors.purple,
-                          Colors.pink,
+                        GestureDetector(
+                          onTap: () {
+                            showContentBottomSheet(context, type: "hadith");
+                          },
+                          child: addconti(
+                            width,
+                            height * 0.07,
+                            "Add Hadith Content",
+                            Colors.blueAccent,
+                            Colors.deepPurple,
+                          ),
                         ),
 
-                        contidesigncontents(
-                          1,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
+                        Column(
+                          children: [
+                            QuranAyatCard(
+                              title: "Hadith",
+                              quranData: {
+                                "title": "حدیث",
+                                "arabic": "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ",
+                                "translation":
+                                    "اعمال کا دار و مدار نیتوں پر ہے۔",
+                                "reference": "صحیح بخاری",
+                              },
+                            ),
 
-                        contidesigncontents(
-                          2,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
+                            QuranAyatCard(
+                              title: "Hadith",
+                              quranData: {
+                                "title": "حدیث",
+                                "arabic": "الدِّينُ النَّصِيحَةُ",
+                                "translation": "دین خیر خواہی کا نام ہے۔",
+                                "reference": "صحیح مسلم",
+                              },
+                            ),
 
-                        contidesigncontents(
-                          3,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
-                        ),
+                            QuranAyatCard(
+                              title: "Hadith",
+                              quranData: {
+                                "title": "حدیث",
+                                "arabic":
+                                    "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+                                "translation":
+                                    "تم میں سب سے بہتر وہ ہے جو قرآن سیکھے اور سکھائے۔",
+                                "reference": "صحیح بخاری",
+                              },
+                            ),
 
-                        contidesigncontents(
-                          4,
-                          width,
-                          height * 0.17,
-                          "Surah AL-Fatihah",
-                          "Complete",
-                          "412 views",
+                            QuranAyatCard(
+                              title: "Hadith",
+                              quranData: {
+                                "title": "حدیث",
+                                "arabic": "لَا تَغْضَبْ",
+                                "translation": "غصہ نہ کرو۔",
+                                "reference": "صحیح بخاری",
+                              },
+                            ),
+                          ],
                         ),
                         SizedBox(height: 30),
                       ],
@@ -306,12 +261,13 @@ class _ContentadminpageState extends State<Contentadminpage> {
         height: heightmain,
         child: GestureDetector(
           onTap: () {
-            setState(() {
-              selectedIndexadmin = index;
-            });
+            // setState(() {
+            //   selectedIndexadmin = index;
+            // });
           },
           child: Card(
-            elevation: selectedIndexadmin == index ? 10 : 5,
+            elevation: 4,
+            // elevation: selectedIndexadmin == index ? 10 : 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),

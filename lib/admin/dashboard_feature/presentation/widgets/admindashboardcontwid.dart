@@ -10,14 +10,14 @@ class Admindashboardcontwid extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: height * 0.3,
+      height: height * 0.32,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [AppColors.pink500, AppColors.pink700],
+          colors: [const Color(0xCC054632), const Color(0xFF006633)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

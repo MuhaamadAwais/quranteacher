@@ -6,7 +6,7 @@ class Searchuserswid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -22,7 +22,18 @@ class Searchuserswid extends StatelessWidget {
             // textAlign: TextAlign.center,
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
-              border: InputBorder.none,
+              //border: InputBorder.none,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(color: Colors.grey, width: 2),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(
+                  color: AppColors.primary,
+                  width: 2,
+                ),
+              ),
               hint: Text(
                 "Search Users...",
                 style: TextStyle(

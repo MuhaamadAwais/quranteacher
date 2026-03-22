@@ -13,7 +13,8 @@ class Bottomnavigationadmin extends StatefulWidget {
   State<Bottomnavigationadmin> createState() => _BottomnavigationadminState();
 }
 
-int selectedIndexadmin = 0;
+//int selectedIndexadmin = 0;
+int indexscreen = 0;
 final List<Widget> screens = [
   Dashboardadmin(),
   Useradminpage(),
@@ -27,7 +28,7 @@ class _BottomnavigationadminState extends State<Bottomnavigationadmin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: screens[selectedIndexadmin],
+        body: screens[indexscreen],
         bottomNavigationBar: Container(
           height: 70,
           width: double.infinity,
@@ -73,12 +74,12 @@ class _BottomnavigationadminState extends State<Bottomnavigationadmin> {
     IconData? icon,
     String? imagepath,
   }) {
-    bool isSelected = selectedIndexadmin == index;
+    bool isSelected = indexscreen == index;
 
     return GestureDetector(
       onTap: () {
         setState(() {
-          selectedIndexadmin = index;
+          indexscreen = index;
         });
       },
       child: AnimatedContainer(

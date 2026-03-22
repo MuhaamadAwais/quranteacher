@@ -80,7 +80,8 @@ class Maincontinerreport extends StatelessWidget {
       height: height,
       width: width,
       child: Card(
-        elevation: 5,
+        elevation: 8,
+        shadowColor: AppColors.backgroundStart,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
         ),

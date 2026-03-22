@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
+import 'package:quranteacher/commonbottomsheet.dart';
+import 'package:quranteacher/admin/user_feature/presentation/widgets/searchuserswid.dart';
 import 'package:quranteacher/admin/user_feature/presentation/widgets/toprolewid.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class Useradminpage extends StatefulWidget {
   const Useradminpage({super.key});
@@ -20,7 +24,22 @@ class _UseradminpageState extends State<Useradminpage> {
         child: Scaffold(
           body: Column(
             children: [
-              Toprolewid(),
+              // Toprolewid(),
+              TopcommonContainer(
+                title: "User Management",
+                subTitle: "Manage Teachers and Students",
+                onBackTap: () {
+                  indexscreen = 0;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Bottomnavigationadmin(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 20),
+              Searchuserswid(),
               SizedBox(height: 20),
               // TAB BAR
               Padding(
@@ -29,13 +48,17 @@ class _UseradminpageState extends State<Useradminpage> {
                   width: width * 0.9,
                   height: height * 0.07,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(25),
                     color: AppColors.islamicEmerald,
                   ),
                   child: TabBar(
                     indicatorSize: TabBarIndicatorSize.tab,
                     indicator: BoxDecoration(
                       color: Colors.white,
+                      border: Border.all(
+                        color: AppColors.islamicEmerald,
+                        width: 4,
+                      ),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     labelColor: Colors.black,
@@ -48,7 +71,7 @@ class _UseradminpageState extends State<Useradminpage> {
                   ),
                 ),
               ),
-
+              SizedBox(height: height * 0.02),
               Expanded(
                 child: TabBarView(
                   children: [
@@ -58,26 +81,31 @@ class _UseradminpageState extends State<Useradminpage> {
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
+                          SizedBox(height: height * 0.015),
 
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
+                          SizedBox(height: height * 0.015),
+
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
+                          SizedBox(height: height * 0.015),
+
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
                           SizedBox(height: 30),
@@ -91,26 +119,31 @@ class _UseradminpageState extends State<Useradminpage> {
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
+                          SizedBox(height: height * 0.015),
 
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
+                          SizedBox(height: height * 0.015),
+
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
+                          SizedBox(height: height * 0.015),
+
                           contstdtea(
                             width,
                             height * 0.25,
-                            width * 0.4,
+                            width * 0.37,
                             height * 0.06,
                           ),
                           SizedBox(height: 30),
@@ -134,17 +167,18 @@ class _UseradminpageState extends State<Useradminpage> {
     double heightmin,
   ) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left: 18, right: 18),
       child: SizedBox(
         width: width,
         height: height,
         child: Card(
           color: AppColors.textWhite,
           elevation: 5,
+          shadowColor: AppColors.islamicEmerald,
           child: Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -152,8 +186,8 @@ class _UseradminpageState extends State<Useradminpage> {
                     // mainAxisAlignment: MainAxisAlignment.
                     children: [
                       Container(
-                        width: 80,
-                        height: 80,
+                        width: 60,
+                        height: 60,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.backgroundStart,
@@ -169,7 +203,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 18,
                             ),
                           ),
 
@@ -178,13 +212,13 @@ class _UseradminpageState extends State<Useradminpage> {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.normal,
-                              fontSize: 15,
+                              fontSize: 14,
                             ),
                           ),
                         ],
                       ),
 
-                      SizedBox(width: 10),
+                      SizedBox(width: 18),
                       Container(
                         width: 55,
                         height: 20,
@@ -201,82 +235,115 @@ class _UseradminpageState extends State<Useradminpage> {
                       ),
                     ],
                   ),
-
+                  SizedBox(height: height * 0.01),
                   // joined date
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
                         "joined 1/15/2026",
                         style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
-                      Spacer(),
+                      //Spacer(),
                       Text(
                         "42 Classes",
                         style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
                     ],
                   ),
-
+                  SizedBox(height: height * 0.01),
                   // container
                   Row(
                     children: [
-                      Container(
-                        width: widthmin,
-                        height: heightmin,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: AppColors.islamicNavy400.withOpacity(0.35),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.security_outlined,
-                                size: 35,
-                                color: AppColors.islamicNavy600,
-                              ),
-                              SizedBox(width: 10),
-                              Text(
-                                textAlign: TextAlign.center,
-                                "View",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: AppColors.islamicNavy600,
+                      GestureDetector(
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              margin: EdgeInsets.all(10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(20),
                                 ),
                               ),
-                            ],
+                              backgroundColor: Color.fromARGB(251, 54, 185, 45),
+                              content: Text(
+                                "Accepted Successfully",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          width: widthmin,
+                          height: heightmin,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color.fromARGB(251, 54, 185, 45),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(width: width * 0.03),
+                                Icon(
+                                  Icons.check_circle,
+                                  size: 25,
+                                  color: AppColors.textWhite,
+                                ),
+                                SizedBox(width: 2),
+                                Text(
+                                  textAlign: TextAlign.center,
+                                  "Accepted",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                      Spacer(),
-                      Container(
-                        width: widthmin,
-                        height: heightmin,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.red.withOpacity(0.35),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Icon(
-                                size: 35,
-                                Icons.block,
-                                color: AppColors.destructive,
-                              ),
-                              SizedBox(width: 5),
-                              Text(
-                                "Suspened",
-                                style: TextStyle(
-                                  fontSize: 18,
+                      //  Spacer(),
+                      SizedBox(width: width * 0.05),
+                      GestureDetector(
+                        onTap: () {
+                          bottomsheet(context);
+                        },
+                        child: Container(
+                          width: widthmin,
+                          height: heightmin,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.red.withOpacity(0.35),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  size: 25,
+                                  Icons.block,
                                   color: AppColors.destructive,
                                 ),
-                              ),
-                            ],
+                                SizedBox(width: 5),
+                                Text(
+                                  "Suspened",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.destructive,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

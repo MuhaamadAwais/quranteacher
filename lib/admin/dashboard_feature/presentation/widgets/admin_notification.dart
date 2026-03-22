@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/notificationmodel.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class AdminNotification extends StatefulWidget {
   const AdminNotification({super.key});
@@ -66,21 +69,35 @@ class AdminNotificationsScreenUIState extends State<AdminNotification> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: Color(0xFFF8FAFC),
-      appBar: AppBar(
-        title: Text(
-          'Admin Notifications',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Color(0xFF4A90E2),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Admin Notifications',
+      //     style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      //   ),
+      //   backgroundColor: Color(0xFF4A90E2),
+      //   elevation: 0,
+      // ),
       body: SafeArea(
         child: Column(
           children: [
+            TopcommonContainer(
+              title: "Admin Notifications",
+              subTitle: "Notification Status ${notifications.length}",
+              onBackTap: () {
+                indexscreen = 0;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Bottomnavigationadmin(),
+                  ),
+                );
+              },
+            ),
+            SizedBox(height: height * 0.02),
             // Compose Section
             Container(
               padding: EdgeInsets.all(2),
-              color: Colors.white,
+              color: Colors.transparent,
               child: Column(
                 children: [
                   SizedBox(height: 12),
@@ -90,7 +107,18 @@ class AdminNotificationsScreenUIState extends State<AdminNotification> {
                       controller: _titleController,
                       decoration: InputDecoration(
                         labelText: 'Title',
-                        border: OutlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.backgroundStart,
+                            width: 1.5,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.backgroundStart,
+                            width: 1.5,
+                          ),
+                        ),
                         prefixIcon: Icon(Icons.title),
                       ),
                     ),
@@ -103,7 +131,18 @@ class AdminNotificationsScreenUIState extends State<AdminNotification> {
                       maxLines: 3,
                       decoration: InputDecoration(
                         labelText: 'Message',
-                        border: OutlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.backgroundStart,
+                            width: 1.5,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.backgroundStart,
+                            width: 1.5,
+                          ),
+                        ),
                         prefixIcon: Icon(Icons.message),
                       ),
                     ),
@@ -118,7 +157,18 @@ class AdminNotificationsScreenUIState extends State<AdminNotification> {
                             initialValue: _selectedTarget,
                             decoration: InputDecoration(
                               labelText: 'Target',
-                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: AppColors.backgroundStart,
+                                  width: 1.5,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: AppColors.backgroundStart,
+                                  width: 1.5,
+                                ),
+                              ),
                               prefixIcon: Icon(Icons.group),
                             ),
                             items:
@@ -149,7 +199,7 @@ class AdminNotificationsScreenUIState extends State<AdminNotification> {
                           icon: Icon(Icons.send),
                           label: Text('Send'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF4A90E2),
+                            backgroundColor: AppColors.backgroundStart,
                             foregroundColor: Colors.white,
                           ),
                         ),
@@ -181,7 +231,7 @@ class AdminNotificationsScreenUIState extends State<AdminNotification> {
                     child: ListTile(
                       contentPadding: EdgeInsets.all(16),
                       leading: CircleAvatar(
-                        backgroundColor: Color(0xFF4A90E2),
+                        backgroundColor: AppColors.backgroundStart,
                         child: Icon(Icons.notifications, color: Colors.white),
                       ),
                       title: Text(

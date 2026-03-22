@@ -20,7 +20,7 @@ class Textforuserwid extends StatelessWidget {
             ),
             child: GestureDetector(
               onTap: () {
-                selectedIndexadmin = 0;
+                indexscreen = 0;
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(

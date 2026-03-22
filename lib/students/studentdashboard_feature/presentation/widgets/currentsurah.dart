@@ -36,7 +36,7 @@ class _CurrentsurahState extends State<Currentsurah>
       curve: Curves.easeInOut,
     );
 
-    _animationController.repeat(reverse: true);
+    _animationController.forward();
     _flipTimer = Timer.periodic(Duration(seconds: 10), (timer) {
       if (mounted) {
         gestureController.flipcard();
@@ -61,7 +61,7 @@ class _CurrentsurahState extends State<Currentsurah>
       padding: const EdgeInsets.all(0.0),
       child: SizedBox(
         height: height * 0.25,
-        width: width * 0.93,
+        width: width * 0.91,
         // 🔥 GestureFlipCard - Tap to flip automatically!
         child: ScaleTransition(
           scale: _simpllefade,
@@ -139,7 +139,7 @@ class _CurrentsurahState extends State<Currentsurah>
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: 14,
                         //textBaseline: TextBaseline.alphabetic,
                       ),
                     ),

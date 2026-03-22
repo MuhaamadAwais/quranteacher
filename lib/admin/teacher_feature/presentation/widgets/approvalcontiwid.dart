@@ -8,36 +8,48 @@ class Approvalcontiwid extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Container(
-      width: width,
-      height: height * 0.08,
-      decoration: BoxDecoration(
-        color: AppColors.textWhite.withOpacity(0.25),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.textWhite, width: 2),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "3",
-            style: TextStyle(
-              color: AppColors.textWhite,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
+    return Align(
+      alignment: Alignment.center, // ya jo chaho
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: width * 0.7,
+          minHeight: height * 0.06,
+        ),
+        child: Container(
+          width: width * 0.7,
+          height: height * 0.06,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            gradient: LinearGradient(
+              colors: [Colors.white24, Colors.white38],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
+            border: Border.all(color: AppColors.textWhite, width: 2),
           ),
-
-          SizedBox(width: 5),
-          Text(
-            "Pending Approval",
-            style: TextStyle(
-              color: AppColors.textWhite,
-              fontWeight: FontWeight.normal,
-              fontSize: 20,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "3",
+                style: TextStyle(
+                  color: AppColors.textWhite,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(width: width * 0.02),
+              Text(
+                "Pending Approval",
+                style: TextStyle(
+                  color: AppColors.textWhite,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

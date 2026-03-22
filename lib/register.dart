@@ -5,7 +5,7 @@ import 'package:quranteacher/students/appanimations.dart';
 
 class Register extends StatefulWidget {
   final String role;
-  const Register({super.key,required this.role});
+  const Register({super.key, required this.role});
 
   @override
   State<Register> createState() => _RegisterState();
@@ -326,7 +326,8 @@ class _RegisterState extends State<Register>
                               onTap: () {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
-                                    builder: (context) => Login(role: widget.role,),
+                                    builder: (context) =>
+                                        Login(role: widget.role),
                                   ),
                                 );
                               },
@@ -391,13 +392,17 @@ class _RegisterState extends State<Register>
                       GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Login(role: widget.role,)),
+                            MaterialPageRoute(
+                              builder: (context) => Login(role: widget.role),
+                            ),
                           );
                         },
                         child: GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => Login(role: widget.role,)),
+                              MaterialPageRoute(
+                                builder: (context) => Login(role: widget.role),
+                              ),
                             );
                           },
                           child: Text(
@@ -412,7 +417,7 @@ class _RegisterState extends State<Register>
                       ),
                     ],
                   ),
-                  SizedBox(height: height * 0.04),
+                  SizedBox(height: height * 0.06),
                 ],
               ),
             ),

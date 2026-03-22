@@ -1,0 +1,155 @@
+import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+
+class QuranAyatCard extends StatelessWidget {
+  final Map<String, String> quranData;
+
+  const QuranAyatCard({
+    super.key,
+    required this.quranData,
+    this.title = "Al-Quran",
+  });
+
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return Card(
+      margin: const EdgeInsets.only(top: 25),
+      elevation: 4,
+      shadowColor: AppColors.islamicEmerald,
+      borderOnForeground: true,
+
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Container(
+        // height: height * 0.4,
+        width: width * 0.9,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: LinearGradient(colors: [Colors.white54, Colors.white]),
+          border: Border.all(color: AppColors.islamicEmerald, width: 2),
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: height * 0.02),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                //SizedBox(width: width * 0.06),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green[700],
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(width: width * 0.06),
+                Container(
+                  height: height * 0.05,
+                  width: width * 0.3,
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade200,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "published",
+                      style: TextStyle(
+                        color: Colors.green[700],
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            // Quran Badge
+            SizedBox(height: height * 0.02),
+
+            // Arabic Ayat (Big + RTL)
+            Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Container(
+                width: width * 0.85,
+                // height: height * 0.17,
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: AppColors.islamicNavy100,
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Colors.white24, width: 2),
+                ),
+                child: Text(
+                  quranData['arabic'] ?? '',
+
+                  textDirection: TextDirection.rtl,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black87,
+                    height: 1.5,
+                  ),
+                ),
+              ),
+            ),
+            //  SizedBox(height: 20),
+
+            // Translation
+            SizedBox(height: 5),
+
+            // Arabic Ayat (Big + RTL)
+            Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Container(
+                width: width * 0.85,
+                // height: height * 0.17,
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: AppColors.glowCircle,
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Colors.white24, width: 2),
+                ),
+                child: Text(
+                  quranData['translation'] ?? '',
+
+                  textDirection: TextDirection.rtl,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black87,
+                    height: 1.5,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: height * 0.02),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Reference: ${quranData['reference'] ?? ""}',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green[700],
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: height * 0.025),
+          ],
+        ),
+      ),
+    );
+  }
+}

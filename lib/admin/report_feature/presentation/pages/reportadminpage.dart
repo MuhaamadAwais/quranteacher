@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/admin/report_feature/presentation/widgets/backstackreport.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/fullexportreport.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/growthchart.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/maincontInerreport.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/platformprofence.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/revenuebreakout.dart';
-import 'package:quranteacher/admin/report_feature/presentation/widgets/stacktextreport.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 
 class Reportadminpage extends StatefulWidget {
   const Reportadminpage({super.key});
@@ -24,21 +24,31 @@ class _ReportadminpageState extends State<Reportadminpage> {
             children: [
               Stack(
                 children: [
-                  Backstackreport(),
-                  Positioned(
-                    top: 20,
-                    left: 20,
-                    right: 20,
-                    child: Stacktextreport(),
+                  // Backstackreport(),
+                  TopcommonContainer(
+                    title: "Reports & Analytics",
+                    subTitle: "complete all analytics reports",
+                    onBackTap: () {
+                      indexscreen = 0;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Bottomnavigationadmin(),
+                        ),
+                      );
+                    },
                   ),
-                  Positioned(
-                    top: 100,
-                    left: 20,
-                    right: 20,
-                    child: Fullexportreport(),
-                  ),
+
+                  // Positioned(
+                  //   top: 20,
+                  //   left: 20,
+                  //   right: 20,
+                  //   child: Stacktextreport(),
+                  // ),
                 ],
               ),
+              SizedBox(height: 10),
+              Fullexportreport(),
               SizedBox(height: 10),
               Maincontinerreport(),
               SizedBox(height: 10),

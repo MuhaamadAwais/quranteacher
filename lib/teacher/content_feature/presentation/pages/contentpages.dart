@@ -269,12 +269,13 @@ class _ContentpagesState extends State<Contentpages> {
         height: heightmain,
         child: GestureDetector(
           onTap: () {
-            setState(() {
-              selectedIndexadmin = index;
-            });
+            // setState(() {
+            //   selectedIndexadmin = index;
+            // });
           },
           child: Card(
-            elevation: selectedIndexadmin == index ? 10 : 5,
+            elevation: 4,
+            //elevation: selectedIndexadmin == index ? 10 : 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),

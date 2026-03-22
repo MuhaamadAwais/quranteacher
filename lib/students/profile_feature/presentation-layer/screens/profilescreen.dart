@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/login.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/achieventscontainer.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/helpsupportscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/privacysecurityscreen.dart';
@@ -350,30 +351,45 @@ class _ProfilescreenState extends State<Profilescreen>
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: height * 0.07,
-                  width: width ,
-                  decoration: BoxDecoration(
-                    color: Colors.white24,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: Colors.pink.shade700
-                         , width: 1.5),
-                  ),
-                  child: Row(
-                    children: [
-                      SizedBox(width: width * 0.23),
-                      Icon(Icons.logout_outlined, color: Colors.pink.shade700,),
-                      SizedBox(width: width * 0.03),
-                      Text(
-                        "Logout",
-                        style: TextStyle(
-                          color: Colors.pink.shade700
-                          ,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Login(role: "student"),
                       ),
-                    ],
+                      (route) => false,
+                    );
+                  },
+                  child: Container(
+                    height: height * 0.07,
+                    width: width * 0.9,
+                    decoration: BoxDecoration(
+                      color: Colors.black12,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: Colors.pink.shade700,
+                        width: 1.5,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        SizedBox(width: width * 0.33),
+                        Icon(
+                          Icons.logout_outlined,
+                          color: Colors.pink.shade700,
+                        ),
+                        SizedBox(width: width * 0.03),
+                        Text(
+                          "Logout",
+                          style: TextStyle(
+                            color: Colors.pink.shade700,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

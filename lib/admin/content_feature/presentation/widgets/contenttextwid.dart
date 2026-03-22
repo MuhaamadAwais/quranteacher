@@ -13,28 +13,39 @@ class Contenttextwid extends StatelessWidget {
       padding: const EdgeInsets.only(left: 0, top: 25),
       child: Row(
         children: [
-          GestureDetector(
-            onTap: () {
-              selectedIndexadmin = 0;
+          Hero(
+            tag: 'back_button',
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16),
+                onTap: () {
+                  indexscreen = 0;
 
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Bottomnavigationadmin(),
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Bottomnavigationadmin(),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Colors.white.withOpacity(0.3)),
+                  ),
+                  child: const Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
-              );
-            },
-            child: Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.textWhite.withOpacity(0.15),
               ),
-              child: Icon(Icons.arrow_back, color: AppColors.textWhite),
             ),
           ),
-          SizedBox(width: 5),
+          SizedBox(width: width * 0.02),
           Text(
             "Content Management",
             style: TextStyle(
