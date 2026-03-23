@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Textstudent extends StatelessWidget {
   const Textstudent({super.key});
@@ -11,12 +12,12 @@ class Textstudent extends StatelessWidget {
     return Row(
       children: [
         GestureDetector(
-          // onTap: () {
-          //   Navigator.push(
-          //     context,
-          //     MaterialPageRoute(builder: (context) => const Bottomnaviteacher()),
-          //   );
-          // },
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Bottomnaviteacher()),
+            );
+          },
           child: Container(
             height: 40,
             width: 40,

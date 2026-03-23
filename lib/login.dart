@@ -8,6 +8,7 @@ import 'package:quranteacher/students/appanimations.dart';
 import 'package:quranteacher/students/bottomnavi.dart';
 import 'package:quranteacher/students/studentdetailform.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
+import 'package:quranteacher/teacher/teacherdet_features/presentation/pages/teacherdetailspage.dart';
 
 class Login extends StatefulWidget {
   final String role;
@@ -230,7 +231,12 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                               Spacer(),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Forgotpasswordpage(),));
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          Forgotpasswordpage(),
+                                    ),
+                                  );
                                 },
                                 child: Text(
                                   "Forget Password?",
@@ -257,7 +263,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Bottomnaviteacher(),
+                                    builder: (context) => Teacherdetailspage(),
                                   ),
                                   (route) => false,
                                 );
