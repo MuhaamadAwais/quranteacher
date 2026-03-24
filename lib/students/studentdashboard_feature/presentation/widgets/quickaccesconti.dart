@@ -4,6 +4,7 @@ import 'package:quranteacher/students/hadits/presentation/pages/haditspage.dart'
 import 'package:quranteacher/students/lesson_feature/presentation_layer/screens/lessonscreen.dart';
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studenthomeworkscreen.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/sudentattendancescreen.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teachercard.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teacherrequestscreen.dart';
 
@@ -78,15 +79,30 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
             ],
           ),
           const SizedBox(height: 10),
-          clickcontistd(
-            4,
-            width * 0.88,
-            height * 0.2,
-            "assets/images/book.png",
-            "Teacher List",
-            "Select related your course",
-            Colors.blue,
-            Colors.lightBlue,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              clickcontistd(
+                4,
+                width * 0.43,
+                height * 0.22,
+                "assets/images/family.png",
+                "Teacher List",
+                "Select related your course",
+                Colors.blue,
+                Colors.lightBlue,
+              ),
+              clickcontistd(
+                5,
+                width * 0.43,
+                height * 0.22,
+                "assets/images/atten.png",
+                "Attandance List",
+                "performance of attandance",
+                Colors.deepOrangeAccent,
+                Colors.deepOrange,
+              ),
+            ],
           ),
         ],
       ),
@@ -134,6 +150,13 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
             context,
             MaterialPageRoute(
               builder: (context) => const TeacherRequestScreen(),
+            ),
+          );
+        } else if (index == 5) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const StudentAttendanceScreen(),
             ),
           );
         }
@@ -196,7 +219,7 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 19,
                 ),
               ),
               Text(

@@ -4,6 +4,7 @@ import 'package:quranteacher/teacher/assignwork_feature/presentation/pages/assig
 import 'package:quranteacher/teacher/earning_feature/presentation/pages/earningpages.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/pages/studentspages.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/formteacherequestsscreen.dart';
+import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/teacherattendancescreen.dart';
 
 class Leastitems extends StatefulWidget {
   const Leastitems({super.key});
@@ -101,23 +102,48 @@ class _LeastitemsState extends State<Leastitems> {
             ],
           ),
           SizedBox(height: 20),
-          clickcontistd(
-            4,
-            width * 0.88,
-            height * 0.2,
-            Icons.group_outlined,
-            "Student Request List",
-            "see all students request",
-            Colors.blue,
-            Colors.lightBlue,
-            () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Formteacherequestsscreen(),
-                ),
-              );
-            },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              clickcontistd(
+                4,
+                width * 0.43,
+                height * 0.22,
+                Icons.group_outlined,
+                "Student Request List",
+                "All students request",
+                Colors.blue,
+                Colors.lightBlue,
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Formteacherequestsscreen(),
+                    ),
+                  );
+                },
+              ),
+              clickcontistd(
+                5,
+                width * 0.43,
+                height * 0.23,
+                Icons.calendar_month,
+                "All Attandance List",
+                "Student attan..",
+                Colors.teal,
+                Colors.tealAccent,
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TeacherAttendanceScreen(
+                        sessionName: "Surah Al-Fatiha",
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ],
       ),
@@ -190,7 +216,11 @@ class _LeastitemsState extends State<Leastitems> {
                   // child: Icon(icon, color: AppColors.textWhite),
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Icon(iconsdata, color: AppColors.textWhite,size: 32,),
+                    child: Icon(
+                      iconsdata,
+                      color: AppColors.textWhite,
+                      size: 32,
+                    ),
                   ),
                 ),
               ),
