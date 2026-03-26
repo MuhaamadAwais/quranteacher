@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class Addbackgroundconti extends StatelessWidget {
   const Addbackgroundconti({super.key});
@@ -16,7 +17,7 @@ class Addbackgroundconti extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [Colors.orange, Colors.deepOrangeAccent],
+          colors: [AppColors.startgreen, AppColors.endgreen],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

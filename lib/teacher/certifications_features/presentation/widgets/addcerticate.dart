@@ -20,7 +20,7 @@ class Addcerticate extends StatelessWidget {
           height: height * 0.1,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [AppColors.backgroundStart, AppColors.backgroundEnd],
+              colors: [AppColors.startgreen, AppColors.endgreen],
             ),
             borderRadius: BorderRadius.circular(20),
           ),

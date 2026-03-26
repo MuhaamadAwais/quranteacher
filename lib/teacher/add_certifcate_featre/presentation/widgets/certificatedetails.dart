@@ -35,7 +35,7 @@ class Certificatedetails extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.islamicNavy,
+                          color: AppColors.islamicNavy800,
                         ),
                         child: Center(
                           child: Icon(
@@ -112,29 +112,6 @@ class Certificatedetails extends StatelessWidget {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                               borderSide: BorderSide.none,
-                            ),
-
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide: BorderSide(
-                                color: AppColors.switchBackground.withOpacity(
-                                  0.4,
-                                ),
-                                width: 1.5,
-                              ),
-                            ),
-
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20),
-                              borderSide: BorderSide(
-                                color: AppColors.islamicGreen,
-                                width: 2,
-                              ),
-                            ),
-
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 18,
-                              horizontal: 20,
                             ),
                           ),
                         ),

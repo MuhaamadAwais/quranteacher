@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
+import 'package:quranteacher/teacher/content_feature/presentation/pages/addhadiescontentpage.dart';
+import 'package:quranteacher/teacher/content_feature/presentation/pages/addlessoncontentpage.dart';
+import 'package:quranteacher/teacher/content_feature/presentation/pages/addqurancontentpage.dart';
 import 'package:quranteacher/teacher/content_feature/presentation/widgets/topcontent.dart';
 
 class Contentpages extends StatefulWidget {
@@ -12,7 +13,7 @@ class Contentpages extends StatefulWidget {
 }
 
 class _ContentpagesState extends State<Contentpages> {
-  int selectedIndex=-1;
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -31,7 +32,7 @@ class _ContentpagesState extends State<Contentpages> {
                 height: height * 0.07,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: AppColors.islamicEmerald,
+                  color: AppColors.startgreen,
                 ),
                 child: TabBar(
                   indicatorSize: TabBarIndicatorSize.tab,
@@ -90,8 +91,15 @@ class _ContentpagesState extends State<Contentpages> {
                           width,
                           height * 0.07,
                           "Add Quran Content",
-                          AppColors.backgroundStart,
-                          AppColors.backgroundStart,
+                          AppColors.startgreen,
+                          AppColors.endgreen,
+                          () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Addqurancontentpage(),
+                              ),
+                            );
+                          },
                         ),
 
                         contidesigncontents(
@@ -141,8 +149,15 @@ class _ContentpagesState extends State<Contentpages> {
                           width,
                           height * 0.07,
                           "Add Hadith Content",
-                          Colors.blueAccent,
-                          Colors.deepPurple,
+                          AppColors.islamicNavy600,
+                          AppColors.islamicNavy800,
+                          () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Addhadiescontentpage(),
+                              ),
+                            );
+                          },
                         ),
 
                         contidesigncontents(
@@ -183,8 +198,15 @@ class _ContentpagesState extends State<Contentpages> {
                           width,
                           height * 0.07,
                           "Add Lesson",
-                          Colors.purple,
-                          Colors.pink,
+                          AppColors.pink500,
+                          AppColors.pink700,
+                          () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Addlessoncontentpage(),
+                              ),
+                            );
+                          },
                         ),
                         contidesigncontents(
                           1,
@@ -221,34 +243,38 @@ class _ContentpagesState extends State<Contentpages> {
     String textforadd,
     Color startcolor,
     Color endcolor,
+    VoidCallback onTabFunction,
   ) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [startcolor, endcolor],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.add, color: AppColors.textWhite),
-            SizedBox(width: 10),
-            Text(
-              textforadd,
-              style: TextStyle(
-                color: AppColors.textWhite,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+      child: GestureDetector(
+        onTap: onTabFunction,
+        child: Container(
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [startcolor, endcolor],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
-          ],
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.add, color: AppColors.textWhite),
+              SizedBox(width: 10),
+              Text(
+                textforadd,
+                style: TextStyle(
+                  color: AppColors.textWhite,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

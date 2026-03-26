@@ -15,8 +15,8 @@ class Verificationconti extends StatelessWidget {
         height: height * 0.2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.islamicNavy500.withOpacity(0.25),
-          border: Border.all(width: 1, color: AppColors.islamicNavy500),
+          color: AppColors.islamicNavy800.withOpacity(0.25),
+          border: Border.all(width: 1, color: AppColors.islamicNavy800),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -30,13 +30,13 @@ class Verificationconti extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.islamicNavy600.withOpacity(0.25),
-                  border: Border.all(width: 1, color: AppColors.islamicNavy500),
+                  color: AppColors.islamicNavy800.withOpacity(0.25),
+                  border: Border.all(width: 1, color: AppColors.islamicNavy800),
                 ),
                 child: Center(
                   child: Icon(
                     Icons.workspace_premium,
-                    color: AppColors.islamicNavy500,
+                    color: AppColors.islamicNavy800,
                     size: 32,
                   ),
                 ),
@@ -57,7 +57,7 @@ class Verificationconti extends StatelessWidget {
                   Text(
                     "All certifications are verified by our\nadmin team within 24-hours verified\nverified certificates boost your\nprofile cerdibility",
                     style: TextStyle(
-                      color: AppColors.islamicNavy600,
+                      color: AppColors.islamicNavy800,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

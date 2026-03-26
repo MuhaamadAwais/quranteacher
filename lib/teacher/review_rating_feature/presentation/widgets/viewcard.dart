@@ -95,12 +95,12 @@ class _ViewcardState extends State<Viewcard> {
                       /// Profile Icon
                       CircleAvatar(
                         radius: 30,
-                        backgroundColor: AppColors.islamicNavy500.withOpacity(
+                        backgroundColor: AppColors.islamicNavy800.withOpacity(
                           0.25,
                         ),
                         child: Icon(
                           Icons.person,
-                          color: AppColors.islamicNavy500,
+                          color: AppColors.islamicNavy800,
                           size: 32,
                         ),
                       ),
@@ -137,14 +137,14 @@ class _ViewcardState extends State<Viewcard> {
                               ),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: AppColors.islamicNavy500.withOpacity(
+                                color: AppColors.islamicNavy800.withOpacity(
                                   0.25,
                                 ),
                               ),
                               child: Text(
                                 studiessubect,
                                 style: TextStyle(
-                                  color: AppColors.islamicNavy500,
+                                  color: AppColors.islamicNavy800,
                                   fontSize: 12,
                                 ),
                               ),

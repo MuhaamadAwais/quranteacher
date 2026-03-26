@@ -60,7 +60,7 @@ class Textreiview extends StatelessWidget {
               shape: BoxShape.circle,
               color: AppColors.textWhite.withOpacity(0.15),
             ),
-            child: Icon(Icons.add, color: AppColors.textWhite),
+            child: Icon(Icons.filter_alt_outlined, color: AppColors.textWhite),
           ),
         ),
       ],

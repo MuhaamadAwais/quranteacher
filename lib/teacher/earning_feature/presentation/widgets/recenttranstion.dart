@@ -58,13 +58,13 @@ class Recenttranstion extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.logout_outlined,
-                              color: AppColors.backgroundStart,
+                              color: AppColors.startgreen,
                             ),
                             SizedBox(width: 8), // Icon aur Text ke beech space
                             Text(
                               "Export",
                               style: TextStyle(
-                                color: AppColors.backgroundStart,
+                                color: AppColors.startgreen,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -223,7 +223,7 @@ class Recenttranstion extends StatelessWidget {
                   Text(
                     "\$$amount",
                     style: TextStyle(
-                      color: AppColors.backgroundStart,
+                      color: AppColors.startgreen,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),

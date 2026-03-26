@@ -16,7 +16,7 @@ class Performanceinsights extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           gradient: LinearGradient(
-            colors: [AppColors.backgroundStart, AppColors.backgroundEnd],
+            colors: [AppColors.startgreen, AppColors.endgreen],
           ),
         ),
         child: Padding(

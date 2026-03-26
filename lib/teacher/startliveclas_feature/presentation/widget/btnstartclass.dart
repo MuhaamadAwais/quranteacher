@@ -15,7 +15,9 @@ class Btnstartclass extends StatelessWidget {
         height: height * 0.08,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.islamicNavy600, AppColors.islamicNavy700],
+            colors: [
+                AppColors.islamicNavy600,
+                AppColors.islamicNavy800,],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

@@ -15,7 +15,7 @@ class Uploaddocument extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Container(
           width: width,
-          height: height * 0.35,
+          height: height * 0.37,
           decoration: BoxDecoration(
             color: AppColors.textWhite,
             borderRadius: BorderRadius.circular(20),
@@ -27,12 +27,12 @@ class Uploaddocument extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      width: 40,
-                      height: 40,
+                      width: 50,
+                      height: 50,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
-                          colors: [Colors.purple, Colors.pink],
+                          colors: [AppColors.pink500, AppColors.pink700],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -82,7 +82,7 @@ class Uploaddocument extends StatelessWidget {
                             width: 60,
                             height: 60,
                             decoration: BoxDecoration(
-                              color: AppColors.islamicGreen,
+                              color: AppColors.startgreen,
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Center(

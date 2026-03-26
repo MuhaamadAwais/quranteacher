@@ -17,7 +17,9 @@ class Topconticlass extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [AppColors.islamicNavy600, AppColors.islamicNavy700],
+          colors: [
+                AppColors.islamicNavy600,
+                AppColors.islamicNavy800,],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -26,19 +28,22 @@ class Topconticlass extends StatelessWidget {
         padding: const EdgeInsets.only(left: 20),
         child: Row(
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: AppColors.textWhite.withOpacity(0.15),
-                  shape: BoxShape.circle,
-                ),
-                child: Center(
-                  child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.white.withOpacity(0.3)),
+              ),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  color: AppColors.textWhite,
+                  size: 20,
                 ),
               ),
             ),

@@ -17,7 +17,7 @@ class Backsetting extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [AppColors.islamicNavy500, AppColors.islamicNavy],
+          colors: [AppColors.islamicNavy600, AppColors.islamicNavy800],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

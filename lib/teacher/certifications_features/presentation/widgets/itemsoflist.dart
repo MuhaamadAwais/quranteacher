@@ -41,7 +41,7 @@ Widget contidesigncertification(double width, double height) {
                   topRight: Radius.circular(20),
                 ),
                 gradient: LinearGradient(
-                  colors: [AppColors.backgroundStart, AppColors.backgroundEnd],
+                  colors: [AppColors.startgreen, AppColors.endgreen],
                 ),
               ),
             ),
@@ -171,9 +171,9 @@ Widget contidesigncertification(double width, double height) {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                         width: 1,
-                        color: AppColors.backgroundStart,
+                        color: AppColors.startgreen,
                       ),
-                      color: AppColors.backgroundStart.withOpacity(0.25),
+                      color: AppColors.startgreen.withOpacity(0.25),
                     ),
                     child: Center(
                       child: Row(
@@ -182,13 +182,13 @@ Widget contidesigncertification(double width, double height) {
                         children: [
                           Icon(
                             Icons.download,
-                            color: AppColors.backgroundStart,
+                            color: AppColors.startgreen,
                           ),
                           SizedBox(width: 5),
                           Text(
                             "Download",
                             style: TextStyle(
-                              color: AppColors.backgroundStart,
+                              color: AppColors.startgreen,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

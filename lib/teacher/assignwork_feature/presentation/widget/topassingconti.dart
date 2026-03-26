@@ -27,14 +27,22 @@ class Topassingconti extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: 40,
               height: 40,
+              width: 40,
               decoration: BoxDecoration(
-                color: AppColors.textWhite.withOpacity(0.15),
-                shape: BoxShape.circle,
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.white.withOpacity(0.3)),
               ),
-              child: Center(
-                child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  color: AppColors.textWhite,
+                  size: 20,
+                ),
               ),
             ),
 

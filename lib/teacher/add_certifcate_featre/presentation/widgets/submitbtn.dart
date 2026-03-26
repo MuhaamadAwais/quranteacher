@@ -16,7 +16,7 @@ class Submitbtn extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: AppColors.switchBackground, width: 1.5),
-          color: AppColors.backgroundStart,
+          color: AppColors.startgreen,
         ),
         child: Center(
           child: Text(
