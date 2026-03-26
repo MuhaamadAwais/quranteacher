@@ -14,9 +14,9 @@ class Todayoverwid extends StatelessWidget {
         width: width,
         height: height * 0.15,
         decoration: BoxDecoration(
-          color: AppColors.secondary.withOpacity(0.25),
+          color: AppColors.startgreen.withOpacity(0.25),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.primary, width: 3),
+          border: Border.all(color: AppColors.startgreen, width: 3),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +27,7 @@ class Todayoverwid extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.trending_up,
-                    color: AppColors.backgroundStart,
+                    color: AppColors.startgreen,
                     size: 30,
                   ),
                   Text(

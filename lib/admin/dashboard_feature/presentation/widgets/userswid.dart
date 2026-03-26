@@ -37,7 +37,7 @@ class Userswid extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       AppColors.islamicNavy600,
-                      AppColors.islamicNavy700,
+                      AppColors.islamicNavy800,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -97,8 +97,8 @@ class Userswid extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppColors.backgroundStart,
-                      AppColors.backgroundEnd,
+                      AppColors.startgreen,
+                      AppColors.endgreen,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,

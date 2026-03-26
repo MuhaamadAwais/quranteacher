@@ -31,17 +31,14 @@ class _ContentadminpageState extends State<Contentadminpage> {
                 height: height * 0.07,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: AppColors.islamicEmerald,
+                  color: AppColors.startgreen,
                 ),
                 child: TabBar(
                   indicatorSize: TabBarIndicatorSize.tab,
                   isScrollable: false,
                   indicator: BoxDecoration(
                     color: Colors.white, // Selected tab background
-                    border: Border.all(
-                      color: AppColors.islamicEmerald,
-                      width: 4,
-                    ),
+                    border: Border.all(color: AppColors.startgreen, width: 4),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   labelColor: Colors.black, // Selected text color
@@ -88,8 +85,8 @@ class _ContentadminpageState extends State<Contentadminpage> {
                             width,
                             height * 0.07,
                             "Add Quran Content",
-                            AppColors.backgroundStart,
-                            AppColors.backgroundStart,
+                            AppColors.startgreen,
+                            AppColors.endgreen,
                           ),
                         ),
 
@@ -139,8 +136,8 @@ class _ContentadminpageState extends State<Contentadminpage> {
                             width,
                             height * 0.07,
                             "Add Hadith Content",
-                            Colors.blueAccent,
-                            Colors.deepPurple,
+                            AppColors.islamicNavy600,
+                            AppColors.islamicNavy800,
                           ),
                         ),
 

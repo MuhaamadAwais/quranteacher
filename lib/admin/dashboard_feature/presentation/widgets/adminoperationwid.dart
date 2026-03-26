@@ -76,7 +76,7 @@ class Adminoperationwid extends StatelessWidget {
                   height: 16,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.islamicGreen,
+                    color: AppColors.startgreen,
                   ),
                 ),
               ),

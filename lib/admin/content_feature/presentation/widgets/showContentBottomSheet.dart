@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 void showContentBottomSheet(BuildContext context, {required String type}) {
   final TextEditingController titleController = TextEditingController();
@@ -41,7 +42,11 @@ void showContentBottomSheet(BuildContext context, {required String type}) {
               // Header
               Row(
                 children: [
-                  Icon(Icons.add_circle_outline, color: Colors.green, size: 28),
+                  Icon(
+                    Icons.add_circle_outline,
+                    color: AppColors.startgreen,
+                    size: 28,
+                  ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
@@ -129,7 +134,7 @@ void showContentBottomSheet(BuildContext context, {required String type}) {
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
+                        backgroundColor: AppColors.startgreen,
                         foregroundColor: Colors.white,
                         elevation: 2,
                         padding: const EdgeInsets.symmetric(vertical: 15),
@@ -152,7 +157,7 @@ void showContentBottomSheet(BuildContext context, {required String type}) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text('Content published successfully! 📢'),
-                            backgroundColor: Colors.green,
+                            backgroundColor: AppColors.startgreen,
                           ),
                         );
 
@@ -193,7 +198,7 @@ Widget _buildTextField({
     children: [
       Row(
         children: [
-          Icon(icon, color: Colors.green[600], size: 22),
+          Icon(icon, color: AppColors.startgreen, size: 22),
           const SizedBox(width: 12),
           Text(
             label,
@@ -216,7 +221,7 @@ Widget _buildTextField({
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: Colors.green, width: 2),
+            borderSide: BorderSide(color: AppColors.startgreen, width: 2),
           ),
           filled: true,
           fillColor: Colors.grey[50],

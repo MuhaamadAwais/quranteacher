@@ -4,7 +4,8 @@ import 'package:quranteacher/forgetpassword_feature/presentation/pages/newpasswo
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/verificationpage.dart';
 
 class Verificationcontiwidget extends StatelessWidget {
-  const Verificationcontiwidget({super.key});
+   final String role;
+  const Verificationcontiwidget({super.key,required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -403,7 +404,7 @@ class Verificationcontiwidget extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => Newpasswordpage()),
+                    MaterialPageRoute(builder: (context) => Newpasswordpage(role: role,)),
                     (route) => false,
                   );
                 },

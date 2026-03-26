@@ -7,9 +7,7 @@ import 'package:quranteacher/admin/teacher_feature/presentation/widgets/teachera
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
-void main() {
-  runApp(MaterialApp(home: Teacheradminpage()));
-}
+
 
 class Teacheradminpage extends StatefulWidget {
   const Teacheradminpage({super.key});
@@ -61,7 +59,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
                 height: height * 0.07,
                 width: width * 0.8,
                 decoration: BoxDecoration(
-                  color: AppColors.islamicEmerald,
+                  color: AppColors.startgreen,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
@@ -74,7 +72,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
                       borderRadius: BorderRadius.circular(10),
                       color: AppColors.textWhite,
                       border: Border.all(
-                        color: AppColors.islamicEmerald,
+                        color: AppColors.startgreen,
                         width: 4,
                       ),
                     ),

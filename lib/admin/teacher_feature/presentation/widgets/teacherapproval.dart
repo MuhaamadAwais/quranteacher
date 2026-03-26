@@ -30,8 +30,8 @@ class Teacherapproval extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      const Color.fromARGB(255, 55, 138, 233),
-                      const Color.fromARGB(176, 0, 57, 110),
+                      AppColors.islamicNavy600,
+                      AppColors.islamicNavy800,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomCenter,
@@ -50,7 +50,7 @@ class Teacherapproval extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: const Color.fromARGB(255, 20, 36, 128),
+                          color: AppColors.islamicNavy800,
                         ),
                         child: Icon(Icons.person, color: AppColors.textWhite),
                       ),
@@ -83,7 +83,7 @@ class Teacherapproval extends StatelessWidget {
                         height: height * 0.04,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.black45,
+                          color: AppColors.islamicNavy600,
                         ),
                         child: Center(
                           child: Text(
@@ -201,10 +201,10 @@ class Teacherapproval extends StatelessWidget {
                               height: height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: AppColors.primary.withOpacity(0.25),
+                                color: AppColors.startgreen.withOpacity(0.25),
                                 border: Border.all(
                                   width: 2,
-                                  color: AppColors.secondary,
+                                  color: AppColors.endgreen,
                                 ),
                               ),
                               child: Center(
@@ -217,13 +217,14 @@ class Teacherapproval extends StatelessWidget {
                                     children: [
                                       Icon(
                                         Icons.check,
-                                        color: AppColors.primary,
+                                        color: AppColors.endgreen,
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
                                         "Approve",
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
+                                          color: AppColors.startgreen,
                                           fontSize: 15,
                                         ),
                                       ),
@@ -276,6 +277,7 @@ class Teacherapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
+                                          color: AppColors.destructive,
                                         ),
                                       ),
                                     ],
@@ -312,8 +314,8 @@ class Teacherapproval extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             gradient: LinearGradient(
                               colors: [
-                                AppColors.backgroundStart,
-                                const Color.fromARGB(109, 5, 150, 104),
+                                AppColors.startgreen,
+                                AppColors.endgreen,
                               ],
                             ),
                           ),

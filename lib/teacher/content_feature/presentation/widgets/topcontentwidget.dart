@@ -61,7 +61,7 @@ class _TopicContentWidgetState extends State<TopicContentWidget> {
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
-              color: isFocused ? Colors.green : Colors.transparent,
+              color: isFocused ? widget.contclickcolor : Colors.transparent,
               width: 2,
             ),
             borderRadius: BorderRadius.circular(20),

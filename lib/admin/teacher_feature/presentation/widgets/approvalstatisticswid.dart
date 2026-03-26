@@ -15,8 +15,8 @@ class Approvalstatisticswid extends StatelessWidget {
         height: height * 0.15,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.primary.withOpacity(0.25),
-          border: Border.all(color: AppColors.secondary, width: 2),
+          color: AppColors.startgreen.withOpacity(0.25),
+          border: Border.all(color: AppColors.startgreen, width: 2),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,8 +25,8 @@ class Approvalstatisticswid extends StatelessWidget {
               padding: const EdgeInsets.only(left: 15, top: 10),
               child: Row(
                 children: [
-                  Icon(Icons.group_outlined, color: AppColors.backgroundStart),
-                  SizedBox(width: 10,),
+                  Icon(Icons.group_outlined, color: AppColors.startgreen),
+                  SizedBox(width: 10),
                   Text(
                     "Approval Statistics",
                     style: TextStyle(

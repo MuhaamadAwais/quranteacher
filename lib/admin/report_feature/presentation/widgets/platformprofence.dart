@@ -64,7 +64,7 @@ class Platformprofence extends StatelessWidget {
                     backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.backgroundStart,
+                      AppColors.startgreen,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -97,7 +97,7 @@ class Platformprofence extends StatelessWidget {
                     backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.backgroundStart,
+                      AppColors.startgreen,
                     ),
                   ),
                   // class
@@ -130,7 +130,7 @@ class Platformprofence extends StatelessWidget {
                     backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.backgroundStart,
+                      AppColors.startgreen,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -162,7 +162,7 @@ class Platformprofence extends StatelessWidget {
                     backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.backgroundStart,
+                      AppColors.startgreen,
                     ),
                   ),
                 ],

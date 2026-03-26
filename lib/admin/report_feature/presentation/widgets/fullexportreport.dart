@@ -16,10 +16,9 @@ class Fullexportreport extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           gradient: LinearGradient(
-            colors: [
-              const Color.fromARGB(255, 5, 98, 68),
-              AppColors.backgroundVia,
-            ],
+            colors: [AppColors.startgreen, AppColors.endgreen],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
         ),
         child: Row(
