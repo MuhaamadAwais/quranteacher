@@ -3,7 +3,8 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/widgets/newpasswordcontiwidget.dart';
 
 class Newpasswordpage extends StatelessWidget {
-  const Newpasswordpage({super.key});
+  final String role;
+  const Newpasswordpage({super.key,required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class Newpasswordpage extends StatelessWidget {
                 ),
 
                 SizedBox(height: 30),
-                Newpasswordcontiwidget(),
+                Newpasswordcontiwidget(role: role,),
               ],
             ),
           ),

@@ -31,8 +31,8 @@ class Studentapproval extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      const Color.fromARGB(255, 7, 45, 183),
-                      const Color.fromARGB(204, 10, 17, 121),
+                      AppColors.islamicNavy600,
+                      AppColors.islamicNavy800,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomCenter,
@@ -51,7 +51,7 @@ class Studentapproval extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.grey,
+                          color: AppColors.islamicNavy800,
                         ),
                         child: Icon(Icons.person, color: AppColors.textWhite),
                       ),
@@ -84,7 +84,7 @@ class Studentapproval extends StatelessWidget {
                         height: height * 0.04,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.black45,
+                          color: AppColors.islamicNavy600,
                         ),
                         child: Center(
                           child: Text(
@@ -207,10 +207,10 @@ class Studentapproval extends StatelessWidget {
                               height: height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: AppColors.primary.withOpacity(0.25),
+                                color: AppColors.startgreen.withOpacity(0.25),
                                 border: Border.all(
                                   width: 2,
-                                  color: AppColors.secondary,
+                                  color: AppColors.endgreen,
                                 ),
                               ),
                               child: Center(
@@ -223,7 +223,7 @@ class Studentapproval extends StatelessWidget {
                                     children: [
                                       Icon(
                                         Icons.check,
-                                        color: AppColors.primary,
+                                        color: AppColors.startgreen,
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
@@ -231,6 +231,7 @@ class Studentapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
+                                          color: AppColors.startgreen,
                                         ),
                                       ),
                                     ],
@@ -282,6 +283,8 @@ class Studentapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
+
+                                          color: AppColors.destructive,
                                         ),
                                       ),
                                     ],
@@ -318,8 +321,8 @@ class Studentapproval extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             gradient: LinearGradient(
                               colors: [
-                                const Color.fromARGB(255, 5, 34, 150),
-                                const Color.fromARGB(108, 5, 56, 150),
+                                AppColors.islamicNavy600,
+                                AppColors.islamicNavy800,
                               ],
                             ),
                           ),

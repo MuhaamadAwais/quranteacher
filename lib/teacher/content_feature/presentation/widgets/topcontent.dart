@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
@@ -28,20 +29,32 @@ class Topcontent extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Row(
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Bottomnaviteacher(),));
-              },
-              child: Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColors.textWhite.withOpacity(0.15),
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.white.withOpacity(0.3)),
+              ),
+              child: GestureDetector(
+                onTap: () {
+                  indexscreen = 0;
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Bottomnaviteacher(),
+                    ),
+                  );
+                },
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  color: AppColors.textWhite,
+                  size: 20,
                 ),
-                child: Icon(Icons.arrow_back, color: AppColors.textWhite),
               ),
             ),
+
             SizedBox(width: 5),
             Text(
               "Content Managment",

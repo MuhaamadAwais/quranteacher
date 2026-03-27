@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
+import 'package:quranteacher/students/studentdetailform.dart';
+import 'package:quranteacher/teacher/teacherdet_features/presentation/pages/teacherdetailspage.dart';
 
-class Sucessfullyypage extends StatelessWidget {
-  const Sucessfullyypage({super.key});
+class Sucessfullyypage extends StatefulWidget {
+ final String role;
+  const Sucessfullyypage({super.key,required this.role});
 
+  @override
+  State<Sucessfullyypage> createState() => _SucessfullyypageState();
+}
+
+class _SucessfullyypageState extends State<Sucessfullyypage> {
+ 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
-
       child: Scaffold(
-      
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Padding(
@@ -98,7 +106,6 @@ class Sucessfullyypage extends StatelessWidget {
                                   fontSize: 17,
                                 ),
                               ),
-
                             ],
                           ),
                         ),
@@ -108,7 +115,32 @@ class Sucessfullyypage extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login(role: ""),));
+                              if (widget.role== "student") {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => StudentDetailForm(),
+                                  ),
+                                  (route) => false,
+                                );
+                              } else if (widget.role == "teacher") {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Teacherdetailspage(),
+                                  ),
+                                  (route) => false,
+                                );
+                              } else if (widget.role == "admin") {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        Bottomnavigationadmin(),
+                                  ),
+                                  (route) => false,
+                                );
+                              }
                             },
                             child: Container(
                               width: width,

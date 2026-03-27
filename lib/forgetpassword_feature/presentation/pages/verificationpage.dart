@@ -4,7 +4,8 @@ import 'package:quranteacher/forgetpassword_feature/presentation/widgets/verific
 import 'package:quranteacher/teacher/certifications_features/presentation/widgets/verificationconti.dart';
 
 class Verificationpage extends StatelessWidget {
-  const Verificationpage({super.key});
+  final String role;
+  const Verificationpage({super.key,required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class Verificationpage extends StatelessWidget {
                 ),
 
                 SizedBox(height: 30),
-                Verificationcontiwidget(),
+                Verificationcontiwidget(role: role,),
               ],
             ),
           ),

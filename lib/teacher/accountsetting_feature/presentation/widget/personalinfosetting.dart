@@ -35,10 +35,11 @@ class Personalinfosetting extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.backgroundEnd,
+                          color: AppColors.startgreen,
                         ),
                         child: Center(
                           child: Icon(
+                            size: 35,
                             Icons.person_2_outlined,
                             color: AppColors.textWhite,
                           ),

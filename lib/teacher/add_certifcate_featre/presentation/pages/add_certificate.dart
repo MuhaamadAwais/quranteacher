@@ -7,9 +7,6 @@ import 'package:quranteacher/teacher/add_certifcate_featre/presentation/widgets/
 import 'package:quranteacher/teacher/add_certifcate_featre/presentation/widgets/submitbtn.dart';
 import 'package:quranteacher/teacher/add_certifcate_featre/presentation/widgets/uploaddocument.dart';
 
-void main() {
-  runApp(MaterialApp(home: AddCertificate()));
-}
 
 class AddCertificate extends StatefulWidget {
   const AddCertificate({super.key});

@@ -49,14 +49,14 @@ class _UseradminpageState extends State<Useradminpage> {
                   height: height * 0.07,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: AppColors.islamicEmerald,
+                    color: AppColors.startgreen,
                   ),
                   child: TabBar(
                     indicatorSize: TabBarIndicatorSize.tab,
                     indicator: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
-                        color: AppColors.islamicEmerald,
+                        color: AppColors.startgreen,
                         width: 4,
                       ),
                       borderRadius: BorderRadius.circular(20),
@@ -174,7 +174,7 @@ class _UseradminpageState extends State<Useradminpage> {
         child: Card(
           color: AppColors.textWhite,
           elevation: 5,
-          shadowColor: AppColors.islamicEmerald,
+          shadowColor: AppColors.startgreen,
           child: Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
             child: Padding(
@@ -190,9 +190,9 @@ class _UseradminpageState extends State<Useradminpage> {
                         height: 60,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.backgroundStart,
+                          color: AppColors.startgreen,
                         ),
-                        child: Icon(Icons.school_outlined),
+                        child: Icon(Icons.school_outlined,color: Colors.white,size: 40,),
                       ),
                       SizedBox(width: 15),
                       Column(
@@ -223,7 +223,7 @@ class _UseradminpageState extends State<Useradminpage> {
                         width: 55,
                         height: 20,
                         decoration: BoxDecoration(
-                          color: AppColors.backgroundStart,
+                          color: AppColors.startgreen,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Center(
@@ -266,7 +266,7 @@ class _UseradminpageState extends State<Useradminpage> {
                                   Radius.circular(20),
                                 ),
                               ),
-                              backgroundColor: Color.fromARGB(251, 54, 185, 45),
+                              backgroundColor: AppColors.startgreen,
                               content: Text(
                                 "Accepted Successfully",
                                 style: TextStyle(
@@ -282,7 +282,7 @@ class _UseradminpageState extends State<Useradminpage> {
                           height: heightmin,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: const Color.fromARGB(251, 54, 185, 45),
+                            color: AppColors.startgreen
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),

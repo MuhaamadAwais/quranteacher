@@ -48,7 +48,7 @@ class _TeacherdetailspageState extends State<Teacherdetailspage> {
                 height: height * 0.2,
                 title: "Specialization",
                 hint: "e.g., Quran, Arabic, Islamic",
-                icon: Icons.content_copy,
+                icon: Icons.verified,
               ),
 
               DesignsContiTextField(

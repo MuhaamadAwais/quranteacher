@@ -31,12 +31,12 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 0,
                 width * 0.43,
-                height * 0.2,
+                height * 0.21,
                 Icons.group_outlined,
                 "My Students",
                 "Manage Students",
-                AppColors.secondary,
-                AppColors.islamicGreen,
+                AppColors.startgreen,
+                AppColors.endgreen,
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Studentspages()),
@@ -47,7 +47,7 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 1,
                 width * 0.43,
-                height * 0.2,
+                height * 0.21,
                 Icons.trending_up,
                 "Assign Work",
                 "create homework",
@@ -70,11 +70,10 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 2,
                 width * 0.43,
-                height * 0.2,
+                height * 0.21,
                 Icons.videocam_outlined,
                 "Lessons",
                 "Manage Lessons",
-
                 Colors.orange,
                 Colors.deepOrangeAccent,
                 () {
@@ -87,12 +86,12 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 3,
                 width * 0.43,
-                height * 0.2,
+                height * 0.21,
                 Icons.attach_money,
                 "Earning",
                 "View Income",
-                AppColors.islamicNavy500,
                 AppColors.islamicNavy600,
+                AppColors.islamicNavy800,
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Earningpages()),
@@ -108,10 +107,10 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 4,
                 width * 0.43,
-                height * 0.22,
+                height * 0.21,
                 Icons.group_outlined,
-                "Student Request List",
-                "All students request",
+                "Student Requests",
+                "All students",
                 Colors.blue,
                 Colors.lightBlue,
                 () {
@@ -126,9 +125,9 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 5,
                 width * 0.43,
-                height * 0.23,
+                height * 0.21,
                 Icons.calendar_month,
-                "All Attandance List",
+                "Attandance List",
                 "Student attan..",
                 Colors.teal,
                 Colors.tealAccent,
@@ -219,7 +218,7 @@ class _LeastitemsState extends State<Leastitems> {
                     child: Icon(
                       iconsdata,
                       color: AppColors.textWhite,
-                      size: 32,
+                      size: 35,
                     ),
                   ),
                 ),
@@ -230,7 +229,7 @@ class _LeastitemsState extends State<Leastitems> {
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontSize: 17,
                 ),
               ),
               Text(

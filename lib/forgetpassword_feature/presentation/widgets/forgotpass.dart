@@ -3,7 +3,8 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/verificationpage.dart';
 
 class Forgotpass extends StatelessWidget {
-  const Forgotpass({super.key});
+  final String role;
+  const Forgotpass({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +152,9 @@ class Forgotpass extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => Verificationpage()),
+                    MaterialPageRoute(
+                      builder: (context) => Verificationpage(role: role),
+                    ),
                     (route) => false,
                   );
                 },

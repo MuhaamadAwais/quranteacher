@@ -5,7 +5,8 @@ import 'package:quranteacher/login.dart';
 
 
 class Forgotpasswordpage extends StatefulWidget {
-  const Forgotpasswordpage({super.key});
+  final String role;
+  const Forgotpasswordpage({super.key,required this.role});
 
   @override
   State<Forgotpasswordpage> createState() => _ForgotpasswordpageState();
@@ -77,7 +78,7 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
                   ),
 
                   SizedBox(height: 20),
-                  Forgotpass(),
+                  Forgotpass(role: widget.role,),
 
                   SizedBox(height: 20),
                   Row(

@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/appcolors.dart';
 
-class Fullexportreport extends StatelessWidget {
-  const Fullexportreport({super.key});
+class Publishcontent extends StatelessWidget {
+  final IconData iconconti;
+  final String publisname;
+  final Color startconticolor;
+  final Color endconticolor;
+  const Publishcontent({
+    super.key,
+    required this.iconconti,
+    required this.publisname,
+    required this.startconticolor,
+    required this.endconticolor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,24 +20,25 @@ class Fullexportreport extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: width * 0.8,
-        height: height * 0.08,
+        width: width,
+        height: height * 0.09,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
           gradient: LinearGradient(
-            colors: [AppColors.startgreen, AppColors.endgreen],
+            colors: [startconticolor, endconticolor],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.download, color: AppColors.textWhite),
+            Icon(iconconti, color: Colors.white),
+            SizedBox(width: 10),
             Text(
-              "Export full Report",
+              publisname,
               style: TextStyle(
-                color: AppColors.textWhite,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),

@@ -35,7 +35,7 @@ class Growthchart extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      Icon(Icons.trending_up, color: AppColors.backgroundStart),
+                      Icon(Icons.trending_up, color: AppColors.startgreen),
                     ],
                   ),
                   Spacer(),
@@ -74,21 +74,19 @@ class Growthchart extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: "Total growth",
-                          style: TextStyle(color:
-                           Colors.black, fontSize: 15),
+                          style: TextStyle(color: Colors.black, fontSize: 15),
                         ),
                         TextSpan(
                           text: " + 114%",
                           style: TextStyle(
                             color: AppColors.backgroundStart,
                             fontSize: 20,
-                            fontWeight: FontWeight.bold
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         TextSpan(
                           text: " over six months",
-                          style: TextStyle(color: Colors.black,
-                           fontSize: 15),
+                          style: TextStyle(color: Colors.black, fontSize: 15),
                         ),
                       ],
                     ),

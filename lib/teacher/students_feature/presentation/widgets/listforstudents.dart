@@ -8,8 +8,8 @@ class Listforstudents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-    shrinkWrap: true,
-    physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) =>
           Studentdesign(studentmodelprogress: studentmodelprogress[index]),
       separatorBuilder: (context, index) => SizedBox(height: 10),

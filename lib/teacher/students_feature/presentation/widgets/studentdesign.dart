@@ -3,8 +3,8 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/pages/studentmodelprogress.dart';
 
 class Studentdesign extends StatelessWidget {
-final Studentmodelprogress studentmodelprogress;
-  const Studentdesign({super.key,required this.studentmodelprogress});
+  final Studentmodelprogress studentmodelprogress;
+  const Studentdesign({super.key, required this.studentmodelprogress});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,14 @@ final Studentmodelprogress studentmodelprogress;
                           height: 80,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: AppColors.backgroundStart,
+                            gradient: LinearGradient(
+                              colors: [
+                                AppColors.startgreen,
+                                AppColors.endgreen,
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
                           ),
                           child: Center(
                             child: Icon(
@@ -57,10 +64,14 @@ final Studentmodelprogress studentmodelprogress;
                             Row(
                               children: [
                                 Icon(Icons.trending_up),
-                                Text("${studentmodelprogress.totalClassess} Classes"),
+                                Text(
+                                  "${studentmodelprogress.totalClassess} Classes",
+                                ),
                                 SizedBox(width: 10),
                                 Icon(Icons.star, color: AppColors.accent),
-                                Text(studentmodelprogress.teacherRating.toString()),
+                                Text(
+                                  studentmodelprogress.teacherRating.toString(),
+                                ),
                               ],
                             ),
                           ],
@@ -72,13 +83,13 @@ final Studentmodelprogress studentmodelprogress;
                           width: 40,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: AppColors.islamicNavy400,
+                            color: AppColors.islamicNavy600.withOpacity(0.5),
                             shape: BoxShape.circle,
                           ),
                           child: Center(
                             child: Icon(
                               Icons.chat_bubble_outline,
-                              color: AppColors.islamicNavy700,
+                              color: AppColors.islamicNavy800,
                             ),
                           ),
                         ),
@@ -106,9 +117,10 @@ final Studentmodelprogress studentmodelprogress;
                   SizedBox(height: 10),
                   LinearProgressIndicator(
                     backgroundColor: AppColors.islamicNavy500.withOpacity(0.25),
-                    color: AppColors.backgroundStart,
+                    color: AppColors.startgreen,
                     value: studentmodelprogress.progressActual,
                     minHeight: 10,
+                    borderRadius: BorderRadius.circular(20),
                   ),
 
                   SizedBox(height: 15),
@@ -122,7 +134,7 @@ final Studentmodelprogress studentmodelprogress;
                       Text(
                         "${studentmodelprogress.progressAttendancetext} %",
                         style: TextStyle(
-                          color: AppColors.islamicNavy500,
+                          color: AppColors.islamicNavy800,
                           fontSize: 15,
                         ),
                       ),
@@ -130,10 +142,11 @@ final Studentmodelprogress studentmodelprogress;
                   ),
                   SizedBox(height: 10),
                   LinearProgressIndicator(
-                    color: AppColors.backgroundStart,
+                    color: AppColors.startgreen,
                     backgroundColor: AppColors.islamicNavy500.withOpacity(0.25),
                     value: studentmodelprogress.progressAttendance,
                     minHeight: 10,
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ],
               ),

@@ -41,7 +41,7 @@ class Recentactivitywid extends StatelessWidget {
                   "pending approval",
                   "12 mins ago",
                 ),
-            
+
                 actvityconti(
                   width,
                   height * 0.12,
@@ -49,7 +49,7 @@ class Recentactivitywid extends StatelessWidget {
                   "Started a live class",
                   "25 mins ago",
                 ),
-            
+
                 actvityconti(
                   width,
                   height * 0.12,

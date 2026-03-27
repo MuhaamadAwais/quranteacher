@@ -43,7 +43,7 @@ class Studentapprovaldetail extends StatelessWidget {
                       height: 70,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color.fromARGB(255, 20, 36, 128),
+                        color: AppColors.islamicNavy800,
                         border: Border.all(color: Colors.white, width: 3),
                       ),
                       child: const Icon(
@@ -167,13 +167,14 @@ class Studentapprovaldetail extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(icon, color: AppColors.primary, size: 22),
+              Icon(icon, color: AppColors.startgreen, size: 22),
               const SizedBox(width: 12),
               Text(
                 title,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
+                  color: AppColors.startgreen,
                 ),
               ),
             ],
@@ -203,7 +204,9 @@ class Studentapprovaldetail extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         gradient: LinearGradient(
-          colors: [color.withOpacity(0.1), color.withOpacity(0.05)],
+          colors: [AppColors.islamicNavy600, AppColors.islamicNavy800],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
         border: Border.all(color: color, width: 2),
       ),

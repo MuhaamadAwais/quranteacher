@@ -36,7 +36,7 @@ class Preferencessetting extends StatelessWidget {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
-                            colors: [Colors.pink, Colors.deepPurpleAccent],
+                            colors: [AppColors.pink500, AppColors.pink700],
                           ),
                         ),
                         child: Center(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class Maintopcontiback extends StatelessWidget {
   const Maintopcontiback({super.key});
@@ -16,7 +17,7 @@ class Maintopcontiback extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [Colors.orange, Colors.deepOrangeAccent],
+          colors: [AppColors.startgreen,AppColors.endgreen],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

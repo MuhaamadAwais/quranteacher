@@ -54,7 +54,7 @@ class _BottomnaviteacherState extends State<Bottomnaviteacher> {
               botommteacherwid(
                 index: 3,
                 label: "Earning",
-                icon: Icons.book_outlined,
+                imagepath: "assets/images/profit.png",
               ),
               botommteacherwid(
                 index: 4,

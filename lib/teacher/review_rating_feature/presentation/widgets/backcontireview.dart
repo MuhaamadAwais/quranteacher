@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class Backcontireview extends StatelessWidget {
   const Backcontireview({super.key});
@@ -16,7 +17,7 @@ class Backcontireview extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [Colors.purple, Colors.pink],
+          colors: [AppColors.pink500, AppColors.pink700],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

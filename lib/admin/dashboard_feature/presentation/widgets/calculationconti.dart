@@ -21,8 +21,8 @@ class Calculationconti extends StatelessWidget {
                 Icons.group_outlined,
                 "Total Students",
                 "1,247",
-                AppColors.backgroundStart,
-                AppColors.backgroundEnd,
+                AppColors.startgreen,
+                AppColors.endgreen,
               ),
               deisgndata(
                 width * 0.46,
@@ -47,8 +47,8 @@ class Calculationconti extends StatelessWidget {
                 Icons.videocam_outlined,
                 "Live Classes ",
                 "24",
-                Colors.purple,
-                Colors.pink,
+                AppColors.pink500,
+                AppColors.pink700,
               ),
               deisgndata(
                 width * 0.46,

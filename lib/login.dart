@@ -234,7 +234,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          Forgotpasswordpage(),
+                                          Forgotpasswordpage(role: widget.role,),
                                     ),
                                   );
                                 },

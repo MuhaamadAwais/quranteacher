@@ -16,7 +16,7 @@ class Classeshourlyconti extends StatelessWidget {
             width: width * 0.45,
             height: height * 0.14,
             decoration: BoxDecoration(
-              color: AppColors.backgroundStart.withOpacity(0.15),
+              color: AppColors.startgreen.withOpacity(0.25),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Padding(
@@ -36,7 +36,7 @@ class Classeshourlyconti extends StatelessWidget {
                   Text(
                     "42",
                     style: TextStyle(
-                      color: AppColors.backgroundStart,
+                      color: AppColors.startgreen,
                       fontWeight: FontWeight.bold,
                       fontSize: 35,
                     ),
@@ -52,7 +52,7 @@ class Classeshourlyconti extends StatelessWidget {
             width: width * 0.45,
             height: height * 0.14,
             decoration: BoxDecoration(
-              color: AppColors.islamicNavy800.withOpacity(0.15),
+              color: AppColors.islamicNavy800.withOpacity(0.25),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Padding(

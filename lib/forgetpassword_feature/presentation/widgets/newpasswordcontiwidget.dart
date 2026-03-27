@@ -3,7 +3,8 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/sucessfullyypage.dart';
 
 class Newpasswordcontiwidget extends StatelessWidget {
-  const Newpasswordcontiwidget({super.key});
+  final String role;
+  const Newpasswordcontiwidget({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -304,7 +305,9 @@ class Newpasswordcontiwidget extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => Sucessfullyypage()),
+                    MaterialPageRoute(
+                      builder: (context) => Sucessfullyypage(role: role),
+                    ),
                     (route) => false,
                   );
                 },

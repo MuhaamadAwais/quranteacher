@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/teacher/add_certifcate_featre/presentation/pages/add_certificate.dart';
 
 class Textcertication extends StatelessWidget {
   const Textcertication({super.key});
@@ -55,14 +56,21 @@ class Textcertication extends StatelessWidget {
 
         Expanded(
           flex: 2,
-          child: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.textWhite.withOpacity(0.15),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => AddCertificate()));
+            },
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.textWhite.withOpacity(0.15),
+              ),
+              child: Icon(Icons.add, color: AppColors.textWhite),
             ),
-            child: Icon(Icons.add, color: AppColors.textWhite),
           ),
         ),
       ],
