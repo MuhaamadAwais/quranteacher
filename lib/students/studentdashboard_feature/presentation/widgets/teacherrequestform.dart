@@ -82,7 +82,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                     ),
                     const SizedBox(height: 8),
                     DropdownButtonFormField<String>(
-                      value: selectedLevel,
+                      initialValue: selectedLevel,
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.book, color: AppColors.primary),
                         border: OutlineInputBorder(
@@ -130,7 +130,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                     ),
                     const SizedBox(height: 8),
                     DropdownButtonFormField<String>(
-                      value: preferredTime,
+                      initialValue: preferredTime,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.schedule,
@@ -180,7 +180,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                     ),
                     const SizedBox(height: 8),
                     DropdownButtonFormField<String>(
-                      value: preferredMadhab,
+                      initialValue: preferredMadhab,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.language,
@@ -232,7 +232,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                     ),
                     const SizedBox(height: 8),
                     DropdownButtonFormField<String>(
-                      value: teacherselct,
+                      initialValue: teacherselct,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.person,

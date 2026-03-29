@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/appcolors.dart';
 
 class Topcontainer extends StatefulWidget {
   const Topcontainer({super.key, required this.size});

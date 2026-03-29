@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranapimodel.dart';
 
-
 class Qurandesign extends StatelessWidget {
   const Qurandesign({super.key, required this.quranapimodel});
   final Quranapimodel quranapimodel;
@@ -31,7 +30,7 @@ class Qurandesign extends StatelessWidget {
                 width: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: AppColors.backgroundStart,
+                  color: AppColors.startgreen,
                 ),
                 child: Center(
                   child: Text(
@@ -67,7 +66,7 @@ class Qurandesign extends StatelessWidget {
                         Text(
                           quranapimodel.urduName,
                           style: TextStyle(
-                            color: AppColors.backgroundStart,
+                            color: AppColors.startgreen,
                             fontSize: 16,
                           ),
                         ),
@@ -90,7 +89,7 @@ class Qurandesign extends StatelessWidget {
                         Expanded(
                           child: LinearProgressIndicator(
                             value: 0.70,
-                            color: AppColors.backgroundStart,
+                            color: AppColors.startgreen,
                             backgroundColor: AppColors.switchBackground,
                           ),
                         ),
@@ -98,7 +97,7 @@ class Qurandesign extends StatelessWidget {
                         Text(
                           "${quranapimodel.Complete}%",
                           style: TextStyle(
-                            color: AppColors.backgroundStart,
+                            color: AppColors.startgreen,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

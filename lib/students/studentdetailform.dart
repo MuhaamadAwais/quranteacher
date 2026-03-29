@@ -13,7 +13,6 @@ class StudentDetailForm extends StatefulWidget {
 class _StudentDetailFormState extends State<StudentDetailForm>
     with TickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
-
   final _nameController = TextEditingController();
   final _rollNoController = TextEditingController();
   final _classController = TextEditingController();
@@ -139,7 +138,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
             color: Colors.white,
           ),
         ),
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.startgreen,
         elevation: 1,
       ),
       body: Padding(
@@ -160,11 +159,11 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         side: BorderSide(
-                          color: AppColors.primary.withOpacity(0.3),
+                          color: AppColors.startgreen.withOpacity(0.3),
                           width: 1.2,
                         ),
                       ),
-                      color: AppColors.primary.withOpacity(0.08),
+                      color: AppColors.startgreen.withOpacity(0.08),
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: Row(
@@ -172,7 +171,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                             Icon(
                               Icons.lock,
                               size: 20,
-                              color: AppColors.primary,
+                              color: AppColors.startgreen,
                             ),
                             const SizedBox(width: 10),
                             Expanded(
@@ -381,7 +380,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                     const SizedBox(width: 16),
                     Expanded(
                       child: DropdownButtonFormField<String>(
-                        value: _selectedGender,
+                        initialValue: _selectedGender,
                         items: const [
                           DropdownMenuItem(
                             value: 'Male',
@@ -460,7 +459,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                         width: width * 0.8,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primary,
+                            backgroundColor: AppColors.startgreen,
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),

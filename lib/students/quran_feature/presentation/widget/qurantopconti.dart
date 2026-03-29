@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/appcolors.dart';
 
 class Qurantopconti extends StatelessWidget {
   const Qurantopconti({super.key});

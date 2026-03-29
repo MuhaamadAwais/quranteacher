@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/widgets/verificationcontiwidget.dart';
-import 'package:quranteacher/teacher/certifications_features/presentation/widgets/verificationconti.dart';
 
 class Verificationpage extends StatelessWidget {
   final String role;

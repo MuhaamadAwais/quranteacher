@@ -66,7 +66,7 @@ class Contidesignhadies extends StatelessWidget {
                       Text(
                         hadiesmodelapi.urduNamehadies,
                         style: TextStyle(
-                          color: AppColors.backgroundStart,
+                          color: AppColors.startgreen,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),

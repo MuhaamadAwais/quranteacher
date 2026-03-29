@@ -5,9 +5,7 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/forgotpasswordpage.dart';
 import 'package:quranteacher/register.dart';
 import 'package:quranteacher/students/appanimations.dart';
-import 'package:quranteacher/students/bottomnavi.dart';
 import 'package:quranteacher/students/studentdetailform.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/pages/teacherdetailspage.dart';
 
 class Login extends StatefulWidget {

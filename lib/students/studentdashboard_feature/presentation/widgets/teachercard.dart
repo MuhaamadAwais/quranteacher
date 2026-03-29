@@ -115,7 +115,7 @@ class TeacherCard extends StatelessWidget {
                       const Icon(Icons.star, color: Colors.amber, size: 14),
                       const SizedBox(width: 4),
                       Text(
-                        "${rating.toStringAsFixed(1)} (${students}+ students)",
+                        "${rating.toStringAsFixed(1)} ($students+ students)",
                         style: TextStyle(
                           fontSize: 13,
                           color: Colors.grey[600],

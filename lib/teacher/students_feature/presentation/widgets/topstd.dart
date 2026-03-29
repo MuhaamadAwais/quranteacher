@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/appcolors.dart';
 
 class Topstd extends StatelessWidget {
   const Topstd({super.key});
