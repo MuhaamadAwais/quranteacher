@@ -54,7 +54,7 @@ class _LessonscreenState extends State<Lessonscreen>
           padding: EdgeInsets.zero,
           children: [
             Topcontainer(size: size),
-            SizedBox(height: height * 0.05),
+            SizedBox(height: height * 0.0),
 
             /// 🔥 Animated List Items
             ListView.separated(

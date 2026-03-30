@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studentchatscreen.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/detailchip.dart';
+import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/teacherchatscreen.dart';
 
 class RequestCard extends StatelessWidget {
   final String studentName;
@@ -114,22 +116,35 @@ class RequestCard extends StatelessWidget {
 
           // Action Buttons
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                child: ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.chat, size: 18),
-                  label: const Text("Chat"),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[100],
-                    foregroundColor: Colors.grey[800],
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-              ),
+              isAccepted
+                  ? SizedBox(
+                      width: screenWidth * 0.37,
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const TeacherChatScreen(
+                                studentName: "Muhammad Ali",
+                              ),
+                            ),
+                          );
+                        },
+                        icon: const Icon(Icons.chat, size: 18),
+                        label: const Text("Chat"),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.grey[100],
+                          foregroundColor: Colors.grey[800],
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                      ),
+                    )
+                  : SizedBox(),
               const SizedBox(width: 12),
               Expanded(
                 child: ElevatedButton.icon(

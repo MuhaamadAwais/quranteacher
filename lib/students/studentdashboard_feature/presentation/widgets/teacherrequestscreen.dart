@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studentchatscreen.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teacher_accepted_request.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teachercard.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teacherrequestform.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class TeacherRequestScreen extends StatelessWidget {
   const TeacherRequestScreen({super.key});
+  // String title = "Find Your Teacher";
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +56,41 @@ class TeacherRequestScreen extends StatelessWidget {
                   ),
 
                   // Featured Teachers Section
-                  Text(
-                    "Featured Teachers",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.islamicNavy900,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Featured Teachers",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.islamicNavy900,
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(
+                            AppColors.islamicGreen,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const TeacherAcceptedRequest(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Accept req..",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 16),
 

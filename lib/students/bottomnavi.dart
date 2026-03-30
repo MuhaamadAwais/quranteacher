@@ -6,7 +6,6 @@ import 'package:quranteacher/students/profile_feature/presentation-layer/screens
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/pages/studentdashboardpage.dart';
 
-
 class Bottomnavi extends StatefulWidget {
   const Bottomnavi({super.key});
 
@@ -38,7 +37,7 @@ class _BottomnaviState extends State<Bottomnavi> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               buildnavItem(Icons.home_outlined, "Home", 0),
-              buildnavItem(Icons.home, "Quran", 1),
+              buildnavItem(Icons.menu_book, "Quran", 1),
               buildnavItem(Icons.book_outlined, "Hadith", 2),
               buildnavItem(Icons.school_outlined, "Lessons", 3),
               buildnavItem(Icons.person_2_outlined, "Profile", 4),

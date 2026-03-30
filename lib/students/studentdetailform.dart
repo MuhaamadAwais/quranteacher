@@ -13,6 +13,8 @@ class StudentDetailForm extends StatefulWidget {
 class _StudentDetailFormState extends State<StudentDetailForm>
     with TickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
+  bool checkboxvalue = false;
+  bool checkbox2 = true;
 
   final _nameController = TextEditingController();
   final _rollNoController = TextEditingController();
@@ -122,6 +124,9 @@ class _StudentDetailFormState extends State<StudentDetailForm>
     final width = size.width;
     return Scaffold(
       appBar: AppBar(
+        shape: RoundedSuperellipseBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+        ),
         leading: GestureDetector(
           onTap: () {
             Navigator.push(
@@ -164,7 +169,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                           width: 1.2,
                         ),
                       ),
-                      color: AppColors.primary.withOpacity(0.08),
+                      color: AppColors.primaryForeground,
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: Row(
@@ -172,16 +177,17 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                             Icon(
                               Icons.lock,
                               size: 20,
-                              color: AppColors.primary,
+                              color: AppColors.sparkle,
                             ),
                             const SizedBox(width: 10),
                             Expanded(
                               child: Text(
                                 "Your data is secure and will not be shared with any third party or other person.All information is stored only for app functionality.\nNotes\nplease enter correct information otherwise remove from app after varification.",
                                 style: TextStyle(
-                                  fontSize: 12.5,
-                                  color: Colors.white70,
+                                  fontSize: 14,
+                                  color: Colors.black54,
                                   height: 1.4,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
@@ -377,49 +383,34 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                 // Gender
                 Row(
                   children: [
-                    const Text("Gender:", style: TextStyle(fontSize: 15)),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: DropdownButtonFormField<String>(
-                        value: _selectedGender,
-                        items: const [
-                          DropdownMenuItem(
-                            value: 'Male',
-                            child: Text(
-                              'Male',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                          DropdownMenuItem(
-                            value: 'Female',
-                            child: Text(
-                              'Female',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ],
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedGender = value;
-                          });
-                        },
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                        ),
-                        style: const TextStyle(fontSize: 15),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Gender is required";
-                          }
-                          return null;
-                        },
+                    const Text(
+                      "Gender:",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
+                    ),
+                    const SizedBox(width: 26),
+                    const Text("Male", style: TextStyle(fontSize: 15)),
+                    Checkbox(
+                      value: checkboxvalue,
+                      onChanged: (value) {
+                        setState(() {
+                          checkboxvalue = value!;
+                          checkbox2 = false;
+                        });
+                      },
+                    ),
+                    const SizedBox(width: 25),
+                    const Text("Female", style: TextStyle(fontSize: 15)),
+                    Checkbox(
+                      value: checkbox2,
+                      onChanged: (value) {
+                        setState(() {
+                          checkbox2 = value!;
+                          checkboxvalue = false;
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -467,15 +458,16 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                             ),
                           ),
                           onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Bottomnavi(),
-                                ),
-                                (router) => false,
-                              );
-                            }
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Bottomnavi(),
+                              ),
+                              (router) => false,
+                            );
+                            // if (_formKey.currentState!.validate()) {
+
+                            // }
                           },
                           child: const Text(
                             "Submit & Proceed to Dashboard",

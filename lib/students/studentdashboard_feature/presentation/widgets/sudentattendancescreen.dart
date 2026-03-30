@@ -1,4 +1,4 @@
-// screens/student_attendance_screen.dart
+//student_attendance_screen.dart
 import 'package:flutter/material.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studentattancemodel.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
@@ -63,175 +63,181 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
 
     return Scaffold(
       backgroundColor: Colors.blue[50],
-
-      // appBar: AppBar(
-      //   title: Text(
-      //     'My Attendance',
-      //     style: TextStyle(fontWeight: FontWeight.bold),
-      //   ),
-      //   backgroundColor: Colors.blue,
-      //   foregroundColor: Colors.white,
-      // ),
       body: Column(
         children: [
-          // app bar
-          TopcommonContainer(title: 'My Attendance'),
+          // App bar
+          const TopcommonContainer(title: 'My Attendance'),
 
-          // Stats Cards
-          Container(
-            margin: EdgeInsets.all(22),
-            padding: EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  const Color.fromARGB(255, 33, 61, 243),
-                  const Color.fromARGB(255, 66, 72, 245),
-                ],
-              ),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [BoxShadow(blurRadius: 20, color: Colors.black12)],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // Expanded ListView for everything else
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.all(16),
               children: [
-                _buildStatCard(
-                  presentCount.toString(),
-                  'Present',
-                  Icons.check_circle,
-                  Colors.green,
-                ),
-                _buildStatCard(
-                  (total - presentCount).toString(),
-                  'Absent',
-                  Icons.cancel,
-                  Colors.red,
-                ),
-                _buildStatCard(
-                  '$percentage%',
-                  'Overall',
-                  Icons.trending_up,
-                  Colors.orange,
-                ),
-              ],
-            ),
-          ),
-
-          // Profile Card
-          Card(
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            color: Colors.white,
-            elevation: 4,
-
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Container(
-              height: height * 0.15,
-              width: width * 0.85,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(
-                  color: const Color.fromARGB(100, 164, 162, 164),
-                  width: 1,
-                ),
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: width * 0.04),
-                  CircleAvatar(
-                    radius: 35,
-                    backgroundColor: Colors.blue[100],
-                    child: Icon(Icons.person, size: 40),
+                // Stats Cards
+                Container(
+                  padding: const EdgeInsets.all(30),
+                  margin: const EdgeInsets.only(bottom: 20),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color.fromARGB(255, 33, 61, 243),
+                        Color.fromARGB(255, 66, 72, 245),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(blurRadius: 20, color: Colors.black12),
+                    ],
                   ),
-                  SizedBox(width: 16),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SizedBox(height: height * 0.02),
-                      Text(
-                        'Ahmed Ali',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      _buildStatCard(
+                        presentCount.toString(),
+                        'Present',
+                        Icons.check_circle,
+                        Colors.green,
                       ),
-                      Text(
-                        'ST001 | Juz 1 |\n Basic Quran Badge',
-                        style: TextStyle(color: Colors.grey[600]),
+                      _buildStatCard(
+                        (total - presentCount).toString(),
+                        'Absent',
+                        Icons.cancel,
+                        Colors.red,
+                      ),
+                      _buildStatCard(
+                        '$percentage%',
+                        'Overall',
+                        Icons.trending_up,
+                        Colors.orange,
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-          ),
-
-          // History
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Attendance History',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                Chip(label: Text('${myAttendance.length} sessions')),
-              ],
-            ),
-          ),
 
-          Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              itemCount: myAttendance.length,
-              itemBuilder: (context, index) {
-                final record = myAttendance[index];
-                return Card(
-                  margin: EdgeInsets.only(bottom: 12),
+                // Profile Card
+                Card(
+                  margin: const EdgeInsets.only(bottom: 20),
+                  color: Colors.white,
                   elevation: 4,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: ListTile(
-                    contentPadding: EdgeInsets.all(20),
-                    leading: Container(
-                      padding: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: record.isPresent ? Colors.green : Colors.red,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        record.isPresent ? Icons.check : Icons.close,
-                        color: Colors.white,
-                        size: 24,
+                  child: Container(
+                    height: height * 0.15,
+                    width: width * 0.85,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: const Color.fromARGB(100, 164, 162, 164),
+                        width: 1,
                       ),
                     ),
-                    title: Text(
-                      '${record.group} - ${record.rollNo}',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Text(
-                      '${record.rollNo} | ${record.date.day} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][record.date.month - 1]}',
-                    ),
-                    trailing: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.orange[100],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        record.isPresent ? 'Present' : 'Absent',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontSize: 14,
+                    child: Row(
+                      children: [
+                        SizedBox(width: width * 0.04),
+                        CircleAvatar(
+                          radius: 35,
+                          backgroundColor: Colors.blue[100],
+                          child: const Icon(Icons.person, size: 40),
                         ),
-                      ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'Ahmed Ali',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'ST001 | Juz 1 |\n Basic Quran Badge',
+                                style: TextStyle(color: Colors.grey[600]),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                );
-              },
+                ),
+
+                // History Header
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Attendance History',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Chip(label: Text('${myAttendance.length} sessions')),
+                  ],
+                ),
+                const SizedBox(height: 16),
+
+                // Attendance ListView.builder
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: myAttendance.length,
+                  itemBuilder: (context, index) {
+                    final record = myAttendance[index];
+                    return Card(
+                      margin: const EdgeInsets.only(bottom: 12),
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.all(20),
+                        leading: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: record.isPresent ? Colors.green : Colors.red,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            record.isPresent ? Icons.check : Icons.close,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ),
+                        title: Text(
+                          '${record.group} - ${record.rollNo}',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          '${record.rollNo} | ${record.date.day} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][record.date.month - 1]}',
+                        ),
+                        trailing: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.orange[100],
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Text(
+                            record.isPresent ? 'Present' : 'Absent',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ),
         ],
@@ -248,23 +254,23 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: color.withOpacity(0.2),
             shape: BoxShape.circle,
           ),
           child: Icon(icon, color: color, size: 30),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           value,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        Text(label, style: TextStyle(color: Colors.white70)),
+        Text(label, style: const TextStyle(color: Colors.white70)),
       ],
     );
   }
