@@ -5,7 +5,6 @@ import 'package:quranteacher/students/lesson_feature/presentation_layer/screens/
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studenthomeworkscreen.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/sudentattendancescreen.dart';
-import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teachercard.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/teacherrequestscreen.dart';
 
 class Quickaccesconti extends StatefulWidget {
@@ -37,8 +36,8 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
                 "assets/images/quran.png",
                 "Quran",
                 "Read & Learn",
-                AppColors.secondary,
-                AppColors.islamicGreen,
+                AppColors.startgreen,
+                AppColors.endgreen,
               ),
               clickcontistd(
                 1,
@@ -47,8 +46,8 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
                 "assets/images/book.png",
                 "Hadith",
                 "Daily Wisdom",
-                AppColors.islamicNavy500,
                 AppColors.islamicNavy600,
+                AppColors.islamicNavy800,
               ),
             ],
           ),
@@ -89,8 +88,8 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
                 "assets/images/family.png",
                 "Teacher List",
                 "Select related your course",
-                Colors.blue,
                 Colors.lightBlue,
+                Colors.blue,
               ),
               clickcontistd(
                 5,

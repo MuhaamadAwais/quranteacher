@@ -27,12 +27,12 @@ class Haditssearch extends StatelessWidget {
               fillColor: Colors.grey.shade200,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: AppColors.secondary),
+                borderSide: const BorderSide(color: AppColors.startgreen),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: const BorderSide(
-                  color: AppColors.islamicEmerald,
+                  color: AppColors.startgreen,
                   width: 2,
                 ),
               ),

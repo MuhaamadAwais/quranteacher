@@ -86,7 +86,7 @@ class _RatescontiState extends State<Ratesconti> {
                 ),
                 Switch(
                   value: ischanged,
-                  activeColor: Colors.green,
+                  activeThumbColor: Colors.green,
 
                   thumbColor: WidgetStatePropertyAll(Colors.white),
 

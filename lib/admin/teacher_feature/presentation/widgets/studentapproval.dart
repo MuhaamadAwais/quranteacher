@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/commonbottomsheet.dart';
 import 'package:quranteacher/admin/teacher_feature/presentation/widgets/studentapprovaldetail.dart';
-import 'package:quranteacher/admin/teacher_feature/presentation/widgets/teacherapprovaldetail.dart';
 import 'package:quranteacher/appcolors.dart';
 
 class Studentapproval extends StatelessWidget {

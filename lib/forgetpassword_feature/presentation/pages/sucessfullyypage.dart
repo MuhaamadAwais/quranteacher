@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/login.dart';
 import 'package:quranteacher/students/studentdetailform.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/pages/teacherdetailspage.dart';
 

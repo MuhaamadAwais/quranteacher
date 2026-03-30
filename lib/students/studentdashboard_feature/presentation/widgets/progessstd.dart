@@ -30,13 +30,13 @@ class Progessstd extends StatelessWidget {
                     const Text(
                       "Your Progress",
                       style: TextStyle(
-                        color: Colors.black,
+                        color: AppColors.startgreen,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                     ),
                     const Spacer(),
-                    Icon(Icons.trending_up, color: AppColors.backgroundStart),
+                    Icon(Icons.trending_up, color: AppColors.startgreen),
                   ],
                 ),
 
@@ -46,14 +46,15 @@ class Progessstd extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     contidesign(
-                      AppColors.islamicEmerald,
-                      AppColors.backgroundEnd,
+                      AppColors.startgreen
+                      ,
+                      AppColors.endgreen,
                       "18",
                       "Surahs",
                     ),
                     contidesign(
-                      AppColors.islamicNavy400,
-                      AppColors.islamicNavy,
+                      AppColors.islamicNavy600,
+                      AppColors.islamicNavy800,
                       "42",
                       "Classes",
                     ),

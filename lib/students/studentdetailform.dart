@@ -13,8 +13,6 @@ class StudentDetailForm extends StatefulWidget {
 class _StudentDetailFormState extends State<StudentDetailForm>
     with TickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
-  bool checkboxvalue = false;
-  bool checkbox2 = true;
 
   final _nameController = TextEditingController();
   final _rollNoController = TextEditingController();
@@ -144,7 +142,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
             color: Colors.white,
           ),
         ),
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.startgreen,
         elevation: 1,
       ),
       body: Padding(
@@ -165,11 +163,11 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         side: BorderSide(
-                          color: AppColors.primary.withOpacity(0.3),
+                          color: AppColors.startgreen.withOpacity(0.3),
                           width: 1.2,
                         ),
                       ),
-                      color: AppColors.primaryForeground,
+                      color: AppColors.primary.withOpacity(0.08),
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: Row(
@@ -177,7 +175,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                             Icon(
                               Icons.lock,
                               size: 20,
-                              color: AppColors.sparkle,
+                              color: AppColors.primary,
                             ),
                             const SizedBox(width: 10),
                             Expanded(
@@ -383,34 +381,49 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                 // Gender
                 Row(
                   children: [
-                    const Text(
-                      "Gender:",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                    const Text("Gender:", style: TextStyle(fontSize: 15)),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: DropdownButtonFormField<String>(
+                        value: _selectedGender,
+                        items: const [
+                          DropdownMenuItem(
+                            value: 'Male',
+                            child: Text(
+                              'Male',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                          DropdownMenuItem(
+                            value: 'Female',
+                            child: Text(
+                              'Female',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedGender = value;
+                          });
+                        },
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 8,
+                          ),
+                        ),
+                        style: const TextStyle(fontSize: 15),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Gender is required";
+                          }
+                          return null;
+                        },
                       ),
-                    ),
-                    const SizedBox(width: 26),
-                    const Text("Male", style: TextStyle(fontSize: 15)),
-                    Checkbox(
-                      value: checkboxvalue,
-                      onChanged: (value) {
-                        setState(() {
-                          checkboxvalue = value!;
-                          checkbox2 = false;
-                        });
-                      },
-                    ),
-                    const SizedBox(width: 25),
-                    const Text("Female", style: TextStyle(fontSize: 15)),
-                    Checkbox(
-                      value: checkbox2,
-                      onChanged: (value) {
-                        setState(() {
-                          checkbox2 = value!;
-                          checkboxvalue = false;
-                        });
-                      },
                     ),
                   ],
                 ),
@@ -451,7 +464,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                         width: width * 0.8,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primary,
+                            backgroundColor: AppColors.startgreen,
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
