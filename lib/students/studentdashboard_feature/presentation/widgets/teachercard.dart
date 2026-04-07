@@ -147,11 +147,7 @@ class TeacherCard extends StatelessWidget {
 
                       // Specialty
                       Text(
-<<<<<<< HEAD
-                        specialty,
-=======
                         "${rating.toStringAsFixed(1)} ($students+ students)",
->>>>>>> b2e6b0a7596e3cc5a1973d0181a23b9069732b2e
                         style: TextStyle(
                           fontSize: 14,
                           color: AppColors.primary,
