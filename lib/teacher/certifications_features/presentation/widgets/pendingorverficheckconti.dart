@@ -29,14 +29,16 @@ class Pendingorverficheckconti extends StatelessWidget {
                   style: TextStyle(
                     color: AppColors.textWhite,
                     fontWeight: FontWeight.bold,
+                    fontSize: 16,
                   ),
                 ),
-            
+
                 Text(
                   "verified",
                   style: TextStyle(
                     color: AppColors.textWhite,
                     fontWeight: FontWeight.normal,
+                    fontSize: 14,
                   ),
                 ),
               ],
@@ -62,14 +64,16 @@ class Pendingorverficheckconti extends StatelessWidget {
                   style: TextStyle(
                     color: AppColors.textWhite,
                     fontWeight: FontWeight.bold,
+                    fontSize: 16,
                   ),
                 ),
-            
+
                 Text(
                   "pending",
                   style: TextStyle(
                     color: AppColors.textWhite,
                     fontWeight: FontWeight.normal,
+                    fontSize: 14,
                   ),
                 ),
               ],

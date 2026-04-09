@@ -32,7 +32,7 @@ class Assignworkcard extends StatelessWidget {
                   Text(
                     "Homework Title",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
@@ -51,7 +51,7 @@ class Assignworkcard extends StatelessWidget {
                           border: InputBorder.none,
                           hint: Text(
                             " e.g, Memorize Surah Al-Mulk",
-                            style: TextStyle(color: Colors.black, fontSize: 15),
+                            style: TextStyle(color: Colors.black, fontSize: 14),
                           ),
                         ),
                       ),
@@ -62,7 +62,7 @@ class Assignworkcard extends StatelessWidget {
                   Text(
                     "Subject",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
@@ -81,7 +81,7 @@ class Assignworkcard extends StatelessWidget {
                           border: InputBorder.none,
                           hint: Text(
                             " Quran Memorization",
-                            style: TextStyle(color: Colors.black, fontSize: 15),
+                            style: TextStyle(color: Colors.black, fontSize: 14),
                           ),
                         ),
                       ),
@@ -91,7 +91,7 @@ class Assignworkcard extends StatelessWidget {
                   Text(
                     "Subject",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
@@ -110,7 +110,7 @@ class Assignworkcard extends StatelessWidget {
                           border: InputBorder.none,
                           hint: Text(
                             " Provide detailed instructions...",
-                            style: TextStyle(color: Colors.black, fontSize: 15),
+                            style: TextStyle(color: Colors.black, fontSize: 14),
                           ),
                         ),
                       ),
@@ -181,7 +181,7 @@ class Assignworkcard extends StatelessWidget {
                   Text(
                     "Assign To",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
@@ -200,7 +200,7 @@ class Assignworkcard extends StatelessWidget {
                           Checkbox(value: false, onChanged: (value) {}),
                           Text(
                             "All Students",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
+                            style: TextStyle(color: Colors.black, fontSize: 14),
                           ),
                         ],
                       ),
@@ -221,7 +221,7 @@ class Assignworkcard extends StatelessWidget {
                           Checkbox(value: false, onChanged: (value) {}),
                           Text(
                             "Beginner Group",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
+                            style: TextStyle(color: Colors.black, fontSize: 14),
                           ),
                         ],
                       ),
@@ -243,7 +243,7 @@ class Assignworkcard extends StatelessWidget {
                           Checkbox(value: false, onChanged: (value) {}),
                           Text(
                             "Advanced Group",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
+                            style: TextStyle(color: Colors.black, fontSize: 14),
                           ),
                         ],
                       ),

@@ -21,7 +21,7 @@ class Btnbacktext extends StatelessWidget {
               shape: BoxShape.circle,
               color: AppColors.textWhite.withOpacity(0.15),
             ),
-            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+            child: Icon(Icons.arrow_back, color: AppColors.textWhite,size: 24,),
           ),
         ),
 
@@ -35,7 +35,7 @@ class Btnbacktext extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
 
@@ -44,7 +44,7 @@ class Btnbacktext extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.normal,
-                fontSize: 15,
+                fontSize: 14,
               ),
             ),
           ],

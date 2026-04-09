@@ -41,14 +41,14 @@ Widget _contides(
         children: [
           Row(
             children: [
-              Icon(iconsset, color: AppColors.textWhite),
+              Icon(iconsset, color: AppColors.textWhite,size: 24,),
               SizedBox(width: 3),
               Text(
                 valuesofper.toString(),
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.normal,
-                  fontSize: 15,
+                  fontSize: 16,
                 ),
               ),
             ],
@@ -58,7 +58,7 @@ Widget _contides(
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.normal,
-              fontSize: 15,
+              fontSize: 14,
             ),
           ),
         ],

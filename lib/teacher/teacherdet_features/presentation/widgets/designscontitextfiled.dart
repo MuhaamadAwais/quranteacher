@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class DesignsContiTextField extends StatefulWidget {
   final double height;
@@ -60,13 +61,13 @@ class _DesignsContiTextFieldState extends State<DesignsContiTextField> {
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
             border: Border.all(
-              color: isFocused ? Colors.green : Colors.transparent,
+              color: isFocused ? AppColors.toplast : Colors.transparent,
               width: 2,
             ),
             boxShadow: [
               if (isFocused)
                 BoxShadow(
-                  color: Colors.green.withOpacity(0.2),
+                  color: AppColors.toplast.withOpacity(0.2),
                   blurRadius: 10,
                   spreadRadius: 1,
                 ),
@@ -83,16 +84,16 @@ class _DesignsContiTextFieldState extends State<DesignsContiTextField> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color(0xFF006633).withOpacity(0.25),
+                        color:  AppColors.toplast.withOpacity(0.25),
                       ),
-                      child: Icon(widget.icon,color: const Color(0xFF006633),size: 25,),
+                      child: Icon(widget.icon,color: AppColors.toplast,size: 24,),
                     ),
                     const SizedBox(width: 10),
                     Text(
                       widget.title,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black, fontSize: 25),
+                        color: Colors.black, fontSize: 18),
                     ),
                   ],
                 ),
@@ -102,6 +103,7 @@ class _DesignsContiTextFieldState extends State<DesignsContiTextField> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: widget.hint,
+                    hintStyle: TextStyle(fontSize: 16)
                   ),
                 ),
               ],

@@ -30,7 +30,7 @@ class Textstudent extends StatelessWidget {
                 ),
               );
             },
-            child: Icon(Icons.arrow_back_ios_new_rounded, color: AppColors.textWhite,size: 20,),
+            child: Icon(Icons.arrow_back_ios_new_rounded, color: AppColors.textWhite,size: 24,),
           ),
         ),
         SizedBox(width: 5),
@@ -38,7 +38,7 @@ class Textstudent extends StatelessWidget {
           "My Students",
           style: TextStyle(
             color: AppColors.textWhite,
-            fontSize: 30,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),

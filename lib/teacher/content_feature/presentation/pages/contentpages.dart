@@ -21,61 +21,68 @@ class _ContentpagesState extends State<Contentpages> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Column(
           children: [
             Topcontent(),
             SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: width,
-                height: height * 0.07,
-                decoration: BoxDecoration(
+              child: Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
-                  color: AppColors.startgreen,
                 ),
-                child: TabBar(
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  isScrollable: false,
-                  indicator: BoxDecoration(
-                    color: Colors.white, // Selected tab background
+                child: Container(
+                  width: width,
+                  height: height * 0.07,
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
+                    color: AppColors.toplast,
                   ),
-                  labelColor: Colors.black, // Selected text color
-                  unselectedLabelColor: Colors.white, // Unselected text color
-                  dividerColor: Colors.transparent, // remove bottom line
-                  tabs: const [
-                    Tab(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.home),
-                          SizedBox(width: 4),
-                          Text("Quran"),
-                        ],
-                      ),
+                  child: TabBar(
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    isScrollable: false,
+                    indicator: BoxDecoration(
+                      color: Colors.white, // Selected tab background
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    Tab(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.book_outlined),
-                          SizedBox(width: 4),
-                          Text("Hadith"),
-                        ],
+                    labelColor: Colors.black, // Selected text color
+                    unselectedLabelColor: Colors.white, // Unselected text color
+                    dividerColor: Colors.transparent, // remove bottom line
+                    tabs: const [
+                      Tab(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.home),
+                            SizedBox(width: 4),
+                            Text("Quran"),
+                          ],
+                        ),
                       ),
-                    ),
-                    Tab(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.school_outlined),
-                          SizedBox(width: 4),
-                          Text("Lessons"),
-                        ],
+                      Tab(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.book_outlined),
+                            SizedBox(width: 4),
+                            Text("Hadith"),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      Tab(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.school_outlined),
+                            SizedBox(width: 4),
+                            Text("Lessons"),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -91,8 +98,8 @@ class _ContentpagesState extends State<Contentpages> {
                           width,
                           height * 0.07,
                           "Add Quran Content",
-                          AppColors.startgreen,
-                          AppColors.endgreen,
+                          AppColors.topmiddle,
+                          AppColors.bottommiddle,
                           () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -149,8 +156,8 @@ class _ContentpagesState extends State<Contentpages> {
                           width,
                           height * 0.07,
                           "Add Hadith Content",
-                          AppColors.islamicNavy600,
-                          AppColors.islamicNavy800,
+                          AppColors.topmiddle,
+                          AppColors.bottommiddle,
                           () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -198,8 +205,8 @@ class _ContentpagesState extends State<Contentpages> {
                           width,
                           height * 0.07,
                           "Add Lesson",
-                          AppColors.pink500,
-                          AppColors.pink700,
+                          AppColors.topmiddle,
+                          AppColors.bottommiddle,
                           () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -263,13 +270,13 @@ class _ContentpagesState extends State<Contentpages> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.add, color: AppColors.textWhite),
+              Icon(Icons.add, color: AppColors.textWhite, size: 24),
               SizedBox(width: 10),
               Text(
                 textforadd,
                 style: TextStyle(
                   color: AppColors.textWhite,
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),

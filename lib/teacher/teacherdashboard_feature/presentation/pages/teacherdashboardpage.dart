@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/classcontiwid.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/leastitems.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/nametextwid.dart';
@@ -18,6 +19,7 @@ class _TeacherdashboardpageState extends State<Teacherdashboardpage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Newcolors.background,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -50,16 +52,15 @@ class _TeacherdashboardpageState extends State<Teacherdashboardpage> {
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               Leastitems(),
-
-              SizedBox(height: 50),
+              SizedBox(height: 30),
             ],
           ),
         ),

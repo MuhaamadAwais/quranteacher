@@ -23,6 +23,7 @@ class Reviewmainconti extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Center(
                     child: Text(
@@ -30,7 +31,7 @@ class Reviewmainconti extends StatelessWidget {
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 40,
+                        fontSize: 18,
                       ),
                     ),
                   ),
@@ -50,7 +51,7 @@ class Reviewmainconti extends StatelessWidget {
                     style: TextStyle(
                       color: AppColors.textWhite,
                       fontWeight: FontWeight.normal,
-                      fontSize: 15,
+                      fontSize: 14,
                     ),
                   ),
                 ],
@@ -86,7 +87,7 @@ Widget ratingrow(
     children: [
       Text(
         position,
-        style: TextStyle(color: AppColors.textWhite, fontSize: 15),
+        style: TextStyle(color: AppColors.textWhite, fontSize: 14),
       ),
       SizedBox(width: 4),
       Icon(Icons.star, color: AppColors.accent),
@@ -105,7 +106,7 @@ Widget ratingrow(
       SizedBox(width: 4),
       Text(
         percentrating,
-        style: TextStyle(color: AppColors.textWhite, fontSize: 15),
+        style: TextStyle(color: AppColors.textWhite, fontSize: 14),
       ),
     ],
   );

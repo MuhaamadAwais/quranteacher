@@ -17,7 +17,7 @@ class Recenttranstion extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(20),
           ),
-          elevation: 10,
+          elevation: 5,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -34,7 +34,7 @@ class Recenttranstion extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 18,
                         ),
                       ),
                       Spacer(),
@@ -58,14 +58,16 @@ class Recenttranstion extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.logout_outlined,
-                              color: AppColors.startgreen,
+                              color: AppColors.toplast,
+                              size: 24,
                             ),
                             SizedBox(width: 8), // Icon aur Text ke beech space
                             Text(
                               "Export",
                               style: TextStyle(
-                                color: AppColors.startgreen,
+                                color: AppColors.toplast,
                                 fontWeight: FontWeight.bold,
+                               fontSize: 16
                               ),
                             ),
                           ],
@@ -160,7 +162,8 @@ class Recenttranstion extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.switchBackground.withOpacity(0.15),
+          color: AppColors.toplast.withOpacity(0.25),
+          border: Border.all(color: AppColors.toplast,width: 2)
         ),
         child: Row(
           children: [
@@ -172,14 +175,14 @@ class Recenttranstion extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: LinearGradient(
-                    colors: [Colors.orange, Colors.deepOrangeAccent],
+                    colors: [AppColors.topmiddle, AppColors.bottommiddle],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                 ),
                 child: Icon(
                   Icons.attach_money,
-                  size: 30,
+                  size: 24,
                   color: AppColors.textWhite,
                 ),
               ),
@@ -192,7 +195,7 @@ class Recenttranstion extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "CLasses Payyment -",
+                    "Classes Payment -",
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 12,
@@ -209,7 +212,7 @@ class Recenttranstion extends StatelessWidget {
                   ),
                   Text(
                     date,
-                    style: TextStyle(color: Colors.grey, fontSize: 15),
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ],
               ),
@@ -223,7 +226,7 @@ class Recenttranstion extends StatelessWidget {
                   Text(
                     "\$$amount",
                     style: TextStyle(
-                      color: AppColors.startgreen,
+                      color: AppColors.toplast,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
@@ -231,7 +234,7 @@ class Recenttranstion extends StatelessWidget {
 
                   Text(
                     "Completed",
-                    style: TextStyle(color: Colors.grey, fontSize: 15),
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ],
               ),

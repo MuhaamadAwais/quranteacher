@@ -37,13 +37,13 @@ class _RatescontiState extends State<Ratesconti> {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.orange.withOpacity(0.25),
+                    color: AppColors.toplast.withOpacity(0.25),
                   ),
                   child: Center(
                     child: Icon(
                       Icons.attach_money_outlined,
-                      color: Colors.orange,
-                      size: 25,
+                      color: AppColors.toplast,
+                      size: 24,
                     ),
                   ),
                 ),
@@ -57,6 +57,7 @@ class _RatescontiState extends State<Ratesconti> {
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
                     Text(
@@ -64,6 +65,7 @@ class _RatescontiState extends State<Ratesconti> {
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
 
@@ -72,6 +74,7 @@ class _RatescontiState extends State<Ratesconti> {
                       style: TextStyle(
                         color: AppColors.switchBackground,
                         fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
                   ],
@@ -81,7 +84,8 @@ class _RatescontiState extends State<Ratesconti> {
                   "Individual",
                   style: TextStyle(
                     color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 16,
                   ),
                 ),
                 Switch(
@@ -102,6 +106,7 @@ class _RatescontiState extends State<Ratesconti> {
                   style: TextStyle(
                     color: AppColors.backgroundStart,
                     fontWeight: FontWeight.bold,
+                    fontSize: 16,
                   ),
                 ),
               ],

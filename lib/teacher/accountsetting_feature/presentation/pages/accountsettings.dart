@@ -6,9 +6,7 @@ import 'package:quranteacher/teacher/accountsetting_feature/presentation/widget/
 import 'package:quranteacher/teacher/accountsetting_feature/presentation/widget/securitysetting.dart';
 import 'package:quranteacher/teacher/accountsetting_feature/presentation/widget/textsettting.dart';
 
-void main() {
-  runApp(MaterialApp(home: Accountsettings()));
-}
+
 
 class Accountsettings extends StatefulWidget {
   const Accountsettings({super.key});
@@ -22,6 +20,7 @@ class _AccountsettingsState extends State<Accountsettings> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [

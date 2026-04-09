@@ -16,8 +16,8 @@ class Btnstartclass extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-                AppColors.islamicNavy600,
-                AppColors.islamicNavy800,],
+                AppColors.toplast,
+                AppColors.bottomlast,],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -28,13 +28,13 @@ class Btnstartclass extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.videocam_outlined, color: AppColors.textWhite,size: 32,),
+              Icon(Icons.videocam_outlined, color: AppColors.textWhite,size: 24,),
               SizedBox(width: 10,),
               Text(
                 "Start Live Class Now",
                 style: TextStyle(
                   color: AppColors.textWhite,
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),

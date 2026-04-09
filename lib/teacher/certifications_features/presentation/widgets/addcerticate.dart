@@ -20,7 +20,7 @@ class Addcerticate extends StatelessWidget {
           height: height * 0.1,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [AppColors.startgreen, AppColors.endgreen],
+              colors: [AppColors.toplast, AppColors.bottomlast],
             ),
             borderRadius: BorderRadius.circular(20),
           ),
@@ -50,7 +50,7 @@ class Addcerticate extends StatelessWidget {
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
                       ),
                     ),
                     Text(
@@ -58,7 +58,7 @@ class Addcerticate extends StatelessWidget {
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.normal,
-                        fontSize: 13,
+                        fontSize: 14,
                       ),
                     ),
                   ],

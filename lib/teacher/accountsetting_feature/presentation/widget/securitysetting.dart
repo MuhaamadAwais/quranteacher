@@ -35,13 +35,14 @@ class Securitysetting extends StatelessWidget {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
-                            colors: [AppColors.pink500, AppColors.pink700],
+                            colors: [AppColors.toplast, AppColors.toplast],
                           ),
                         ),
                         child: Center(
                           child: Icon(
                             Icons.lock_outline,
                             color: AppColors.textWhite,
+                            size: 24,
                           ),
                         ),
                       ),
@@ -51,7 +52,7 @@ class Securitysetting extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 16,
                         ),
                       ),
                     ],
@@ -72,6 +73,7 @@ class Securitysetting extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Icon(
+                                size: 24,
                                 Icons.lock_outline,
                                 color: AppColors.switchBackground,
                               ),
@@ -88,7 +90,7 @@ class Securitysetting extends StatelessWidget {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 15,
+                                      fontSize: 16,
                                     ),
                                   ),
 
@@ -97,7 +99,7 @@ class Securitysetting extends StatelessWidget {
                                     style: TextStyle(
                                       color: AppColors.switchBackground,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 10,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ],
@@ -107,7 +109,8 @@ class Securitysetting extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Icon(
-                                Icons.arrow_forward_ios,
+
+size: 24,                                Icons.arrow_forward_ios,
                                 color: AppColors.switchBackground,
                               ),
                             ),

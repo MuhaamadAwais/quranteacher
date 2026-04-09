@@ -15,7 +15,7 @@ class Addasign extends StatelessWidget {
         height: height * 0.07,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.pinkAccent, Colors.purpleAccent],
+            colors: [AppColors.toplast, AppColors.bottomlast],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -27,12 +27,12 @@ class Addasign extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Icon(Icons.add, color: AppColors.textWhite),
-              SizedBox(width: 20),
+              SizedBox(width: 10),
               Text(
                 "Assign HomeWork",
                 style: TextStyle(
                   color: AppColors.textWhite,
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),

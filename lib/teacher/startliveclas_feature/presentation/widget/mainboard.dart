@@ -80,7 +80,7 @@ class Mainboard extends StatelessWidget {
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hint: Text(
-                            " What will yyou teach today ?",
+                            " What will you teach today ?",
                             style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                         ),
@@ -108,7 +108,9 @@ class Mainboard extends StatelessWidget {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  prefixIcon: Icon(Icons.calendar_month_outlined),
+                                  prefixIcon: Icon(
+                                    Icons.calendar_month_outlined,
+                                  ),
                                   hint: Text("mm/dd/yyyy"),
                                 ),
                               ),

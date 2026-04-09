@@ -17,7 +17,7 @@ class Topassingconti extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [Colors.pinkAccent, Colors.purpleAccent],
+          colors: [AppColors.topmaingreen,AppColors.bottommaingreen],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

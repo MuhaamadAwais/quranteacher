@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/teacher/startliveclas_feature/presentation/pages/startliveclass.dart';
 
 class Classcontiwid extends StatelessWidget {
@@ -31,14 +32,14 @@ class Classcontiwid extends StatelessWidget {
                 width: 60,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.orange, Colors.deepOrangeAccent],
+                    colors: [AppColors.topmiddle, AppColors.bottommiddle],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
-                  size: 35,
+                  size: 24,
                   Icons.videocam_outlined,
                   color: AppColors.textWhite,
                 ),
@@ -55,7 +56,7 @@ class Classcontiwid extends StatelessWidget {
                     "Start Live Class",
                     style: TextStyle(
                       color: AppColors.textWhite,
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -69,7 +70,11 @@ class Classcontiwid extends StatelessWidget {
 
             Expanded(
               flex: 2,
-              child: Icon(Icons.arrow_forward_ios, color: AppColors.textWhite),
+              child: Icon(
+                Icons.arrow_forward_ios,
+                color: AppColors.textWhite,
+                size: 24,
+              ),
             ),
           ],
         ),

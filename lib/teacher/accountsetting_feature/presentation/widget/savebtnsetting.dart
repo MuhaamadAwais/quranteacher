@@ -15,7 +15,7 @@ class Savebtnsetting extends StatelessWidget {
         height: height * 0.075,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.startgreen, AppColors.endgreen],
+            colors: [AppColors.toplast, AppColors.bottomlast],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -26,14 +26,14 @@ class Savebtnsetting extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.check, color: AppColors.textWhite, size: 30),
+              Icon(Icons.check, color: AppColors.textWhite, size: 24),
               SizedBox(width: 10),
               Text(
                 "Save Changes",
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
             ],

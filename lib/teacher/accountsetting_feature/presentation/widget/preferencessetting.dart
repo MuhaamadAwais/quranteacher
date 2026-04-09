@@ -36,7 +36,7 @@ class Preferencessetting extends StatelessWidget {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           gradient: LinearGradient(
-                            colors: [AppColors.pink500, AppColors.pink700],
+                            colors: [AppColors.toplast, AppColors.toplast],
                           ),
                         ),
                         child: Center(
@@ -52,7 +52,7 @@ class Preferencessetting extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 16,
                         ),
                       ),
                     ],
@@ -139,8 +139,9 @@ class Preferencessetting extends StatelessWidget {
                   ),
                   Text(
                     "Preferred Language",
-                    style: TextStyle(fontSize: 20, color: Colors.black),
+                    style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
+                  SizedBox(height: 5,),
                   Container(
                     width: width,
                     height: height * 0.08,
@@ -155,13 +156,14 @@ class Preferencessetting extends StatelessWidget {
                           child: Icon(
                             Icons.language,
                             color: AppColors.switchBackground,
+                            size: 24,
                           ),
                         ),
                         Expanded(
                           flex: 3,
                           child: Text(
                             "English",
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.black,fontSize: 16),
                           ),
                         ),
                         Expanded(

@@ -39,7 +39,7 @@ class Multicontistd extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 16,
             ),
           ),
 
@@ -48,7 +48,7 @@ class Multicontistd extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.bold,
-              fontSize: 15,
+              fontSize: 16,
             ),
           ),
         ],

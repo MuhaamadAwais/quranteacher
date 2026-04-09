@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  // main two color
+  static const Color topmaingreen = Color(0xFF2E7D32);
+  static const Color bottommaingreen = Color(0xFF1B5E20);
+
+  // second wele 4
+  static const Color topmiddle = Color(0xFF6B8E23);
+  static const Color bottommiddle = Color(0xFF1B5E20);
+
+  // last 6
+  static const toplast = Color(0xFF1B5E20);
+  static const bottomlast = Color(0xFF6B8E23);
+
   // Background Gradients
   static const Color backgroundStart = Color(0xFF059669); // emerald-600
   static const Color backgroundVia = Color(0xFF10B981); // emerald-500

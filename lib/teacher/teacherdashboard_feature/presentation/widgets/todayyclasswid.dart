@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Todayyclasswid extends StatelessWidget {
   const Todayyclasswid({super.key});
@@ -11,7 +12,7 @@ class Todayyclasswid extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
-        elevation: 5,
+        elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
         ),
@@ -33,12 +34,12 @@ class Todayyclasswid extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.calendar_month_outlined,
-                        color: AppColors.islamicNavy800,
+                        color: AppColors.toplast,
                       ),
                       Text(
                         "Today's Classes",
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -46,7 +47,7 @@ class Todayyclasswid extends StatelessWidget {
                       Spacer(),
                       Text(
                         "3 classes",
-                        style: TextStyle(fontSize: 15, color: Colors.black),
+                        style: TextStyle(fontSize: 14, color: Colors.black),
                       ),
                     ],
                   ),
@@ -72,8 +73,8 @@ class Todayyclasswid extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: AppColors.islamicNavy700.withOpacity(0.15),
-        border: Border.all(color: AppColors.islamicNavy800, width: 3),
+        color: AppColors.toplast.withOpacity(0.25),
+        border: Border.all(color: AppColors.toplast, width: 2),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
@@ -88,7 +89,7 @@ class Todayyclasswid extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 16,
                   ),
                 ),
                 Spacer(),
@@ -96,16 +97,16 @@ class Todayyclasswid extends StatelessWidget {
                   height: 30,
                   width: 120,
                   decoration: BoxDecoration(
-                    color: AppColors.islamicNavy500.withOpacity(0.25),
+                    color: AppColors.toplast.withOpacity(0.5),
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
                   child: Center(
                     child: Text(
                       "UpComing",
                       style: TextStyle(
-                        color: AppColors.islamicNavy700,
+                        color: Newcolors.background,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
                       ),
                     ),
                   ),
@@ -115,16 +116,16 @@ class Todayyclasswid extends StatelessWidget {
 
             Row(
               children: [
-                Icon(Icons.access_time, color:  Colors.grey),
+                Icon(Icons.access_time, color:  Colors.white,size: 24,),
                 Text(
                   "10:00 AM",
-                  style: TextStyle(color:  Colors.grey),
+                  style: TextStyle(color:  Colors.white,fontSize: 14),
                 ),
                 SizedBox(width: 20),
-                Icon(Icons.group_outlined, color:  Colors.grey),
+                Icon(Icons.group_outlined, color:  Colors.white,size: 24,),
                 Text(
                   "6 Students",
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.white,fontSize: 14),
                 ),
               ],
             ),

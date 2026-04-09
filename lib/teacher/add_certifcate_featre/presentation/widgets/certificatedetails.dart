@@ -35,13 +35,13 @@ class Certificatedetails extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.islamicNavy800,
+                          color: AppColors.toplast,
                         ),
                         child: Center(
                           child: Icon(
                             Icons.workspace_premium,
                             color: AppColors.textWhite,
-                            size: 32,
+                            size: 24,
                           ),
                         ),
                       ),
@@ -51,7 +51,7 @@ class Certificatedetails extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -137,7 +137,7 @@ class Certificatedetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(propertyname, style: TextStyle(fontSize: 20, color: Colors.black)),
+        Text(propertyname, style: TextStyle(fontSize: 16, color: Colors.black)),
 
         SizedBox(height: 5),
         Container(
@@ -151,7 +151,6 @@ class Certificatedetails extends StatelessWidget {
             decoration: InputDecoration(
               hintText: hintname,
               hintStyle: TextStyle(color: Colors.grey),
-
               prefixIcon: Icon(Icons, color: AppColors.switchBackground),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),

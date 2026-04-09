@@ -15,8 +15,8 @@ class Addverticationconti extends StatelessWidget {
         height: height * 0.2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.islamicNavy500.withOpacity(0.25),
-          border: Border.all(width: 1, color: AppColors.islamicNavy500),
+          color: AppColors.toplast.withOpacity(0.25),
+          border: Border.all(width: 2, color: AppColors.toplast),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -30,14 +30,14 @@ class Addverticationconti extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.islamicNavy800.withOpacity(0.25),
-                  border: Border.all(width: 1, color: AppColors.islamicNavy800),
+                  color: AppColors.toplast.withOpacity(0.25),
+                  border: Border.all(width: 2, color: AppColors.toplast),
                 ),
                 child: Center(
                   child: Icon(
                     Icons.workspace_premium,
-                    color: AppColors.islamicNavy800,
-                    size: 32,
+                    color: AppColors.toplast,
+                    size: 24,
                   ),
                 ),
               ),
@@ -57,7 +57,7 @@ class Addverticationconti extends StatelessWidget {
                   Text(
                     "After submission, our admin team \nwill verify your certificate within 24-\n48 hours. You will receive a \nnotification once the verification is \ncomplete.",
                     style: TextStyle(
-                      color: AppColors.islamicNavy800,
+                      color: AppColors.toplast,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

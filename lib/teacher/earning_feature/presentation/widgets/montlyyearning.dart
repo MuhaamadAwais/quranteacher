@@ -33,14 +33,14 @@ class Montlyyearning extends StatelessWidget {
                         "Montly Earning",
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 25,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Spacer(),
                       Icon(
                         Icons.calendar_month_outlined,
-                        color: Colors.deepOrangeAccent,
+                        color: AppColors.toplast,
                       ),
                     ],
                   ),

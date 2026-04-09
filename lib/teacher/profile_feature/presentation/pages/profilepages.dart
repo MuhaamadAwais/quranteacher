@@ -18,6 +18,7 @@ class _ProfilepagesState extends State<Profilepages> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [

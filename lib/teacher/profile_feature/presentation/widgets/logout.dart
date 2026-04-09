@@ -27,19 +27,19 @@ Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApp(),));
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: AppColors.textWhite,
-            border: Border.all(color: AppColors.pink700, width: 1.5),
+            border: Border.all(color: Colors.red, width: 2),
             
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.logout, color: AppColors.pink700),
+              Icon(Icons.logout, color: Colors.red,size: 24,),
               Text(
                 "Logout",
                 style: TextStyle(
-                  color: AppColors.pink700,
+                  color: Colors.red,
                   fontWeight: FontWeight.bold,
-                  fontSize: 15,
+                  fontSize: 16,
                 ),
               ),
             ],

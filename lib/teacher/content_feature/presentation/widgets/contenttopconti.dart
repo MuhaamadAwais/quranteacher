@@ -60,7 +60,7 @@ Widget contnenttopConti(
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   Text(
@@ -68,7 +68,7 @@ Widget contnenttopConti(
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
-                      fontSize: 18,
+                      fontSize: 16,
                     ),
                   ),
                 ],
@@ -77,14 +77,14 @@ Widget contnenttopConti(
           ),
 
           Container(
-            width: 90,
-            height: 90,
+            width: 60,
+            height: 60,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.25),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Center(
-              child: Icon(iconsdata, color: Colors.white, size: 45),
+              child: Icon(iconsdata, color: Colors.white, size: 24),
             ),
           ),
         ],

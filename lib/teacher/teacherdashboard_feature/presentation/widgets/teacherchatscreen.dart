@@ -1,5 +1,6 @@
 // screens/teacher_chat_screen.dart
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/chatmessage.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
@@ -94,132 +95,137 @@ class _TeacherChatScreenState extends State<TeacherChatScreen> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-      backgroundColor: Colors.blue[50],
-      body: Column(
-        children: [
-          // App Bar Title (Teacher Side)
-          TopcommonContainer(
-            title: "Teacher Chat",
-            subTitle: "student: ${widget.studentName} | class: Tajweed ",
-          ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            // App Bar Title (Teacher Side)
+            TopcommonContainer(
+              title: "Teacher Chat",
+              subTitle: "student: ${widget.studentName} | class: Tajweed ",
+            ),
 
-          // Messages List
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
+            // Messages List
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    // Online Status (Student Online)
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.toplast.withOpacity(0.25),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 10,
+                            height: 10,
+                            decoration: BoxDecoration(
+                              color: AppColors.toplast,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            'Ayesha Online',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.toplast,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+
+                    // Messages
+                    Expanded(
+                      child: ListView.builder(
+                        controller: _scrollController,
+                        padding: EdgeInsets.only(bottom: 20),
+                        itemCount: messages.length,
+                        itemBuilder: (context, index) {
+                          final message = messages[index];
+                          return MessageBubble(message: message);
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              child: Column(
+            ),
+
+            // Input Box (Teacher → Student)
+            Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 20,
+                    color: Colors.black12,
+                    offset: Offset(0, -2),
+                  ),
+                ],
+              ),
+              child: Row(
                 children: [
-                  // Online Status (Student Online)
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.green[100],
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          width: 10,
-                          height: 10,
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            shape: BoxShape.circle,
-                          ),
+                  Expanded(
+                    child: TextField(
+                      controller: _messageController,
+                      decoration: InputDecoration(
+                        hintText: 'Type message to student...',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide.none,
                         ),
-                        SizedBox(width: 8),
-                        Text(
-                          'Ayesha Online',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.green[800],
-                          ),
+                        filled: true,
+                        fillColor: Colors.grey[100],
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 12,
                         ),
-                      ],
+                      ),
+                      maxLines: null,
+                      onSubmitted: (_) => _sendMessage(),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(width: 12),
 
-                  // Messages
-                  Expanded(
-                    child: ListView.builder(
-                      controller: _scrollController,
-                      padding: EdgeInsets.only(bottom: 20),
-                      itemCount: messages.length,
-                      itemBuilder: (context, index) {
-                        final message = messages[index];
-                        return MessageBubble(message: message);
-                      },
+                  GestureDetector(
+                    onTap: _sendMessage,
+                    child: Container(
+                      padding: EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [AppColors.topmiddle, AppColors.bottommiddle],
+                        ),
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: Icon(Icons.send, color: Colors.white),
                     ),
                   ),
                 ],
               ),
             ),
-          ),
-
-          // Input Box (Teacher → Student)
-          Container(
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 20,
-                  color: Colors.black12,
-                  offset: Offset(0, -2),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _messageController,
-                    decoration: InputDecoration(
-                      hintText: 'Type message to student...',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide.none,
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey[100],
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 12,
-                      ),
-                    ),
-                    maxLines: null,
-                    onSubmitted: (_) => _sendMessage(),
-                  ),
-                ),
-                SizedBox(width: 12),
-
-                GestureDetector(
-                  onTap: _sendMessage,
-                  child: Container(
-                    padding: EdgeInsets.all(14),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.blue[600]!, Colors.blue[800]!],
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Icon(Icons.send, color: Colors.white),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

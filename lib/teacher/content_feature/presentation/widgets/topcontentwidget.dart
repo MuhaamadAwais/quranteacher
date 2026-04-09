@@ -72,14 +72,14 @@ class _TopicContentWidgetState extends State<TopicContentWidget> {
               children: [
                 Row(
                   children: [
-                    Icon(widget.iconfields, color: widget.iconsColor, size: 35),
+                    Icon(widget.iconfields, color: widget.iconsColor, size: 24),
                     const SizedBox(width: 5),
                     Text(
                       widget.titlefield,
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                   ],

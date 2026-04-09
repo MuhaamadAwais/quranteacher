@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Submitapplicationconti extends StatelessWidget {
@@ -23,7 +24,7 @@ class Submitapplicationconti extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
-              colors: [const Color(0xFF006633), const Color(0xCC054632)],
+              colors: [AppColors.toplast,AppColors.bottomlast],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -34,6 +35,7 @@ class Submitapplicationconti extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
+                  fontSize: 18
               ),
             ),
           ),

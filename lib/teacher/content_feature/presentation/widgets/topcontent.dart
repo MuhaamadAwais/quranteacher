@@ -19,7 +19,7 @@ class Topcontent extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [const Color(0xFF006633), const Color(0xCC054632)],
+          colors: [AppColors.topmaingreen,AppColors.bottommaingreen],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -50,7 +50,7 @@ class Topcontent extends StatelessWidget {
                 child: Icon(
                   Icons.arrow_back_ios_new_rounded,
                   color: AppColors.textWhite,
-                  size: 20,
+                  size: 24,
                 ),
               ),
             ),
@@ -60,7 +60,7 @@ class Topcontent extends StatelessWidget {
               "Content Managment",
               style: TextStyle(
                 color: AppColors.textWhite,
-                fontSize: 30,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),

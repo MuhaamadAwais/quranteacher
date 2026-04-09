@@ -11,23 +11,22 @@ class Textcertication extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Row(
       children: [
-        Expanded(
-          flex: 2,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-            child: Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.textWhite.withOpacity(0.15),
-              ),
-              child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.white.withOpacity(0.3)),
             ),
+            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
           ),
         ),
+        SizedBox(width: 5,),
         Expanded(
           flex: 6,
           child: Column(
@@ -38,7 +37,7 @@ class Textcertication extends StatelessWidget {
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 18,
                 ),
               ),
 
@@ -47,7 +46,7 @@ class Textcertication extends StatelessWidget {
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.normal,
-                  fontSize: 12,
+                  fontSize: 14,
                 ),
               ),
             ],

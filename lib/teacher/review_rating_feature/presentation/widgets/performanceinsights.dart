@@ -16,7 +16,7 @@ class Performanceinsights extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           gradient: LinearGradient(
-            colors: [AppColors.startgreen, AppColors.endgreen],
+            colors: [AppColors.toplast, AppColors.bottomlast],
           ),
         ),
         child: Padding(
@@ -28,13 +28,13 @@ class Performanceinsights extends StatelessWidget {
               // text
               Row(
                 children: [
-                  Icon(Icons.trending_up, color: AppColors.textWhite, size: 30),
+                  Icon(Icons.trending_up, color: AppColors.textWhite, size: 24),
                   SizedBox(width: 5),
                   Text(
                     "Performance Insignhts",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                       color: AppColors.textWhite,
                     ),
                   ),
@@ -59,7 +59,7 @@ class Performanceinsights extends StatelessWidget {
                         "Teacher Quality",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 16,
                           color: AppColors.textWhite,
                         ),
                       ),
@@ -68,7 +68,7 @@ class Performanceinsights extends StatelessWidget {
                         "90%",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 16,
                           color: AppColors.textWhite,
                         ),
                       ),
@@ -93,7 +93,7 @@ class Performanceinsights extends StatelessWidget {
                         "Student Satisfaction",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 18,
                           color: AppColors.textWhite,
                         ),
                       ),
@@ -102,7 +102,7 @@ class Performanceinsights extends StatelessWidget {
                         "96%",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 16,
                           color: AppColors.textWhite,
                         ),
                       ),
@@ -127,7 +127,7 @@ class Performanceinsights extends StatelessWidget {
                         "Response Rate",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 18,
                           color: AppColors.textWhite,
                         ),
                       ),
@@ -136,7 +136,7 @@ class Performanceinsights extends StatelessWidget {
                         "100%",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 16,
                           color: AppColors.textWhite,
                         ),
                       ),

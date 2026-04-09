@@ -33,7 +33,7 @@ class Textearning extends StatelessWidget {
             child: Icon(
               Icons.arrow_back_ios_new_rounded,
               color: AppColors.textWhite,
-              size: 20,
+              size: 24,
             ),
           ),
         ),
@@ -42,7 +42,7 @@ class Textearning extends StatelessWidget {
           "Earning",
           style: TextStyle(
             color: AppColors.textWhite,
-            fontSize: 30,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),

@@ -26,7 +26,7 @@ class Earningmainconti extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 16,
               ),
             ),
             Row(
@@ -36,7 +36,7 @@ class Earningmainconti extends StatelessWidget {
                   style: TextStyle(
                     color: AppColors.textWhite,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 16,
                   ),
                 ),
                 SizedBox(width: 10),
@@ -46,7 +46,7 @@ class Earningmainconti extends StatelessWidget {
                   style: TextStyle(
                     color: AppColors.textWhite,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    fontSize: 14,
                   ),
                 ),
               ],
@@ -56,7 +56,7 @@ class Earningmainconti extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  width: width * 0.35,
+                  width: width * 0.37,
                   height: height * 0.1,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
@@ -73,7 +73,7 @@ class Earningmainconti extends StatelessWidget {
                           style: TextStyle(
                             color: AppColors.textWhite,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 16,
                           ),
                         ),
     
@@ -82,7 +82,7 @@ class Earningmainconti extends StatelessWidget {
                           style: TextStyle(
                             color: AppColors.textWhite,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 14,
                           ),
                         ),
                       ],
@@ -91,7 +91,7 @@ class Earningmainconti extends StatelessWidget {
                 ),
     
                 Container(
-                  width: width * 0.35,
+                  width: width * 0.37,
                   height: height * 0.1,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
@@ -108,7 +108,7 @@ class Earningmainconti extends StatelessWidget {
                           style: TextStyle(
                             color: AppColors.textWhite,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 16,
                           ),
                         ),
     
@@ -117,7 +117,7 @@ class Earningmainconti extends StatelessWidget {
                           style: TextStyle(
                             color: AppColors.textWhite,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 14,
                           ),
                         ),
                       ],

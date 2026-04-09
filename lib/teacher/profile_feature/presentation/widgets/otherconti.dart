@@ -28,7 +28,7 @@ class _OthercontiState extends State<Otherconti> {
             1,
             width,
             height * 0.1,
-            Colors.black,
+            Colors.white,
             Icons.settings_outlined,
             "Account Settings",
             () {
@@ -43,7 +43,7 @@ class _OthercontiState extends State<Otherconti> {
             2,
             width,
             height * 0.1,
-            Colors.red,
+            Colors.white,
             Icons.verified_outlined,
             "Certifications",
             () {
@@ -59,7 +59,7 @@ class _OthercontiState extends State<Otherconti> {
             3,
             width,
             height * 0.1,
-            AppColors.islamicNavy,
+            AppColors.textWhite,
             Icons.star_border_outlined,
             "Review & Ratings",
             () {
@@ -119,9 +119,9 @@ class _OthercontiState extends State<Otherconti> {
                   height: 50,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.switchBackground,
+                    color: AppColors.toplast,
                   ),
-                  child: Center(child: Icon(icons, color: iconcolor, size: 38)),
+                  child: Center(child: Icon(icons, color: iconcolor, size: 24)),
                 ),
               ),
 
@@ -131,7 +131,7 @@ class _OthercontiState extends State<Otherconti> {
                   textname,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

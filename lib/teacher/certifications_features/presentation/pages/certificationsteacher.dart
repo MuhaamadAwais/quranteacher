@@ -6,9 +6,6 @@ import 'package:quranteacher/teacher/certifications_features/presentation/widget
 import 'package:quranteacher/teacher/certifications_features/presentation/widgets/textcertication.dart';
 import 'package:quranteacher/teacher/certifications_features/presentation/widgets/verificationconti.dart';
 
-void main() {
-  runApp(MaterialApp(home: Certificationsteacher()));
-}
 
 class Certificationsteacher extends StatefulWidget {
   const Certificationsteacher({super.key});
@@ -22,6 +19,7 @@ class _CertificationsteacherState extends State<Certificationsteacher> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [

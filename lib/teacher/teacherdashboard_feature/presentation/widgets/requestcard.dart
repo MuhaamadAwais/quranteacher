@@ -50,7 +50,7 @@ class RequestCard extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [AppColors.primary, Colors.green],
+                    colors: [AppColors.topmiddle, AppColors.bottommiddle],
                   ),
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -82,13 +82,13 @@ class RequestCard extends StatelessWidget {
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.orange.withOpacity(0.1),
+                    color: AppColors.toplast.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Text(
                     "New",
                     style: TextStyle(
-                      color: Colors.orange,
+                      color: AppColors.toplast,
                       fontWeight: FontWeight.w700,
                       fontSize: 12,
                     ),
@@ -102,12 +102,12 @@ class RequestCard extends StatelessWidget {
           // Details Row
           Row(
             children: [
-              DetailChip(icon: Icons.schedule, label: time, color: Colors.blue),
+              DetailChip(icon: Icons.schedule, label: time, color: AppColors.toplast),
               const SizedBox(width: 12),
               DetailChip(
                 icon: Icons.school,
                 label: madhab,
-                color: Colors.purple,
+                color:AppColors.toplast,
               ),
             ],
           ),
@@ -154,7 +154,7 @@ class RequestCard extends StatelessWidget {
                   ),
                   label: Text(isAccepted ? "Teaching" : "Accept"),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
+                    backgroundColor: AppColors.toplast,
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(

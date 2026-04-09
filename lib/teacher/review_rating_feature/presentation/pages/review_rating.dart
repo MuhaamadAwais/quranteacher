@@ -7,10 +7,6 @@ import 'package:quranteacher/teacher/review_rating_feature/presentation/widgets/
 import 'package:quranteacher/teacher/review_rating_feature/presentation/widgets/twoconti.dart';
 import 'package:quranteacher/teacher/review_rating_feature/presentation/widgets/viewcard.dart';
 
-void main() {
-  runApp(MaterialApp(home: ReviewRating()));
-}
-
 class ReviewRating extends StatefulWidget {
   const ReviewRating({super.key});
 

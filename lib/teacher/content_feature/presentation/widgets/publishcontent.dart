@@ -33,14 +33,14 @@ class Publishcontent extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(iconconti, color: Colors.white),
+            Icon(iconconti, color: Colors.white,size: 24,),
             SizedBox(width: 10),
             Text(
               publisname,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           ],

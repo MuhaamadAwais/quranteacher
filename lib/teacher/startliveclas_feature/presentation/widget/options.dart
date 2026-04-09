@@ -14,7 +14,7 @@ class Options extends StatelessWidget {
         width: width,
         height: height * 0.3,
         decoration: BoxDecoration(
-          color: AppColors.islamicNavy300,
+          color: AppColors.toplast.withOpacity(0.25),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
@@ -28,7 +28,7 @@ class Options extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 16,
                 ),
               ),
 
@@ -37,7 +37,7 @@ class Options extends StatelessWidget {
                 height: height * 0.1,
                 decoration: BoxDecoration(
                   color: AppColors.textWhite,
-                  border: Border.all(color: AppColors.islamicNavy600, width: 2),
+                  border: Border.all(color: AppColors.toplast, width: 2),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
@@ -51,7 +51,7 @@ class Options extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 16,
                         ),
                       ),
                       Text(
@@ -72,7 +72,7 @@ class Options extends StatelessWidget {
                 height: height * 0.1,
                 decoration: BoxDecoration(
                   color: AppColors.textWhite,
-                  border: Border.all(color: AppColors.islamicNavy600, width: 2),
+                  border: Border.all(color: AppColors.toplast, width: 2),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
@@ -86,7 +86,7 @@ class Options extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 16,
                         ),
                       ),
                       Text(

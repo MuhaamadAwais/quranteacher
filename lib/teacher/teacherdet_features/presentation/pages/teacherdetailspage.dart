@@ -31,7 +31,7 @@ class _TeacherdetailspageState extends State<Teacherdetailspage> {
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 35,
+                  fontSize: 18,
                 ),
               ),
 
@@ -40,7 +40,7 @@ class _TeacherdetailspageState extends State<Teacherdetailspage> {
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.normal,
-                  fontSize: 19,
+                  fontSize: 14,
                 ),
               ),
 

@@ -35,11 +35,11 @@ class Personalinfosetting extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.startgreen,
+                          color: AppColors.toplast,
                         ),
                         child: Center(
                           child: Icon(
-                            size: 35,
+                            size: 24,
                             Icons.person_2_outlined,
                             color: AppColors.textWhite,
                           ),
@@ -51,7 +51,7 @@ class Personalinfosetting extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 16,
                         ),
                       ),
                     ],
@@ -111,7 +111,7 @@ Widget perosnal(
     children: [
       Text(
         propertyname,
-        style: TextStyle(fontSize: 20, color: AppColors.switchBackground),
+        style: TextStyle(fontSize: 20, color: Colors.black),
       ),
 
       SizedBox(height: 5),
@@ -125,9 +125,9 @@ Widget perosnal(
         child: TextFormField(
           decoration: InputDecoration(
             hintText: hintname,
-            hintStyle: TextStyle(color: Colors.grey),
+            hintStyle: TextStyle(color: Colors.black),
 
-            prefixIcon: Icon(Icons, color: AppColors.switchBackground),
+            prefixIcon: Icon(Icons, color: Colors.black),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide.none,

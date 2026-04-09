@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/teacher/assignwork_feature/presentation/pages/assignwork.dart';
 import 'package:quranteacher/teacher/earning_feature/presentation/pages/earningpages.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/pages/studentspages.dart';
@@ -35,8 +36,8 @@ class _LeastitemsState extends State<Leastitems> {
                 Icons.group_outlined,
                 "My Students",
                 "Manage Students",
-                AppColors.startgreen,
-                AppColors.endgreen,
+                AppColors.toplast,
+                AppColors.bottomlast,
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Studentspages()),
@@ -51,8 +52,9 @@ class _LeastitemsState extends State<Leastitems> {
                 Icons.trending_up,
                 "Assign Work",
                 "create homework",
-                AppColors.pink500,
-                AppColors.pink700,
+
+                AppColors.toplast,
+                AppColors.bottomlast,
                 () {
                   Navigator.of(
                     context,
@@ -74,8 +76,9 @@ class _LeastitemsState extends State<Leastitems> {
                 Icons.videocam_outlined,
                 "Lessons",
                 "Manage Lessons",
-                Colors.orange,
-                Colors.deepOrangeAccent,
+
+                AppColors.toplast,
+                AppColors.bottomlast,
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Studentspages()),
@@ -90,8 +93,8 @@ class _LeastitemsState extends State<Leastitems> {
                 Icons.attach_money,
                 "Earning",
                 "View Income",
-                AppColors.islamicNavy600,
-                AppColors.islamicNavy800,
+                AppColors.toplast,
+                AppColors.bottomlast,
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => Earningpages()),
@@ -111,8 +114,8 @@ class _LeastitemsState extends State<Leastitems> {
                 Icons.group_outlined,
                 "Student Requests",
                 "All students",
-                Colors.blue,
-                Colors.lightBlue,
+                AppColors.toplast,
+                AppColors.bottomlast,
                 () {
                   Navigator.push(
                     context,
@@ -129,8 +132,9 @@ class _LeastitemsState extends State<Leastitems> {
                 Icons.calendar_month,
                 "Attandance List",
                 "Student attan..",
-                Colors.teal,
-                Colors.tealAccent,
+                AppColors.toplast,
+                AppColors.bottomlast,
+
                 () {
                   Navigator.push(
                     context,
@@ -209,7 +213,7 @@ class _LeastitemsState extends State<Leastitems> {
                 height: 60,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.textWhite.withOpacity(0.15),
+                  color: Newcolors.background.withOpacity(0.15),
                 ),
                 child: Center(
                   // child: Icon(icon, color: AppColors.textWhite),
@@ -218,7 +222,7 @@ class _LeastitemsState extends State<Leastitems> {
                     child: Icon(
                       iconsdata,
                       color: AppColors.textWhite,
-                      size: 35,
+                      size: 24,
                     ),
                   ),
                 ),
@@ -229,7 +233,7 @@ class _LeastitemsState extends State<Leastitems> {
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 17,
+                  fontSize: 16,
                 ),
               ),
               Text(

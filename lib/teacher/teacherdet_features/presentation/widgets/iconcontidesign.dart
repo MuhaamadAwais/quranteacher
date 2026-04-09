@@ -6,8 +6,8 @@ class Iconcontidesign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 80,
-      height: 80,
+      width: 60,
+      height: 60,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
@@ -20,7 +20,7 @@ class Iconcontidesign extends StatelessWidget {
         child: Icon(
           Icons.supervisor_account_outlined,
           color: Colors.white,
-          size: 45,
+          size: 24,
         ),
       ),
     );

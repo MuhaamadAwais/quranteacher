@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Showdatacontiwid extends StatelessWidget {
   const Showdatacontiwid({super.key});
@@ -21,8 +22,7 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.group_outlined,
                 "Total Students",
                 "48",
-                AppColors.startgreen,
-                AppColors.endgreen,
+                AppColors.topmiddle,AppColors.bottommiddle,
                 "+5",
               ),
               deisgndata(
@@ -31,8 +31,8 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.videocam_outlined,
                 "Classes Today",
                 "3",
-                AppColors.islamicNavy600,
-                AppColors.islamicNavy800,
+                
+                AppColors.topmiddle,AppColors.bottommiddle,
               ),
             ],
           ),
@@ -48,8 +48,8 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.attach_money_outlined,
                 "The Month ",
                 "2,450",
-                Colors.orange,
-                Colors.deepOrangeAccent,
+                
+                AppColors.topmiddle,AppColors.bottommiddle,
                 "+12 %",
               ),
               deisgndata(
@@ -58,8 +58,7 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.star_outline,
                 "Rating",
                 "4.9",
-                AppColors.pink500,
-                AppColors.pink700,
+                AppColors.topmiddle,AppColors.bottommiddle,
                 "+0.2 ",
               ),
             ],
@@ -83,7 +82,7 @@ class Showdatacontiwid extends StatelessWidget {
       height: height,
       width: width,
       child: Card(
-        elevation: 5,
+        elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
         ),
@@ -112,7 +111,7 @@ class Showdatacontiwid extends StatelessWidget {
                   child: Center(
                     child: Icon(
                       iconsselect,
-                      size: 35,
+                      size: 24,
                       color: AppColors.textWhite,
                     ),
                   ),
@@ -122,7 +121,7 @@ class Showdatacontiwid extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
                 ),
@@ -136,7 +135,7 @@ class Showdatacontiwid extends StatelessWidget {
                             text: count,
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 25,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -144,7 +143,7 @@ class Showdatacontiwid extends StatelessWidget {
                           TextSpan(
                             text: " ", // simple space
                             style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 16,
                             ), // optional chhota space
                           ),
                           TextSpan(

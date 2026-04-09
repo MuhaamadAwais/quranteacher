@@ -16,7 +16,7 @@ class Classeshourlyconti extends StatelessWidget {
             width: width * 0.45,
             height: height * 0.14,
             decoration: BoxDecoration(
-              color: AppColors.startgreen.withOpacity(0.25),
+              color: AppColors.toplast.withOpacity(0.25),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Padding(
@@ -30,15 +30,15 @@ class Classeshourlyconti extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
-                      fontSize: 15,
+                      fontSize: 14,
                     ),
                   ),
                   Text(
                     "42",
                     style: TextStyle(
-                      color: AppColors.startgreen,
+                      color: AppColors.toplast,
                       fontWeight: FontWeight.bold,
-                      fontSize: 35,
+                      fontSize: 20,
                     ),
                   ),
                 ],
@@ -52,7 +52,7 @@ class Classeshourlyconti extends StatelessWidget {
             width: width * 0.45,
             height: height * 0.14,
             decoration: BoxDecoration(
-              color: AppColors.islamicNavy800.withOpacity(0.25),
+              color: AppColors.toplast.withOpacity(0.25),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Padding(
@@ -66,16 +66,16 @@ class Classeshourlyconti extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
-                      fontSize: 15,
+                      fontSize: 14,
                     ),
                   ),
 
                   Text(
                     "58",
                     style: TextStyle(
-                      color: AppColors.islamicNavy800,
+                      color: AppColors.toplast,
                       fontWeight: FontWeight.bold,
-                      fontSize: 35,
+                      fontSize: 20,
                     ),
                   ),
                 ],

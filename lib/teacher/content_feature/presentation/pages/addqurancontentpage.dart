@@ -24,8 +24,8 @@ class _AddqurancontentpageState extends State<Addqurancontentpage> {
               contnenttopConti(
                 width,
                 height * 0.25,
-                AppColors.startgreen,
-                AppColors.endgreen,
+                AppColors.topmaingreen,
+                AppColors.bottommaingreen,
                 "ADD Quran Content",
                 "Share Quranic Knowledge",
                 Icons.home_outlined,
@@ -41,8 +41,8 @@ class _AddqurancontentpageState extends State<Addqurancontentpage> {
                 titlefield: "Surah/Topic Title",
                 heighttextfield: height * 0.09,
                 hintfield: 'e.g., Surah Al-Fatihal',
-                iconsColor: AppColors.startgreen,
-                contclickcolor: AppColors.startgreen,
+                iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
               ),
 
               TopicContentWidget(
@@ -52,8 +52,8 @@ class _AddqurancontentpageState extends State<Addqurancontentpage> {
                 titlefield: "Content Type",
                 heighttextfield: height * 0.09,
                 hintfield: 'Tajweed Rules',
-                iconsColor: AppColors.startgreen,
-                contclickcolor: AppColors.startgreen,
+                iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
               ),
 
               TopicContentWidget(
@@ -63,8 +63,8 @@ class _AddqurancontentpageState extends State<Addqurancontentpage> {
                 titlefield: "Description",
                 heighttextfield: height * 0.18,
                 hintfield: 'Describe the content...',
-                iconsColor: AppColors.startgreen,
-                contclickcolor: AppColors.startgreen,
+                iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
               ),
 
               TopicContentWidget(
@@ -74,8 +74,8 @@ class _AddqurancontentpageState extends State<Addqurancontentpage> {
                 titlefield: "Upload Videos",
                 heighttextfield: height * 0.18,
                 hintfield: 'Click to upload or drag and drop ',
-                iconsColor: AppColors.startgreen,
-                contclickcolor: AppColors.startgreen,
+                iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
               ),
 
               TopicContentWidget(
@@ -85,15 +85,15 @@ class _AddqurancontentpageState extends State<Addqurancontentpage> {
                 titlefield: "Arabic Text",
                 heighttextfield: height * 0.18,
                 hintfield: '... Enter Arabic text',
-                iconsColor: AppColors.startgreen,
-                contclickcolor: AppColors.startgreen,
+                iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
               ),
 
               Publishcontent(
                 iconconti: Icons.check_circle_outline_outlined,
                 publisname: "Publish Quran Content",
-                startconticolor: AppColors.startgreen,
-                endconticolor: AppColors.endgreen,
+                startconticolor: AppColors.toplast,
+                endconticolor: AppColors.bottomlast,
               ),
               SizedBox(height: 30),
             ],

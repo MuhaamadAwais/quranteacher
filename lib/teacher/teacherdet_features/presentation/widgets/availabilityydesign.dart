@@ -32,7 +32,7 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: isSelected
-                ? const Color(0xFF006633)
+                ? AppColors.toplast
                 : AppColors.switchBackground.withOpacity(0.25),
           ),
           child: Center(
@@ -40,7 +40,7 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
               label,
               style: TextStyle(
                 color: isSelected ? Colors.white : Colors.black,
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -72,12 +72,13 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color(0xFF006633).withOpacity(0.25),
+                        color:AppColors.toplast.withOpacity(0.25),
                       ),
                       child: Center(
                         child: Icon(
                           Icons.access_time,
-                          color: const Color(0xFF006633),
+                          color: AppColors.toplast,
+                          size: 24,
                         ),
                       ),
                     ),
@@ -87,7 +88,7 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                   ],

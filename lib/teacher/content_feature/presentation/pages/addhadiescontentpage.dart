@@ -24,8 +24,9 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
               contnenttopConti(
                 width,
                 height * 0.25,
-                AppColors.islamicNavy600,
-                AppColors.islamicNavy800,
+               AppColors.topmaingreen,
+               AppColors.bottommaingreen,
+
                 "ADD Hadith",
                 "Share prophetic traditions",
                 Icons.book_outlined,
@@ -41,8 +42,8 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Hadith Title",
                 heighttextfield: height * 0.1,
                 hintfield: 'e.g., The Importance of Prayyer',
-                iconsColor: AppColors.islamicNavy600,
-                contclickcolor: AppColors.islamicNavy800,
+                iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
               ),
 
               TopicContentWidget(
@@ -52,9 +53,10 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Hadith Collection",
                 heighttextfield: height * 0.1,
                 hintfield: 'Select collection',
-                iconsColor: AppColors.islamicNavy600,
-                contclickcolor: AppColors.islamicNavy800,
-              ),
+              iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
+             
+               ),
 
               TopicContentWidget(
                 widthfield: width,
@@ -63,9 +65,10 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Hadith Number",
                 heighttextfield: height * 0.1,
                 hintfield: 'e.g., Books,Hadiths 8',
-                iconsColor: AppColors.islamicNavy600,
-                contclickcolor: AppColors.islamicNavy800,
-              ),
+             iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
+             
+               ),
 
               TopicContentWidget(
                 widthfield: width,
@@ -74,8 +77,9 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Arabic Text",
                 heighttextfield: height * 0.2,
                 hintfield: '... Enter Arabic text',
-                iconsColor: AppColors.islamicNavy600,
-                contclickcolor: AppColors.islamicNavy800,
+             iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
+             
               ),
 
               TopicContentWidget(
@@ -85,15 +89,16 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Categor/Theme",
                 heighttextfield: height * 0.1,
                 hintfield: 'select category',
-                iconsColor: AppColors.islamicNavy600,
-                contclickcolor: AppColors.islamicNavy800,
+             iconsColor: AppColors.toplast,
+                contclickcolor: AppColors.toplast,
+             
               ),
 
               Publishcontent(
                 iconconti: Icons.check_circle_outline_outlined,
                 publisname: "Publish Hadith",
-                startconticolor: AppColors.islamicNavy600,
-                endconticolor: AppColors.islamicNavy800,
+                startconticolor: AppColors.toplast,
+                endconticolor: AppColors.bottomlast,
               ),
 
               SizedBox(height: 30),

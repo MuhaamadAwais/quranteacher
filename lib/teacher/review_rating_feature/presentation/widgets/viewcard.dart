@@ -95,13 +95,13 @@ class _ViewcardState extends State<Viewcard> {
                       /// Profile Icon
                       CircleAvatar(
                         radius: 30,
-                        backgroundColor: AppColors.islamicNavy800.withOpacity(
+                        backgroundColor: AppColors.toplast.withOpacity(
                           0.25,
                         ),
                         child: Icon(
                           Icons.person,
-                          color: AppColors.islamicNavy800,
-                          size: 32,
+                          color: AppColors.toplast,
+                          size: 24,
                         ),
                       ),
 
@@ -115,7 +115,7 @@ class _ViewcardState extends State<Viewcard> {
                             Text(
                               name,
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -137,14 +137,14 @@ class _ViewcardState extends State<Viewcard> {
                               ),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: AppColors.islamicNavy800.withOpacity(
+                                color: AppColors.toplast.withOpacity(
                                   0.25,
                                 ),
                               ),
                               child: Text(
                                 studiessubect,
                                 style: TextStyle(
-                                  color: AppColors.islamicNavy800,
+                                  color: AppColors.toplast,
                                   fontSize: 12,
                                 ),
                               ),
@@ -171,7 +171,7 @@ class _ViewcardState extends State<Viewcard> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       decribe,
-                      style: TextStyle(color: Colors.black, fontSize: 15),
+                      style: TextStyle(color: Colors.black, fontSize: 14),
                     ),
                   ),
 
@@ -185,21 +185,21 @@ class _ViewcardState extends State<Viewcard> {
                       Icon(
                         Icons.thumb_up,
                         color: AppColors.switchBackground,
-                        size: 20,
+                        size: 24,
                       ),
 
                       SizedBox(width: 6),
 
                       Text(
                         "Helpful (8)",
-                        style: TextStyle(color: AppColors.switchBackground),
+                        style: TextStyle(color: AppColors.switchBackground,fontSize: 14),
                       ),
 
                       Spacer(),
 
                       Text(
                         "Reply",
-                        style: TextStyle(color: AppColors.switchBackground),
+                        style: TextStyle(color: AppColors.switchBackground,fontSize: 14),
                       ),
                     ],
                   ),

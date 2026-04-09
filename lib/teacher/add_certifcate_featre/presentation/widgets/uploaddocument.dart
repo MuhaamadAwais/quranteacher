@@ -32,7 +32,7 @@ class Uploaddocument extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
-                          colors: [AppColors.pink500, AppColors.pink700],
+                          colors: [AppColors.toplast, AppColors.toplast],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -43,6 +43,7 @@ class Uploaddocument extends StatelessWidget {
                           child: Icon(
                             Icons.login_rounded,
                             color: AppColors.textWhite,
+                            size: 24,
                           ),
                         ),
                       ),
@@ -53,7 +54,7 @@ class Uploaddocument extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                   ],
@@ -91,7 +92,7 @@ class Uploaddocument extends StatelessWidget {
                                 child: Icon(
                                   Icons.login_rounded,
                                   color: AppColors.textWhite,
-                                  size: 32,
+                                  size: 24,
                                 ),
                               ),
                             ),
@@ -102,7 +103,7 @@ class Uploaddocument extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 18,
                             ),
                           ),
 
@@ -111,7 +112,7 @@ class Uploaddocument extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.normal,
-                              fontSize: 15,
+                              fontSize: 14,
                             ),
                           ),
 
@@ -120,7 +121,7 @@ class Uploaddocument extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.normal,
-                              fontSize: 15,
+                              fontSize: 14,
                             ),
                           ),
                         ],

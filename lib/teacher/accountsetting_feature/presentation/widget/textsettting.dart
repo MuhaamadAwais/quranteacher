@@ -14,14 +14,15 @@ class Textsettting extends StatelessWidget {
           onTap: () {
             Navigator.of(context).pop();
           },
-          child: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.textWhite.withOpacity(0.15),
-            ),
-            child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+          child:         Container(
+          height: 40,
+          width: 40,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: Colors.white.withOpacity(0.3)),
+          ),
+            child: Icon(Icons.arrow_back_ios_new_rounded, color: AppColors.textWhite,size: 24,),
           ),
         ),
 
@@ -35,7 +36,7 @@ class Textsettting extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 16,
               ),
             ),
 
@@ -44,7 +45,7 @@ class Textsettting extends StatelessWidget {
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.normal,
-                fontSize: 15,
+                fontSize: 14,
               ),
             ),
           ],

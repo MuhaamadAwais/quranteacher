@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 
-
 class Itemsoflist extends StatelessWidget {
   const Itemsoflist({super.key});
 
@@ -41,7 +40,7 @@ Widget contidesigncertification(double width, double height) {
                   topRight: Radius.circular(20),
                 ),
                 gradient: LinearGradient(
-                  colors: [AppColors.startgreen, AppColors.endgreen],
+                  colors: [AppColors.topmiddle, AppColors.bottommiddle],
                 ),
               ),
             ),
@@ -73,7 +72,7 @@ Widget contidesigncertification(double width, double height) {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppColors.textWhite,
-                  fontSize: 17,
+                  fontSize: 16,
                 ),
               ),
             ),
@@ -87,7 +86,7 @@ Widget contidesigncertification(double width, double height) {
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                   color: AppColors.textWhite,
-                  fontSize: 15,
+                  fontSize: 14,
                 ),
               ),
             ),
@@ -105,7 +104,7 @@ Widget contidesigncertification(double width, double height) {
                     style: TextStyle(
                       fontWeight: FontWeight.normal,
                       color: AppColors.textWhite,
-                      fontSize: 15,
+                      fontSize: 14,
                     ),
                   ),
                 ],
@@ -120,7 +119,7 @@ Widget contidesigncertification(double width, double height) {
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 14,
                 ),
               ),
             ),
@@ -136,7 +135,7 @@ Widget contidesigncertification(double width, double height) {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        width: 1,
+                        width: 2,
                         color: AppColors.switchBackground,
                       ),
                       color: AppColors.switchBackground.withOpacity(0.25),
@@ -156,6 +155,7 @@ Widget contidesigncertification(double width, double height) {
                             style: TextStyle(
                               color: AppColors.switchBackground,
                               fontWeight: FontWeight.bold,
+                              fontSize: 14,
                             ),
                           ),
                         ],
@@ -169,27 +169,22 @@ Widget contidesigncertification(double width, double height) {
                     height: height * 0.15,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        width: 1,
-                        color: AppColors.startgreen,
-                      ),
-                      color: AppColors.startgreen.withOpacity(0.25),
+                      border: Border.all(width: 2, color: AppColors.toplast),
+                      color: AppColors.toplast.withOpacity(0.25),
                     ),
                     child: Center(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            Icons.download,
-                            color: AppColors.startgreen,
-                          ),
+                          Icon(Icons.download, color: AppColors.toplast),
                           SizedBox(width: 5),
                           Text(
                             "Download",
                             style: TextStyle(
-                              color: AppColors.startgreen,
+                              color: AppColors.toplast,
                               fontWeight: FontWeight.bold,
+                              fontSize: 14,
                             ),
                           ),
                         ],

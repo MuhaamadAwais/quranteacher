@@ -14,7 +14,7 @@ class Nametextwid extends StatelessWidget {
           "Assalamu Alaikum",
           style: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: 15,
+            fontSize: 16,
             color: AppColors.textWhite,
           ),
         ),
@@ -29,7 +29,7 @@ class Nametextwid extends StatelessWidget {
                   "Sheikh Muhammad",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 16,
                     color: AppColors.textWhite,
                   ),
                 ),
@@ -37,7 +37,7 @@ class Nametextwid extends StatelessWidget {
                 Text(
                   "Tajweed & Quran Expert",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
                     fontSize: 14,
                     color: AppColors.textWhite,
                   ),
@@ -70,6 +70,7 @@ class Nametextwid extends StatelessWidget {
                     child: Icon(
                       Icons.notifications_outlined,
                       color: AppColors.textWhite,
+                      size: 24,
                     ),
                   ),
                 ),

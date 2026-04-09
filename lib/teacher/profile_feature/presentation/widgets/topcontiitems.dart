@@ -15,14 +15,14 @@ class Topcontiitems extends StatelessWidget {
         children: [
           SizedBox(height: 10),
           Container(
-            height: height * 0.12,
-            width: height * 0.12,
+            height: height * 0.1,
+            width: height * 0.1,
             decoration: BoxDecoration(
               color: AppColors.textWhite,
               shape: BoxShape.circle,
             ),
             child: Center(
-              child: Icon(Icons.people_outline, color: Colors.black, size: 50),
+              child: Icon(Icons.people_outline, color: Colors.black, size: 24),
             ),
           ),
 
@@ -31,7 +31,7 @@ class Topcontiitems extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 16,
             ),
           ),
 
@@ -40,7 +40,7 @@ class Topcontiitems extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.normal,
-              fontSize: 15,
+              fontSize: 14,
             ),
           ),
 
@@ -54,13 +54,13 @@ class Topcontiitems extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(Icons.star, color: Colors.yellow),
+                Icon(Icons.star, color: Colors.yellow,size: 24,),
                 Text(
                   "4.9 Rating",
                   style: TextStyle(
                     color: AppColors.textWhite,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                 ),
               ],
@@ -99,7 +99,7 @@ class Topcontiitems extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 16,
             ),
           ),
 
@@ -108,7 +108,7 @@ class Topcontiitems extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.bold,
-              fontSize: 15,
+              fontSize: 16,
             ),
           ),
         ],

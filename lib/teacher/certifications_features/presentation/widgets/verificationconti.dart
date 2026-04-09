@@ -15,8 +15,8 @@ class Verificationconti extends StatelessWidget {
         height: height * 0.2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.islamicNavy800.withOpacity(0.25),
-          border: Border.all(width: 1, color: AppColors.islamicNavy800),
+          color: AppColors.toplast.withOpacity(0.25),
+          border: Border.all(width: 2, color: AppColors.toplast),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -30,14 +30,14 @@ class Verificationconti extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.islamicNavy800.withOpacity(0.25),
-                  border: Border.all(width: 1, color: AppColors.islamicNavy800),
+                  color: AppColors.toplast.withOpacity(0.25),
+                  border: Border.all(width: 1, color: AppColors.toplast),
                 ),
                 child: Center(
                   child: Icon(
                     Icons.workspace_premium,
-                    color: AppColors.islamicNavy800,
-                    size: 32,
+                    color: AppColors.toplast,
+                    size: 24,
                   ),
                 ),
               ),
@@ -51,14 +51,16 @@ class Verificationconti extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
+                     fontSize: 16
                     ),
                   ),
                   SizedBox(height: 5),
                   Text(
                     "All certifications are verified by our\nadmin team within 24-hours verified\nverified certificates boost your\nprofile cerdibility",
                     style: TextStyle(
-                      color: AppColors.islamicNavy800,
+                      color: AppColors.toplast,
                       fontWeight: FontWeight.bold,
+                      fontSize: 14
                     ),
                   ),
                 ],

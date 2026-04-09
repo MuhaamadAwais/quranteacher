@@ -18,8 +18,8 @@ class Topconticlass extends StatelessWidget {
         ),
         gradient: LinearGradient(
           colors: [
-                AppColors.islamicNavy600,
-                AppColors.islamicNavy800,],
+                AppColors.topmaingreen,
+                AppColors.bottommaingreen,],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
