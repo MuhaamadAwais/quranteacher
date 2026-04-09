@@ -167,7 +167,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                           width: 1.2,
                         ),
                       ),
-                      color: AppColors.primary.withOpacity(0.08),
+                      color: AppColors.whiteBackground,
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: Row(

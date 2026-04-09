@@ -15,8 +15,8 @@ class Progessstd extends StatelessWidget {
         height: height * 0.23,
         width: width,
         child: Card(
-          color: AppColors.textWhite,
-          elevation: 10,
+          color: const Color.fromARGB(73, 5, 150, 104),
+          elevation: 6,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
@@ -30,13 +30,13 @@ class Progessstd extends StatelessWidget {
                     const Text(
                       "Your Progress",
                       style: TextStyle(
-                        color: AppColors.startgreen,
+                        color: AppColors.greenDark,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                     ),
                     const Spacer(),
-                    Icon(Icons.trending_up, color: AppColors.startgreen),
+                    Icon(Icons.trending_up, color: AppColors.greenDark),
                   ],
                 ),
 
@@ -46,23 +46,28 @@ class Progessstd extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     contidesign(
-                      AppColors.startgreen
-                      ,
-                      AppColors.endgreen,
+                      Colors.white24,
+                      AppColors.textWhite,
                       "18",
                       "Surahs",
+                      height * 0.08,
+                      width * 0.15,
                     ),
                     contidesign(
-                      AppColors.islamicNavy600,
-                      AppColors.islamicNavy800,
+                      Colors.white24,
+                      AppColors.textWhite,
                       "42",
                       "Classes",
+                      height * 0.08,
+                      width * 0.15,
                     ),
                     contidesign(
-                      AppColors.sparkle,
-                      AppColors.accent,
+                      Colors.white24,
+                      AppColors.textWhite,
                       "95%",
                       "Attendance",
+                      height * 0.08,
+                      width * 0.15,
                     ),
                   ],
                 ),
@@ -79,12 +84,14 @@ class Progessstd extends StatelessWidget {
     Color textcol,
     String number,
     String contitext,
+    double height,
+    double width,
   ) {
     return Column(
       children: [
         Container(
-          height: 60,
-          width: 60,
+          height: height,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: color,
@@ -103,7 +110,7 @@ class Progessstd extends StatelessWidget {
         const SizedBox(height: 6),
         Text(
           contitext,
-          style: const TextStyle(color: Colors.black, fontSize: 13),
+          style: const TextStyle(color: Colors.white, fontSize: 13),
         ),
       ],
     );

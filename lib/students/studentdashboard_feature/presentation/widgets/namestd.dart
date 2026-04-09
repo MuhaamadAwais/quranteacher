@@ -7,8 +7,11 @@ class Namestd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Row(
       children: [
+        SizedBox(width: width * 0.03),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -28,35 +31,35 @@ class Namestd extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(width: width * 0.30),
 
-        Spacer(),
         Column(
           children: [
-            Badge(
-              label: Text("3"),
-              isLabelVisible: true,
-              textColor: AppColors.textWhite,
-              backgroundColor: AppColors.destructive,
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.15),
-                  border: Border.all(color: Colors.black26, width: 1.5),
-                ),
-                child: Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const QuranNotificationScreen(),
-                        ),
-                      );
-                    },
+            Container(
+              height: height * 0.13,
+              width: width * 0.13,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white.withOpacity(0.15),
+                border: Border.all(color: Colors.black26, width: 1.5),
+              ),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QuranNotificationScreen(),
+                      ),
+                    );
+                  },
+                  child: Badge(
+                    isLabelVisible: true,
+                    offset: Offset(12, -14),
+                    label: Text("3"),
                     child: Icon(
                       Icons.notifications_outlined,
+                      size: 18,
                       color: AppColors.textWhite,
                     ),
                   ),

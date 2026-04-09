@@ -48,9 +48,9 @@ class _MaincontstdState extends State<Maincontstd>
           height: heigth * 0.25,
           width: width,
           decoration: BoxDecoration(
-            color: Colors.white12,
+            color: AppColors.endgreen,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: Colors.white54, width: 1.5),
+            border: Border.all(color: AppColors.backgroundStart, width: 1.5),
           ),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
@@ -60,11 +60,11 @@ class _MaincontstdState extends State<Maincontstd>
                 Column(
                   children: [
                     Container(
-                      width: 60,
-                      height: 60,
+                      width: width * 0.15,
+                      height: heigth * 0.07,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white.withOpacity(0.4),
+                        gradient: AppColors.gradient,
                       ),
                       child: Icon(
                         Icons.video_camera_back_outlined,
@@ -82,37 +82,38 @@ class _MaincontstdState extends State<Maincontstd>
                       "TODAY's CLASS",
                       style: TextStyle(
                         color: AppColors.textWhite,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
                     ),
                     Text(
                       "Tajweed Rules",
                       style: TextStyle(
                         color: AppColors.textWhite,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
                       ),
                     ),
                     Text(
                       "- Noon",
                       style: TextStyle(
                         color: AppColors.textWhite,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
                       ),
                     ),
                     Text(
                       "Sakianh",
                       style: TextStyle(
                         color: AppColors.textWhite,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
                       ),
                     ),
                     Row(
                       children: [
                         Icon(Icons.lock_clock, color: AppColors.textWhite),
+                        SizedBox(width: width * 0.01),
                         Text(
                           "4:00PM - 5:00 PM",
                           style: TextStyle(

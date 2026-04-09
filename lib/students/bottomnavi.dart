@@ -30,7 +30,16 @@ class _BottomnaviState extends State<Bottomnavi> {
         bottomNavigationBar: Container(
           height: 70,
           decoration: BoxDecoration(
-            color: AppColors.textWhite,
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+            border: Border(
+              top: BorderSide(color: AppColors.textGreen, width: 3),
+              // left: BorderSide(color: AppColors.greenAccent, width: 4),
+              // right: BorderSide(color: AppColors.greenAccent, width: 4),
+            ),
             boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
           ),
           child: Row(
@@ -62,9 +71,14 @@ class _BottomnaviState extends State<Bottomnavi> {
         padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
         decoration: BoxDecoration(
           color: isSelected
-              ? Colors.green.withOpacity(0.15) // very light green for container
+              ? const Color.fromARGB(
+                  59,
+                  5,
+                  150,
+                  104,
+                ) // very light green for container
               : Colors.white,
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(18),
           boxShadow: isSelected
               ? [
                   BoxShadow(

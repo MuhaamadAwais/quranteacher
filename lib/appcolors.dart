@@ -91,4 +91,30 @@ class AppColors {
 
   // Pink 700
   static const Color pink700 = Color(0xFFBE185D);
+
+  /// add new color whtie and green combination here 08/04/2026
+  static const Color whitePrimary = Color(0xFFFFFFFF); // Pure white
+  static const Color whiteSurface = Color(0xFFFAFAFA); // Off-white surface
+  static const Color whiteBackground = Color(0xFFFEFEFE); // Subtle bg
+
+  // Green shades (Emerald-inspired for Islamic/clean vibe)
+  static const Color greenPrimary = Color(0xFF059669); // Emerald-600 main
+  static const Color greenLight = Color(0xFF10B981); // Emerald-500 light
+  static const Color greenDark = Color(0xFF047857); // Emerald-700 dark
+  static const Color greenAccent = Color(0xFF34D399); // Emerald-400 accent
+
+  // Text colors
+  static const Color textDark = Color(0xFF1F2937); // Gray-900 on white
+  static const Color textLight = Color(0xFF6B7280); // Gray-500 secondary
+  static const Color textGreen = Color(0xFF065F46); // Emerald-800
+
+  // Other utils
+  static const Color shadow = Color(0xFF000000); // Black shadow 10% opacity
+  static const Color errorRed = Color(0xFFEF4444); // Red-500
+  static const LinearGradient gradient = LinearGradient(
+    colors: [greenDark, whitePrimary],
+    stops: [0.6, 1.0],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 }
