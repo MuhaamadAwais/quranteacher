@@ -24,7 +24,7 @@ class Submitapplicationconti extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
-              colors: [AppColors.toplast,AppColors.bottomlast],
+              colors: [AppColors.toplast,AppColors.toplast],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),

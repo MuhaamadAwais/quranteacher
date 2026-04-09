@@ -29,10 +29,10 @@ class Forgotpass extends StatelessWidget {
               height: 100,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.backgroundStart.withOpacity(0.25),
+                color: AppColors.toplast.withOpacity(0.25),
               ),
               child: Center(
-                child: Icon(size: 45, Icons.lock_outline, color: Colors.green),
+                child: Icon(size: 24, Icons.lock_outline, color: AppColors.toplast),
               ),
             ),
 
@@ -42,7 +42,7 @@ class Forgotpass extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 30,
+                fontSize: 18,
               ),
             ),
 
@@ -52,7 +52,7 @@ class Forgotpass extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
-                fontSize: 19,
+                fontSize: 14,
               ),
             ),
             Text(
@@ -60,7 +60,7 @@ class Forgotpass extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
-                fontSize: 19,
+                fontSize: 14,
               ),
             ),
 
@@ -69,7 +69,7 @@ class Forgotpass extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
-                fontSize: 19,
+                fontSize: 14,
               ),
             ),
 
@@ -126,7 +126,7 @@ class Forgotpass extends StatelessWidget {
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: AppColors.backgroundStart,
+                              color: AppColors.toplast,
                               width: 2,
                             ),
                           ),
@@ -162,7 +162,7 @@ class Forgotpass extends StatelessWidget {
                   width: width,
                   height: height * 0.07,
                   decoration: BoxDecoration(
-                    color: AppColors.backgroundEnd,
+                    color: AppColors.toplast,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(

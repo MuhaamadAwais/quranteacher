@@ -16,7 +16,7 @@ class Fullexportreport extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           gradient: LinearGradient(
-            colors: [AppColors.startgreen, AppColors.endgreen],
+            colors: [AppColors.toplast, AppColors.toplast],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -24,13 +24,14 @@ class Fullexportreport extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.download, color: AppColors.textWhite),
+            Icon(Icons.download,size: 24, color: AppColors.textWhite),
+            SizedBox(width: 10,),
             Text(
               "Export full Report",
               style: TextStyle(
                 color: AppColors.textWhite,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           ],

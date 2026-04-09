@@ -44,15 +44,15 @@ void showContentBottomSheet(BuildContext context, {required String type}) {
                 children: [
                   Icon(
                     Icons.add_circle_outline,
-                    color: AppColors.startgreen,
-                    size: 28,
+                    color: AppColors.toplast,
+                    size: 24,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
                       smallitter == 'quran' ? 'Add Quran Ayat' : 'Add Hadith',
                       style: const TextStyle(
-                        fontSize: 22,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.black87,
                       ),
@@ -198,7 +198,7 @@ Widget _buildTextField({
     children: [
       Row(
         children: [
-          Icon(icon, color: AppColors.startgreen, size: 22),
+          Icon(icon, color: AppColors.startgreen, size: 24),
           const SizedBox(width: 12),
           Text(
             label,

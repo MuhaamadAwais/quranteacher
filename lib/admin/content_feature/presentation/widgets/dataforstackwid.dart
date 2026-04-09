@@ -39,7 +39,7 @@ class Dataforstackwid extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 18,
             ),
           ),
 
@@ -48,7 +48,7 @@ class Dataforstackwid extends StatelessWidget {
             style: TextStyle(
               color: AppColors.textWhite,
               fontWeight: FontWeight.bold,
-              fontSize: 15,
+              fontSize: 14,
             ),
           ),
         ],

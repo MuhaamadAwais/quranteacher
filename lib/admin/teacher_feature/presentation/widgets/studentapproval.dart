@@ -30,8 +30,8 @@ class Studentapproval extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppColors.islamicNavy600,
-                      AppColors.islamicNavy800,
+                      AppColors.topmiddle,
+                      AppColors.bottommiddle,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomCenter,
@@ -50,9 +50,9 @@ class Studentapproval extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.islamicNavy800,
+                          color: AppColors.toplast.withOpacity(0.25),
                         ),
-                        child: Icon(Icons.person, color: AppColors.textWhite),
+                        child: Icon(Icons.person, color: AppColors.textWhite,size: 24,),
                       ),
 
                       Column(
@@ -64,7 +64,7 @@ class Studentapproval extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontSize: 15,
                             ),
                           ),
                           Text(
@@ -83,7 +83,7 @@ class Studentapproval extends StatelessWidget {
                         height: height * 0.04,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.islamicNavy600,
+                          color: AppColors.toplast.withOpacity(0.25),
                         ),
                         child: Center(
                           child: Text(
@@ -125,7 +125,7 @@ class Studentapproval extends StatelessWidget {
 
                       Row(
                         children: [
-                          Icon(Icons.star_outline, color: AppColors.primary),
+                          Icon(Icons.star_outline, color: AppColors.toplast),
                           const SizedBox(width: 6),
                           const Text(
                             "Basic learn Quran",
@@ -206,7 +206,7 @@ class Studentapproval extends StatelessWidget {
                               height: height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: AppColors.startgreen.withOpacity(0.25),
+                                color: AppColors.toplast.withOpacity(0.25),
                                 border: Border.all(
                                   width: 2,
                                   color: AppColors.endgreen,
@@ -222,7 +222,8 @@ class Studentapproval extends StatelessWidget {
                                     children: [
                                       Icon(
                                         Icons.check,
-                                        color: AppColors.startgreen,
+                                        color: AppColors.toplast,
+                                        size: 24,
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
@@ -230,7 +231,7 @@ class Studentapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
-                                          color: AppColors.startgreen,
+                                          color: AppColors.toplast,
                                         ),
                                       ),
                                     ],
@@ -257,10 +258,10 @@ class Studentapproval extends StatelessWidget {
                               height: height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: AppColors.destructive.withOpacity(0.25),
+                                color: AppColors.toplast.withOpacity(0.25),
                                 border: Border.all(
                                   width: 2,
-                                  color: AppColors.destructive,
+                                  color: AppColors.toplast,
                                 ),
                               ),
                               child: Center(
@@ -274,7 +275,7 @@ class Studentapproval extends StatelessWidget {
                                       SizedBox(width: 10),
                                       Icon(
                                         Icons.cancel_outlined,
-                                        color: AppColors.destructive,
+                                        color: AppColors.toplast,
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
@@ -282,8 +283,7 @@ class Studentapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
-
-                                          color: AppColors.destructive,
+                                          color: AppColors.toplast,
                                         ),
                                       ),
                                     ],
@@ -320,8 +320,8 @@ class Studentapproval extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             gradient: LinearGradient(
                               colors: [
-                                AppColors.islamicNavy600,
-                                AppColors.islamicNavy800,
+                                AppColors.toplast,
+                                AppColors.toplast,
                               ],
                             ),
                           ),

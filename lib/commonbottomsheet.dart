@@ -46,13 +46,13 @@ void bottomsheet(
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: AppColors.islamicEmerald,
+                  color: AppColors.toplast,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   Icons.warning_amber_rounded,
                   color: AppColors.textWhite,
-                  size: 40,
+                  size: 24,
                 ),
               ),
               const SizedBox(height: 20),
@@ -61,7 +61,7 @@ void bottomsheet(
               Text(
                 title ?? "Delete Confirmation",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
                 ),
@@ -112,7 +112,7 @@ void bottomsheet(
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.islamicEmerald,
+                        backgroundColor: AppColors.toplast,
                         foregroundColor: Colors.white,
                         elevation: 2,
                         padding: const EdgeInsets.symmetric(vertical: 14),

@@ -98,7 +98,7 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 iconconti: Icons.check_circle_outline_outlined,
                 publisname: "Publish Hadith",
                 startconticolor: AppColors.toplast,
-                endconticolor: AppColors.bottomlast,
+                endconticolor: AppColors.toplast,
               ),
 
               SizedBox(height: 30),

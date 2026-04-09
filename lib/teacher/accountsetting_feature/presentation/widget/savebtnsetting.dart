@@ -15,7 +15,7 @@ class Savebtnsetting extends StatelessWidget {
         height: height * 0.075,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.toplast, AppColors.bottomlast],
+            colors: [AppColors.toplast, AppColors.toplast],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

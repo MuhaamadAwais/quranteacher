@@ -25,7 +25,7 @@ class Recentactivitywid extends StatelessWidget {
               children: [
                 Text(
                   "Recent Activity",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 actvityconti(
                   width,
@@ -78,60 +78,71 @@ class Recentactivitywid extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: AppColors.switchBackground,
+          color: AppColors.toplast.withOpacity(0.25),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                    colors: [AppColors.pink500, AppColors.pink700],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+              Expanded(
+                flex: 2,
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                      colors: [AppColors.toplast, AppColors.toplast],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Icon(Icons.group, color: AppColors.textWhite),
+                  child: Center(
+                    child: Icon(
+                      Icons.group,
+                      color: AppColors.textWhite,
+                      size: 24,
+                    ),
+                  ),
                 ),
               ),
 
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      name,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
+              Expanded(
+                flex: 8,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
-                    ),
-                    Text(
-                      purpose,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 15,
+                      Text(
+                        purpose,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 14,
+                        ),
                       ),
-                    ),
-
-                    Text(
-                      time,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 15,
+                
+                      Text(
+                        time,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 14,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

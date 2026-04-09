@@ -7,9 +7,6 @@ import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/recent
 import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/userswid.dart';
 import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/todayoverwid.dart';
 
-void main() {
-  runApp(MaterialApp(home: Dashboardadmin()));
-}
 
 class Dashboardadmin extends StatefulWidget {
   const Dashboardadmin({super.key});
@@ -51,6 +48,7 @@ class _DashboardadminState extends State<Dashboardadmin>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -78,7 +76,7 @@ class _DashboardadminState extends State<Dashboardadmin>
               Calculationconti(),
               SizedBox(height: 10),
               Todayoverwid(),
-              SizedBox(height: 10),
+              SizedBox(height: 05,),
               Recentactivitywid(),
               SizedBox(height: 10),
               Userswid(),

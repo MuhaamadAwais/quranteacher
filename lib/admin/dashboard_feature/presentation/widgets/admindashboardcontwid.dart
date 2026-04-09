@@ -17,7 +17,7 @@ class Admindashboardcontwid extends StatelessWidget {
           bottomRight: Radius.circular(20),
         ),
         gradient: LinearGradient(
-          colors: [AppColors.startgreen, AppColors.endgreen],
+          colors: [AppColors.topmaingreen, AppColors.bottommaingreen],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

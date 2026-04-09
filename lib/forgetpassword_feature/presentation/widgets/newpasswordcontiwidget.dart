@@ -29,10 +29,10 @@ class Newpasswordcontiwidget extends StatelessWidget {
               height: 100,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.backgroundStart.withOpacity(0.25),
+                color: AppColors.toplast.withOpacity(0.25),
               ),
               child: Center(
-                child: Icon(size: 45, Icons.lock, color: Colors.green),
+                child: Icon(size: 24, Icons.lock, color: AppColors.toplast),
               ),
             ),
 
@@ -42,7 +42,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 30,
+                fontSize: 18,
               ),
             ),
 
@@ -52,7 +52,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
-                fontSize: 17,
+                fontSize: 14,
               ),
             ),
             Text(
@@ -60,7 +60,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
-                fontSize: 17,
+                fontSize: 14,
               ),
             ),
 
@@ -117,7 +117,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: AppColors.backgroundStart,
+                              color: AppColors.toplast,
                               width: 2,
                             ),
                           ),
@@ -187,7 +187,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
                             borderSide: BorderSide(
-                              color: AppColors.backgroundStart,
+                              color: AppColors.toplast,
                               width: 2,
                             ),
                           ),
@@ -315,7 +315,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
                   width: width,
                   height: height * 0.07,
                   decoration: BoxDecoration(
-                    color: AppColors.backgroundEnd,
+                    color: AppColors.toplast,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
@@ -324,7 +324,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 18,
                       ),
                     ),
                   ),

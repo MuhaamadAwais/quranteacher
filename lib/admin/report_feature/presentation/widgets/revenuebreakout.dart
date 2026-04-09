@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class Revenuebreakout extends StatelessWidget {
   const Revenuebreakout({super.key});
@@ -10,10 +11,10 @@ class Revenuebreakout extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: width,
-        height: height * 0.3,
+        height: height * 0.28,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.orange.withOpacity(0.25),
+          color: AppColors.toplast.withOpacity(0.25),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -22,7 +23,7 @@ class Revenuebreakout extends StatelessWidget {
               SizedBox(height: 10),
               Row(
                 children: [
-                  Icon(Icons.monetization_on, color: Colors.orange),
+                  Icon(Icons.monetization_on, color: AppColors.toplast,size: 24,),
 
                   SizedBox(width: 10),
                   Text(
@@ -30,7 +31,7 @@ class Revenuebreakout extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 20,
                     ),
                   ),
                 ],
@@ -43,7 +44,7 @@ class Revenuebreakout extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                   ),
                   Spacer(),
@@ -52,7 +53,7 @@ class Revenuebreakout extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -63,7 +64,7 @@ class Revenuebreakout extends StatelessWidget {
                 value: 0.8,
                 backgroundColor: Colors.white,
                 minHeight: 8,
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.toplast),
               ),
 
               // teacher commissions
@@ -75,7 +76,7 @@ class Revenuebreakout extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                   ),
                   Spacer(),
@@ -84,7 +85,7 @@ class Revenuebreakout extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -95,7 +96,7 @@ class Revenuebreakout extends StatelessWidget {
                 minHeight: 8,
                 value: 0.7,
                 backgroundColor: Colors.white,
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.toplast),
               ),
 
               // premium features
@@ -108,7 +109,7 @@ class Revenuebreakout extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                   ),
                   Spacer(),
@@ -117,7 +118,7 @@ class Revenuebreakout extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -128,7 +129,7 @@ class Revenuebreakout extends StatelessWidget {
                 value: 0.3,
                 backgroundColor: Colors.white,
                 minHeight: 8,
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+                valueColor: AlwaysStoppedAnimation<Color>(AppColors.toplast),
                 stopIndicatorColor: Colors.white,
               ),
             ],

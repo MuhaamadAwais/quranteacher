@@ -44,11 +44,11 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                           height: 100,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: AppColors.backgroundStart,
+                            color: AppColors.toplast,
                           ),
                           child: Center(
                             child: Icon(
-                              size: 45,
+                              size: 24,
                               Icons.check,
                               color: Colors.white,
                             ),
@@ -61,7 +61,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 18,
                           ),
                         ),
 
@@ -71,7 +71,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 18,
                           ),
                         ),
 
@@ -84,7 +84,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 17,
+                                  fontSize: 14,
                                 ),
                               ),
 
@@ -93,7 +93,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 17,
+                                  fontSize: 14,
                                 ),
                               ),
 
@@ -102,7 +102,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 17,
+                                  fontSize: 14,
                                 ),
                               ),
                             ],
@@ -145,7 +145,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                               width: width,
                               height: height * 0.07,
                               decoration: BoxDecoration(
-                                color: AppColors.backgroundEnd,
+                                color: AppColors.toplast,
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Center(
@@ -154,7 +154,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                                   style: TextStyle(
                                     color: AppColors.textWhite,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 25,
+                                    fontSize: 18,
                                   ),
                                 ),
                               ),

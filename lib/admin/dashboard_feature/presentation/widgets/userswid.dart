@@ -19,7 +19,6 @@ class Userswid extends StatelessWidget {
           height: height * 0.15,
           child: Card(
             elevation: 5,
-
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusGeometry.circular(20),
             ),
@@ -36,8 +35,8 @@ class Userswid extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppColors.islamicNavy600,
-                      AppColors.islamicNavy800,
+                      AppColors.toplast,
+                      AppColors.toplast,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -55,7 +54,7 @@ class Userswid extends StatelessWidget {
                         "Content",
                         style: TextStyle(
                           color: AppColors.textWhite,
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -64,7 +63,7 @@ class Userswid extends StatelessWidget {
                         "Manage Content",
                         style: TextStyle(
                           color: AppColors.textWhite,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.normal,
                         ),
                       ),
@@ -97,8 +96,8 @@ class Userswid extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppColors.startgreen,
-                      AppColors.endgreen,
+                      AppColors.toplast,
+                      AppColors.toplast,
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -110,12 +109,12 @@ class Userswid extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.group_outlined, color: AppColors.textWhite),
+                      Icon(Icons.group_outlined, color: AppColors.textWhite,size: 24,),
                       Text(
                         "Users",
                         style: TextStyle(
                           color: AppColors.textWhite,
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -124,7 +123,7 @@ class Userswid extends StatelessWidget {
                         "Manage Users",
                         style: TextStyle(
                           color: AppColors.textWhite,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.normal,
                         ),
                       ),

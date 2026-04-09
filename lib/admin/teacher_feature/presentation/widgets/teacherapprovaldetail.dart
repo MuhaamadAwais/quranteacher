@@ -43,13 +43,13 @@ class Teacherapprovaldetail extends StatelessWidget {
                       height: 70,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color.fromARGB(255, 20, 36, 128),
+                        color: AppColors.toplast,
                         border: Border.all(color: Colors.white, width: 3),
                       ),
                       child: const Icon(
                         Icons.person,
                         color: Colors.white,
-                        size: 35,
+                        size: 24,
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -61,7 +61,7 @@ class Teacherapprovaldetail extends StatelessWidget {
                             "Shiekh Omer",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 24,
+                              fontSize: 18,
                             ),
                           ),
                           Text(
@@ -78,14 +78,14 @@ class Teacherapprovaldetail extends StatelessWidget {
                               vertical: 4,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.orange[100],
+                              color: AppColors.toplast.withOpacity(0.25),
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: const Text(
                               "Pending",
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                color: Colors.orange,
+                                color: AppColors.toplast,
                               ),
                             ),
                           ),
@@ -135,7 +135,7 @@ class Teacherapprovaldetail extends StatelessWidget {
                       child: _buildButton(
                         "Approve",
                         Icons.check_circle,
-                        AppColors.primary,
+                        AppColors.toplast,
                         context,
                       ),
                     ),
@@ -144,7 +144,7 @@ class Teacherapprovaldetail extends StatelessWidget {
                       child: _buildButton(
                         "Reject",
                         Icons.cancel_outlined,
-                        AppColors.destructive,
+                        AppColors.toplast,
                         context,
                       ),
                     ),
@@ -167,7 +167,7 @@ class Teacherapprovaldetail extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(icon, color: AppColors.primary, size: 22),
+              Icon(icon, color: AppColors.toplast, size: 24),
               const SizedBox(width: 12),
               Text(
                 title,
@@ -182,7 +182,7 @@ class Teacherapprovaldetail extends StatelessWidget {
           Text(
             details,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 15,
               height: 1.5,
               color: Colors.grey[700],
             ),

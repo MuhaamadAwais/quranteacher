@@ -40,7 +40,7 @@ class Adminoperationwid extends StatelessWidget {
                       color: AppColors.textWhite.withOpacity(0.25),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const Icon(Icons.show_chart, color: Colors.white),
+                    child: const Icon(Icons.show_chart, size: 24,color: Colors.white),
                   ),
                   const SizedBox(width: 12),
 
@@ -60,7 +60,7 @@ class Adminoperationwid extends StatelessWidget {
                         "All Systems Operational",
                         style: TextStyle(
                           color: AppColors.textWhite,
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -76,7 +76,7 @@ class Adminoperationwid extends StatelessWidget {
                   height: 16,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: AppColors.startgreen,
+                    color: AppColors.toplast,
                   ),
                 ),
               ),

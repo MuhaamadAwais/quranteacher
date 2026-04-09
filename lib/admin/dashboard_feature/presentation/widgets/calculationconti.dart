@@ -21,8 +21,8 @@ class Calculationconti extends StatelessWidget {
                 Icons.group_outlined,
                 "Total Students",
                 "1,247",
-                AppColors.startgreen,
-                AppColors.endgreen,
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
               deisgndata(
                 width * 0.46,
@@ -30,8 +30,9 @@ class Calculationconti extends StatelessWidget {
                 Icons.school_outlined,
                 "Total Teachers",
                 "86",
-                AppColors.islamicNavy600,
-                AppColors.islamicNavy800,
+
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
             ],
           ),
@@ -47,8 +48,8 @@ class Calculationconti extends StatelessWidget {
                 Icons.videocam_outlined,
                 "Live Classes ",
                 "24",
-                AppColors.pink500,
-                AppColors.pink700,
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
               deisgndata(
                 width * 0.46,
@@ -56,8 +57,8 @@ class Calculationconti extends StatelessWidget {
                 Icons.attach_money,
                 "Revenue",
                 "125k",
-                Colors.orange,
-                Colors.deepOrangeAccent,
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
             ],
           ),
@@ -108,7 +109,7 @@ class Calculationconti extends StatelessWidget {
                   child: Center(
                     child: Icon(
                       iconsselect,
-                      size: 35,
+                      size: 24,
                       color: AppColors.textWhite,
                     ),
                   ),
@@ -118,7 +119,7 @@ class Calculationconti extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 16,
                     fontWeight: FontWeight.normal,
                   ),
                 ),
@@ -127,7 +128,7 @@ class Calculationconti extends StatelessWidget {
                   count,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

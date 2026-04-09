@@ -12,7 +12,7 @@ class Platformprofence extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-        height: height * 0.38,
+        height: height * 0.35,
         child: Card(
           elevation: 5,
           child: Container(
@@ -31,7 +31,7 @@ class Platformprofence extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 20,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -44,7 +44,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.normal,
-                          fontSize: 20,
+                          fontSize: 16,
                         ),
                       ),
                       Spacer(),
@@ -53,7 +53,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -64,7 +64,7 @@ class Platformprofence extends StatelessWidget {
                     backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.startgreen,
+                      AppColors.toplast,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -76,7 +76,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.normal,
-                          fontSize: 20,
+                          fontSize: 16,
                         ),
                       ),
                       Spacer(),
@@ -85,7 +85,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -97,7 +97,7 @@ class Platformprofence extends StatelessWidget {
                     backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.startgreen,
+                      AppColors.toplast,
                     ),
                   ),
                   // class
@@ -109,7 +109,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.normal,
-                          fontSize: 20,
+                          fontSize: 16,
                         ),
                       ),
                       Spacer(),
@@ -118,7 +118,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -141,7 +141,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.normal,
-                          fontSize: 20,
+                          fontSize: 16,
                         ),
                       ),
                       Spacer(),
@@ -150,7 +150,7 @@ class Platformprofence extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -162,7 +162,7 @@ class Platformprofence extends StatelessWidget {
                     backgroundColor: AppColors.switchBackground.withOpacity(0.25),
                     value: 0.8,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.startgreen,
+                      AppColors.toplast,
                     ),
                   ),
                 ],

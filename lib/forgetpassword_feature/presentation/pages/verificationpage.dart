@@ -28,7 +28,7 @@ class Verificationpage extends StatelessWidget {
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.backgroundStart,
+                        color: AppColors.toplast,
                       ),
                     ),
                     Container(
@@ -36,7 +36,7 @@ class Verificationpage extends StatelessWidget {
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.backgroundStart,
+                        color: AppColors.toplast,
                       ),
                     ),
 

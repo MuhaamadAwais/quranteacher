@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
+import 'package:quranteacher/admin/user_feature/presentation/widgets/topcontiwid.dart';
+import 'package:quranteacher/admin/user_feature/presentation/widgets/toprolewid.dart';
 import 'package:quranteacher/commonbottomsheet.dart';
 import 'package:quranteacher/admin/user_feature/presentation/widgets/searchuserswid.dart';
 import 'package:quranteacher/appcolors.dart';
@@ -21,52 +23,47 @@ class _UseradminpageState extends State<Useradminpage> {
       length: 2,
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           body: Column(
             children: [
-              // Toprolewid(),
-              TopcommonContainer(
-                title: "User Management",
-                subTitle: "Manage Teachers and Students",
-                onBackTap: () {
-                  indexscreen = 0;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Bottomnavigationadmin(),
-                    ),
-                  );
-                },
-              ),
-              SizedBox(height: 20),
-              Searchuserswid(),
+              Toprolewid(),
               SizedBox(height: 20),
               // TAB BAR
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: width * 0.9,
-                  height: height * 0.07,
-                  decoration: BoxDecoration(
+                child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25),
-                    color: AppColors.startgreen,
                   ),
-                  child: TabBar(
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    indicator: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: AppColors.startgreen,
-                        width: 4,
-                      ),
-                      borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    width: width * 0.9,
+                    height: height * 0.07,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: AppColors.toplast,
                     ),
-                    labelColor: Colors.black,
-                    unselectedLabelColor: Colors.white,
-                    dividerColor: Colors.transparent,
-                    tabs: const [
-                      Tab(text: "Students", icon: Icon(Icons.group_outlined)),
-                      Tab(text: "Teachers", icon: Icon(Icons.school_outlined)),
-                    ],
+                    child: TabBar(
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicator: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: AppColors.startgreen,
+                          width: 4,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      labelColor: Colors.black,
+                      unselectedLabelColor: Colors.white,
+                      dividerColor: Colors.transparent,
+                      tabs: const [
+                        Tab(text: "Students", icon: Icon(Icons.group_outlined)),
+                        Tab(
+                          text: "Teachers",
+                          icon: Icon(Icons.school_outlined),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -189,9 +186,13 @@ class _UseradminpageState extends State<Useradminpage> {
                         height: 60,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.startgreen,
+                          color: AppColors.toplast,
                         ),
-                        child: Icon(Icons.school_outlined,color: Colors.white,size: 40,),
+                        child: Icon(
+                          Icons.school_outlined,
+                          color: Colors.white,
+                          size: 24,
+                        ),
                       ),
                       SizedBox(width: 15),
                       Column(
@@ -222,7 +223,7 @@ class _UseradminpageState extends State<Useradminpage> {
                         width: 55,
                         height: 20,
                         decoration: BoxDecoration(
-                          color: AppColors.startgreen,
+                          color: AppColors.toplast,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Center(
@@ -241,12 +242,12 @@ class _UseradminpageState extends State<Useradminpage> {
                     children: [
                       Text(
                         "joined 1/15/2026",
-                        style: TextStyle(color: Colors.black, fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontSize: 14),
                       ),
                       //Spacer(),
                       Text(
                         "42 Classes",
-                        style: TextStyle(color: Colors.black, fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontSize: 14),
                       ),
                     ],
                   ),
@@ -265,7 +266,7 @@ class _UseradminpageState extends State<Useradminpage> {
                                   Radius.circular(20),
                                 ),
                               ),
-                              backgroundColor: AppColors.startgreen,
+                              backgroundColor: AppColors.toplast,
                               content: Text(
                                 "Accepted Successfully",
                                 style: TextStyle(
@@ -281,7 +282,7 @@ class _UseradminpageState extends State<Useradminpage> {
                           height: heightmin,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: AppColors.startgreen
+                            color: AppColors.toplast,
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -291,7 +292,7 @@ class _UseradminpageState extends State<Useradminpage> {
                                 SizedBox(width: width * 0.03),
                                 Icon(
                                   Icons.check_circle,
-                                  size: 25,
+                                  size: 24,
                                   color: AppColors.textWhite,
                                 ),
                                 SizedBox(width: 2),
@@ -299,7 +300,7 @@ class _UseradminpageState extends State<Useradminpage> {
                                   textAlign: TextAlign.center,
                                   "Accepted",
                                   style: TextStyle(
-                                    fontSize: 17,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                   ),
@@ -320,7 +321,7 @@ class _UseradminpageState extends State<Useradminpage> {
                           height: heightmin,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Colors.red.withOpacity(0.35),
+                            color: AppColors.toplast,
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -328,9 +329,9 @@ class _UseradminpageState extends State<Useradminpage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  size: 25,
+                                  size: 24,
                                   Icons.block,
-                                  color: AppColors.destructive,
+                                  color: AppColors.textWhite,
                                 ),
                                 SizedBox(width: 5),
                                 Text(
@@ -338,7 +339,7 @@ class _UseradminpageState extends State<Useradminpage> {
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
-                                    color: AppColors.destructive,
+                                    color: AppColors.textWhite,
                                   ),
                                 ),
                               ],

@@ -93,7 +93,7 @@ class _AddqurancontentpageState extends State<Addqurancontentpage> {
                 iconconti: Icons.check_circle_outline_outlined,
                 publisname: "Publish Quran Content",
                 startconticolor: AppColors.toplast,
-                endconticolor: AppColors.bottomlast,
+                endconticolor: AppColors.toplast,
               ),
               SizedBox(height: 30),
             ],

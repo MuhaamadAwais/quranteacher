@@ -50,7 +50,7 @@ class Contenttextwid extends StatelessWidget {
             "Content Management",
             style: TextStyle(
               color: AppColors.textWhite,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),

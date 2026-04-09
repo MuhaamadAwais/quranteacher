@@ -14,10 +14,11 @@ class Stacktextreport extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            height: 40,
-            width: 40,
+            height: 50,
+            width: 50,
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
+              border: Border.all(width: 1,color: Colors.white),
+              borderRadius: BorderRadius.circular(20),
               color: AppColors.textWhite.withOpacity(0.15),
             ),
             child: GestureDetector(
@@ -30,7 +31,7 @@ class Stacktextreport extends StatelessWidget {
                   ),
                 );
               },
-              child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+              child: Center(child: Icon(Icons.arrow_back_ios,size: 24, color: AppColors.textWhite)),
             ),
           ),
           SizedBox(width: 5),

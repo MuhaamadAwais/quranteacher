@@ -30,13 +30,13 @@ class Verificationcontiwidget extends StatelessWidget {
               height: 100,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.backgroundStart.withOpacity(0.25),
+                color: AppColors.toplast.withOpacity(0.25),
               ),
               child: Center(
                 child: Icon(
-                  size: 45,
+                  size: 24,
                   Icons.admin_panel_settings_outlined,
-                  color: Colors.green,
+                  color:AppColors.toplast,
                 ),
               ),
             ),
@@ -47,7 +47,7 @@ class Verificationcontiwidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 30,
+                fontSize: 18,
               ),
             ),
 
@@ -57,16 +57,16 @@ class Verificationcontiwidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
-                fontSize: 17,
+                fontSize: 14,
               ),
             ),
 
             Text(
               "your email",
               style: TextStyle(
-                color: AppColors.backgroundStart,
+                color: AppColors.toplast,
                 fontWeight: FontWeight.bold,
-                fontSize: 19,
+                fontSize: 14,
               ),
             ),
 
@@ -120,7 +120,7 @@ class Verificationcontiwidget extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide(
-                                  color: AppColors.backgroundStart,
+                                  color: AppColors.toplast,
                                   width: 2,
                                 ),
                               ),
@@ -166,7 +166,7 @@ class Verificationcontiwidget extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide(
-                                  color: AppColors.backgroundStart,
+                                  color: AppColors.toplast,
                                   width: 2,
                                 ),
                               ),
@@ -212,7 +212,7 @@ class Verificationcontiwidget extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide(
-                                  color: AppColors.backgroundStart,
+                                  color: AppColors.toplast,
                                   width: 2,
                                 ),
                               ),
@@ -258,7 +258,7 @@ class Verificationcontiwidget extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide(
-                                  color: AppColors.backgroundStart,
+                                  color: AppColors.toplast,
                                   width: 2,
                                 ),
                               ),
@@ -304,7 +304,7 @@ class Verificationcontiwidget extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide(
-                                  color: AppColors.backgroundStart,
+                                  color: AppColors.toplast,
                                   width: 2,
                                 ),
                               ),
@@ -350,7 +350,7 @@ class Verificationcontiwidget extends StatelessWidget {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide(
-                                  color: AppColors.backgroundStart,
+                                  color: AppColors.toplast,
                                   width: 2,
                                 ),
                               ),
@@ -382,16 +382,16 @@ class Verificationcontiwidget extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.normal,
-                    fontSize: 17,
+                    fontSize: 14,
                   ),
                 ),
                 SizedBox(width: 5),
                 Text(
                   "Resend Code",
                   style: TextStyle(
-                    color: AppColors.backgroundStart,
+                    color: AppColors.toplast,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                 ),
               ],
@@ -411,7 +411,7 @@ class Verificationcontiwidget extends StatelessWidget {
                   width: width,
                   height: height * 0.07,
                   decoration: BoxDecoration(
-                    color: AppColors.backgroundEnd,
+                    color: AppColors.toplast,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
@@ -420,7 +420,7 @@ class Verificationcontiwidget extends StatelessWidget {
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 18,
                       ),
                     ),
                   ),

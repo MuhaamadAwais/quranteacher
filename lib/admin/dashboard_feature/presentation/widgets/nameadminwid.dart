@@ -20,7 +20,7 @@ class Nameadminwid extends StatelessWidget {
                   "WelCome Back",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    fontSize: 18,
                     color: AppColors.textWhite,
                   ),
                 ),
@@ -29,7 +29,7 @@ class Nameadminwid extends StatelessWidget {
                   "Admin Dashboard",
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
-                    fontSize: 20,
+                    fontSize: 16,
                     color: AppColors.textWhite,
                   ),
                 ),
@@ -60,6 +60,7 @@ class Nameadminwid extends StatelessWidget {
                     child: Icon(
                       Icons.notifications_outlined,
                       color: AppColors.textWhite,
+                      size: 24,
                     ),
                   ),
                 ),

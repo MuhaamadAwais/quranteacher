@@ -7,8 +7,6 @@ import 'package:quranteacher/admin/teacher_feature/presentation/widgets/teachera
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
-
-
 class Teacheradminpage extends StatefulWidget {
   const Teacheradminpage({super.key});
 
@@ -26,6 +24,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
       length: 2,
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           body: Column(
             children: [
               // 🔹 Top Section
@@ -33,6 +32,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
                 children: [
                   TopcommonContainer(
                     title: "Teachers & Students Approval",
+                    fontSize: 18,
                     onBackTap: () {
                       indexscreen = 0;
                       Navigator.push(
@@ -41,7 +41,10 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
                           builder: (context) => Bottomnavigationadmin(),
                         ),
                       );
+                      
                     },
+                    gradient1: AppColors.topmaingreen,
+                    gradient2: AppColors.bottommaingreen,
                   ),
                   Positioned(
                     top: 80,
@@ -59,7 +62,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
                 height: height * 0.07,
                 width: width * 0.8,
                 decoration: BoxDecoration(
-                  color: AppColors.startgreen,
+                  color: AppColors.toplast,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Padding(
@@ -71,10 +74,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
                     indicator: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: AppColors.textWhite,
-                      border: Border.all(
-                        color: AppColors.startgreen,
-                        width: 4,
-                      ),
+                      border: Border.all(color: AppColors.toplast, width: 4),
                     ),
                     labelColor: Colors.black,
                     unselectedLabelColor: Colors.white,
@@ -138,6 +138,7 @@ class _TeacheradminpageState extends State<Teacheradminpage> {
                         Studentapproval(),
                         SizedBox(height: 20),
                         Approvalstatisticswid(),
+                        SizedBox(height: 30),
                       ],
                     ),
                   ],

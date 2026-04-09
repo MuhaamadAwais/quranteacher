@@ -30,8 +30,9 @@ class Teacherapproval extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppColors.islamicNavy600,
-                      AppColors.islamicNavy800,
+                     AppColors.topmiddle,
+                      AppColors.bottommiddle,
+                   
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomCenter,
@@ -50,7 +51,7 @@ class Teacherapproval extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.islamicNavy800,
+                          color: AppColors.toplast,
                         ),
                         child: Icon(Icons.person, color: AppColors.textWhite),
                       ),
@@ -64,7 +65,7 @@ class Teacherapproval extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontSize: 15,
                             ),
                           ),
                           Text(
@@ -83,7 +84,7 @@ class Teacherapproval extends StatelessWidget {
                         height: height * 0.04,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.islamicNavy600,
+                          color: AppColors.toplast,
                         ),
                         child: Center(
                           child: Text(
@@ -125,7 +126,7 @@ class Teacherapproval extends StatelessWidget {
 
                       Row(
                         children: [
-                          Icon(Icons.star_outline, color: AppColors.primary),
+                          Icon(Icons.star_outline, color: AppColors.toplast),
                           const SizedBox(width: 6),
                           const Text(
                             "Tajweed Quran Memorization",
@@ -252,10 +253,10 @@ class Teacherapproval extends StatelessWidget {
                               height: height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: AppColors.destructive.withOpacity(0.25),
+                                color: AppColors.toplast.withOpacity(0.25),
                                 border: Border.all(
                                   width: 2,
-                                  color: AppColors.destructive,
+                                  color: AppColors.toplast,
                                 ),
                               ),
                               child: Center(
@@ -269,7 +270,7 @@ class Teacherapproval extends StatelessWidget {
                                       SizedBox(width: 10),
                                       Icon(
                                         Icons.cancel_outlined,
-                                        color: AppColors.destructive,
+                                        color: AppColors.toplast
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
@@ -277,7 +278,7 @@ class Teacherapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
-                                          color: AppColors.destructive,
+                                          color: AppColors.toplast,
                                         ),
                                       ),
                                     ],

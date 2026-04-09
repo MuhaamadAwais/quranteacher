@@ -21,8 +21,8 @@ class Maincontinerreport extends StatelessWidget {
                 Icons.group_outlined,
                 "Total Users",
                 "2,100",
-                AppColors.startgreen,
-                AppColors.endgreen,
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
               deisgndata(
                 width * 0.46,
@@ -30,8 +30,9 @@ class Maincontinerreport extends StatelessWidget {
                 Icons.school_outlined,
                 "Revenu ",
                 "24",
-                Colors.orange,
-                Colors.deepOrangeAccent,
+                
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
             ],
           ),
@@ -47,8 +48,9 @@ class Maincontinerreport extends StatelessWidget {
                 Icons.videocam_outlined,
                 "Total Classes",
                 "86",
-                AppColors.islamicNavy600,
-                AppColors.islamicNavy800,
+                
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
               deisgndata(
                 width * 0.46,
@@ -56,8 +58,9 @@ class Maincontinerreport extends StatelessWidget {
                 Icons.attach_money,
                 "Engagment",
                 "125k",
-                AppColors.pink500,
-                AppColors.pink700,
+                
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
             ],
           ),
@@ -80,7 +83,6 @@ class Maincontinerreport extends StatelessWidget {
       width: width,
       child: Card(
         elevation: 8,
-        shadowColor: AppColors.backgroundStart,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
         ),
@@ -109,7 +111,7 @@ class Maincontinerreport extends StatelessWidget {
                   child: Center(
                     child: Icon(
                       iconsselect,
-                      size: 35,
+                      size: 24,
                       color: AppColors.textWhite,
                     ),
                   ),
@@ -128,10 +130,11 @@ class Maincontinerreport extends StatelessWidget {
                   count,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 05,),
               ],
             ),
           ),

@@ -14,9 +14,9 @@ class Todayoverwid extends StatelessWidget {
         width: width,
         height: height * 0.15,
         decoration: BoxDecoration(
-          color: AppColors.startgreen.withOpacity(0.25),
+          color: AppColors.toplast.withOpacity(0.25),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.startgreen, width: 3),
+          border: Border.all(color: AppColors.toplast, width: 2),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,17 +25,13 @@ class Todayoverwid extends StatelessWidget {
               padding: const EdgeInsets.only(left: 15, top: 10),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.trending_up,
-                    color: AppColors.startgreen,
-                    size: 30,
-                  ),
+                  Icon(Icons.trending_up, color: AppColors.toplast, size: 24),
                   Text(
                     "Today's Overview",
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -54,7 +50,7 @@ class Todayoverwid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 18,
                         ),
                       ),
 
@@ -63,7 +59,7 @@ class Todayoverwid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ],
@@ -76,7 +72,7 @@ class Todayoverwid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 18,
                         ),
                       ),
 
@@ -85,7 +81,7 @@ class Todayoverwid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ],
@@ -98,7 +94,7 @@ class Todayoverwid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 18,
                         ),
                       ),
 
@@ -107,7 +103,7 @@ class Todayoverwid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ],

@@ -28,7 +28,7 @@ class Newpasswordpage extends StatelessWidget {
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.backgroundStart,
+                        color: AppColors.toplast,
                       ),
                     ),
                     Container(
@@ -36,7 +36,7 @@ class Newpasswordpage extends StatelessWidget {
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.backgroundStart,
+                        color: AppColors.toplast,
                       ),
                     ),
 
@@ -45,7 +45,7 @@ class Newpasswordpage extends StatelessWidget {
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.backgroundStart,
+                        color: AppColors.toplast,
                       ),
                     ),
                   ],

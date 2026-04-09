@@ -12,10 +12,10 @@ class Textforuserwid extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            height: 40,
-            width: 40,
+            height: 50,
+            width: 50,
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
+              borderRadius: BorderRadius.circular(20),
               color: AppColors.textWhite.withOpacity(0.15),
             ),
             child: GestureDetector(
@@ -28,7 +28,7 @@ class Textforuserwid extends StatelessWidget {
                   ),
                 );
               },
-              child: Icon(Icons.arrow_back, color: AppColors.textWhite),
+              child: Icon(Icons.arrow_back_ios_new, color: AppColors.textWhite,size: 24,),
             ),
           ),
           SizedBox(width: 8),
@@ -36,7 +36,7 @@ class Textforuserwid extends StatelessWidget {
             "User Managment",
             style: TextStyle(
               color: AppColors.textWhite,
-              fontSize: 25,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),

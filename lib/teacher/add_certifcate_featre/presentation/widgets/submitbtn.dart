@@ -17,7 +17,7 @@ class Submitbtn extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: AppColors.switchBackground, width: 1.5),
           gradient: LinearGradient(
-            colors: [AppColors.toplast, AppColors.bottomlast],
+            colors: [AppColors.toplast, AppColors.toplast],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

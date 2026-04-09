@@ -105,7 +105,7 @@ class _AddlessoncontentpageState extends State<Addlessoncontentpage> {
                 iconconti: Icons.check_circle_outline_outlined,
                 publisname: "Publish Lesson",
                 startconticolor: AppColors.toplast,
-                endconticolor: AppColors.bottomlast,
+                endconticolor: AppColors.toplast,
               ),
 
               SizedBox(height: 30),

@@ -20,6 +20,7 @@ class _ContentadminpageState extends State<Contentadminpage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Column(
           children: [
             Topmaincontentwid(),
@@ -85,8 +86,8 @@ class _ContentadminpageState extends State<Contentadminpage> {
                             width,
                             height * 0.07,
                             "Add Quran Content",
-                            AppColors.startgreen,
-                            AppColors.endgreen,
+                            AppColors.topmiddle,
+                            AppColors.bottommiddle,
                           ),
                         ),
 
@@ -136,8 +137,8 @@ class _ContentadminpageState extends State<Contentadminpage> {
                             width,
                             height * 0.07,
                             "Add Hadith Content",
-                            AppColors.islamicNavy600,
-                            AppColors.islamicNavy800,
+                            AppColors.topmiddle,
+                            AppColors.bottommiddle,
                           ),
                         ),
 

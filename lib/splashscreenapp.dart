@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/roleselector.dart';
 
-void main() {
-  runApp(MaterialApp(home: Splashscreenapp()));
-}
 
 class Splashscreenapp extends StatefulWidget {
   const Splashscreenapp({super.key});

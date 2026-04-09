@@ -37,10 +37,10 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
                     },
                     child: Row(
                       children: [
-                        Icon(Icons.arrow_back, color: Colors.black),
+                        Icon(Icons.arrow_back, color: Colors.black,size: 24,),
                         Text(
                           "Back to Login",
-                          style: TextStyle(fontSize: 20, color: Colors.black),
+                          style: TextStyle(fontSize: 18, color: Colors.black),
                         ),
                       ],
                     ),
@@ -54,7 +54,7 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
                         height: height * 0.02,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.islamicGreen,
+                          color: AppColors.toplast,
                         ),
                       ),
                       Container(
@@ -98,8 +98,8 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
                         child: Text(
                           "Sign In",
                           style: TextStyle(
-                            color: AppColors.backgroundStart,
-                            fontSize: 20,
+                            color: AppColors.toplast,
+                            fontSize: 18,
                           ),
                         ),
                       ),

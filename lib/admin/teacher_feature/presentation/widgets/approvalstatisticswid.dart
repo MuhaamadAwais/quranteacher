@@ -15,8 +15,8 @@ class Approvalstatisticswid extends StatelessWidget {
         height: height * 0.15,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.startgreen.withOpacity(0.25),
-          border: Border.all(color: AppColors.startgreen, width: 2),
+          color: AppColors.toplast.withOpacity(0.25),
+          border: Border.all(color: AppColors.toplast, width: 2),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +32,7 @@ class Approvalstatisticswid extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -51,7 +51,7 @@ class Approvalstatisticswid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
 
@@ -60,7 +60,7 @@ class Approvalstatisticswid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ],
@@ -71,9 +71,9 @@ class Approvalstatisticswid extends StatelessWidget {
                       Text(
                         "3",
                         style: TextStyle(
-                          color: AppColors.destructive,
+                          color:Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
 
@@ -82,7 +82,7 @@ class Approvalstatisticswid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ],
@@ -93,9 +93,9 @@ class Approvalstatisticswid extends StatelessWidget {
                       Text(
                         "12",
                         style: TextStyle(
-                          color: AppColors.destructive,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 18,
                         ),
                       ),
 
@@ -104,7 +104,7 @@ class Approvalstatisticswid extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ],
