@@ -53,9 +53,9 @@ class _RegisterState extends State<Register>
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  AppColors.backgroundStart,
-                  AppColors.backgroundVia,
-                  AppColors.backgroundEnd,
+                  AppColors.topmaingreen,
+                  AppColors.bottommaingreen,
+                  // AppColors.backgroundEnd,
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -75,8 +75,8 @@ class _RegisterState extends State<Register>
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
                           colors: [
-                            AppColors.backgroundVia,
-                            AppColors.islamicNavy200,
+                            AppColors.toplast,
+                            AppColors.toplast
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -95,7 +95,7 @@ class _RegisterState extends State<Register>
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                        fontSize: 22,
                       ),
                     ),
                   ),
@@ -108,7 +108,7 @@ class _RegisterState extends State<Register>
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 22,
+                        fontSize: 20,
                       ),
                     ),
                   ),
@@ -121,23 +121,7 @@ class _RegisterState extends State<Register>
                       height: height * 0.72,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        gradient: LinearGradient(
-                          colors: [
-                            AppColors.backgroundEnd,
-                            AppColors.backgroundStart,
-                            AppColors.backgroundVia,
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.white,
-                            blurRadius: 1,
-                            spreadRadius: 1,
-                            offset: Offset(0, 0),
-                          ),
-                        ],
+                        color: AppColors.topmiddle.withOpacity(0.25)
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -152,7 +136,7 @@ class _RegisterState extends State<Register>
                                 "Full Name",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -160,7 +144,7 @@ class _RegisterState extends State<Register>
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
-                                height: height * 0.08,
+                                height: height * 0.07,
                                 width: width * 0.8,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
@@ -185,7 +169,7 @@ class _RegisterState extends State<Register>
                                 "Email Address",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -193,7 +177,7 @@ class _RegisterState extends State<Register>
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
-                                height: height * 0.08,
+                                height: height * 0.07,
                                 width: width * 0.8,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
@@ -217,7 +201,7 @@ class _RegisterState extends State<Register>
                                 "Password",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -225,7 +209,7 @@ class _RegisterState extends State<Register>
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
-                                height: height * 0.08,
+                                height: height * 0.07,
                                 width: width * 0.8,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
@@ -249,7 +233,7 @@ class _RegisterState extends State<Register>
                                 "Confirm Password",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -257,7 +241,7 @@ class _RegisterState extends State<Register>
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
-                                height: height * 0.08,
+                                height: height * 0.07,
                                 width: width * 0.8,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
@@ -293,7 +277,7 @@ class _RegisterState extends State<Register>
                                       TextSpan(
                                         text: "Terms of Service ",
                                         style: TextStyle(
-                                          color: Colors.orangeAccent,
+                                          color: AppColors.topmiddle,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -311,7 +295,7 @@ class _RegisterState extends State<Register>
                                       TextSpan(
                                         text: "\n Privacy policy ",
                                         style: TextStyle(
-                                          color: Colors.orangeAccent,
+                                          color: AppColors.topmiddle,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -336,26 +320,8 @@ class _RegisterState extends State<Register>
                                 width: width,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                    colors: [
-                                      Color.fromARGB(
-                                        255,
-                                        5,
-                                        121,
-                                        150,
-                                      ), // emerald-600
-                                      Color.fromARGB(
-                                        255,
-                                        16,
-                                        185,
-                                        182,
-                                      ), // emerald-500
-                                      Color.fromARGB(255, 13, 105, 148),
-                                    ],
+                                 color: AppColors.toplast
                                   ),
-                                ),
 
                                 child: Center(
                                   child: Text(
@@ -363,7 +329,7 @@ class _RegisterState extends State<Register>
                                     style: TextStyle(
                                       color: AppColors.textWhite,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20,
+                                      fontSize: 18,
                                     ),
                                   ),
                                 ),
@@ -408,7 +374,7 @@ class _RegisterState extends State<Register>
                           child: Text(
                             " Login",
                             style: TextStyle(
-                              color: AppColors.islamicNavy,
+                              color: AppColors.topmiddle,
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
                             ),
