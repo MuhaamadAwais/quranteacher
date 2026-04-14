@@ -91,9 +91,9 @@ class _CharityPageState extends State<CharityPage>
                       child: Text(
                         "Quran Say About Charity",
                         style: TextStyle(
-                          fontSize: 26,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.islamicNavy900,
+                          color: AppColors.textGreen,
                         ),
                       ),
                     ),
@@ -120,7 +120,7 @@ class _CharityPageState extends State<CharityPage>
                         right: width * 0.05,
                       ),
                       child: Card(
-                        color: Colors.purple[50],
+                        color: const Color.fromARGB(255, 222, 239, 216),
                         child: Padding(
                           padding: const EdgeInsets.all(20),
                           child: Column(
@@ -128,7 +128,7 @@ class _CharityPageState extends State<CharityPage>
                               const Text(
                                 'سورۃ البقرہ (2:261)',
                                 style: TextStyle(
-                                  color: AppColors.islamicNavy900,
+                                  color: AppColors.textGreen,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -169,7 +169,7 @@ class _CharityPageState extends State<CharityPage>
                       child: const Text(
                         "Important Notes:",
                         style: TextStyle(
-                          color: AppColors.islamicNavy900,
+                          color: AppColors.textGreen,
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
                         ),
@@ -198,7 +198,7 @@ class _CharityPageState extends State<CharityPage>
                         width: width * 0.8,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.purple[50],
+                          color: const Color.fromARGB(255, 222, 239, 216),
                         ),
                         child: Column(
                           children: [
@@ -238,7 +238,7 @@ class _CharityPageState extends State<CharityPage>
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.islamicNavy900,
+                          color: AppColors.textGreen,
                         ),
                       ),
                     ),
@@ -265,9 +265,11 @@ class _CharityPageState extends State<CharityPage>
                         children: [
                           TextField(
                             controller: _wealthController,
+
                             keyboardType: TextInputType.number,
                             enableInteractiveSelection: true,
                             decoration: const InputDecoration(
+                              iconColor: AppColors.toplast,
                               labelText: 'total amount (PKR)',
                               prefixIcon: Icon(Icons.currency_rupee),
                               border: OutlineInputBorder(),
@@ -296,7 +298,8 @@ class _CharityPageState extends State<CharityPage>
                                     '${zakatAmount.toStringAsFixed(0)} PKR',
                                     style: TextStyle(
                                       fontSize: 32,
-                                      color: Colors.purple[400],
+                                      color: AppColors.textGreen,
+
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),

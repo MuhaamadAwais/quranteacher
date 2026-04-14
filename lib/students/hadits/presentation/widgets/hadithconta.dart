@@ -60,7 +60,7 @@ class _CurrentsurahState extends State<Hadithconta>
     return Padding(
       padding: const EdgeInsets.all(0.0),
       child: SizedBox(
-        height: height * 0.41,
+        height: height * 0.3,
         width: width * 0.7,
         // 🔥 GestureFlipCard - Tap to flip automatically!
         child: ScaleTransition(
@@ -75,7 +75,7 @@ class _CurrentsurahState extends State<Hadithconta>
             frontWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.transparent,
+                gradient: AppColors.icongradient,
                 boxShadow: [
                   BoxShadow(
                     color: const Color.fromARGB(19, 251, 252, 254),
@@ -89,7 +89,7 @@ class _CurrentsurahState extends State<Hadithconta>
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(08.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -99,7 +99,7 @@ class _CurrentsurahState extends State<Hadithconta>
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
                         //textBaseline: TextBaseline.alphabetic,
                       ),
                     ),
@@ -123,7 +123,8 @@ class _CurrentsurahState extends State<Hadithconta>
             backWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.transparent,
+                gradient: AppColors.icongradient,
+
                 boxShadow: [
                   BoxShadow(
                     color: const Color.fromARGB(28, 237, 233, 233),
@@ -137,7 +138,7 @@ class _CurrentsurahState extends State<Hadithconta>
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(08.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -147,11 +148,10 @@ class _CurrentsurahState extends State<Hadithconta>
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 21,
+                        fontSize: 16,
                         //textBaseline: TextBaseline.alphabetic,
                       ),
                     ),
-                    SizedBox(height: height * 0.01),
 
                     Center(
                       child: const Text(
@@ -159,7 +159,7 @@ class _CurrentsurahState extends State<Hadithconta>
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 16,
                         ),
                       ),
                     ),

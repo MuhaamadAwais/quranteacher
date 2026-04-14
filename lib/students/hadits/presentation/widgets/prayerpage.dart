@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class PrayerPage extends StatefulWidget {
@@ -78,7 +80,7 @@ class _PrayerPageState extends State<PrayerPage>
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                      color: AppColors.textGreen,
                     ),
                   ),
                 ),
@@ -101,7 +103,7 @@ class _PrayerPageState extends State<PrayerPage>
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Card(
-                      color: Colors.blue[50],
+                      color: const Color.fromARGB(129, 37, 183, 42),
                       child: Padding(
                         padding: const EdgeInsets.all(20),
                         child: Column(
@@ -148,7 +150,7 @@ class _PrayerPageState extends State<PrayerPage>
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                      color: AppColors.textGreen,
                     ),
                   ),
                 ),
@@ -256,9 +258,9 @@ Widget prayercontainer(String engtext, String urdutext) {
       Card(
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        color: Colors.blue[50],
+        color: const Color.fromARGB(129, 49, 183, 37),
         child: ListTile(
-          hoverColor: Colors.lightGreen,
+          hoverColor: AppColors.topmiddle,
           title: Text(engtext, style: const TextStyle(fontSize: 20)),
           trailing: Text(urdutext, style: const TextStyle(fontSize: 20)),
         ),

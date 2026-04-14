@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class FaithPage extends StatefulWidget {
@@ -44,7 +46,7 @@ class _FaithPageState extends State<FaithPage>
         child: SlideTransition(
           position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(01),
+            padding: const EdgeInsets.all(0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -74,7 +76,7 @@ class _FaithPageState extends State<FaithPage>
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF4CAF50),
+                        color: AppColors.textGreen,
                       ),
                     ),
                   ),
@@ -98,7 +100,7 @@ class _FaithPageState extends State<FaithPage>
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Card(
-                      color: Colors.green[50],
+                      color: Newcolors.green100,
                       child: Padding(
                         padding: const EdgeInsets.all(25),
                         child: Column(
@@ -151,6 +153,8 @@ class _FaithPageState extends State<FaithPage>
                     child: const Text(
                       'Five Foundations of Faith',
                       style: TextStyle(
+                        color: AppColors.textGreen,
+
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -208,9 +212,9 @@ class _FaithPageState extends State<FaithPage>
   Widget _buildFaithPoint(IconData icon, String text) {
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
-      color: Colors.green[50],
+      color: Newcolors.green100,
       child: ListTile(
-        leading: Icon(icon, color: Colors.green[400]),
+        leading: Icon(icon, color: Colors.green[800]),
         title: Text(text, style: const TextStyle(fontWeight: FontWeight.w600)),
       ),
     );

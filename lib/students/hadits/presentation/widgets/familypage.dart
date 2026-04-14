@@ -90,7 +90,7 @@ class _FamilyPageState extends State<FamilyPage>
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.islamicNavy900,
+                        color: AppColors.textGreen,
                       ),
                     ),
                   ),
@@ -114,7 +114,7 @@ class _FamilyPageState extends State<FamilyPage>
                   child: Padding(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Card(
-                      color: Colors.red[50],
+                      color: Colors.green[50],
                       child: Padding(
                         padding: const EdgeInsets.all(20),
                         child: Column(
@@ -171,7 +171,7 @@ class _FamilyPageState extends State<FamilyPage>
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.islamicNavy900,
+                        color: AppColors.textGreen,
                       ),
                     ),
                   ),
@@ -251,10 +251,23 @@ class _FamilyPageState extends State<FamilyPage>
   Widget _buildFamilyRight(IconData icon, String text, {IconData? icon2}) {
     return Card(
       margin: const EdgeInsets.only(bottom: 10),
-      child: ListTile(
-        leading: Icon(icon, color: Colors.red[400]),
-        title: Text(text, style: const TextStyle(fontWeight: FontWeight.w600)),
-        trailing: icon2 != null ? Icon(icon2, color: Colors.red[400]) : null,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      child: SizedBox(
+        width: 330,
+        child: ListTile(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          tileColor: Colors.green[50],
+          leading: Icon(icon, color: AppColors.greenDark),
+          title: Text(
+            text,
+            style: const TextStyle(fontWeight: FontWeight.w600),
+          ),
+          trailing: icon2 != null
+              ? Icon(icon2, color: AppColors.greenAccent)
+              : null,
+        ),
       ),
     );
   }

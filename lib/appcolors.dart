@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class AppColors {
   // main two color
@@ -111,8 +112,14 @@ class AppColors {
   // Other utils
   static const Color shadow = Color(0xFF000000); // Black shadow 10% opacity
   static const Color errorRed = Color(0xFFEF4444); // Red-500
-  static const LinearGradient gradient = LinearGradient(
-    colors: [greenDark, whitePrimary],
+  static const LinearGradient icongradient = LinearGradient(
+    colors: [toplast, bottomlast],
+    stops: [0.6, 1.0],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+  static const LinearGradient backgroundgradient = LinearGradient(
+    colors: [AppColors.topmaingreen, AppColors.bottommaingreen],
     stops: [0.6, 1.0],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,

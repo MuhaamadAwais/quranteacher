@@ -1,5 +1,7 @@
 //student_attendance_screen.dart
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/studentattancemodel.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
@@ -62,7 +64,7 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
         : '0';
 
     return Scaffold(
-      backgroundColor: Colors.blue[50],
+      backgroundColor: Colors.green[50],
       body: Column(
         children: [
           // App bar
@@ -79,10 +81,7 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                   margin: const EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [
-                        Color.fromARGB(255, 33, 61, 243),
-                        Color.fromARGB(255, 66, 72, 245),
-                      ],
+                      colors: [AppColors.bottommaingreen, Newcolors.green900],
                     ),
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
@@ -108,7 +107,7 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                         '$percentage%',
                         'Overall',
                         Icons.trending_up,
-                        Colors.orange,
+                        Colors.white,
                       ),
                     ],
                   ),
@@ -117,14 +116,14 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                 // Profile Card
                 Card(
                   margin: const EdgeInsets.only(bottom: 20),
-                  color: Colors.white,
+                  color: Colors.green[50],
                   elevation: 4,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Container(
-                    height: height * 0.15,
-                    width: width * 0.85,
+                    height: height * 0.13,
+                    width: width * 0.78,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(
@@ -137,8 +136,12 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                         SizedBox(width: width * 0.04),
                         CircleAvatar(
                           radius: 35,
-                          backgroundColor: Colors.blue[100],
-                          child: const Icon(Icons.person, size: 40),
+                          backgroundColor: Newcolors.green700,
+                          child: const Icon(
+                            Icons.person,
+                            size: 28,
+                            color: AppColors.whiteBackground,
+                          ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
@@ -155,7 +158,7 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                               ),
                               Text(
                                 'ST001 | Juz 1 |\n Basic Quran Badge',
-                                style: TextStyle(color: Colors.grey[600]),
+                                style: TextStyle(color: Colors.grey[700]),
                               ),
                             ],
                           ),
@@ -176,10 +179,17 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Chip(label: Text('${myAttendance.length} sessions')),
+                    Chip(
+                      backgroundColor: Colors.green[50],
+
+                      label: Text(
+                        '${myAttendance.length} sessions',
+                        style: const TextStyle(color: Colors.grey),
+                      ),
+                    ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                //   const SizedBox(height: 8),
 
                 // Attendance ListView.builder
                 ListView.builder(
@@ -191,6 +201,7 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                     return Card(
                       margin: const EdgeInsets.only(bottom: 12),
                       elevation: 4,
+                      color: Colors.green[50],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
@@ -221,14 +232,16 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.orange[100],
+                            color: record.isPresent
+                                ? Newcolors.green500
+                                : const Color.fromARGB(255, 238, 117, 109),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(
                             record.isPresent ? 'Present' : 'Absent',
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: 14,
                             ),
                           ),

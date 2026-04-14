@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class Qurantopconti extends StatelessWidget {
   const Qurantopconti({super.key});
@@ -9,17 +10,13 @@ class Qurantopconti extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: height * 0.25,
+      height: height * 0.15,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20),
+          bottomLeft: Radius.circular(15),
+          bottomRight: Radius.circular(15),
         ),
-        gradient: LinearGradient(
-          colors: [const Color(0xFF006633), const Color(0xCC054632)],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomRight,
-        ),
+        gradient: AppColors.backgroundgradient,
       ),
     );
   }

@@ -30,7 +30,7 @@ class Qurandesign extends StatelessWidget {
                 width: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: AppColors.startgreen,
+                  gradient: AppColors.icongradient,
                 ),
                 child: Center(
                   child: Text(
@@ -112,8 +112,8 @@ class Qurandesign extends StatelessWidget {
               /// ➡ Arrow
               Icon(
                 Icons.arrow_forward_ios,
-                size: 18,
-                color: AppColors.switchBackground,
+                size: 24,
+                color: AppColors.bottommaingreen,
               ),
             ],
           ),

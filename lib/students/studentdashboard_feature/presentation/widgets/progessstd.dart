@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Progessstd extends StatelessWidget {
   const Progessstd({super.key});
@@ -15,8 +16,9 @@ class Progessstd extends StatelessWidget {
         height: height * 0.23,
         width: width,
         child: Card(
-          color: const Color.fromARGB(73, 5, 150, 104),
+          color: Newcolors.green700,
           elevation: 6,
+          shadowColor: AppColors.bottommaingreen,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
@@ -30,13 +32,13 @@ class Progessstd extends StatelessWidget {
                     const Text(
                       "Your Progress",
                       style: TextStyle(
-                        color: AppColors.greenDark,
+                        color: AppColors.textWhite,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                     ),
                     const Spacer(),
-                    Icon(Icons.trending_up, color: AppColors.greenDark),
+                    Icon(Icons.trending_up, color: AppColors.textWhite),
                   ],
                 ),
 
@@ -102,7 +104,7 @@ class Progessstd extends StatelessWidget {
               style: TextStyle(
                 color: textcol,
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
           ),
@@ -110,7 +112,7 @@ class Progessstd extends StatelessWidget {
         const SizedBox(height: 6),
         Text(
           contitext,
-          style: const TextStyle(color: Colors.white, fontSize: 13),
+          style: const TextStyle(color: Colors.white, fontSize: 14),
         ),
       ],
     );

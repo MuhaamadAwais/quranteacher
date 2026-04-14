@@ -18,20 +18,20 @@ class Namestd extends StatelessWidget {
             SizedBox(width: 5),
             Text(
               "Assalamu Alaikum",
-              style: TextStyle(color: AppColors.textWhite, fontSize: 16),
+              style: TextStyle(color: AppColors.textWhite, fontSize: 14),
             ),
 
             Text(
               "Ahmaed Hassan",
               style: TextStyle(
                 color: AppColors.textWhite,
-                fontSize: 22,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ],
         ),
-        SizedBox(width: width * 0.30),
+        SizedBox(width: width * 0.4),
 
         Column(
           children: [
@@ -59,7 +59,7 @@ class Namestd extends StatelessWidget {
                     label: Text("3"),
                     child: Icon(
                       Icons.notifications_outlined,
-                      size: 18,
+                      size: 24,
                       color: AppColors.textWhite,
                     ),
                   ),

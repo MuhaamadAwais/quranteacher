@@ -71,12 +71,7 @@ class _BottomnaviState extends State<Bottomnavi> {
         padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
         decoration: BoxDecoration(
           color: isSelected
-              ? const Color.fromARGB(
-                  59,
-                  5,
-                  150,
-                  104,
-                ) // very light green for container
+              ? const Color.fromARGB(85, 27, 94, 31)
               : Colors.white,
           borderRadius: BorderRadius.circular(18),
           boxShadow: isSelected

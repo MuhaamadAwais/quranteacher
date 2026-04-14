@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class TajweedRulesScreen extends StatelessWidget {
@@ -27,9 +29,12 @@ class TajweedRulesScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 8, 90, 98),
-                    Color.fromARGB(174, 10, 130, 112),
+                    const Color.fromARGB(255, 13, 56, 16),
+                    const Color.fromARGB(255, 38, 136, 43),
+                    const Color.fromARGB(255, 32, 165, 41),
                   ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -125,7 +130,7 @@ class TajweedRulesScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 8, 90, 98),
+                  gradient: AppColors.icongradient,
 
                   borderRadius: BorderRadius.circular(12),
                 ),

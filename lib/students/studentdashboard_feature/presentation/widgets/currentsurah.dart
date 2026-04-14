@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/appanimations.dart';
 
 class Currentsurah extends StatefulWidget {
@@ -76,16 +77,7 @@ class _CurrentsurahState extends State<Currentsurah>
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 // color: AppColors.startgreen,
-                gradient: LinearGradient(
-                  colors: [
-                    const Color.fromARGB(255, 7, 88, 62),
-                    const Color.fromARGB(107, 7, 231, 160),
-                    const Color.fromARGB(193, 7, 88, 62),
-                  ],
-                  stops: [0.0, 0.8, 1.0],
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                ),
+                gradient: AppColors.icongradient,
                 border: Border.all(
                   width: 4.0,
                   color: AppColors.whiteBackground,
@@ -135,20 +127,9 @@ class _CurrentsurahState extends State<Currentsurah>
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 // color: AppColors.greenLight,
-                gradient: LinearGradient(
-                  colors: [
-                    const Color.fromARGB(255, 7, 88, 62),
-                    const Color.fromARGB(107, 7, 231, 160),
-                    const Color.fromARGB(193, 7, 88, 62),
-                  ],
-                  stops: [0.0, 0.8, 1.0],
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                ),
-                border: Border.all(
-                  width: 4.0,
-                  color: AppColors.whiteBackground,
-                ),
+                gradient: AppColors.icongradient,
+
+                border: Border.all(width: 4.0, color: AppColors.whitePrimary),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,

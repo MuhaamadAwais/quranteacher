@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/videocallscreen.dart';
 
 class Maincontstd extends StatefulWidget {
@@ -48,7 +49,7 @@ class _MaincontstdState extends State<Maincontstd>
           height: heigth * 0.25,
           width: width,
           decoration: BoxDecoration(
-            color: AppColors.endgreen,
+            color: const Color.fromARGB(39, 183, 242, 186),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: AppColors.backgroundStart, width: 1.5),
           ),
@@ -64,16 +65,17 @@ class _MaincontstdState extends State<Maincontstd>
                       height: heigth * 0.07,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        gradient: AppColors.gradient,
+                        gradient: AppColors.icongradient,
                       ),
                       child: Icon(
                         Icons.video_camera_back_outlined,
+                        size: 24,
                         color: AppColors.textWhite,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -83,7 +85,7 @@ class _MaincontstdState extends State<Maincontstd>
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 16,
                       ),
                     ),
                     Text(
@@ -91,11 +93,11 @@ class _MaincontstdState extends State<Maincontstd>
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.w500,
-                        fontSize: 16,
+                        fontSize: 14,
                       ),
                     ),
                     Text(
-                      "- Noon",
+                      "Noon",
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.w600,
@@ -145,13 +147,13 @@ class _MaincontstdState extends State<Maincontstd>
                           width: width * 0.25,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                            color: AppColors.textWhite,
+                            gradient: AppColors.icongradient,
                           ),
                           child: Center(
                             child: Text(
                               "Join Now",
                               style: TextStyle(
-                                color: AppColors.backgroundStart,
+                                color: AppColors.textWhite,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
                               ),

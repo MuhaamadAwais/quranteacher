@@ -58,7 +58,7 @@ class TeacherCard extends StatelessWidget {
                 height: 55,
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFF006633), Color(0xFF054632)],
+                    colors: [Color.fromARGB(255, 8, 44, 26), Color(0xFF054632)],
                   ),
                   borderRadius: BorderRadius.circular(18),
                 ),
@@ -182,7 +182,7 @@ class TeacherCard extends StatelessWidget {
                   icon: icon,
                   label: Text(buttontext, style: TextStyle(fontSize: 13)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
+                    backgroundColor: AppColors.toplast,
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 16,

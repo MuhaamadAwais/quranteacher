@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class TopcommonContainer extends StatelessWidget {
   const TopcommonContainer({
     super.key,
     required this.title,
     this.subTitle = "",
-    this.gradient1 = const Color(0xFF006633),
-    this.gradient2 = const Color(0xCC054632),
+    this.gradient1 = AppColors.topmaingreen,
+    this.gradient2 = AppColors.bottommaingreen,
     this.fontSize = 24.0,
     this.onBackTap,
   });

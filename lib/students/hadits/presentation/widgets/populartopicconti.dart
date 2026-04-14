@@ -35,12 +35,13 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
                   );
                 },
                 child: Popularconti(
-                  "assets/images/faith.png",
+                  Icon(Icons.volunteer_activism, color: Colors.white),
                   "Faith",
+                  "True Belief",
                   width * 0.43,
                   height * 0.2,
-                  AppColors.startgreen,
-                  AppColors.endgreen,
+                  AppColors.toplast,
+                  AppColors.bottomlast,
                 ),
               ),
 
@@ -52,12 +53,13 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
                   );
                 },
                 child: Popularconti(
-                  "assets/images/prayer.png",
+                  Icon(Icons.mosque, color: Colors.white),
                   "Prayer",
+                  "Salah Guide",
                   width * 0.43,
                   height * 0.2,
-                  AppColors.islamicNavy600,
-                  AppColors.islamicNavy800,
+                  AppColors.toplast,
+                  AppColors.bottomlast,
                 ),
               ),
             ],
@@ -74,12 +76,13 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
                 );
               },
               child: Popularconti(
-                "assets/images/charity.png",
+                Icon(Icons.monetization_on, color: Colors.white),
                 "Charity",
+                "Give Charity",
                 width * 0.43,
                 height * 0.2,
-                AppColors.pink500,
-                AppColors.pink700,
+                AppColors.toplast,
+                AppColors.bottomlast,
               ),
             ),
 
@@ -91,12 +94,13 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
                 );
               },
               child: Popularconti(
-                "assets/images/manner.png",
+                Icon(Icons.handshake, color: Colors.white),
                 "Manners",
+                "Islamic Etiquette",
                 width * 0.43,
                 height * 0.2,
-                Colors.orangeAccent,
-                Colors.orange,
+                AppColors.toplast,
+                AppColors.bottomlast,
               ),
             ),
           ],
@@ -113,12 +117,13 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
                 );
               },
               child: Popularconti(
-                "assets/images/family.png",
+                Icon(Icons.family_restroom, color: Colors.white),
                 "Family",
+                "Learn Family Life",
                 width * 0.43,
                 height * 0.2,
-                Colors.redAccent,
-                Colors.red,
+                AppColors.toplast,
+                AppColors.bottomlast,
               ),
             ),
 
@@ -132,12 +137,13 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
                 );
               },
               child: Popularconti(
-                "assets/images/knowledge.png",
+                Icon(Icons.psychology, color: Colors.white),
                 "Knowledge",
+                "Islamic Knowledge",
                 width * 0.43,
                 height * 0.2,
-                Colors.blueAccent,
-                Colors.blue,
+                AppColors.toplast,
+                AppColors.bottomlast,
               ),
             ),
           ],
@@ -147,8 +153,9 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
   }
 
   Widget Popularconti(
-    String image,
+    Icon icon,
     String name,
+    String subtitle,
     double width,
     double height,
     Color firstcolor,
@@ -163,23 +170,52 @@ class _PopulartopiccontiState extends State<Populartopicconti> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(35),
+
+          bottomRight: Radius.circular(35),
+        ),
+        border: Border.all(color: AppColors.glowCircle, width: 4.5),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset(image, width: width * 0.4, fit: BoxFit.cover),
             Padding(
-              padding: const EdgeInsets.only(bottom: 10),
+              padding: const EdgeInsets.only(top: 12, left: 12),
+              child: Container(
+                height: height * 0.33,
+                width: width * 0.33,
+                decoration: BoxDecoration(
+                  gradient: AppColors.backgroundgradient,
+                  shape: BoxShape.circle,
+                ),
+                child: icon,
+              ),
+            ),
+            SizedBox(height: 7),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
               child: Text(
                 name,
                 style: TextStyle(
                   color: AppColors.textWhite,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
+                ),
+              ),
+            ),
+            SizedBox(height: 1),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                subtitle,
+                style: TextStyle(
+                  color: AppColors.textWhite,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
                 ),
               ),
             ),

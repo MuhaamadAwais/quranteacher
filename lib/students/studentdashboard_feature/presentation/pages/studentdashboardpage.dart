@@ -110,7 +110,7 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                     },
                     child: Currentsurah(),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 12),
                   // 4. Text Access (450ms delay)
                   TweenAnimationBuilder<double>(
                     duration: const Duration(milliseconds: 400 + (2 * 150)),
@@ -126,14 +126,13 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                       );
                     },
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 16),
+                      padding: const EdgeInsets.only(right: 152),
                       child: SizedBox(
                         width: size.width * 0.45,
-                        child: Card(elevation: 4, child: Textacces()),
+                        child: Textacces(),
                       ),
                     ),
                   ),
-                  SizedBox(height: size.height * 0.01),
 
                   TweenAnimationBuilder<double>(
                     duration: const Duration(

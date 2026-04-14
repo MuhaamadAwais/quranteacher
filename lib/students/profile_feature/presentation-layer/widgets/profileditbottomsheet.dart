@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 
 class Profileditbottomsheet extends StatelessWidget {
   final TextEditingController usernameController;
@@ -27,11 +28,7 @@ class Profileditbottomsheet extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(24), // Increased padding
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFF667eea), Color.fromARGB(255, 51, 164, 138)],
-          ),
+          gradient: AppColors.backgroundgradient,
           borderRadius: BorderRadius.circular(32),
           boxShadow: [
             BoxShadow(
@@ -190,13 +187,11 @@ class Profileditbottomsheet extends StatelessWidget {
               width: double.infinity,
               height: 56,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xFF667eea), Color(0xFF764ba2)],
-                ),
+                gradient: AppColors.icongradient,
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xFF667eea).withOpacity(0.4),
+                    color: Color.fromARGB(255, 102, 234, 109).withOpacity(0.4),
                     blurRadius: 15,
                     offset: Offset(0, 8),
                   ),

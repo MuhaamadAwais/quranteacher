@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/howtotakequizscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/memorizationtipsscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/help&support_inner_screen/tajweedrulesscreen.dart';
@@ -152,10 +153,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
     padding: const EdgeInsets.all(24),
     decoration: BoxDecoration(
       gradient: const LinearGradient(
-        colors: [
-          Color.fromARGB(255, 1, 71, 50),
-          Color.fromARGB(158, 1, 62, 45),
-        ],
+        colors: [Color.fromARGB(255, 19, 61, 22), Newcolors.green900],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
@@ -175,13 +173,13 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
         const Text(
           'Need Help?',
           style: TextStyle(
-            color: Colors.white,
+            color: AppColors.textWhite,
             fontSize: 24,
             fontWeight: FontWeight.w700,
           ),
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 2),
         Text(
           "We're here to help you in your Quran learning journey",
           style: TextStyle(color: Colors.white.withOpacity(0.9), fontSize: 16),
@@ -199,7 +197,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w700,
-          color: AppColors.islamicNavy900,
+          color: AppColors.textGreen,
         ),
       ),
       //const SizedBox(height: 2),
@@ -208,7 +206,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 2,
         crossAxisSpacing: 14,
-        mainAxisSpacing: 14,
+        mainAxisSpacing: 12,
         childAspectRatio: 1.1,
         children: [
           _buildQuickHelpButton(
@@ -260,7 +258,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
           children: [
             const Icon(
               Icons.question_answer,
-              color: Color(0xFF40C4FF),
+              color: Newcolors.green900,
               size: 28,
             ),
             const SizedBox(width: 12),
@@ -315,7 +313,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
       } else if (title == 'Recitation Help') {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Newcolors.green300,
             behavior: SnackBarBehavior.floating,
             margin: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
             shape: RoundedRectangleBorder(
@@ -326,7 +324,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
                 "in processing",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -336,31 +334,36 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
       }
     },
     borderRadius: BorderRadius.circular(16),
-    child: Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.2)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: color, size: 32),
-          const SizedBox(height: 12),
-          Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
-            textAlign: TextAlign.center,
-          ),
-        ],
+    child: Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      shadowColor: Newcolors.green500,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Newcolors.green300),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: Newcolors.green800, size: 32),
+            const SizedBox(height: 12),
+            Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     ),
   );
@@ -370,7 +373,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
         margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Colors.grey.shade50,
+          color: const Color.fromARGB(109, 200, 230, 201),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.grey.shade200),
         ),

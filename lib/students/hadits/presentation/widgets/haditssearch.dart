@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Haditssearch extends StatelessWidget {
   const Haditssearch({super.key});
@@ -22,29 +23,38 @@ class Haditssearch extends StatelessWidget {
             // textAlign: TextAlign.center,
             textAlignVertical: TextAlignVertical.center,
             style: TextStyle(color: AppColors.primary),
+
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.grey.shade200,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(color: AppColors.startgreen),
+                borderSide: const BorderSide(
+                  color: Newcolors.green400,
+                  width: 2,
+                ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: const BorderSide(
-                  color: AppColors.startgreen,
+                  color: Newcolors.green300,
                   width: 2,
                 ),
               ),
-              //border: InputBorder.none,
+
+              border: InputBorder.none,
               hint: Text(
                 "Search Hadith...",
                 style: TextStyle(
-                  fontSize: 15,
-                  color: AppColors.switchBackground,
+                  fontSize: 16,
+                  color: const Color.fromARGB(255, 181, 186, 191),
                 ),
               ),
-              prefixIcon: Icon(Icons.search, color: AppColors.switchBackground),
+              prefixIcon: Icon(
+                Icons.search,
+                color: AppColors.textGreen,
+                size: 24,
+              ),
             ),
           ),
         ),

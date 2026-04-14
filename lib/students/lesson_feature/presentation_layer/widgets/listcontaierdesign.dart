@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Listcontaierdesign extends StatelessWidget {
   Listcontaierdesign({super.key, required this.size})
@@ -10,13 +11,16 @@ class Listcontaierdesign extends StatelessWidget {
 
   static Color _randomColor() {
     final colors = [
-      Colors.red,
-      Colors.blue,
-      Colors.green,
-      Colors.purple,
-      Colors.orange,
-      Colors.teal,
-      Colors.indigo,
+      Newcolors.green500,
+      Newcolors.green700,
+
+      Newcolors.green500,
+
+      Newcolors.green800,
+
+      Newcolors.green600,
+
+      Newcolors.green700,
     ];
     return colors[Random().nextInt(colors.length)];
   }
@@ -87,7 +91,10 @@ class Listcontaierdesign extends StatelessWidget {
                               SizedBox(width: width * 0.013),
                               Text(
                                 "75% completed",
-                                style: TextStyle(color: themeColor, fontSize: 14),
+                                style: TextStyle(
+                                  color: themeColor,
+                                  fontSize: 14,
+                                ),
                               ),
                             ],
                           ),

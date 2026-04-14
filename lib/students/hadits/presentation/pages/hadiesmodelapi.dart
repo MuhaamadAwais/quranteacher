@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
@@ -8,12 +9,14 @@ class Hadiesmodelapi {
   num hadiescollection;
   Color startcolor;
   Color endcolor;
+  IconData icon;
   Hadiesmodelapi({
     required this.engNamehadies,
     required this.urduNamehadies,
     required this.hadiescollection,
     required this.startcolor,
     required this.endcolor,
+    required this.icon,
   });
 
   Hadiesmodelapi copyWith({
@@ -22,6 +25,7 @@ class Hadiesmodelapi {
     num? hadiescollection,
     Color? startcolor,
     Color? endcolor,
+    IconData? icon,
   }) {
     return Hadiesmodelapi(
       engNamehadies: engNamehadies ?? this.engNamehadies,
@@ -29,49 +33,52 @@ class Hadiesmodelapi {
       hadiescollection: hadiescollection ?? this.hadiescollection,
       startcolor: startcolor ?? this.startcolor,
       endcolor: endcolor ?? this.endcolor,
+      icon: icon ?? this.icon,
     );
   }
 
   Map<String, dynamic> toMap() {
-    return {
+    return <String, dynamic>{
       'engNamehadies': engNamehadies,
       'urduNamehadies': urduNamehadies,
       'hadiescollection': hadiescollection,
       'startcolor': startcolor.value,
       'endcolor': endcolor.value,
+      'icon': icon.codePoint,
     };
   }
 
   factory Hadiesmodelapi.fromMap(Map<String, dynamic> map) {
     return Hadiesmodelapi(
-      engNamehadies: map['engNamehadies'] ?? '',
-      urduNamehadies: map['urduNamehadies'] ?? '',
-      hadiescollection: map['hadiescollection'] ?? 0,
-      startcolor: Color(map['startcolor']),
-      endcolor: Color(map['endcolor']),
+      engNamehadies: map['engNamehadies'] as String,
+      urduNamehadies: map['urduNamehadies'] as String,
+      hadiescollection: map['hadiescollection'] as num,
+      startcolor: Color(map['startcolor'] as int),
+      endcolor: Color(map['endcolor'] as int),
+      icon: IconData(map['icon'] as int, fontFamily: 'MaterialIcons'),
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory Hadiesmodelapi.fromJson(String source) =>
-      Hadiesmodelapi.fromMap(json.decode(source));
+      Hadiesmodelapi.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'Hadiesmodelapi(engNamehadies: $engNamehadies, urduNamehadies: $urduNamehadies, hadiescollection: $hadiescollection, startcolor: $startcolor, endcolor: $endcolor)';
+    return 'Hadiesmodelapi(engNamehadies: $engNamehadies, urduNamehadies: $urduNamehadies, hadiescollection: $hadiescollection, startcolor: $startcolor, endcolor: $endcolor, icon: $icon)';
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(covariant Hadiesmodelapi other) {
     if (identical(this, other)) return true;
 
-    return other is Hadiesmodelapi &&
-        other.engNamehadies == engNamehadies &&
+    return other.engNamehadies == engNamehadies &&
         other.urduNamehadies == urduNamehadies &&
         other.hadiescollection == hadiescollection &&
         other.startcolor == startcolor &&
-        other.endcolor == endcolor;
+        other.endcolor == endcolor &&
+        other.icon == icon;
   }
 
   @override
@@ -80,6 +87,7 @@ class Hadiesmodelapi {
         urduNamehadies.hashCode ^
         hadiescollection.hashCode ^
         startcolor.hashCode ^
-        endcolor.hashCode;
+        endcolor.hashCode ^
+        icon.hashCode;
   }
 }

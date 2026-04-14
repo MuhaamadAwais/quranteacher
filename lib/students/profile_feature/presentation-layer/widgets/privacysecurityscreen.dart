@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class PrivacySecurityScreen extends StatefulWidget {
@@ -190,10 +192,7 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
     padding: const EdgeInsets.all(24),
     decoration: BoxDecoration(
       gradient: const LinearGradient(
-        colors: [
-          Color.fromARGB(255, 1, 71, 50),
-          Color.fromARGB(158, 1, 62, 45),
-        ],
+        colors: [Color.fromARGB(255, 20, 65, 23), Newcolors.green800],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),
@@ -322,9 +321,9 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
       Row(
         children: [
           const Icon(Icons.block, color: Colors.red, size: 28),
-          const SizedBox(width: 12),
+          const SizedBox(width: 6),
           Text(
-            'What We NEVER Do',
+            'What We Never Do',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w700,
@@ -374,10 +373,11 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: const Color(0xFF40C4FF).withOpacity(0.1),
-            borderRadius: BorderRadius.circular(12),
+            gradient: AppColors.icongradient,
+            // borderRadius: BorderRadius.circular(24),
+            shape: BoxShape.circle,
           ),
-          child: Icon(icon, color: const Color(0xFF40C4FF)),
+          child: Icon(icon, color: AppColors.textWhite),
         ),
         const SizedBox(width: 16),
         Expanded(
@@ -399,16 +399,16 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
     required String text,
     required Color color,
   }) => Padding(
-    padding: const EdgeInsets.symmetric(vertical: 8),
+    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
     child: Row(
       children: [
         Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            gradient: AppColors.icongradient,
             shape: BoxShape.circle,
           ),
-          child: Icon(icon, color: color, size: 20),
+          child: Icon(icon, color: AppColors.textWhite, size: 24),
         ),
         const SizedBox(width: 16),
         Expanded(
@@ -440,7 +440,7 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
         padding: const EdgeInsets.all(16),
         child: Row(
           children: [
-            Icon(icon, color: const Color(0xFF40C4FF)),
+            Icon(icon, color: Newcolors.green500),
             const SizedBox(width: 16),
             Text(title, style: TextStyle(fontWeight: FontWeight.w600)),
             const Spacer(),

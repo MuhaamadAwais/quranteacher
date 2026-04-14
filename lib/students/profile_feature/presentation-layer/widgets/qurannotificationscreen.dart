@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class QuranNotificationScreen extends StatefulWidget {
@@ -20,7 +22,7 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
       'time': '5 min ago',
       'type': 'memorization',
       'isRead': false,
-      'color': Color(0xFF40C4FF),
+      'color': Colors.white,
     },
     {
       'icon': Icons.video_call,
@@ -29,7 +31,7 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
       'time': '10 min ago',
       'type': 'live_class',
       'isRead': false,
-      'color': Color(0xFFFF9800),
+      'color': Colors.white,
     },
     {
       'icon': Icons.quiz,
@@ -38,7 +40,7 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
       'time': '1 hr ago',
       'type': 'quiz',
       'isRead': true,
-      'color': Color(0xFF4CAF50),
+      'color': Colors.white,
     },
     {
       'icon': Icons.lock_open,
@@ -47,7 +49,7 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
       'time': 'Today',
       'type': 'lesson',
       'isRead': false,
-      'color': Color(0xFFE91E63),
+      'color': Colors.white,
     },
     {
       'icon': Icons.message,
@@ -56,7 +58,7 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
       'time': 'Yesterday',
       'type': 'teacher_message',
       'isRead': true,
-      'color': Color(0xFF9C27B0),
+      'color': Colors.white,
     },
   ];
 
@@ -69,7 +71,7 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1), // LessonScreen same
+      duration: Duration(seconds: 1),
     );
     _slideAnimation = Tween<Offset>(
       begin: Offset(0, 0.08),
@@ -91,133 +93,90 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
 
     return Scaffold(
       backgroundColor: Color(0xFFF5F7FA),
-      // appBar: AppBar(
-      //   shape: BeveledRectangleBorder(
-      //     borderRadius: BorderRadius.only(
-      //       bottomRight: Radius.circular(10),
-      //       bottomLeft: Radius.circular(10),
-      //     ),
-      //   ),
-      //   title: Row(
-      //     children: [
-      //       Icon(Icons.notifications_none, color: Colors.white),
-      //       SizedBox(width: 12),
-      //       Text('Notifications', style: TextStyle(color: Colors.white)),
-      //       Spacer(),
-      //       if (unreadCount > 0)
-      //         Container(
-      //           padding: EdgeInsets.all(6),
-      //           decoration: BoxDecoration(
-      //             color: Colors.white,
-      //             shape: BoxShape.circle,
-      //           ),
-      //           child: Text(
-      //             '$unreadCount',
-      //             style: TextStyle(
-      //               color: Color(0xFF40C4FF),
-      //               fontWeight: FontWeight.bold,
-      //               fontSize: 12,
-      //             ),
-      //           ),
-      //         ),
-      //     ],
-      //   ),
-      //   backgroundColor: Color(0xFF40C4FF),
-      //   elevation: 0,
-      //   actions: [
-      //     IconButton(
-      //       icon: Icon(Icons.mark_chat_read, color: Colors.white),
-      //       onPressed: _markAllRead,
-      //     ),
-      //   ],
-      // ),
       body: FadeTransition(
-        opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
+        opacity: _fadeAnimation,
         child: SlideTransition(
-          position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
+          position: _slideAnimation,
           child: Column(
             children: [
               TopcommonContainer(
-                title: " Notifications",
-                subTitle: "Update Notifications : ${unreadCount.toString()}",
+                title: "Notifications",
+                subTitle: "Update Notifications: $unreadCount",
               ),
-              const SizedBox(height: 20),
-              // 🔥 1. Quick Actions (400ms)
-              TweenAnimationBuilder<double>(
-                duration: Duration(milliseconds: 400),
-                tween: Tween(begin: 0, end: 1),
-                curve: Curves.easeOut,
-                builder: (context, value, child) {
-                  return Opacity(
-                    opacity: value,
-                    child: Transform.translate(
-                      offset: Offset(0, 20 * (1 - value)),
-                      child: child,
-                    ),
-                  );
-                },
-                child: Container(
-                  padding: EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: _buildActionButton(
-                          icon: Icons.play_lesson,
-                          label: 'Continue Learning',
-                          color: Color(0xFF4CAF50),
-                        ),
-                      ),
-                      SizedBox(width: 12),
-                      Expanded(
-                        child: _buildActionButton(
-                          icon: Icons.quiz,
-                          label: 'Take Quiz',
-                          color: Color(0xFFFF9800),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              SizedBox(height: 20),
 
-              // 🔥 2. Notifications List (staggered index * 150ms)
               Expanded(
-                child: TweenAnimationBuilder<double>(
-                  duration: Duration(milliseconds: 700),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.scale(
-                        scale: 0.95 + (0.05 * value),
-                        child: child,
+                child: ListView(
+                  // 🔥 SINGLE ListView - سب scrollable
+                  physics: BouncingScrollPhysics(),
+                  padding: EdgeInsets.all(16),
+                  children: [
+                    // 1. Top Container
+
+                    // 2. Quick Actions (400ms animation)
+                    TweenAnimationBuilder<double>(
+                      duration: Duration(milliseconds: 400),
+                      tween: Tween(begin: 0, end: 1),
+                      curve: Curves.easeOut,
+                      builder: (context, value, child) {
+                        return Opacity(
+                          opacity: value,
+                          child: Transform.translate(
+                            offset: Offset(0, 20 * (1 - value)),
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(16),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: _buildActionButton(
+                                icon: Icons.play_lesson,
+                                label: 'Continue Learning',
+                                color: Color(0xFF4CAF50),
+                              ),
+                            ),
+                            SizedBox(width: 12),
+                            Expanded(
+                              child: _buildActionButton(
+                                icon: Icons.quiz,
+                                label: 'Take Quiz',
+                                color: Newcolors.green400,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    );
-                  },
-                  child: ListView.builder(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    itemCount: notifications.length,
-                    itemBuilder: (context, index) {
-                      return TweenAnimationBuilder<double>(
-                        duration: Duration(
-                          milliseconds: 400 + (index * 150),
-                        ), // 🔥 Staggered!
+                    ),
+                    SizedBox(height: 20),
+
+                    // 3. Notifications List (staggered 150ms)
+                    ...List.generate(
+                      notifications.length,
+                      (index) => TweenAnimationBuilder<double>(
+                        duration: Duration(milliseconds: 400 + (index * 150)),
                         tween: Tween(begin: 0, end: 1),
                         curve: Curves.easeOut,
                         builder: (context, value, child) {
-                          return Opacity(
-                            opacity: value,
-                            child: Transform.translate(
-                              offset: Offset(0, 20 * (1 - value)),
-                              child: child,
+                          return Padding(
+                            padding: EdgeInsets.only(bottom: 12),
+                            child: Opacity(
+                              opacity: value,
+                              child: Transform.translate(
+                                offset: Offset(0, 20 * (1 - value)),
+                                child: child,
+                              ),
                             ),
                           );
                         },
                         child: _buildQuranNotification(notifications[index]),
-                      );
-                    },
-                  ),
+                      ),
+                    ),
+
+                    SizedBox(height: 20), // bottom padding
+                  ],
                 ),
               ),
             ],
@@ -227,7 +186,6 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
     );
   }
 
-  // بाकی methods same رہیں گے...
   Widget _buildActionButton({
     required IconData icon,
     required String label,
@@ -260,13 +218,15 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
     return Container(
       margin: EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: notification['isRead'] ? Colors.white : Color(0xFFF0F8FF),
+        color: notification['isRead']
+            ? Colors.white
+            : const Color.fromARGB(148, 200, 230, 201),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: notification['isRead']
               ? Colors.grey.shade200
-              : Color(0xFF40C4FF),
-          width: 1,
+              : Newcolors.green700,
+          width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
@@ -281,8 +241,8 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
         leading: Container(
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: notification['color'].withOpacity(0.1),
             shape: BoxShape.circle,
+            gradient: AppColors.icongradient,
           ),
           child: Icon(
             notification['icon'],
@@ -339,7 +299,7 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
                       width: 10,
                       height: 10,
                       decoration: BoxDecoration(
-                        color: notification['color'],
+                        color: Newcolors.green700,
                         shape: BoxShape.circle,
                       ),
                     ),

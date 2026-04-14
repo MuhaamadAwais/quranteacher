@@ -8,8 +8,8 @@ class Hadieslist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-    shrinkWrap: true, 
-    physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) =>
           Contidesignhadies(hadiesmodelapi: hadiesmodelapi[index]),
       separatorBuilder: (context, index) => SizedBox(height: 0),
