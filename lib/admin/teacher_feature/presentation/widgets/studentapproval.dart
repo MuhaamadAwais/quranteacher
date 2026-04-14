@@ -177,12 +177,7 @@ class Studentapproval extends StatelessWidget {
                             onTap: () {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  backgroundColor: Color.fromARGB(
-                                    255,
-                                    7,
-                                    45,
-                                    183,
-                                  ),
+                                  backgroundColor: AppColors.toplast,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
                                       Radius.circular(20),
@@ -218,7 +213,6 @@ class Studentapproval extends StatelessWidget {
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-
                                     children: [
                                       Icon(
                                         Icons.check,

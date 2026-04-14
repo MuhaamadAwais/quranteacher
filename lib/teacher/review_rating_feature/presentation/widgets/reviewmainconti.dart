@@ -14,7 +14,7 @@ class Reviewmainconti extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: AppColors.textWhite.withOpacity(0.25),
-        border: Border.all(width: 1, color: AppColors.textWhite),
+        border: Border.all(width: 1.5, color: AppColors.textWhite),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),

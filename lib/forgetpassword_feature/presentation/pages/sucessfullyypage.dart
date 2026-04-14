@@ -18,10 +18,10 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -54,7 +54,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                             ),
                           ),
                         ),
-
+            
                         SizedBox(height: 20),
                         Text(
                           "Password Reset",
@@ -64,7 +64,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                             fontSize: 18,
                           ),
                         ),
-
+            
                         SizedBox(height: 10),
                         Text(
                           "Successful!",
@@ -74,7 +74,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                             fontSize: 18,
                           ),
                         ),
-
+            
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -87,7 +87,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                                   fontSize: 14,
                                 ),
                               ),
-
+            
                               Text(
                                 "reset.You can now sign in with your",
                                 style: TextStyle(
@@ -96,7 +96,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                                   fontSize: 14,
                                 ),
                               ),
-
+            
                               Text(
                                 " new pasword",
                                 style: TextStyle(

@@ -18,10 +18,10 @@ class _TeacherRequestsScreenState extends State<Formteacherequestsscreen> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
 
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
           children: [
             Container(
               width: double.infinity,
@@ -66,9 +66,9 @@ class _TeacherRequestsScreenState extends State<Formteacherequestsscreen> {
                         ),
                       ),
                     ),
-
+            
                     SizedBox(width: 10),
-
+            
                     Expanded(
                       flex: 6,
                       child: Column(
@@ -83,7 +83,7 @@ class _TeacherRequestsScreenState extends State<Formteacherequestsscreen> {
                               fontSize: 16,
                             ),
                           ),
-
+            
                           Text(
                             "Manage incoming Students requests",
                             style: TextStyle(
@@ -99,7 +99,7 @@ class _TeacherRequestsScreenState extends State<Formteacherequestsscreen> {
                 ),
               ),
             ),
-
+            
             SizedBox(height: 20),
             // Tab Bar
             Container(
@@ -184,7 +184,7 @@ class _TeacherRequestsScreenState extends State<Formteacherequestsscreen> {
                 },
               ),
             ),
-
+            
             // Quick Stats
             Container(
               padding: EdgeInsets.all(screenWidth * 0.04),

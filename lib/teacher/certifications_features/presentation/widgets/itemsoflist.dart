@@ -64,9 +64,8 @@ Widget contidesigncertification(double width, double height) {
 
             Positioned(
               left: 20,
-              top: 30,
+              top: height*0.05,
               right: 0,
-
               child: Text(
                 "Ijazah in Quran Recitation",
                 style: TextStyle(
@@ -79,7 +78,7 @@ Widget contidesigncertification(double width, double height) {
 
             Positioned(
               left: 20,
-              top: 60,
+              top: height*0.15,
               right: 0,
               child: Text(
                 "Al-Azhar University",
@@ -93,7 +92,7 @@ Widget contidesigncertification(double width, double height) {
 
             Positioned(
               left: 20,
-              top: 90,
+              top: height*0.23,
               right: 0,
               child: Row(
                 children: [
@@ -112,7 +111,7 @@ Widget contidesigncertification(double width, double height) {
             ),
 
             Positioned(
-              top: 140,
+              top: height*0.47,
               left: 20,
               child: Text(
                 "complete chain of transmission (Sanad) \n with hafs recitation",
@@ -126,7 +125,8 @@ Widget contidesigncertification(double width, double height) {
 
             Positioned(
               left: 20,
-              top: 200,
+              
+              top: height*0.67,
               child: Row(
                 children: [
                   Container(

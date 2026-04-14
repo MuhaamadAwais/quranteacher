@@ -27,13 +27,7 @@ class Searchuserswid extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 borderSide: const BorderSide(color: Colors.grey, width: 2),
               ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(
-                  color: AppColors.primary,
-                  width: 2,
-                ),
-              ),
+              border: InputBorder.none,
               hint: Text(
                 "Search Users...",
                 style: TextStyle(

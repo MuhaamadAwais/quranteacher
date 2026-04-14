@@ -57,10 +57,10 @@ class _TeacherAttendanceScreenState extends State<TeacherAttendanceScreen> {
   Widget build(BuildContext context) {
     int presentCount = students.where((s) => s.isPresent).length;
 
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.grey[100],
-        body: ListView(
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+      body: SafeArea(
+        child: ListView(
           // ← SIRF EK TOP LISTVIEW!
           children: [
             // 1. Top Container
@@ -314,38 +314,38 @@ class _TeacherAttendanceScreenState extends State<TeacherAttendanceScreen> {
             SizedBox(height: 100), // Bottom button ke liye space
           ],
         ),
+      ),
 
-        // Bottom Save Button - OUTSIDE ListView
-        bottomNavigationBar: Container(
-          margin: EdgeInsets.all(16),
-          child: ElevatedButton.icon(
-            icon: Icon(Icons.save, color: Colors.white, size: 24),
-            label: Text(
-              'Save Attendance (${students.where((s) => s.isPresent).length}/${students.length})',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.toplast,
-              padding: EdgeInsets.symmetric(vertical: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-            onPressed: () {
-              final savedSession = SessionHistory(
-                className: widget.sessionName,
-                classTitle: 'Juz 1 Complete',
-                date: '24 Mar 2026',
-                time: '4:00 PM',
-                totalStudents: students.length,
-                presentStudents: students.where((s) => s.isPresent).length,
-              );
-
-              ScaffoldMessenger.of(
-                context,
-              ).showSnackBar(SnackBar(content: Text('Attendance Saved! ✅')));
-            },
+      // Bottom Save Button - OUTSIDE ListView
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.all(16),
+        child: ElevatedButton.icon(
+          icon: Icon(Icons.save, color: Colors.white, size: 24),
+          label: Text(
+            'Save Attendance (${students.where((s) => s.isPresent).length}/${students.length})',
+            style: TextStyle(color: Colors.white),
           ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.toplast,
+            padding: EdgeInsets.symmetric(vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+          onPressed: () {
+            final savedSession = SessionHistory(
+              className: widget.sessionName,
+              classTitle: 'Juz 1 Complete',
+              date: '24 Mar 2026',
+              time: '4:00 PM',
+              totalStudents: students.length,
+              presentStudents: students.where((s) => s.isPresent).length,
+            );
+
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text('Attendance Saved! ✅')));
+          },
         ),
       ),
     );

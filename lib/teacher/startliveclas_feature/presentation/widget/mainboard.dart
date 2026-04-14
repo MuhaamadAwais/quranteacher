@@ -44,10 +44,24 @@ class Mainboard extends StatelessWidget {
                       color: AppColors.switchBackground.withOpacity(0.25),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                    child: Center(
                       child: TextField(
                         decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: AppColors.switchBackground,
+                            ),
+                          ),
+
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: AppColors.toplast,
+                            ),
+                          ),
                           border: InputBorder.none,
                           hint: Text(
                             " e.g, Taweed Rules",
@@ -74,10 +88,27 @@ class Mainboard extends StatelessWidget {
                       color: AppColors.switchBackground.withOpacity(0.25),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: TextField(
+                    child: Center(
+                      child: TextFormField(
+                        maxLines: null,
+                        minLines: 3,
+                        keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: AppColors.switchBackground,
+                            ),
+                          ),
+
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: AppColors.toplast,
+                            ),
+                          ),
                           border: InputBorder.none,
                           hint: Text(
                             " What will you teach today ?",
@@ -107,6 +138,21 @@ class Mainboard extends StatelessWidget {
                             child: Center(
                               child: TextField(
                                 decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide: BorderSide(
+                                      width: 2,
+                                      color: AppColors.switchBackground,
+                                    ),
+                                  ),
+
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide: BorderSide(
+                                      width: 2,
+                                      color: AppColors.toplast,
+                                    ),
+                                  ),
                                   border: InputBorder.none,
                                   prefixIcon: Icon(
                                     Icons.calendar_month_outlined,
@@ -122,7 +168,7 @@ class Mainboard extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("TIme"),
+                          Text("Time"),
                           Container(
                             width: width * 0.4,
                             height: 50,
@@ -135,6 +181,21 @@ class Mainboard extends StatelessWidget {
                             child: Center(
                               child: TextField(
                                 decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide: BorderSide(
+                                      width: 2,
+                                      color: AppColors.switchBackground,
+                                    ),
+                                  ),
+
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide: BorderSide(
+                                      width: 2,
+                                      color: AppColors.toplast,
+                                    ),
+                                  ),
                                   border: InputBorder.none,
                                   prefixIcon: Icon(Icons.lock_clock),
                                   hint: Text("--|-- --"),
@@ -163,19 +224,28 @@ class Mainboard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.group_outlined),
-                            border: InputBorder.none,
-                            hint: Text(
-                              " All Students",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: AppColors.switchBackground,
                             ),
+                          ),
+
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: AppColors.toplast,
+                            ),
+                          ),
+                          prefixIcon: Icon(Icons.group_outlined),
+                          border: InputBorder.none,
+                          hint: Text(
+                            " All Students",
+                            style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                         ),
                       ),

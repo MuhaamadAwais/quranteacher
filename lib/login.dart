@@ -48,9 +48,9 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
           child: Container(
             height: height,
             width: width,
@@ -96,7 +96,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                       fontSize: 22,
                     ),
                   ),
-      
+            
                   // SizedBox(height: height * 0.02),
                   Text(
                     "Sign in to continue learning",
@@ -106,7 +106,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                       fontSize: 20,
                     ),
                   ),
-      
+            
                   SizedBox(height: height * 0.03),
                   AnimatedBuilder(
                     animation: _controller,
@@ -154,7 +154,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                     keyboardAppearance: Brightness.light,
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
-      
+            
                                       prefixIcon: Icon(Icons.email),
                                       hint: Text("your.email@example.com"),
                                     ),
@@ -194,7 +194,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-      
+            
                             Row(
                               children: [
                                 Checkbox(
@@ -231,7 +231,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 ),
                               ],
                             ),
-      
+            
                             GestureDetector(
                               onTap: () {
                                 if (widget.role == "student") {
@@ -268,7 +268,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                   borderRadius: BorderRadius.circular(20),
                                   color: AppColors.toplast
                                 ),
-      
+            
                                 child: Center(
                                   child: Text(
                                     "Login",
@@ -336,7 +336,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                         ),
                                       ),
                                       SizedBox(width: width * 0.0),
-      
+            
                                       Text(
                                         "Google  ",
                                         style: TextStyle(
@@ -355,7 +355,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-      
+            
                   SizedBox(height: height * 0.03),
                   RichText(
                     text: TextSpan(
@@ -368,7 +368,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                             fontSize: 16,
                           ),
                         ),
-      
+            
                         TextSpan(
                           text: " register now",
                           style: TextStyle(

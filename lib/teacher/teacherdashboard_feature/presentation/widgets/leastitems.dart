@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/teacher/assignwork_feature/presentation/pages/assignwork.dart';
+import 'package:quranteacher/teacher/content_feature/presentation/pages/contentpages.dart';
 import 'package:quranteacher/teacher/earning_feature/presentation/pages/earningpages.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/pages/studentspages.dart';
 import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/formteacherequestsscreen.dart';
@@ -74,14 +75,13 @@ class _LeastitemsState extends State<Leastitems> {
                 width * 0.43,
                 height * 0.21,
                 Icons.videocam_outlined,
-                "Lessons",
+                "Content",
                 "Manage Lessons",
-
                 AppColors.toplast,
                 AppColors.bottomlast,
                 () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Studentspages()),
+                    MaterialPageRoute(builder: (context) =>Contentpages(),)
                   );
                 },
               ),

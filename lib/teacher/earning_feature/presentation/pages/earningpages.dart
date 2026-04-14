@@ -17,10 +17,10 @@ class Earningpages extends StatefulWidget {
 class _EarningpagesState extends State<Earningpages> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
         
           child: Column(
             

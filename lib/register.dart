@@ -44,9 +44,9 @@ class _RegisterState extends State<Register>
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
           child: Container(
             height: height,
             width: width,
@@ -99,7 +99,7 @@ class _RegisterState extends State<Register>
                       ),
                     ),
                   ),
-
+            
                   //SizedBox(height: height * 0.01),
                   ScaleTransition(
                     scale: registerAnimation,
@@ -112,7 +112,7 @@ class _RegisterState extends State<Register>
                       ),
                     ),
                   ),
-
+            
                   SizedBox(height: height * 0.02),
                   ScaleTransition(
                     scale: registerAnimation,
@@ -162,7 +162,7 @@ class _RegisterState extends State<Register>
                                 ),
                               ),
                             ),
-
+            
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
@@ -194,7 +194,7 @@ class _RegisterState extends State<Register>
                                 ),
                               ),
                             ),
-
+            
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
@@ -226,7 +226,7 @@ class _RegisterState extends State<Register>
                                 ),
                               ),
                             ),
-
+            
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
@@ -261,7 +261,7 @@ class _RegisterState extends State<Register>
                             Row(
                               children: [
                                 Checkbox(value: false, onChanged: (value) {}),
-
+            
                                 RichText(
                                   text: TextSpan(
                                     children: [
@@ -273,7 +273,7 @@ class _RegisterState extends State<Register>
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-
+            
                                       TextSpan(
                                         text: "Terms of Service ",
                                         style: TextStyle(
@@ -282,7 +282,7 @@ class _RegisterState extends State<Register>
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-
+            
                                       TextSpan(
                                         text: " and ",
                                         style: TextStyle(
@@ -291,7 +291,7 @@ class _RegisterState extends State<Register>
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-
+            
                                       TextSpan(
                                         text: "\n Privacy policy ",
                                         style: TextStyle(
@@ -322,7 +322,7 @@ class _RegisterState extends State<Register>
                                   borderRadius: BorderRadius.circular(20),
                                  color: AppColors.toplast
                                   ),
-
+            
                                 child: Center(
                                   child: Text(
                                     "Create Account",
@@ -341,9 +341,9 @@ class _RegisterState extends State<Register>
                       ),
                     ),
                   ),
-
+            
                   SizedBox(height: height * 0.03),
-
+            
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

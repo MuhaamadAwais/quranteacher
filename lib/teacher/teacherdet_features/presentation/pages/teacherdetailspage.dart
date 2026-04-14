@@ -17,10 +17,10 @@ class _TeacherdetailspageState extends State<Teacherdetailspage> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -78,11 +78,9 @@ class _TeacherdetailspageState extends State<Teacherdetailspage> {
                 hint: "select your madhab",
                 icon: Icons.auto_awesome_outlined,
               ),
-
               Availabilityydesign(),
               Ratesconti(),
               Submitapplicationconti(),
-
               SizedBox(height: 30),
             ],
           ),

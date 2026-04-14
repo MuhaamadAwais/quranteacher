@@ -17,7 +17,7 @@ class Btnstartclass extends StatelessWidget {
           gradient: LinearGradient(
             colors: [
                 AppColors.toplast,
-                AppColors.bottomlast,],
+                AppColors.toplast,],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

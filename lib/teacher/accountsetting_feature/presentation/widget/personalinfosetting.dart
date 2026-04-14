@@ -144,7 +144,7 @@ Widget perosnal(
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: BorderSide(
-                color: AppColors.switchBackground,
+                color: AppColors.toplast,
                 width: 2,
               ),
             ),

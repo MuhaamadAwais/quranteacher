@@ -75,9 +75,9 @@ class _RoleselectorState extends State<Roleselector>
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
@@ -95,7 +95,7 @@ class _RoleselectorState extends State<Roleselector>
             child: Column(
               children: [
                 SizedBox(height: height * 0.08),
-      
+            
                 // ✨ Premium Title Section
                 ScaleTransition(
                   scale: _headerAnimation,
@@ -156,9 +156,9 @@ class _RoleselectorState extends State<Roleselector>
                     ),
                   ),
                 ),
-      
+            
                 SizedBox(height: height * 0.06),
-      
+            
                 // 🎓 Student Card
                 ScaleTransition(
                   scale: _studentcontainerAnimation,
@@ -187,9 +187,9 @@ class _RoleselectorState extends State<Roleselector>
                     ),
                   ),
                 ),
-      
+            
                 SizedBox(height: height * 0.025),
-      
+            
                 // 👨‍🏫 Teacher Card
                 FadeTransition(
                   opacity: _teachercontainerAnimation,
@@ -223,13 +223,13 @@ class _RoleselectorState extends State<Roleselector>
                     ),
                   ),
                 ),
-      
+            
                 SizedBox(height: height * 0.025),
-      
+            
                 // ⚙️ Admin Card
                 ScaleTransition(
                   scale: _admincontainerAnimation,
-      
+            
                   child: FadeTransition(
                     opacity: _admincontainerAnimation,
                     child: _buildRoleCard(
@@ -255,7 +255,7 @@ class _RoleselectorState extends State<Roleselector>
                     ),
                   ),
                 ),
-      
+            
                 SizedBox(height: height * 0.08),
               ],
             ),

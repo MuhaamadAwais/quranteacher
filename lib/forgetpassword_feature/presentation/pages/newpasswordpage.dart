@@ -11,10 +11,10 @@ class Newpasswordpage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -39,7 +39,7 @@ class Newpasswordpage extends StatelessWidget {
                         color: AppColors.toplast,
                       ),
                     ),
-
+            
                     Container(
                       width: width * 0.3,
                       height: height * 0.02,
@@ -50,7 +50,7 @@ class Newpasswordpage extends StatelessWidget {
                     ),
                   ],
                 ),
-
+            
                 SizedBox(height: 30),
                 Newpasswordcontiwidget(role: role,),
               ],

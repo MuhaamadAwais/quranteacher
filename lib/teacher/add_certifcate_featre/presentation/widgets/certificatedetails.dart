@@ -12,7 +12,7 @@ class Certificatedetails extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-        height: height * 0.78,
+        height: height * 0.7,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(20),
@@ -108,11 +108,26 @@ class Certificatedetails extends StatelessWidget {
                             hintText:
                                 "Brief description of the certification...",
                             hintStyle: TextStyle(color: Colors.grey),
-
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                               borderSide: BorderSide.none,
                             ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(
+                                color: AppColors.switchBackground,
+                                width: 2,
+                              ),
+                              
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(
+                                color: AppColors.toplast,
+                                width: 2,
+                              ),
+                              
+                            )
                           ),
                         ),
                       ),
@@ -138,7 +153,6 @@ class Certificatedetails extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(propertyname, style: TextStyle(fontSize: 16, color: Colors.black)),
-
         SizedBox(height: 5),
         Container(
           width: width,
@@ -168,7 +182,7 @@ class Certificatedetails extends StatelessWidget {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: BorderSide(
-                  color: AppColors.switchBackground,
+                  color: AppColors.toplast,
                   width: 2,
                 ),
               ),

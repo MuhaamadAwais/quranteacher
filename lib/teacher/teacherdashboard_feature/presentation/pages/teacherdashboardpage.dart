@@ -17,10 +17,10 @@ class Teacherdashboardpage extends StatefulWidget {
 class _TeacherdashboardpageState extends State<Teacherdashboardpage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Newcolors.background,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Newcolors.background,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Stack(

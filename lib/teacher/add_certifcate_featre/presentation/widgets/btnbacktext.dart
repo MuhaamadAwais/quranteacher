@@ -17,11 +17,17 @@ class Btnbacktext extends StatelessWidget {
           child: Container(
             height: 40,
             width: 40,
+
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.textWhite.withOpacity(0.15),
+              color: Colors.white.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.white.withOpacity(0.3)),
             ),
-            child: Icon(Icons.arrow_back, color: AppColors.textWhite,size: 24,),
+            child: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: AppColors.textWhite,
+              size: 24,
+            ),
           ),
         ),
 

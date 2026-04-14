@@ -17,28 +17,35 @@ class ReviewRating extends StatefulWidget {
 class _ReviewRatingState extends State<ReviewRating> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    double height = MediaQuery.of(context).size.height;
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Stack(
                 children: [
                   Backcontireview(),
                   Positioned(
-                    top: 20,
+                    top: height * 0.03,
                     left: 20,
                     right: 20,
                     child: Textreiview(),
                   ),
                   Positioned(
-                    top: 90,
+                    top: height * 0.12,
                     left: 20,
                     right: 20,
                     child: Reviewmainconti(),
                   ),
-
-                  Positioned(top: 260, left: 20, right: 20, child: Twoconti()),
+            
+                  Positioned(
+                    top: height * 0.35,
+                    left: 20,
+                    right: 20,
+                    child: Twoconti(),
+                  ),
                 ],
               ),
               SizedBox(height: 10),

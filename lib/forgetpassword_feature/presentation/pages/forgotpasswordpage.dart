@@ -17,10 +17,10 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Center(
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -65,7 +65,7 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
                           color: AppColors.switchBackground,
                         ),
                       ),
-
+            
                       Container(
                         width: width * 0.3,
                         height: height * 0.02,
@@ -76,10 +76,10 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
                       ),
                     ],
                   ),
-
+            
                   SizedBox(height: 20),
                   Forgotpass(role: widget.role,),
-
+            
                   SizedBox(height: 20),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,7 +105,7 @@ class _ForgotpasswordpageState extends State<Forgotpasswordpage> {
                       ),
                     ],
                   ),
-
+            
                   SizedBox(height: 30),
                 ],
               ),

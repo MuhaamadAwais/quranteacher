@@ -26,43 +26,51 @@ final List<Widget> screens = [
 class _BottomnavigationadminState extends State<Bottomnavigationadmin> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: screens[indexscreen],
-        bottomNavigationBar: Container(
-          height: 70,
-          width: double.infinity,
-          color: AppColors.textWhite,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              botommteacherwid(
+    return Scaffold(
+      body: SafeArea(child: screens[indexscreen]),
+      bottomNavigationBar: Container(
+        height: 75,
+        width: double.infinity,
+        color: AppColors.textWhite,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(
+              child: botommteacherwid(
                 index: 0,
                 label: "Home",
                 icon: Icons.home_outlined,
               ),
-              botommteacherwid(
+            ),
+            Expanded(
+              child: botommteacherwid(
                 index: 1,
                 label: "Users",
                 icon: Icons.person_2_outlined,
               ),
-              botommteacherwid(
+            ),
+            Expanded(
+              child: botommteacherwid(
                 index: 2,
                 label: "Teachers",
                 icon: Icons.school_outlined,
               ),
-              botommteacherwid(
+            ),
+            Expanded(
+              child: botommteacherwid(
                 index: 3,
                 label: "Content",
                 imagepath: "assets/images/content.png",
               ),
-              botommteacherwid(
+            ),
+            Expanded(
+              child: botommteacherwid(
                 index: 4,
                 label: "Reports",
                 icon: Icons.book_outlined,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -87,13 +95,13 @@ class _BottomnavigationadminState extends State<Bottomnavigationadmin> {
         padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
         decoration: BoxDecoration(
           color: isSelected
-              ? Colors.green.withOpacity(0.15) // very light green for container
+              ? AppColors.toplast.withOpacity(0.15) // very light green for container
               : Colors.white,
           borderRadius: BorderRadius.circular(15),
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: Colors.green.withOpacity(0.3),
+                    color: AppColors.toplast.withOpacity(0.3),
                     blurRadius: 15,
                     spreadRadius: 2,
                     offset: Offset(4, 4),
@@ -114,22 +122,22 @@ class _BottomnavigationadminState extends State<Bottomnavigationadmin> {
             if (icon != null)
               Icon(
                 icon,
-                size: 28,
-                color: isSelected ? AppColors.backgroundStart : Colors.black,
+                size: 24,
+                color: isSelected ? AppColors.toplast : Colors.black,
               )
             else if (imagepath != null)
               Image.asset(
                 imagepath,
                 height: 28,
                 width: 28,
-                color: isSelected ? AppColors.backgroundStart : Colors.black,
+                color: isSelected ? AppColors.toplast : Colors.black,
               ),
             SizedBox(height: 4),
             Text(
               label,
               style: TextStyle(
-                fontSize: 12,
-                color: isSelected ? AppColors.backgroundStart : Colors.black,
+                fontSize: 10,
+                color: isSelected ? AppColors.toplast : Colors.black,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
               ),
             ),

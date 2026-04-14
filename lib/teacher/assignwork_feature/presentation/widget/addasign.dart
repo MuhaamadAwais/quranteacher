@@ -15,7 +15,7 @@ class Addasign extends StatelessWidget {
         height: height * 0.07,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.toplast, AppColors.bottomlast],
+            colors: [AppColors.toplast, AppColors.toplast],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

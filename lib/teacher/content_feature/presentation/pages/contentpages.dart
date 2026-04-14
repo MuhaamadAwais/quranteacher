@@ -22,223 +22,226 @@ class _ContentpagesState extends State<Contentpages> {
       length: 3,
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            Topcontent(),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Container(
-                  width: width,
-                  height: height * 0.07,
-                  decoration: BoxDecoration(
+        body: SafeArea(
+          child: Column(
+            children: [
+              Topcontent(),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
-                    color: AppColors.toplast,
                   ),
-                  child: TabBar(
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    isScrollable: false,
-                    indicator: BoxDecoration(
-                      color: Colors.white, // Selected tab background
+                  child: Container(
+                    width: width,
+                    height: height * 0.08,
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
+                      color: AppColors.toplast,
                     ),
-                    labelColor: Colors.black, // Selected text color
-                    unselectedLabelColor: Colors.white, // Unselected text color
-                    dividerColor: Colors.transparent, // remove bottom line
-                    tabs: const [
-                      Tab(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.home),
-                            SizedBox(width: 4),
-                            Text("Quran"),
-                          ],
-                        ),
+                    child: TabBar(
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      isScrollable: false,
+                      indicator: BoxDecoration(
+                        color: Colors.white, // Selected tab background
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      Tab(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.book_outlined),
-                            SizedBox(width: 4),
-                            Text("Hadith"),
-                          ],
+                      labelColor: Colors.black, // Selected text color
+                      unselectedLabelColor:
+                          Colors.white, // Unselected text color
+                      dividerColor: Colors.transparent, // remove bottom line
+                      tabs: const [
+                        Tab(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.home),
+                              SizedBox(width: 2),
+                              Text("Quran"),
+                            ],
+                          ),
                         ),
-                      ),
-                      Tab(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.school_outlined),
-                            SizedBox(width: 4),
-                            Text("Lessons"),
-                          ],
+                        Tab(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.book_outlined),
+                              SizedBox(width: 2),
+                              Text("Hadith"),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                        Tab(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.school_outlined),
+                              SizedBox(width: 2),
+                              Text("Lessons"),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
 
-            Expanded(
-              child: TabBarView(
-                children: [
-                  SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10),
-                        addconti(
-                          width,
-                          height * 0.07,
-                          "Add Quran Content",
-                          AppColors.topmiddle,
-                          AppColors.bottommiddle,
-                          () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Addqurancontentpage(),
-                              ),
-                            );
-                          },
-                        ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          addconti(
+                            width,
+                            height * 0.07,
+                            "Add Quran Content",
+                            AppColors.topmiddle,
+                            AppColors.bottommiddle,
+                            () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => Addqurancontentpage(),
+                                ),
+                              );
+                            },
+                          ),
 
-                        contidesigncontents(
-                          1,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
+                          contidesigncontents(
+                            1,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
 
-                        contidesigncontents(
-                          2,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
+                          contidesigncontents(
+                            2,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
 
-                        contidesigncontents(
-                          3,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
+                          contidesigncontents(
+                            3,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
 
-                        contidesigncontents(
-                          4,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
-                      ],
+                          contidesigncontents(
+                            4,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
 
-                  SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10),
-                        addconti(
-                          width,
-                          height * 0.07,
-                          "Add Hadith Content",
-                          AppColors.topmiddle,
-                          AppColors.bottommiddle,
-                          () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Addhadiescontentpage(),
-                              ),
-                            );
-                          },
-                        ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          addconti(
+                            width,
+                            height * 0.07,
+                            "Add Hadith Content",
+                            AppColors.topmiddle,
+                            AppColors.bottommiddle,
+                            () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => Addhadiescontentpage(),
+                                ),
+                              );
+                            },
+                          ),
 
-                        contidesigncontents(
-                          1,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
+                          contidesigncontents(
+                            1,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
 
-                        contidesigncontents(
-                          2,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
+                          contidesigncontents(
+                            2,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
 
-                        contidesigncontents(
-                          3,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
-                      ],
+                          contidesigncontents(
+                            3,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
 
-                  SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10),
-                        addconti(
-                          width,
-                          height * 0.07,
-                          "Add Lesson",
-                          AppColors.topmiddle,
-                          AppColors.bottommiddle,
-                          () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Addlessoncontentpage(),
-                              ),
-                            );
-                          },
-                        ),
-                        contidesigncontents(
-                          1,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10),
+                          addconti(
+                            width,
+                            height * 0.07,
+                            "Add Lesson",
+                            AppColors.topmiddle,
+                            AppColors.bottommiddle,
+                            () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => Addlessoncontentpage(),
+                                ),
+                              );
+                            },
+                          ),
+                          contidesigncontents(
+                            1,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
 
-                        contidesigncontents(
-                          2,
-                          width,
-                          height * 0.17,
-                          "Surah AL -Fathia",
-                          "Audio + Translation",
-                          "48",
-                        ),
-                      ],
+                          contidesigncontents(
+                            2,
+                            width,
+                            height * 0.17,
+                            "Surah AL -Fathia",
+                            "Audio + Translation",
+                            "48",
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

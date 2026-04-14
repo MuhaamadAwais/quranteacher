@@ -29,11 +29,7 @@ class Teacherapproval extends StatelessWidget {
                 height: height * 0.1,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                     AppColors.topmiddle,
-                      AppColors.bottommiddle,
-                   
-                    ],
+                    colors: [AppColors.topmiddle, AppColors.bottommiddle],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomCenter,
                   ),
@@ -178,7 +174,7 @@ class Teacherapproval extends StatelessWidget {
                             onTap: () {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  backgroundColor: Colors.green,
+                                  backgroundColor: AppColors.toplast,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
                                       Radius.circular(20),
@@ -265,12 +261,11 @@ class Teacherapproval extends StatelessWidget {
                                   child: Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-
                                     children: [
                                       SizedBox(width: 10),
                                       Icon(
                                         Icons.cancel_outlined,
-                                        color: AppColors.toplast
+                                        color: AppColors.toplast,
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(

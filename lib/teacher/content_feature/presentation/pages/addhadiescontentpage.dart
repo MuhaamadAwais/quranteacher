@@ -16,16 +16,17 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               contnenttopConti(
                 width,
                 height * 0.25,
-               AppColors.topmaingreen,
-               AppColors.bottommaingreen,
+                AppColors.topmaingreen,
+                AppColors.bottommaingreen,
 
                 "ADD Hadith",
                 "Share prophetic traditions",
@@ -53,10 +54,9 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Hadith Collection",
                 heighttextfield: height * 0.1,
                 hintfield: 'Select collection',
-              iconsColor: AppColors.toplast,
+                iconsColor: AppColors.toplast,
                 contclickcolor: AppColors.toplast,
-             
-               ),
+              ),
 
               TopicContentWidget(
                 widthfield: width,
@@ -65,10 +65,9 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Hadith Number",
                 heighttextfield: height * 0.1,
                 hintfield: 'e.g., Books,Hadiths 8',
-             iconsColor: AppColors.toplast,
+                iconsColor: AppColors.toplast,
                 contclickcolor: AppColors.toplast,
-             
-               ),
+              ),
 
               TopicContentWidget(
                 widthfield: width,
@@ -77,9 +76,8 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Arabic Text",
                 heighttextfield: height * 0.2,
                 hintfield: '... Enter Arabic text',
-             iconsColor: AppColors.toplast,
+                iconsColor: AppColors.toplast,
                 contclickcolor: AppColors.toplast,
-             
               ),
 
               TopicContentWidget(
@@ -89,9 +87,8 @@ class _AddhadiescontentpageState extends State<Addhadiescontentpage> {
                 titlefield: "Categor/Theme",
                 heighttextfield: height * 0.1,
                 hintfield: 'select category',
-             iconsColor: AppColors.toplast,
+                iconsColor: AppColors.toplast,
                 contclickcolor: AppColors.toplast,
-             
               ),
 
               Publishcontent(

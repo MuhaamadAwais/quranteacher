@@ -21,10 +21,10 @@ class _UseradminpageState extends State<Useradminpage> {
     double height = MediaQuery.of(context).size.height;
     return DefaultTabController(
       length: 2,
-      child: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          body: Column(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SafeArea(
+          child: Column(
             children: [
               Toprolewid(),
               SizedBox(height: 20),
@@ -81,7 +81,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-
+                
                           contstdtea(
                             width,
                             height * 0.25,
@@ -89,7 +89,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-
+                
                           contstdtea(
                             width,
                             height * 0.25,
@@ -97,7 +97,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-
+                
                           contstdtea(
                             width,
                             height * 0.25,
@@ -108,7 +108,7 @@ class _UseradminpageState extends State<Useradminpage> {
                         ],
                       ),
                     ),
-
+                
                     SingleChildScrollView(
                       child: Column(
                         children: [
@@ -119,7 +119,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-
+                
                           contstdtea(
                             width,
                             height * 0.25,
@@ -127,7 +127,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-
+                
                           contstdtea(
                             width,
                             height * 0.25,
@@ -135,7 +135,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-
+                
                           contstdtea(
                             width,
                             height * 0.25,
