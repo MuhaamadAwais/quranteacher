@@ -7,56 +7,59 @@ class Namestd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Row(
       children: [
+        SizedBox(width: width * 0.03),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(width: 5),
             Text(
               "Assalamu Alaikum",
-              style: TextStyle(color: AppColors.textWhite, fontSize: 16),
+              style: TextStyle(color: AppColors.textWhite, fontSize: 14),
             ),
 
             Text(
               "Ahmaed Hassan",
               style: TextStyle(
                 color: AppColors.textWhite,
-                fontSize: 22,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ],
         ),
+        SizedBox(width: width * 0.4),
 
-        Spacer(),
         Column(
           children: [
-            Badge(
-              label: Text("3"),
-              isLabelVisible: true,
-              textColor: AppColors.textWhite,
-              backgroundColor: AppColors.destructive,
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.15),
-                  border: Border.all(color: Colors.black26, width: 1.5),
-                ),
-                child: Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const QuranNotificationScreen(),
-                        ),
-                      );
-                    },
+            Container(
+              height: height * 0.13,
+              width: width * 0.13,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white.withOpacity(0.15),
+                border: Border.all(color: Colors.black26, width: 1.5),
+              ),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QuranNotificationScreen(),
+                      ),
+                    );
+                  },
+                  child: Badge(
+                    isLabelVisible: true,
+                    offset: Offset(12, -14),
+                    label: Text("3"),
                     child: Icon(
                       Icons.notifications_outlined,
+                      size: 24,
                       color: AppColors.textWhite,
                     ),
                   ),

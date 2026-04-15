@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/hadits/presentation/pages/hadiesmodelapi.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/hadieslist.dart';
 import 'package:quranteacher/students/hadits/presentation/widgets/hadithconta.dart';
@@ -15,41 +16,47 @@ final List<Hadiesmodelapi> hadiesmodelapi = [
     hadiescollection: 7563,
     startcolor: AppColors.startgreen,
     endcolor: AppColors.endgreen,
+    icon: Icons.book,
   ),
   Hadiesmodelapi(
     engNamehadies: "Sahih Muslim",
     urduNamehadies: "صحیح مسلم",
     hadiescollection: 7190,
-    startcolor: AppColors.islamicNavy600,
-    endcolor: AppColors.islamicNavy800,
+    startcolor: AppColors.startgreen,
+    endcolor: AppColors.endgreen,
+    icon: Icons.mosque,
   ),
   Hadiesmodelapi(
     engNamehadies: "Sahih Abu Dawood",
     urduNamehadies: "صحیح ابوداؤد",
     hadiescollection: 7563,
-    startcolor: AppColors.pink500, 
-    endcolor: AppColors.pink700,
+    startcolor: AppColors.startgreen,
+    endcolor: AppColors.endgreen,
+    icon: Icons.menu_book,
   ),
   Hadiesmodelapi(
     engNamehadies: "Jami At-Tirmdhii",
     urduNamehadies: "جامع ترمذی",
     hadiescollection: 7563,
-    startcolor: Colors.orangeAccent,
-    endcolor: Colors.orange,
+    startcolor: AppColors.startgreen,
+    endcolor: AppColors.endgreen,
+    icon: Icons.book_online_outlined,
   ),
   Hadiesmodelapi(
     engNamehadies: "Sunan An-Nasai",
     urduNamehadies: "سنن نسائی",
     hadiescollection: 7563,
-    startcolor: Colors.redAccent,
-    endcolor: Colors.red,
+    startcolor: AppColors.startgreen,
+    endcolor: AppColors.endgreen,
+    icon: Icons.store_rounded,
   ),
   Hadiesmodelapi(
     engNamehadies: "Sunan Ibn Majah",
     urduNamehadies: "سنن ابن ماجہ",
     hadiescollection: 7563,
-    startcolor: Colors.blueAccent,
-    endcolor: Colors.blue,
+    startcolor: AppColors.startgreen,
+    endcolor: AppColors.endgreen,
+    icon: Icons.book_sharp,
   ),
 ];
 
@@ -130,20 +137,25 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
 
               SizedBox(height: 10),
               Haditssearch(),
-              SizedBox(height: 10),
+              SizedBox(height: 12),
 
               // 🔥 2. "Collection" Title
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 14),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      "Collection",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                    Container(
+                      color: Colors.transparent,
+                      width: width * 0.32,
+                      child: Text(
+                        "Collection",
+                        style: TextStyle(
+                          color: AppColors.textGreen,
+
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                        ),
                       ),
                     ),
                   ],
@@ -154,34 +166,23 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
               Hadieslist(hadiesmodelapi: hadiesmodelapi),
 
               // 🔥 4. "Popular Topic" Title
-              TweenAnimationBuilder<double>(
-                duration: const Duration(milliseconds: 550),
-                tween: Tween(begin: 0, end: 1),
-                curve: Curves.easeOut,
-                builder: (context, value, child) {
-                  return Opacity(
-                    opacity: value,
-                    child: Transform.translate(
-                      offset: Offset(0, 20 * (1 - value)),
-                      child: child,
-                    ),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
                         "Popular Topic",
                         style: TextStyle(
-                          color: Colors.black,
+                          color: AppColors.textGreen,
                           fontWeight: FontWeight.bold,
-                          fontSize: 30,
+                          fontSize: 24,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
 

@@ -90,7 +90,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                       style: TextStyle(
                         fontSize: 23,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.islamicNavy900,
+                        color: AppColors.textGreen,
                       ),
                     ),
                   ),
@@ -114,7 +114,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Card(
-                      color: Colors.blue[50],
+                      color: const Color.fromARGB(83, 118, 240, 105),
                       child: Padding(
                         padding: const EdgeInsets.all(20),
                         child: Column(
@@ -170,7 +170,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.islamicNavy900,
+                        color: AppColors.textGreen,
                       ),
                     ),
                   ),
@@ -209,7 +209,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                         _buildExpandableCard(
                           title: 'تفسیر',
                           icon: Icons.chrome_reader_mode,
-                          color: Colors.indigo,
+                          color: Colors.teal,
                           content:
                               'تفسیر = قرآن کی تشریح\n\nقسمیں:\n1. تفسیر بالماثور (صحابہ)\n2. تفسیر بالرائے (علماء)\n\nمشہور تفاسیر:\n✅ تفسیر طبری\n✅ تفسیر ابن کثیر\n✅ تفسیر قرطبی\n✅ تفسیر بہشتی زخیرہ\n\nمطالعہ: روزانہ 1 صفحہ',
                           isExpanded: _tafseerExpanded,
@@ -220,7 +220,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                         _buildExpandableCard(
                           title: 'حفظ',
                           icon: Icons.bookmark,
-                          color: Colors.amber,
+                          color: Colors.teal,
                           content:
                               'قرآن حفظ کا طریقہ:\n\n1. ناظرہ = 4 بار پڑھیں\n2. مناجات = 3 بار سنائیں\n3. معاہدہ = 1 بار سنائیں\n\nپلان:\n📖 30 جزء = 20 دن\n📖 1/2 حصہ روزانہ\n\nTips:\n✅ صبح کا وقت بہترین\n✅ وضو کر کے حفظ\n✅ ترجمہ سمجھیں\n✅ تکرار ضروری',
                           isExpanded: _hifzExpanded,
@@ -230,7 +230,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                         _buildExpandableCard(
                           title: 'ترجمہ',
                           icon: Icons.language,
-                          color: Colors.green,
+                          color: Colors.teal,
                           content:
                               'اردو تراجم:\n\n✅ مولانا فتح محمد جالندھری\n✅ سید ابو الاعلیٰ مودودی\n✅ طاہر القادری\n✅ مرزا تقی\n✅ نعمت اللہ اعزی\n\nاستعمال:\n1. پہلے ترجمہ پڑھیں\n2. معنی سمجھیں\n3. پھر عربی پڑھیں\n\nفائدہ: 80% قرآن سمجھ آئے گا',
                           isExpanded: _tarjumaExpanded,
@@ -241,7 +241,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                         _buildExpandableCard(
                           title: 'قراءت',
                           icon: Icons.volume_up,
-                          color: Colors.purple,
+                          color: Colors.teal,
                           content:
                               'قراءۃ کے قواعد:\n\n10 مشہور قاری:\n1. مشاری راشد\n2. سعد الغامدی\n3. عبد الباسط\n4. منشاوی\n5. سدھیس\n\nسننے کا طریقہ:\n✅ روزانہ 1 پارہ\n✅ سست آواز میں\n✅ تکرار کریں\n✅ اپنی ریکارڈنگ\n✅ استاد سے سنوائیں',
                           isExpanded: _qiraatExpanded,
@@ -252,7 +252,7 @@ class _KnowledgePageState extends State<KnowledgePage>
                         _buildExpandableCard(
                           title: 'عربی',
                           icon: Icons.translate,
-                          color: Colors.orange,
+                          color: Colors.teal,
                           content:
                               'عربی گرامر:\n\nحروف:\n• اسم\n• فعل\n• حرف\n\nاعراب:\n• ضمہ = ُ\n• کسرہ = ِ\n• فتہ = َ\n• سکون = ْ\n\nافعال:\nماضی = کَتَبَ\nمضارع = یَکْتُبُ\n\nمطالعہ: نصاب صرفی + صرف رحمانی',
                           isExpanded: _arabicExpanded,
@@ -282,11 +282,15 @@ class _KnowledgePageState extends State<KnowledgePage>
     required VoidCallback onTap,
   }) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       margin: const EdgeInsets.only(bottom: 12),
       child: Column(
         children: [
           ListTile(
-            tileColor: Colors.blue[50],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            tileColor: const Color.fromARGB(83, 109, 240, 105),
             onTap: onTap,
             leading: Icon(icon, color: color, size: 30),
             title: Text(

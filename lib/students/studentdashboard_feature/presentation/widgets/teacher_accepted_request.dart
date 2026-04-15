@@ -62,7 +62,7 @@ class TeacherAcceptedRequest extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.islamicNavy900,
+                      color: AppColors.textGreen,
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -106,7 +106,7 @@ class TeacherAcceptedRequest extends StatelessWidget {
                           style: TextStyle(fontSize: 13),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
+                          backgroundColor: AppColors.greenDark,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,

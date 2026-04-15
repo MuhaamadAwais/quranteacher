@@ -42,7 +42,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.primary,
+                        color: AppColors.textGreen,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -51,7 +51,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                         hintText: "Enter your full name",
                         prefixIcon: Icon(
                           Icons.person,
-                          color: AppColors.primary,
+                          color: AppColors.textGreen,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -77,14 +77,17 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.primary,
+                        color: AppColors.textGreen,
                       ),
                     ),
                     const SizedBox(height: 8),
                     DropdownButtonFormField<String>(
                       initialValue: selectedLevel,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.book, color: AppColors.primary),
+                        prefixIcon: Icon(
+                          Icons.book,
+                          color: AppColors.textGreen,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide(color: Colors.grey[300]!),
@@ -125,7 +128,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.primary,
+                        color: AppColors.textGreen,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -134,7 +137,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.schedule,
-                          color: AppColors.primary,
+                          color: AppColors.textGreen,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -175,7 +178,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.primary,
+                        color: AppColors.textGreen,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -184,7 +187,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.language,
-                          color: AppColors.primary,
+                          color: AppColors.textGreen,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -227,7 +230,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.primary,
+                        color: AppColors.textGreen,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -236,7 +239,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.person,
-                          color: AppColors.primary,
+                          color: AppColors.textGreen,
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -286,7 +289,7 @@ class _TeacherRequestFormState extends State<TeacherRequestForm> {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
+                          backgroundColor: AppColors.toplast,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 18),
                           shape: RoundedRectangleBorder(

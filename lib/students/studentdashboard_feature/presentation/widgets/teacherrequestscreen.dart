@@ -60,17 +60,17 @@ class TeacherRequestScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        "Featured Teachers",
+                        "Teacher List",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.islamicNavy900,
+                          color: AppColors.textGreen,
                         ),
                       ),
                       ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: WidgetStatePropertyAll(
-                            AppColors.islamicGreen,
+                            AppColors.textGreen,
                           ),
                         ),
                         onPressed: () {
@@ -83,7 +83,7 @@ class TeacherRequestScreen extends StatelessWidget {
                           );
                         },
                         child: Text(
-                          "Accept req..",
+                          "Accept request",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -125,7 +125,7 @@ class TeacherRequestScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF006633), Color(0xFF054632)],
+                        colors: [AppColors.toplast, AppColors.bottommiddle],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),

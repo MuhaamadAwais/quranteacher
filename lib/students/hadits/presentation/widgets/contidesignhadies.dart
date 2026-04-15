@@ -33,18 +33,14 @@ class Contidesignhadies extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                      colors: [
-                        hadiesmodelapi.startcolor,
-                        hadiesmodelapi.endcolor,
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
+                    gradient: AppColors.icongradient,
                   ),
                   child: Center(
                     child: Center(
-                      child: Icon(Icons.book, color: AppColors.textWhite),
+                      child: Icon(
+                        hadiesmodelapi.icon,
+                        color: AppColors.textWhite,
+                      ),
                     ),
                   ),
                 ),
@@ -54,20 +50,21 @@ class Contidesignhadies extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(height: 2),
                       Text(
                         hadiesmodelapi.engNamehadies,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 5),
+                      //SizedBox(height: 2),
                       Text(
                         hadiesmodelapi.urduNamehadies,
                         style: TextStyle(
                           color: AppColors.startgreen,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -86,7 +83,10 @@ class Contidesignhadies extends StatelessWidget {
 
                 Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: Icon(Icons.arrow_forward_ios),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: AppColors.bottommaingreen,
+                  ),
                 ),
               ],
             ),

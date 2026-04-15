@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class MemorizationTipsScreen extends StatelessWidget {
@@ -28,9 +29,12 @@ class MemorizationTipsScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 16, 104, 90),
-                    Color.fromARGB(145, 13, 116, 121),
+                    const Color.fromARGB(255, 13, 56, 16),
+                    Newcolors.green800,
+                    const Color.fromARGB(255, 81, 136, 85),
                   ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -126,7 +130,7 @@ class MemorizationTipsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 16, 104, 90),
+            backgroundColor: Newcolors.green900,
 
             child: Text(
               '$number',

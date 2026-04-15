@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/appanimations.dart';
 
 class Videocallscreen extends StatefulWidget {
@@ -77,7 +79,11 @@ class _VideocallscreenState extends State<Videocallscreen>
                   height: height * 0.1,
                   width: width,
                   decoration: const BoxDecoration(
-                    color: Colors.grey,
+                    gradient: LinearGradient(
+                      colors: [AppColors.toplast, AppColors.bottomlast],
+                      begin: Alignment.topLeft,
+                      end: Alignment.topRight,
+                    ),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20),
@@ -90,7 +96,11 @@ class _VideocallscreenState extends State<Videocallscreen>
                         onTap: () => Navigator.pop(context),
                         child: const CircleAvatar(
                           backgroundColor: Colors.black12,
-                          child: Icon(Icons.arrow_back, color: Colors.white),
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                            size: 24,
+                          ),
                         ),
                       ),
                       const Column(
@@ -156,10 +166,10 @@ class _VideocallscreenState extends State<Videocallscreen>
                       left: width * 0.34,
                       child: const CircleAvatar(
                         radius: 50,
-                        backgroundColor: Colors.greenAccent,
+                        backgroundColor: Newcolors.green600,
                         child: Icon(
                           Icons.person,
-                          size: 50,
+                          size: 32,
                           color: Colors.white,
                         ),
                       ),
@@ -167,7 +177,7 @@ class _VideocallscreenState extends State<Videocallscreen>
 
                     Positioned(
                       top: height * 0.41,
-                      left: width * 0.24,
+                      left: width * 0.26,
                       child: const Text(
                         "Sheikh Muhammad",
                         style: TextStyle(
@@ -243,7 +253,10 @@ class _VideocallscreenState extends State<Videocallscreen>
                             topRight: Radius.circular(20),
                           ),
                           border: Border(
-                            top: BorderSide(color: Colors.grey, width: 2),
+                            top: BorderSide(
+                              color: Newcolors.green600,
+                              width: 3,
+                            ),
                           ),
                           gradient: LinearGradient(
                             colors: [Colors.white10, Colors.white12],
@@ -338,7 +351,7 @@ class _VideocallscreenState extends State<Videocallscreen>
                                       child: CircleAvatar(
                                         radius: 25,
                                         backgroundColor: isHandRaised
-                                            ? Colors.orange
+                                            ? Colors.lightGreen
                                             : Colors.white12,
                                         child: const Icon(
                                           Icons.back_hand,
@@ -391,27 +404,32 @@ class _VideocallscreenState extends State<Videocallscreen>
                             SizedBox(height: height * 0.02),
 
                             /// LEAVE CALL BUTTON
-                            Container(
-                              height: height * 0.06,
-                              width: width * 0.8,
-                              decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.call_end, color: Colors.white),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    "Leave Call",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                height: height * 0.06,
+                                width: width * 0.8,
+                                decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(Icons.call_end, color: Colors.white),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      "Leave Call",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ],

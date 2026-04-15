@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Profilecateg extends StatelessWidget {
   const Profilecateg({
@@ -21,7 +23,8 @@ class Profilecateg extends StatelessWidget {
     final width = size.width;
     return Card(
       color: Colors.white30,
-      elevation: 1,
+      elevation: 3,
+      shadowColor: Newcolors.green700,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: SizedBox(
         height: height * 0.1,
@@ -42,10 +45,14 @@ class Profilecateg extends StatelessWidget {
                   height: height * 0.06,
                   width: width * 0.12,
                   decoration: BoxDecoration(
-                    color: Colors.black12,
+                    gradient: AppColors.icongradient,
                     borderRadius: BorderRadius.circular(22),
                   ),
-                  child: Icon(mainicon.icon, size: 30, color: color),
+                  child: Icon(
+                    mainicon.icon,
+                    size: 24,
+                    color: AppColors.textWhite,
+                  ),
                 ),
               ),
               Positioned(
@@ -65,7 +72,11 @@ class Profilecateg extends StatelessWidget {
               Positioned(
                 top: height * 0.04,
                 left: width * 0.8,
-                child: Icon(positionalIcon.icon, size: 25, color: Colors.grey),
+                child: Icon(
+                  positionalIcon.icon,
+                  size: 25,
+                  color: AppColors.textGreen,
+                ),
               ),
             ],
           ),

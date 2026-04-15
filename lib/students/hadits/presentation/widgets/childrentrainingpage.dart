@@ -47,7 +47,7 @@ class _ChildrenTrainingPageState extends State<ChildrenTrainingPage> {
               style: TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.bold,
-                color: AppColors.islamicNavy900,
+                color: AppColors.textGreen,
               ),
             ),
             const SizedBox(height: 25),

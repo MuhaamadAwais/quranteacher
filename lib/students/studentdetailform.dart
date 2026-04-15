@@ -22,6 +22,7 @@ class _StudentDetailFormState extends State<StudentDetailForm>
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -37,6 +38,83 @@ class _StudentDetailFormState extends State<StudentDetailForm>
                 "Start learning Quran easily",
                 style: TextStyle(fontSize: 14),
               ),
+=======
+      appBar: AppBar(
+        shape: RoundedSuperellipseBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+        ),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Login(role: "student")),
+            );
+          },
+          child: Icon(Icons.arrow_back, color: Colors.white),
+        ),
+        title: const Text(
+          "Student Detail Form",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: AppColors.startgreen,
+        elevation: 1,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // 👇 TOP INFO CARD (security note)
+                ScaleTransition(
+                  scale: scale,
+                  child: FadeTransition(
+                    opacity: fade,
+                    child: Card(
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: BorderSide(
+                          color: AppColors.startgreen.withOpacity(0.3),
+                          width: 1.2,
+                        ),
+                      ),
+                      color: AppColors.whiteBackground,
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.lock,
+                              size: 20,
+                              color: AppColors.primary,
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Text(
+                                "Your data is secure and will not be shared with any third party or other person.All information is stored only for app functionality.\nNotes\nplease enter correct information otherwise remove from app after varification.",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black54,
+                                  height: 1.4,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+>>>>>>> b635513191a4e7bb8db95608e100c23a23a4e805
 
               /// Name
               DesignsContiTextField(

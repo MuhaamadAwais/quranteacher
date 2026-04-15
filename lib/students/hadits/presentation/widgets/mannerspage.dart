@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class MannersPage extends StatefulWidget {
@@ -94,7 +95,7 @@ class _MannersPageState extends State<MannersPage>
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.islamicNavy950,
+                        color: AppColors.textGreen,
                       ),
                     ),
                   ),
@@ -118,7 +119,7 @@ class _MannersPageState extends State<MannersPage>
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Card(
-                      color: Colors.orange[50],
+                      color: const Color.fromARGB(77, 124, 233, 110),
                       child: Padding(
                         padding: const EdgeInsets.all(20),
                         child: Column(
@@ -167,7 +168,7 @@ class _MannersPageState extends State<MannersPage>
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.islamicNavy950,
+                        color: AppColors.textGreen,
                       ),
                     ),
                   ),
@@ -210,7 +211,7 @@ class _MannersPageState extends State<MannersPage>
       _buildExpandableCard(
         title: 'صدق (سچائی)',
         icon: Icons.person,
-        color: Colors.orange,
+        color: AppColors.toplast,
         content:
             'قرآن: سورۃ التوبہ (9:119)\n\n"اے ایمان والو! اللہ سے ڈرو اور سچوں کے ساتھ رہو"\n\nحدیث: "سچائی نجات ہے، جھوٹ ہلاکت"\n\nعملی:\n✅ وعدہ ہمیشہ نبھائیں\n✅ چھوٹا جھوٹ بھی نہ بولیں\n✅ قسم کھاتے وقت سچ\n✅ "نہیں" کہنے میں شرم نہ کریں\n✅ بچوں کو سچ سکھائیں\n\nفائدہ: جنت کی ضمانت',
         isExpanded: _sadkh,
@@ -219,7 +220,7 @@ class _MannersPageState extends State<MannersPage>
       _buildExpandableCard(
         title: 'رحم دلی',
         icon: Icons.favorite,
-        color: Colors.red,
+        color: AppColors.toplast,
         content:
             'قرآن: سورۃ النحل (16:90)\n\n"...اللہ انصاف، احسان اور قرابت داروں کو دینے کا حکم دیتا"\n\nحدیث: "جو شخص یہ چاہتا ہے کہ اس کے رزق میں وسعت ہو اور اس کی عمر میں برکت ہو تو اسے چاہیے کہ صلہ رحمی کرے۔"  \n  Sahih al-Bukhari،\n حدیث نمبر 5986\n\nعملی:\n❤️ یتیم کی کفالت\n❤️ بوڑھوں کی عزت\n❤️ غریب کو کھلائیں\n❤️ غلطی معاف کریں\n❤️ مسکرانا صدقہ\n',
         isExpanded: kindness,
@@ -228,7 +229,7 @@ class _MannersPageState extends State<MannersPage>
       _buildExpandableCard(
         title: 'والدین کی خدمت',
         icon: Icons.family_restroom,
-        color: Colors.purpleAccent,
+        color: AppColors.toplast,
         content:
             'قرآن: سورۃ بنی اسرائیل (17:23)\n\n"اور تمہارے رب نے فیصلہ کر دیا ہے کہ تم اس کے سوا کسی کی عبادت نہ کرو اور والدین کے ساتھ احسان کرو۔"\n\n-حدیث: "اللہ کی رضا والد کے رضا میں ہے اور اللہ کی ناراضی والد کے ناراض ہونے میں ہے"  \n Jami` at-Tirmidhi،:\n حدیث نمبر  1899\n\nعملی:\n❤️ والدین سے نرمی سے بات کریں\n❤️ ان کی خدمت کو سعادت سمجھیں\n❤️ ان کے لیے دعا کریں\n❤️ غلطی معاف کریں\n❤️ ان کی ضروریات پوری کریں\n',
         isExpanded: parent_respect,
@@ -237,7 +238,7 @@ class _MannersPageState extends State<MannersPage>
       _buildExpandableCard(
         title: 'پڑوسی حقوق',
         icon: Icons.family_restroom,
-        color: Colors.lightGreenAccent,
+        color: AppColors.toplast,
         content:
             'قرآن:سورۃ النساء (4:36))\n\n"اور اللہ کی عبادت کرو اور اس کے ساتھ کسی کو شریک نہ ٹھہراؤ، اور والدین کے ساتھ احسان کرو… اور رشتہ دار پڑوسی اور اجنبی پڑوسی کے ساتھ بھی\n\nحدیث: "وہ مومن نہیں جس کا پڑوسی اس کی تکلیف سے محفوظ نہ ہو"   \n Sahih al-Bukhari، \nحدیث نمبر  6016\n\nعملی:\n❤️ پڑوسی سے حسنِ سلوک کریں\n❤️ ان کو تکلیف نہ دیں\n❤️ خوشی و غم میں شریک ہوں\n❤️ ضرورت میں مدد کریں\n❤️ ماحول کو آلودہ نہ کریں\n',
         isExpanded: relative_respect,
@@ -246,7 +247,7 @@ class _MannersPageState extends State<MannersPage>
       _buildExpandableCard(
         title: 'صفائی',
         icon: Icons.clean_hands,
-        color: const Color.fromARGB(255, 3, 90, 161),
+        color: AppColors.toplast,
         content:
             'قرآن سورۃ البقرہ (2:222))\n\n"“بے شک اللہ توبہ کرنے والوں کو پسند کرتا ہے اور پاکیزگی اختیار کرنے والوں کو پسند کرتا ہے۔”\n\nحدیث: "“صفائی نصف ایمان ہے۔”"   \n Sahih Muslim، \n حدیث نمبر  223\n\nعملی:\n❤️ پجسم اور لباس صاف رکھیں\n❤️ گھر اور گلی کو صاف رکھیں\n❤️ کچرا مقررہ جگہ پر ڈالیں\n❤️ وضو اور طہارت کا اہتمام کریں\n❤️ سلام اور مسکراہٹ سے پیش آئیں\n',
         isExpanded: clean,
@@ -267,24 +268,32 @@ class _MannersPageState extends State<MannersPage>
   }) {
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
-      color: Colors.orange[50],
+      color: const Color.fromARGB(77, 110, 233, 112),
+
       child: Column(
         children: [
           ListTile(
+            //   tileColor: const Color.fromARGB(97, 5, 150, 61),
             onTap: onTap,
             leading: Icon(icon, color: color, size: 30),
             title: Text(
               title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.black,
+              ),
             ),
-            trailing: Icon(isExpanded ? Icons.expand_less : Icons.expand_more),
+            trailing: Icon(
+              isExpanded ? Icons.expand_less : Icons.expand_more,
+              color: Colors.white,
+            ),
           ),
           if (isExpanded) ...[
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
-                borderRadius: const BorderRadius.vertical(),
+                borderRadius: BorderRadius.circular(12),
               ),
               child: SingleChildScrollView(
                 child: Text(

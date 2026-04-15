@@ -40,7 +40,7 @@ class MessageBubble extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: message.isMe
-                      ? [Colors.blue[600]!, Colors.blue[800]!]
+                      ? [Colors.green[600]!, Colors.green[800]!]
                       : [Colors.grey[200]!, Colors.grey[300]!],
                 ),
                 borderRadius: BorderRadius.only(

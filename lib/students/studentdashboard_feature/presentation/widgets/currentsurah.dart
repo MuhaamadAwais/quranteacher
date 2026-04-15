@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/appanimations.dart';
 
 class Currentsurah extends StatefulWidget {
@@ -60,7 +61,7 @@ class _CurrentsurahState extends State<Currentsurah>
     return Padding(
       padding: const EdgeInsets.all(0.0),
       child: SizedBox(
-        height: height * 0.25,
+        height: height * 0.28,
         width: width * 0.91,
         // 🔥 GestureFlipCard - Tap to flip automatically!
         child: ScaleTransition(
@@ -75,7 +76,12 @@ class _CurrentsurahState extends State<Currentsurah>
             frontWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: AppColors.backgroundVia,
+                // color: AppColors.startgreen,
+                gradient: AppColors.icongradient,
+                border: Border.all(
+                  width: 4.0,
+                  color: AppColors.whiteBackground,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
@@ -91,11 +97,12 @@ class _CurrentsurahState extends State<Currentsurah>
                   children: [
                     SizedBox(height: height * 0.01),
                     Text(
-                      "هُوَ الَّذِيْ جَعَلَ لَكُمُ الْأَرْضَ ذَلُوْلًا فَامْشُوْا فِيْ مَنَاكِبِهَا وَكُلُوْا مِنْ رِزْقِهِ ۖ وَإِلَيْهِ النُّشُوْرُ",
+                      "  هُوَ الَّذِيْ جَعَلَ لَكُمُ الْأَرْضَ ذَلُوْلًا فَامْشُوْا فِيْ مَنَاكِبِهَا وَكُلُوْا مِنْ رِزْقِهِ ۖ وَإِلَيْهِ النُّشُوْرُ  ",
                       style: TextStyle(
                         color: Colors.white,
+
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 18,
                         //textBaseline: TextBaseline.alphabetic,
                       ),
                     ),
@@ -107,7 +114,7 @@ class _CurrentsurahState extends State<Currentsurah>
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 18,
                         ),
                       ),
                     ),
@@ -119,7 +126,10 @@ class _CurrentsurahState extends State<Currentsurah>
             backWidget: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: AppColors.islamicGold,
+                // color: AppColors.greenLight,
+                gradient: AppColors.icongradient,
+
+                border: Border.all(width: 4.0, color: AppColors.whitePrimary),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
@@ -139,7 +149,7 @@ class _CurrentsurahState extends State<Currentsurah>
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                        fontSize: 16,
                         //textBaseline: TextBaseline.alphabetic,
                       ),
                     ),
@@ -149,7 +159,7 @@ class _CurrentsurahState extends State<Currentsurah>
                       child: const Text(
                         "اردو ترجمہ (مولانا فتح محمد جالندھری)",
                         style: TextStyle(
-                          color: Colors.tealAccent,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),

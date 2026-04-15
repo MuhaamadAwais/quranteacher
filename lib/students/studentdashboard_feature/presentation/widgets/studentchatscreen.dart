@@ -199,7 +199,7 @@ class _StudentChatScreenState extends State<StudentChatScreen> {
                     padding: EdgeInsets.all(14),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [Colors.blue[600]!, Colors.blue[800]!],
+                        colors: [Colors.green[600]!, Colors.green[800]!],
                       ),
                       borderRadius: BorderRadius.circular(25),
                     ),

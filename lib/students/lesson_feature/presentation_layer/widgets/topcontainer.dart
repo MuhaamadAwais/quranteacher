@@ -14,11 +14,7 @@ class Topcontainer extends StatelessWidget {
       height: height * 0.2,
       width: width,
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [const Color(0xFF006633), const Color(0xCC054632)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+        gradient: AppColors.backgroundgradient,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),

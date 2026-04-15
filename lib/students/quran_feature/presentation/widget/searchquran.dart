@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Searchquran extends StatelessWidget {
   const Searchquran({super.key});
@@ -21,7 +22,15 @@ class Searchquran extends StatelessWidget {
           child: TextField(
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
-              border: InputBorder.none,
+              //border: InputBorder.none,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(color: Newcolors.green500),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(color: Newcolors.green300),
+              ),
               hint: Text(
                 "Search Surah...",
                 style: TextStyle(

@@ -1,8 +1,15 @@
 import 'dart:ui';
+<<<<<<< HEAD
 class Newcolors {
   
   // 🌿 Green Shades (Material Standard)
   static const Color green50  = Color(0xFFE8F5E9);
+=======
+
+class Newcolors {
+  // 🌿 Green Shades (Material Standard)
+  static const Color green50 = Color(0xFFE8F5E9);
+>>>>>>> ca3ec41 (store locally own code)
   static const Color green100 = Color(0xFFC8E6C9);
   static const Color green200 = Color(0xFFA5D6A7);
   static const Color green300 = Color(0xFF81C784);
@@ -29,4 +36,8 @@ class Newcolors {
   static const Color primary = green700;
   static const Color secondary = green400;
   static const Color background = white;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ca3ec41 (store locally own code)

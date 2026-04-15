@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/login.dart';
-import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/achieventscontainer.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/helpsupportscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/privacysecurityscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/profilecateg.dart';
@@ -10,101 +11,17 @@ import 'package:quranteacher/students/profile_feature/presentation-layer/widgets
 
 class Profilescreen extends StatefulWidget {
   const Profilescreen({super.key});
+
   @override
   State<Profilescreen> createState() => _ProfilescreenState();
 }
 
-class _ProfilescreenState extends State<Profilescreen>
-    with TickerProviderStateMixin {
+class _ProfilescreenState extends State<Profilescreen> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
 
-  // 🔥 LessonScreen main controller
-  late AnimationController _mainController;
-  late Animation<Offset> _slideAnimation;
-
-  // 🔥 Achievements staggered controllers (پہلی والی animation)
-  late AnimationController _achieveController;
-  late Animation<double> animation1, animation2, animation3, animation4;
-  late Animation<double> animation5, animation6, animation7, animation8;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // 🔥 Main LessonScreen animation (1s)
-    _mainController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
-    _slideAnimation = Tween<Offset>(
-      begin: Offset(0, 0.08),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(parent: _mainController, curve: Curves.easeOut));
-    _mainController.forward();
-
-    // 🔥 Achievements animation (8s loop جیسے پہلے)
-    _achieveController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 8),
-    );
-    animation1 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.0, 0.1, curve: Curves.easeIn),
-      ),
-    );
-    animation2 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.2, 0.3, curve: Curves.easeIn),
-      ),
-    );
-    animation3 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.3, 0.4, curve: Curves.easeIn),
-      ),
-    );
-    animation4 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.4, 0.5, curve: Curves.easeIn),
-      ),
-    );
-    animation5 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.5, 0.6, curve: Curves.easeIn),
-      ),
-    );
-    animation6 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.6, 0.7, curve: Curves.easeIn),
-      ),
-    );
-    animation7 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.7, 0.8, curve: Curves.easeIn),
-      ),
-    );
-    animation8 = Tween(begin: 0.3, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _achieveController,
-        curve: Interval(0.9, 1.0, curve: Curves.easeIn),
-      ),
-    );
-
-    _achieveController.forward();
-    _achieveController.repeat(reverse: true);
-  }
-
   @override
   void dispose() {
-    _mainController.dispose();
-    _achieveController.dispose();
     usernameController.dispose();
     addressController.dispose();
     super.dispose();
@@ -139,263 +56,454 @@ class _ProfilescreenState extends State<Profilescreen>
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // 🔥 1. Top Container + staggered cards (LessonScreen style)
             Topcontainer(size: size),
-
             SizedBox(height: height * 0.02),
 
-            // 🔥 Profile cards (staggered)
-            GestureDetector(
+            // Profile Cards - NO ANIMATION
+            _buildCard(
+              icon: Icons.person_2_outlined,
+              title: "Edit Profile",
+              color: null,
               onTap: openBottomSheet,
-              child: Profilecateg(
-                size: size,
-                mainicon: Icon(Icons.person_2_outlined),
-                title: "Edit Profile",
-                positionalIcon: Icon(Icons.arrow_forward_ios_outlined),
-              ),
             ),
-
             SizedBox(height: height * 0.01),
-            GestureDetector(
+            _buildCard(
+              icon: Icons.notifications_none,
+              title: "Notification",
+              color: AppColors.bottommaingreen,
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => QuranNotificationScreen(),
                 ),
               ),
-              child: Profilecateg(
-                size: size,
-                mainicon: Icon(Icons.notifications_none),
-                title: "Notification",
-                positionalIcon: Icon(Icons.arrow_forward_ios),
-                color: Colors.blueAccent,
-              ),
             ),
-
             SizedBox(height: height * 0.01),
-            GestureDetector(
+            _buildCard(
+              icon: Icons.privacy_tip_sharp,
+              title: "Privacy & Security",
+              color: Colors.deepPurpleAccent,
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => PrivacySecurityScreen(),
                 ),
               ),
-              child: Profilecateg(
-                size: size,
-                mainicon: Icon(Icons.privacy_tip_sharp),
-                title: "Privacy & Security",
-                positionalIcon: Icon(Icons.arrow_forward_ios),
-                color: Colors.deepPurpleAccent,
-              ),
             ),
-
             SizedBox(height: height * 0.01),
-            GestureDetector(
+            _buildCard(
+              icon: Icons.help_outline_outlined,
+              title: "Help & Support",
+              color: Colors.deepOrangeAccent,
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => HelpSupportScreen()),
               ),
-              child: Profilecateg(
-                size: size,
-                mainicon: Icon(Icons.help_outline_outlined),
-                title: "Help & Support",
-                positionalIcon: Icon(Icons.arrow_forward_ios),
-                color: Colors.deepOrangeAccent,
-              ),
             ),
 
+            SizedBox(height: height * 0.04),
+
+            // Profile Stats Section
+            _buildProfileStatsSection(context, size),
             SizedBox(height: height * 0.03),
 
-            // 🔥 Achievements Title
-            Padding(
-              padding: EdgeInsets.only(right: 100),
-              child: Text(
-                "Resent Achievements",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+            // Logout Button - NO ANIMATION
+            _buildLogoutButton(size),
+            SizedBox(height: height * 0.05),
+          ],
+        ),
+      ),
+    );
+  }
 
-            SizedBox(height: height * 0.03),
+  // ✅ SIMPLE STATIC CARDS - NO ANIMATION
+  Widget _buildCard({
+    required IconData icon,
+    required String title,
+    Color? color,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Profilecateg(
+        size: MediaQuery.of(context).size,
+        mainicon: Icon(icon, size: 28),
+        title: title,
+        positionalIcon: Icon(Icons.arrow_forward_ios, size: 18),
+        color: color ?? Newcolors.green700,
+      ),
+    );
+  }
 
-            // 🔥 Achievements Container + پہلی والی cool animation
-            Card(
-              elevation: 1,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: height * 0.26,
-                width: width * 0.96,
-                decoration: BoxDecoration(
-                  color: Colors.black12,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  children: [
-                    SizedBox(height: height * 0.01),
-                    Row(
-                      children: [
-                        SizedBox(width: width * 0.02),
-                        FadeTransition(
-                          opacity: animation1,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.amber,
-                            achieventsicon: Icon(Icons.emoji_events_rounded),
-                          ),
-                        ),
-                        SizedBox(width: width * 0.01),
-                        FadeTransition(
-                          opacity: animation5,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.orange,
-                            achieventsicon: Icon(Icons.star_outlined),
-                          ),
-                        ),
-                        SizedBox(width: width * 0.01),
-                        FadeTransition(
-                          opacity: animation8,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.cyan,
-                            achieventsicon: Icon(Icons.auto_stories),
-                          ),
-                        ),
-                        SizedBox(width: width * 0.01),
-                        FadeTransition(
-                          opacity: animation3,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.red,
-                            achieventsicon: Icon(Icons.crisis_alert_sharp),
-                          ),
-                        ),
-                      ],
+  // ✅ SIMPLE STATS SECTION - NO ANIMATION
+  Widget _buildProfileStatsSection(BuildContext context, Size size) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = screenWidth < 400; // Phone vs Tablet detection
+
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.all(isSmallScreen ? 16 : 20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: Newcolors.green400.withOpacity(0.25),
+            blurRadius: isSmallScreen ? 15 : 25,
+            offset: Offset(0, isSmallScreen ? 6 : 10),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // 🔥 RESPONSIVE Header
+          Padding(
+            padding: EdgeInsets.only(bottom: isSmallScreen ? 16 : 20),
+            child: Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(isSmallScreen ? 12 : 14),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Newcolors.green700, Newcolors.green400],
                     ),
-                    SizedBox(height: height * 0.01),
-                    Row(
-                      children: [
-                        SizedBox(width: width * 0.02),
-                        FadeTransition(
-                          opacity: animation7,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.yellow,
-                            achieventsicon: Icon(
-                              Icons.local_fire_department_sharp,
-                            ),
+                    borderRadius: BorderRadius.circular(
+                      isSmallScreen ? 16 : 20,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Newcolors.green400.withOpacity(0.4),
+                        blurRadius: isSmallScreen ? 8 : 12,
+                      ),
+                    ],
+                  ),
+                  child: Icon(
+                    Icons.account_circle,
+                    color: Colors.white,
+                    size: isSmallScreen ? 24 : 28,
+                  ),
+                ),
+                SizedBox(width: isSmallScreen ? 12 : 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      FittedBox(
+                        // ✅ Auto-scale text
+                        child: Text(
+                          "Your Progress",
+                          style: TextStyle(
+                            fontSize: isSmallScreen ? 18 : 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
                           ),
                         ),
-                        SizedBox(width: width * 0.01),
-                        FadeTransition(
-                          opacity: animation2,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.amber,
-                            achieventsicon: Icon(
-                              Icons.energy_savings_leaf_rounded,
-                            ),
+                      ),
+                      SizedBox(height: 2),
+                      FittedBox(
+                        child: Text(
+                          "Student Stats",
+                          style: TextStyle(
+                            fontSize: isSmallScreen ? 12 : 13,
+                            color: Colors.grey[600],
                           ),
                         ),
-                        SizedBox(width: width * 0.01),
-                        FadeTransition(
-                          opacity: animation3,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.red,
-                            achieventsicon: Icon(Icons.star_purple500_rounded),
-                          ),
-                        ),
-                        SizedBox(width: width * 0.01),
-                        FadeTransition(
-                          opacity: animation4,
-                          child: Achieventscontainer(
-                            height: height,
-                            width: width,
-                            iconcolor: Colors.teal,
-                            achieventsicon: Icon(Icons.architecture),
-                          ),
-                        ),
-                      ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // 🔥 RESPONSIVE Stats Layout
+          if (isSmallScreen)
+            // Small Screen: Vertical Stack
+            Column(
+              children: [
+                _buildResponsiveStatCard(
+                  context: context,
+                  icon: Icons.menu_book,
+                  label: "Ayats Learned",
+                  value: "286",
+                  accentColor: Colors.green.shade400,
+                ),
+                SizedBox(height: 10),
+                _buildResponsiveStatCard(
+                  context: context,
+                  icon: Icons.emoji_events,
+                  label: "Badges",
+                  value: "12",
+                  accentColor: Newcolors.green400,
+                ),
+                SizedBox(height: 10),
+                _buildResponsiveStatCard(
+                  context: context,
+                  icon: Icons.trending_up,
+                  label: "Global Rank",
+                  value: "#47",
+                  accentColor: Newcolors.green900,
+                ),
+              ],
+            )
+          else
+            // Large Screen: Grid Layout
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: _buildResponsiveStatCard(
+                        context: context,
+                        icon: Icons.menu_book,
+                        label: "Ayats Learned",
+                        value: "286",
+                        accentColor: Colors.green.shade400,
+                      ),
+                    ),
+                    SizedBox(width: 12),
+                    Expanded(
+                      child: _buildResponsiveStatCard(
+                        context: context,
+                        icon: Icons.emoji_events,
+                        label: "Badges",
+                        value: "12",
+                        accentColor: Newcolors.green400,
+                      ),
                     ),
                   ],
                 ),
-              ),
-            ),
-
-            SizedBox(height: height * 0.03),
-
-            // 🔥 Logout
-            TweenAnimationBuilder<double>(
-              duration: Duration(milliseconds: 1400),
-              tween: Tween(begin: 0, end: 1),
-              curve: Curves.easeOut,
-              builder: (context, value, child) => Opacity(
-                opacity: value,
-                child: Transform.translate(
-                  offset: Offset(0, 20 * (1 - value)),
-                  child: child,
+                SizedBox(height: 12),
+                _buildResponsiveStatCard(
+                  context: context,
+                  icon: Icons.trending_up,
+                  label: "Global Rank",
+                  value: "#47",
+                  accentColor: Newcolors.green900,
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Login(role: "student"),
+              ],
+            ),
+        ],
+      ),
+    );
+  }
+
+  // 🔥 FULLY RESPONSIVE STAT CARD
+  Widget _buildResponsiveStatCard({
+    required BuildContext context,
+    required IconData icon,
+    required String label,
+    required String value,
+    required Color accentColor,
+  }) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = screenWidth < 400;
+
+    return Container(
+      height: isSmallScreen ? 65 : 70,
+      padding: EdgeInsets.symmetric(
+        horizontal: isSmallScreen ? 12 : 16,
+        vertical: isSmallScreen ? 10 : 12,
+      ),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.white,
+            Colors.white.withOpacity(0.92),
+            accentColor.withOpacity(0.08),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(isSmallScreen ? 14 : 16),
+        border: Border.all(
+          color: accentColor.withOpacity(0.3),
+          width: isSmallScreen ? 1 : 1.2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: accentColor.withOpacity(0.25),
+            blurRadius: isSmallScreen ? 10 : 12,
+            offset: Offset(0, isSmallScreen ? 3 : 4),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Icon
+          Container(
+            padding: EdgeInsets.all(isSmallScreen ? 6 : 8),
+            decoration: BoxDecoration(
+              color: accentColor.withOpacity(0.18),
+              shape: BoxShape.circle,
+              border: Border.all(color: accentColor.withOpacity(0.35)),
+            ),
+            child: Icon(
+              icon,
+              color: accentColor,
+              size: isSmallScreen ? 18 : 20,
+            ),
+          ),
+
+          // Text - Right Aligned
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(left: 8),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  FittedBox(
+                    child: Text(
+                      value,
+                      style: TextStyle(
+                        fontSize: isSmallScreen ? 18 : 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                        height: 1.1,
                       ),
-                      (route) => false,
-                    );
-                  },
-                  child: Container(
-                    height: height * 0.07,
-                    width: width * 0.9,
-                    decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: Colors.pink.shade700,
-                        width: 1.5,
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        SizedBox(width: width * 0.33),
-                        Icon(
-                          Icons.logout_outlined,
-                          color: Colors.pink.shade700,
-                        ),
-                        SizedBox(width: width * 0.03),
-                        Text(
-                          "Logout",
-                          style: TextStyle(
-                            color: Colors.pink.shade700,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
-                ),
+                  SizedBox(height: isSmallScreen ? 1 : 2),
+                  FittedBox(
+                    child: Text(
+                      label,
+                      style: TextStyle(
+                        fontSize: isSmallScreen ? 11 : 12,
+                        color: Colors.grey[600],
+                        fontWeight: FontWeight.w500,
+                        height: 1.2,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: height * 0.03),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ✅ SIMPLE STAT CARD - NO ANIMATION
+  Widget _buildStatCard(
+    IconData icon,
+    String label,
+    String value,
+    Color accentColor,
+  ) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      height: 70,
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.white,
+            Colors.white.withOpacity(0.92),
+            accentColor.withOpacity(0.08),
           ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: accentColor.withOpacity(0.3), width: 1.2),
+        boxShadow: [
+          BoxShadow(
+            color: accentColor.withOpacity(0.25),
+            blurRadius: 12,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            padding: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: accentColor.withOpacity(0.18),
+              shape: BoxShape.circle,
+              border: Border.all(color: accentColor.withOpacity(0.35)),
+            ),
+            child: Icon(icon, color: accentColor, size: 20),
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  value,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[600],
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ✅ SIMPLE LOGOUT BUTTON - NO ANIMATION
+  Widget _buildLogoutButton(Size size) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => Login(role: "student")),
+            (route) => false,
+          );
+        },
+        child: Container(
+          height: size.height * 0.06,
+          width: size.width * 0.9,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(28),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.red.withOpacity(0.2),
+                blurRadius: 12,
+                offset: Offset(0, 6),
+              ),
+            ],
+            border: Border.all(color: Colors.red, width: 2),
+            color: Colors.white,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.logout_outlined, color: Colors.red, size: 22),
+              SizedBox(width: 12),
+              Text(
+                "Logout",
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
