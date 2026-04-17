@@ -3,8 +3,8 @@ import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Submitapplicationconti extends StatelessWidget {
-  const Submitapplicationconti({super.key});
-
+  final VoidCallback ontabs;
+  const Submitapplicationconti({super.key,required this.ontabs});
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -12,12 +12,7 @@ class Submitapplicationconti extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {
-          Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => Bottomnaviteacher()),
-            (route) => false,
-          );
-        },
+        onTap: ontabs,
         child: Container(
           height: height * 0.08,
           width: width,

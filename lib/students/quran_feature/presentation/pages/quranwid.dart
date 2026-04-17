@@ -84,9 +84,10 @@ class _QuranwidState extends State<Quranwid>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               // 🔥 1. Header Stack (Natural flow with main animation)
@@ -96,14 +97,14 @@ class _QuranwidState extends State<Quranwid>
                   Positioned(top: 40, left: 20, child: Qurantex()),
                 ],
               ),
-
+            
               SizedBox(height: 10),
               Searchquran(),
               SizedBox(height: 10),
-
+            
               // 🔥 2. Quran List - Staggered Animation (index * 150ms)
               Quranlist(quranapimodel: quranapimodel),
-
+            
               SizedBox(height: 20),
             ],
           ),

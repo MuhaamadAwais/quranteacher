@@ -49,9 +49,10 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return SafeArea(
-      child: Scaffold(
-        body: FadeTransition(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: FadeTransition(
           opacity: _fadeAnimation,
           child: SlideTransition(
             position: _slideAnimation,
@@ -76,7 +77,7 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                     ],
                   ),
                   SizedBox(height: 10),
-
+            
                   TweenAnimationBuilder<double>(
                     duration: const Duration(milliseconds: 400 + (0 * 150)),
                     tween: Tween(begin: 0, end: 1),
@@ -92,9 +93,9 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                     },
                     child: Progessstd(),
                   ),
-
+            
                   SizedBox(height: 10),
-
+            
                   TweenAnimationBuilder<double>(
                     duration: const Duration(milliseconds: 400 + (1 * 150)),
                     tween: Tween(begin: 0, end: 1),
@@ -133,7 +134,7 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                       ),
                     ),
                   ),
-
+            
                   TweenAnimationBuilder<double>(
                     duration: const Duration(
                       milliseconds: 700,
@@ -151,7 +152,7 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
                     },
                     child: Quickaccesconti(),
                   ),
-
+            
                   SizedBox(height: 30),
                 ],
               ),
@@ -163,6 +164,3 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
   }
 }
 
-// void main() {
-//   runApp(MaterialApp(home: Scaffold(body: Studentdashboardpage())));
-// }

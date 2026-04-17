@@ -65,195 +65,197 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
 
     return Scaffold(
       backgroundColor: Colors.green[50],
-      body: Column(
-        children: [
-          // App bar
-          const TopcommonContainer(title: 'My Attendance'),
-
-          // Expanded ListView for everything else
-          Expanded(
-            child: ListView(
-              padding: const EdgeInsets.all(16),
-              children: [
-                // Stats Cards
-                Container(
-                  padding: const EdgeInsets.all(30),
-                  margin: const EdgeInsets.only(bottom: 20),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [AppColors.bottommaingreen, Newcolors.green900],
-                    ),
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(blurRadius: 20, color: Colors.black12),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      _buildStatCard(
-                        presentCount.toString(),
-                        'Present',
-                        Icons.check_circle,
-                        Colors.green,
-                      ),
-                      _buildStatCard(
-                        (total - presentCount).toString(),
-                        'Absent',
-                        Icons.cancel,
-                        Colors.red,
-                      ),
-                      _buildStatCard(
-                        '$percentage%',
-                        'Overall',
-                        Icons.trending_up,
-                        Colors.white,
-                      ),
-                    ],
-                  ),
-                ),
-
-                // Profile Card
-                Card(
-                  margin: const EdgeInsets.only(bottom: 20),
-                  color: Colors.green[50],
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Container(
-                    height: height * 0.13,
-                    width: width * 0.78,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // App bar
+            const TopcommonContainer(title: 'My Attendance'),
+        
+            // Expanded ListView for everything else
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.all(16),
+                children: [
+                  // Stats Cards
+                  Container(
+                    padding: const EdgeInsets.all(30),
+                    margin: const EdgeInsets.only(bottom: 20),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: const Color.fromARGB(100, 164, 162, 164),
-                        width: 1,
+                      gradient: const LinearGradient(
+                        colors: [AppColors.bottommaingreen, Newcolors.green900],
                       ),
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(blurRadius: 20, color: Colors.black12),
+                      ],
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        SizedBox(width: width * 0.04),
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundColor: Newcolors.green700,
-                          child: const Icon(
-                            Icons.person,
-                            size: 28,
-                            color: AppColors.whiteBackground,
-                          ),
+                        _buildStatCard(
+                          presentCount.toString(),
+                          'Present',
+                          Icons.check_circle,
+                          Colors.green,
                         ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'Ahmed Ali',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                'ST001 | Juz 1 |\n Basic Quran Badge',
-                                style: TextStyle(color: Colors.grey[700]),
-                              ),
-                            ],
-                          ),
+                        _buildStatCard(
+                          (total - presentCount).toString(),
+                          'Absent',
+                          Icons.cancel,
+                          Colors.red,
+                        ),
+                        _buildStatCard(
+                          '$percentage%',
+                          'Overall',
+                          Icons.trending_up,
+                          Colors.white,
                         ),
                       ],
                     ),
                   ),
-                ),
-
-                // History Header
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Attendance History',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+        
+                  // Profile Card
+                  Card(
+                    margin: const EdgeInsets.only(bottom: 20),
+                    color: Colors.green[50],
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                    Chip(
-                      backgroundColor: Colors.green[50],
-
-                      label: Text(
-                        '${myAttendance.length} sessions',
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                  ],
-                ),
-                //   const SizedBox(height: 8),
-
-                // Attendance ListView.builder
-                ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: myAttendance.length,
-                  itemBuilder: (context, index) {
-                    final record = myAttendance[index];
-                    return Card(
-                      margin: const EdgeInsets.only(bottom: 12),
-                      elevation: 4,
-                      color: Colors.green[50],
-                      shape: RoundedRectangleBorder(
+                    child: Container(
+                      height: height * 0.13,
+                      width: width * 0.78,
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: const Color.fromARGB(100, 164, 162, 164),
+                          width: 1,
+                        ),
                       ),
-                      child: ListTile(
-                        contentPadding: const EdgeInsets.all(20),
-                        leading: Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: record.isPresent ? Colors.green : Colors.red,
-                            shape: BoxShape.circle,
+                      child: Row(
+                        children: [
+                          SizedBox(width: width * 0.04),
+                          CircleAvatar(
+                            radius: 35,
+                            backgroundColor: Newcolors.green700,
+                            child: const Icon(
+                              Icons.person,
+                              size: 28,
+                              color: AppColors.whiteBackground,
+                            ),
                           ),
-                          child: Icon(
-                            record.isPresent ? Icons.check : Icons.close,
-                            color: Colors.white,
-                            size: 24,
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'Ahmed Ali',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  'ST001 | Juz 1 |\n Basic Quran Badge',
+                                  style: TextStyle(color: Colors.grey[700]),
+                                ),
+                              ],
+                            ),
                           ),
+                        ],
+                      ),
+                    ),
+                  ),
+        
+                  // History Header
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Attendance History',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
-                        title: Text(
-                          '${record.group} - ${record.rollNo}',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Chip(
+                        backgroundColor: Colors.green[50],
+        
+                        label: Text(
+                          '${myAttendance.length} sessions',
+                          style: const TextStyle(color: Colors.grey),
                         ),
-                        subtitle: Text(
-                          '${record.rollNo} | ${record.date.day} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][record.date.month - 1]}',
+                      ),
+                    ],
+                  ),
+                  //   const SizedBox(height: 8),
+        
+                  // Attendance ListView.builder
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: myAttendance.length,
+                    itemBuilder: (context, index) {
+                      final record = myAttendance[index];
+                      return Card(
+                        margin: const EdgeInsets.only(bottom: 12),
+                        elevation: 4,
+                        color: Colors.green[50],
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
                         ),
-                        trailing: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 4,
-                          ),
-                          decoration: BoxDecoration(
-                            color: record.isPresent
-                                ? Newcolors.green500
-                                : const Color.fromARGB(255, 238, 117, 109),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Text(
-                            record.isPresent ? 'Present' : 'Absent',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.all(20),
+                          leading: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: record.isPresent ? Colors.green : Colors.red,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              record.isPresent ? Icons.check : Icons.close,
                               color: Colors.white,
-                              fontSize: 14,
+                              size: 24,
+                            ),
+                          ),
+                          title: Text(
+                            '${record.group} - ${record.rollNo}',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text(
+                            '${record.rollNo} | ${record.date.day} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][record.date.month - 1]}',
+                          ),
+                          trailing: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: record.isPresent
+                                  ? Newcolors.green500
+                                  : const Color.fromARGB(255, 238, 117, 109),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text(
+                              record.isPresent ? 'Present' : 'Absent',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 14,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                ),
-              ],
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

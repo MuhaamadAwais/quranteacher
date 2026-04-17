@@ -74,105 +74,106 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
 
     return Scaffold(
       backgroundColor: Colors.grey[50],
-
-      body: FadeTransition(
-        opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
-        child: SlideTransition(
-          position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
-          child: Column(
-            children: [
-              // SizedBox(height: height * 0.05),
-              TopcommonContainer(title: "📚 My Homework"),
-              // 🔥 1. Stats Header (400ms)
-              TweenAnimationBuilder<double>(
-                duration: Duration(milliseconds: 400),
-                tween: Tween(begin: 0, end: 1),
-                curve: Curves.easeOut,
-                builder: (context, value, child) => Opacity(
-                  opacity: value,
-                  child: Transform.translate(
-                    offset: Offset(0, 20 * (1 - value)),
-                    child: child,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    width: double.infinity,
-
-                    padding: EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.blue[400]!,
-                          Colors.blue[300]!,
-                          Colors.blue[100]!,
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        _buildStatCard(
-                          'Pending',
-                          '$pendingCount',
-                          Icons.pending_actions,
-                          Colors.orange,
-                        ),
-                        _buildStatCard(
-                          'Completed',
-                          '${4 - pendingCount}',
-                          Icons.check_circle,
-                          Colors.green,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-
-              // 🔥 2. Homework List (staggered index * 150ms)
-              Expanded(
-                child: TweenAnimationBuilder<double>(
-                  duration: Duration(milliseconds: 700),
+      body: SafeArea(
+        child: FadeTransition(
+          opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
+          child: SlideTransition(
+            position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
+            child: Column(
+              children: [
+                // SizedBox(height: height * 0.05),
+                TopcommonContainer(title: "📚 My Homework"),
+                // 🔥 1. Stats Header (400ms)
+                TweenAnimationBuilder<double>(
+                  duration: Duration(milliseconds: 400),
                   tween: Tween(begin: 0, end: 1),
                   curve: Curves.easeOut,
                   builder: (context, value, child) => Opacity(
                     opacity: value,
-                    child: Transform.scale(
-                      scale: 0.95 + (0.05 * value),
+                    child: Transform.translate(
+                      offset: Offset(0, 20 * (1 - value)),
                       child: child,
                     ),
                   ),
-                  child: ListView.separated(
-                    padding: EdgeInsets.all(20),
-                    itemCount: homework.length,
-                    separatorBuilder: (context, index) => SizedBox(height: 12),
-                    itemBuilder: (context, index) {
-                      final task = homework[index];
-                      return TweenAnimationBuilder<double>(
-                        duration: Duration(
-                          milliseconds: 400 + (index * 150),
-                        ), // 🔥 Staggered!
-                        tween: Tween(begin: 0, end: 1),
-                        curve: Curves.easeOut,
-                        builder: (context, value, child) => Opacity(
-                          opacity: value,
-                          child: Transform.translate(
-                            offset: Offset(0, 20 * (1 - value)),
-                            child: child,
-                          ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      width: double.infinity,
+        
+                      padding: EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.blue[400]!,
+                            Colors.blue[300]!,
+                            Colors.blue[100]!,
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
                         ),
-                        child: _buildHomeworkCard(task, index),
-                      );
-                    },
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          _buildStatCard(
+                            'Pending',
+                            '$pendingCount',
+                            Icons.pending_actions,
+                            Colors.orange,
+                          ),
+                          _buildStatCard(
+                            'Completed',
+                            '${4 - pendingCount}',
+                            Icons.check_circle,
+                            Colors.green,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ],
+        
+                // 🔥 2. Homework List (staggered index * 150ms)
+                Expanded(
+                  child: TweenAnimationBuilder<double>(
+                    duration: Duration(milliseconds: 700),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) => Opacity(
+                      opacity: value,
+                      child: Transform.scale(
+                        scale: 0.95 + (0.05 * value),
+                        child: child,
+                      ),
+                    ),
+                    child: ListView.separated(
+                      padding: EdgeInsets.all(20),
+                      itemCount: homework.length,
+                      separatorBuilder: (context, index) => SizedBox(height: 12),
+                      itemBuilder: (context, index) {
+                        final task = homework[index];
+                        return TweenAnimationBuilder<double>(
+                          duration: Duration(
+                            milliseconds: 400 + (index * 150),
+                          ), // 🔥 Staggered!
+                          tween: Tween(begin: 0, end: 1),
+                          curve: Curves.easeOut,
+                          builder: (context, value, child) => Opacity(
+                            opacity: value,
+                            child: Transform.translate(
+                              offset: Offset(0, 20 * (1 - value)),
+                              child: child,
+                            ),
+                          ),
+                          child: _buildHomeworkCard(task, index),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
