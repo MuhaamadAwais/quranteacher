@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:quranteacher/admin/admindetailpage.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/forgotpasswordpage.dart';
@@ -267,7 +268,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          Bottomnavigationadmin(),
+                                          Admindetailpage(),
                                     ),
                                     (route) => false,
                                   );

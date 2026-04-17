@@ -48,6 +48,7 @@ class _LessonscreenState extends State<Lessonscreen>
     final width = size.width;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: FadeTransition(
         opacity: _fadeAnimation,
         child: ListView(

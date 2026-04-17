@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Iconcontidesign extends StatelessWidget {
-  const Iconcontidesign({super.key});
+  final IconData icons;
+  const Iconcontidesign({super.key, required this.icons});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class Iconcontidesign extends StatelessWidget {
       ),
       child: Center(
         child: Icon(
-          Icons.supervisor_account_outlined,
+          icons,
           color: Colors.white,
           size: 24,
         ),

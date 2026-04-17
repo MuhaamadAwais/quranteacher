@@ -33,7 +33,7 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 0,
                 width * 0.43,
-                height * 0.21,
+                height * 0.22,
                 Icons.group_outlined,
                 "My Students",
                 "Manage Students",
@@ -49,7 +49,7 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 1,
                 width * 0.43,
-                height * 0.21,
+                height * 0.22,
                 Icons.trending_up,
                 "Assign Work",
                 "create homework",
@@ -73,7 +73,7 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 2,
                 width * 0.43,
-                height * 0.21,
+                height * 0.22,
                 Icons.videocam_outlined,
                 "Content",
                 "Manage Lessons",
@@ -89,7 +89,7 @@ class _LeastitemsState extends State<Leastitems> {
               clickcontistd(
                 3,
                 width * 0.43,
-                height * 0.21,
+                height * 0.22,
                 Icons.attach_money,
                 "Earning",
                 "View Income",

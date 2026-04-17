@@ -53,6 +53,7 @@ class _ProfilescreenState extends State<Profilescreen> {
     final width = size.width;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [

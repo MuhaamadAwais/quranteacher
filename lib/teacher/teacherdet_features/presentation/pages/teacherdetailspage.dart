@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/widgets/availabilityydesign.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/widgets/designscontitextfiled.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/widgets/iconcontidesign.dart';
@@ -25,7 +26,7 @@ class _TeacherdetailspageState extends State<Teacherdetailspage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(height: 30),
-              Iconcontidesign(),
+              Iconcontidesign(icons: Icons.supervisor_account_outlined),
               Text(
                 "Become a Teacher",
                 style: TextStyle(
@@ -80,7 +81,16 @@ class _TeacherdetailspageState extends State<Teacherdetailspage> {
               ),
               Availabilityydesign(),
               Ratesconti(),
-              Submitapplicationconti(),
+              Submitapplicationconti(
+                ontabs: () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => Bottomnaviteacher(),
+                    ),
+                    (route) => false,
+                  );
+                },
+              ),
               SizedBox(height: 30),
             ],
           ),

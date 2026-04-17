@@ -24,34 +24,21 @@ class _BottomnaviState extends State<Bottomnavi> {
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: screens[selectedIndex],
-        bottomNavigationBar: Container(
-          height: 70,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
-            ),
-            border: Border(
-              top: BorderSide(color: AppColors.textGreen, width: 3),
-              // left: BorderSide(color: AppColors.greenAccent, width: 4),
-              // right: BorderSide(color: AppColors.greenAccent, width: 4),
-            ),
-            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              buildnavItem(Icons.home_outlined, "Home", 0),
-              buildnavItem(Icons.menu_book, "Quran", 1),
-              buildnavItem(Icons.book_outlined, "Hadith", 2),
-              buildnavItem(Icons.school_outlined, "Lessons", 3),
-              buildnavItem(Icons.person_2_outlined, "Profile", 4),
-            ],
-          ),
+    return Scaffold(
+      body: SafeArea(child: screens[selectedIndex]),
+      bottomNavigationBar: Container(
+        height: 75,
+        width: double.infinity,
+        color: AppColors.textWhite,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(child: buildnavItem(Icons.home_outlined, "Home", 0)),
+            Expanded(child: buildnavItem(Icons.menu_book, "Quran", 1)),
+            Expanded(child: buildnavItem(Icons.book_outlined, "Hadith", 2)),
+            Expanded(child: buildnavItem(Icons.school_outlined, "Lessons", 3)),
+            Expanded(child: buildnavItem(Icons.person_2_outlined, "Profile", 4)),
+          ],
         ),
       ),
     );
@@ -71,13 +58,13 @@ class _BottomnaviState extends State<Bottomnavi> {
         padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
         decoration: BoxDecoration(
           color: isSelected
-              ? const Color.fromARGB(85, 27, 94, 31)
+              ? Colors.green.withOpacity(0.15) // very light green for container
               : Colors.white,
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(15),
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: Colors.green.withOpacity(0.3),
+                    color: AppColors.toplast.withOpacity(0.3),
                     blurRadius: 15,
                     spreadRadius: 2,
                     offset: Offset(4, 4),
@@ -95,19 +82,18 @@ class _BottomnaviState extends State<Bottomnavi> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              size: 28,
-              color: isSelected
-                  ? AppColors.backgroundStart
-                  : Colors.black, // white text on green
-            ),
+            if (icon != null)
+              Icon(
+                icon,
+                size: 24,
+                color: isSelected ? AppColors.toplast : Colors.black,
+              ),
             SizedBox(height: 4),
             Text(
               label,
               style: TextStyle(
-                fontSize: 12,
-                color: isSelected ? AppColors.backgroundStart : Colors.black,
+                fontSize: 10,
+                color: isSelected ? AppColors.toplast : Colors.black,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
               ),
             ),

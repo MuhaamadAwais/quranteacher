@@ -112,9 +112,10 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
     final size = MediaQuery.of(context).size;
     final height = size.height;
     final width = size.width;
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               // 🔥 1. Header Stack (Natural main animation)
@@ -122,7 +123,7 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
                 children: [
                   Tophadits(),
                   Positioned(top: 25, left: 20, child: Haditsname()),
-
+            
                   Positioned(
                     top: 90,
                     left: 20,
@@ -134,11 +135,11 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
                   ),
                 ],
               ),
-
+            
               SizedBox(height: 10),
               Haditssearch(),
               SizedBox(height: 12),
-
+            
               // 🔥 2. "Collection" Title
               Padding(
                 padding: const EdgeInsets.only(left: 14),
@@ -152,7 +153,7 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
                         "Collection",
                         style: TextStyle(
                           color: AppColors.textGreen,
-
+            
                           fontWeight: FontWeight.bold,
                           fontSize: 24,
                         ),
@@ -161,10 +162,10 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
                   ],
                 ),
               ),
-
+            
               // 🔥 3. Hadith List (index * 150ms stagger جیسے LessonScreen)
               Hadieslist(hadiesmodelapi: hadiesmodelapi),
-
+            
               // 🔥 4. "Popular Topic" Title
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -185,10 +186,10 @@ class _HaditspageState extends State<Haditspage> with TickerProviderStateMixin {
                   ],
                 ),
               ),
-
+            
               // 🔥 5. Popular Topics (Last item scale effect)
               Populartopicconti(),
-
+            
               SizedBox(height: 30),
             ],
           ),
