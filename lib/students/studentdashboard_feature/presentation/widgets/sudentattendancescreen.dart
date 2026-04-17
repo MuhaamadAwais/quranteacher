@@ -81,7 +81,10 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                   margin: const EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [AppColors.bottommaingreen, Newcolors.green900],
+                      colors: [
+                        AppColors.bottommaingreen,
+                        AppColors.backgroundStart,
+                      ],
                     ),
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
@@ -136,7 +139,7 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                         SizedBox(width: width * 0.04),
                         CircleAvatar(
                           radius: 35,
-                          backgroundColor: Newcolors.green700,
+                          backgroundColor: Colors.green[700],
                           child: const Icon(
                             Icons.person,
                             size: 28,
@@ -233,7 +236,7 @@ class _StudentAttendanceScreenState extends State<StudentAttendanceScreen> {
                           ),
                           decoration: BoxDecoration(
                             color: record.isPresent
-                                ? Newcolors.green500
+                                ? Colors.green[400]
                                 : const Color.fromARGB(255, 238, 117, 109),
                             borderRadius: BorderRadius.circular(12),
                           ),

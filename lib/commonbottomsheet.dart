@@ -7,6 +7,8 @@ void bottomsheet(
   String? message,
   String? firstbutton,
   String? secondbutton,
+  Color? firstbuttoncolor,
+  Color? secondbuttoncolor,
 }) {
   showModalBottomSheet(
     context: context,
@@ -14,7 +16,7 @@ void bottomsheet(
     backgroundColor: Colors.transparent,
     builder: (context) {
       return Container(
-        height: MediaQuery.of(context).size.height * 0.5,
+        height: MediaQuery.of(context).size.height * 0.45,
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
@@ -88,8 +90,9 @@ void bottomsheet(
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey[100],
-                        foregroundColor: Colors.black87,
+                        backgroundColor:
+                            firstbuttoncolor ??
+                            const Color.fromARGB(255, 238, 235, 235),
                         elevation: 0,
                         padding: const EdgeInsets.symmetric(vertical: 14),
                         shape: RoundedRectangleBorder(
@@ -101,6 +104,7 @@ void bottomsheet(
                         firstbutton ?? "Cancel",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
+                          color: Colors.black87,
                           fontSize: 16,
                         ),
                       ),
@@ -112,8 +116,7 @@ void bottomsheet(
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.toplast,
-                        foregroundColor: Colors.white,
+                        backgroundColor: secondbuttoncolor ?? AppColors.toplast,
                         elevation: 2,
                         padding: const EdgeInsets.symmetric(vertical: 14),
                         shape: RoundedRectangleBorder(
@@ -128,13 +131,14 @@ void bottomsheet(
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
+                          color: AppColors.textWhite,
                         ),
                       ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 0),
             ],
           ),
         ),

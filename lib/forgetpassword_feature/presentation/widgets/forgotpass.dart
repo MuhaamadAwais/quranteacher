@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/verificationpage.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Forgotpass extends StatelessWidget {
   final String role;
@@ -12,18 +13,20 @@ class Forgotpass extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      elevation: 15,
+      elevation: 10,
+      color: const Color.fromARGB(255, 200, 230, 201),
       child: Container(
-        width: width,
-        height: height * 0.8,
+        width: width * 0.88,
+        height: height * 0.6,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: AppColors.textWhite,
+          //color: AppColors.greenDark,
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: height * 0.05),
             Container(
               width: 100,
               height: 100,
@@ -32,11 +35,15 @@ class Forgotpass extends StatelessWidget {
                 color: AppColors.toplast.withOpacity(0.25),
               ),
               child: Center(
-                child: Icon(size: 24, Icons.lock_outline, color: AppColors.toplast),
+                child: Icon(
+                  size: 24,
+                  Icons.lock_outline,
+                  color: AppColors.toplast,
+                ),
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 14),
             Text(
               "Forgot Password ?",
               style: TextStyle(
@@ -46,7 +53,7 @@ class Forgotpass extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Text(
               "Don't worry! Enter your email address ",
               style: TextStyle(
@@ -80,20 +87,24 @@ class Forgotpass extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Email Address",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "Email Address",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
+                  SizedBox(height: height * 0.01),
                   Container(
                     width: width,
                     height: height * 0.07,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: AppColors.switchBackground.withOpacity(0.25),
+                      color: AppColors.topmaingreen,
                       border: Border.all(
                         width: 1.5,
                         color: AppColors.switchBackground,
@@ -104,7 +115,7 @@ class Forgotpass extends StatelessWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.email_outlined,
-                            color: AppColors.switchBackground,
+                            color: AppColors.textGreen,
                             size: 28,
                           ),
 
@@ -159,10 +170,10 @@ class Forgotpass extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  width: width,
-                  height: height * 0.07,
+                  width: width * 0.7,
+                  height: height * 0.06,
                   decoration: BoxDecoration(
-                    color: AppColors.toplast,
+                    color: AppColors.bottommaingreen,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
@@ -171,7 +182,7 @@ class Forgotpass extends StatelessWidget {
                       style: TextStyle(
                         color: AppColors.textWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 22,
                       ),
                     ),
                   ),

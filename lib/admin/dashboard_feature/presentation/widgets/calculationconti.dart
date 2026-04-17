@@ -81,6 +81,7 @@ class Calculationconti extends StatelessWidget {
       width: width,
       child: Card(
         elevation: 5,
+        shadowColor: AppColors.bottommaingreen,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
         ),
@@ -88,6 +89,12 @@ class Calculationconti extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.textWhite,
             borderRadius: BorderRadius.circular(20),
+            border: Border(
+              //left: BorderSide(color: AppColors.bottommaingreen, width: 2),
+              //top: BorderSide(color: AppColors.bottommaingreen, width: 2),
+              // right: BorderSide(color: AppColors.bottommaingreen, width: 2),
+              bottom: BorderSide(color: AppColors.bottommaingreen, width: 3),
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 20, top: 7),

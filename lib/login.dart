@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/forgotpasswordpage.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/register.dart';
 import 'package:quranteacher/students/appanimations.dart';
 import 'package:quranteacher/students/studentdetailform.dart';
@@ -20,6 +21,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> loginAnimation;
   late Animation<Offset> scale;
+  bool isvisible = false;
 
   @override
   void initState() {
@@ -57,8 +59,8 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  AppColors.topmaingreen,
-                  AppColors.bottommaingreen,
+                  AppColors.border,
+                  const Color.fromARGB(255, 63, 142, 35),
                   // AppColors.backgroundEnd,
                 ],
                 begin: Alignment.topLeft,
@@ -68,17 +70,14 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: height * 0.05),
+                  SizedBox(height: height * 0.04),
                   Container(
                     height: height * 0.12,
                     width: height * 0.12,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       gradient: LinearGradient(
-                        colors: [
-                          AppColors.toplast,
-                          AppColors.toplast,
-                        ],
+                        colors: [AppColors.toplast, AppColors.toplast],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -91,34 +90,38 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                   Text(
                     "Welcome Back",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.textGreen,
                       fontWeight: FontWeight.bold,
-                      fontSize: 22,
+                      fontSize: 24,
                     ),
                   ),
-            
-                  // SizedBox(height: height * 0.02),
-                  Text(
-                    "Sign in to continue learning",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                    ),
-                  ),
-            
-                  SizedBox(height: height * 0.03),
+                  SizedBox(height: height * 0.02),
+
+                  // // SizedBox(height: height * 0.02),
+                  // Text(
+                  //   "Sign in to continue learning",
+                  //   style: TextStyle(
+                  //     color: Colors.white,
+                  //     fontWeight: FontWeight.w600,
+                  //     fontSize: 20,
+                  //   ),
+                  // ),
+
+                  // SizedBox(height: height * 0.03),
                   AnimatedBuilder(
                     animation: _controller,
                     builder: (context, child) {
-                      return ScaleTransition(scale: loginAnimation, child: child);
+                      return ScaleTransition(
+                        scale: loginAnimation,
+                        child: child,
+                      );
                     },
                     child: Container(
                       width: width * 0.9,
                       height: height * 0.62,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                      color: AppColors.topmiddle.withOpacity(0.25)
+                        gradient: AppColors.icongradient,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -154,7 +157,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                     keyboardAppearance: Brightness.light,
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
-            
+
                                       prefixIcon: Icon(Icons.email),
                                       hint: Text("your.email@example.com"),
                                     ),
@@ -194,13 +197,19 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-            
+
                             Row(
                               children: [
                                 Checkbox(
-                                  value: false,
+                                  activeColor: AppColors.startgreen,
+                                  fillColor: MaterialStateProperty.all(
+                                    Colors.white30,
+                                  ),
+                                  value: isvisible,
                                   onChanged: (value) {
-                                    value = true;
+                                    setState(() {
+                                      isvisible = value!;
+                                    });
                                   },
                                 ),
                                 Text(
@@ -217,21 +226,23 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            Forgotpasswordpage(role: widget.role,),
+                                            Forgotpasswordpage(
+                                              role: widget.role,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Text(
                                     "Forget Password?",
                                     style: TextStyle(
-                                      color: AppColors.topmiddle,
+                                      color: AppColors.whitePrimary,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ],
                             ),
-            
+
                             GestureDetector(
                               onTap: () {
                                 if (widget.role == "student") {
@@ -246,7 +257,8 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                   Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Teacherdetailspage(),
+                                      builder: (context) =>
+                                          Teacherdetailspage(),
                                     ),
                                     (route) => false,
                                   );
@@ -261,21 +273,39 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                   );
                                 }
                               },
-                              child: Container(
-                                height: height * 0.07,
-                                width: width,
-                                decoration: BoxDecoration(
+                              child: Card(
+                                elevation: 80,
+                                shadowColor: Newcolors.green300,
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: AppColors.toplast
                                 ),
-            
-                                child: Center(
-                                  child: Text(
-                                    "Login",
-                                    style: TextStyle(
-                                      color: AppColors.textWhite,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
+                                child: Container(
+                                  height: height * 0.07,
+                                  width: width,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        AppColors.startgreen,
+                                        AppColors.topmiddle,
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ),
+                                    border: Border.all(
+                                      color: Colors.grey[500]!,
+                                      width: 1,
+                                    ),
+                                  ),
+
+                                  child: Center(
+                                    child: Text(
+                                      "Login",
+                                      style: TextStyle(
+                                        color: AppColors.textWhite,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -320,7 +350,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                   width: width * 0.4,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
-                                   color: AppColors.textWhite
+                                    color: AppColors.textWhite,
                                   ),
                                   child: Row(
                                     children: [
@@ -336,7 +366,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                         ),
                                       ),
                                       SizedBox(width: width * 0.0),
-            
+
                                       Text(
                                         "Google  ",
                                         style: TextStyle(
@@ -355,7 +385,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-            
+
                   SizedBox(height: height * 0.03),
                   RichText(
                     text: TextSpan(
@@ -368,11 +398,11 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                             fontSize: 16,
                           ),
                         ),
-            
+
                         TextSpan(
                           text: " register now",
                           style: TextStyle(
-                            color: AppColors.topmiddle,
+                            color: Colors.grey[400],
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),

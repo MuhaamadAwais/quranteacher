@@ -37,12 +37,12 @@ class Textearning extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 5),
+        SizedBox(width: 15),
         Text(
           "Earning",
           style: TextStyle(
             color: AppColors.textWhite,
-            fontSize: 18,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
         ),

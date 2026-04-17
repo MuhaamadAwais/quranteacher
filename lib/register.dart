@@ -16,6 +16,7 @@ class _RegisterState extends State<Register>
   late AnimationController _controller;
   late Animation<double> registerAnimation;
   late Animation<Offset> scale;
+  bool isvisible = false;
 
   @override
   void initState() {
@@ -53,8 +54,8 @@ class _RegisterState extends State<Register>
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  AppColors.topmaingreen,
-                  AppColors.bottommaingreen,
+                  AppColors.border,
+                  const Color.fromARGB(255, 63, 142, 35),
                   // AppColors.backgroundEnd,
                 ],
                 begin: Alignment.topLeft,
@@ -74,10 +75,7 @@ class _RegisterState extends State<Register>
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         gradient: LinearGradient(
-                          colors: [
-                            AppColors.toplast,
-                            AppColors.toplast
-                          ],
+                          colors: [AppColors.toplast, AppColors.toplast],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -93,26 +91,26 @@ class _RegisterState extends State<Register>
                     child: Text(
                       "Create Account",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.textDark,
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
                       ),
                     ),
                   ),
-            
+
                   //SizedBox(height: height * 0.01),
                   ScaleTransition(
                     scale: registerAnimation,
                     child: Text(
                       "join our learning community",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: AppColors.textDark,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                     ),
                   ),
-            
+
                   SizedBox(height: height * 0.02),
                   ScaleTransition(
                     scale: registerAnimation,
@@ -121,7 +119,7 @@ class _RegisterState extends State<Register>
                       height: height * 0.72,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: AppColors.topmiddle.withOpacity(0.25)
+                        gradient: AppColors.icongradient,
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -162,7 +160,7 @@ class _RegisterState extends State<Register>
                                 ),
                               ),
                             ),
-            
+
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
@@ -194,7 +192,7 @@ class _RegisterState extends State<Register>
                                 ),
                               ),
                             ),
-            
+
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
@@ -226,7 +224,7 @@ class _RegisterState extends State<Register>
                                 ),
                               ),
                             ),
-            
+
                             Padding(
                               padding: const EdgeInsets.only(left: 10),
                               child: Text(
@@ -260,8 +258,19 @@ class _RegisterState extends State<Register>
                             ),
                             Row(
                               children: [
-                                Checkbox(value: false, onChanged: (value) {}),
-            
+                                Checkbox(
+                                  activeColor: AppColors.startgreen,
+                                  fillColor: MaterialStateProperty.all(
+                                    Colors.white30,
+                                  ),
+                                  value: isvisible,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      isvisible = value!;
+                                    });
+                                  },
+                                ),
+
                                 RichText(
                                   text: TextSpan(
                                     children: [
@@ -273,16 +282,16 @@ class _RegisterState extends State<Register>
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-            
+
                                       TextSpan(
                                         text: "Terms of Service ",
                                         style: TextStyle(
-                                          color: AppColors.topmiddle,
+                                          color: Colors.grey,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-            
+
                                       TextSpan(
                                         text: " and ",
                                         style: TextStyle(
@@ -291,11 +300,11 @@ class _RegisterState extends State<Register>
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
-            
+
                                       TextSpan(
                                         text: "\n Privacy policy ",
                                         style: TextStyle(
-                                          color: AppColors.topmiddle,
+                                          color: Colors.grey,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -315,21 +324,39 @@ class _RegisterState extends State<Register>
                                   ),
                                 );
                               },
-                              child: Container(
-                                height: height * 0.07,
-                                width: width,
-                                decoration: BoxDecoration(
+                              child: Card(
+                                elevation: 10,
+                                shadowColor: Colors.grey,
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                 color: AppColors.toplast
+                                ),
+                                child: Container(
+                                  height: height * 0.07,
+                                  width: width,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        AppColors.topmiddle,
+                                        AppColors.bottommaingreen,
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ),
+                                    border: Border.all(
+                                      color: Colors.grey[500]!,
+                                      width: 1,
+                                    ),
                                   ),
-            
-                                child: Center(
-                                  child: Text(
-                                    "Create Account",
-                                    style: TextStyle(
-                                      color: AppColors.textWhite,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
+
+                                  child: Center(
+                                    child: Text(
+                                      "Create Account",
+                                      style: TextStyle(
+                                        color: AppColors.textWhite,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -341,9 +368,9 @@ class _RegisterState extends State<Register>
                       ),
                     ),
                   ),
-            
+
                   SizedBox(height: height * 0.03),
-            
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -374,9 +401,9 @@ class _RegisterState extends State<Register>
                           child: Text(
                             " Login",
                             style: TextStyle(
-                              color: AppColors.topmiddle,
+                              color: Colors.grey[400],
                               fontWeight: FontWeight.bold,
-                              fontSize: 17,
+                              fontSize: 18,
                             ),
                           ),
                         ),

@@ -12,7 +12,7 @@ class Certificatedetails extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-        height: height * 0.7,
+        height: height * 0.72,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(20),
@@ -118,7 +118,6 @@ class Certificatedetails extends StatelessWidget {
                                 color: AppColors.switchBackground,
                                 width: 2,
                               ),
-                              
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
@@ -126,8 +125,7 @@ class Certificatedetails extends StatelessWidget {
                                 color: AppColors.toplast,
                                 width: 2,
                               ),
-                              
-                            )
+                            ),
                           ),
                         ),
                       ),
@@ -181,10 +179,7 @@ class Certificatedetails extends StatelessWidget {
 
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(
-                  color: AppColors.toplast,
-                  width: 2,
-                ),
+                borderSide: BorderSide(color: AppColors.toplast, width: 2),
               ),
 
               contentPadding: EdgeInsets.symmetric(

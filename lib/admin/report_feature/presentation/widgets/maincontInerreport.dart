@@ -30,7 +30,7 @@ class Maincontinerreport extends StatelessWidget {
                 Icons.school_outlined,
                 "Revenu ",
                 "24",
-                
+
                 AppColors.topmiddle,
                 AppColors.bottommiddle,
               ),
@@ -48,7 +48,7 @@ class Maincontinerreport extends StatelessWidget {
                 Icons.videocam_outlined,
                 "Total Classes",
                 "86",
-                
+
                 AppColors.topmiddle,
                 AppColors.bottommiddle,
               ),
@@ -58,7 +58,7 @@ class Maincontinerreport extends StatelessWidget {
                 Icons.attach_money,
                 "Engagment",
                 "125k",
-                
+
                 AppColors.topmiddle,
                 AppColors.bottommiddle,
               ),
@@ -83,6 +83,7 @@ class Maincontinerreport extends StatelessWidget {
       width: width,
       child: Card(
         elevation: 8,
+        shadowColor: AppColors.startgreen,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
         ),
@@ -90,6 +91,7 @@ class Maincontinerreport extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.textWhite,
             borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: const Color.fromARGB(124, 0, 102, 51)),
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 20, top: 7),
@@ -134,7 +136,7 @@ class Maincontinerreport extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 05,),
+                SizedBox(height: 05),
               ],
             ),
           ),

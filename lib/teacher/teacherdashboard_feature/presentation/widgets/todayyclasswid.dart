@@ -116,16 +116,22 @@ class Todayyclasswid extends StatelessWidget {
 
             Row(
               children: [
-                Icon(Icons.access_time, color:  Colors.white,size: 24,),
+                Icon(Icons.access_time, color: AppColors.textGreen, size: 24),
+                SizedBox(width: 3),
                 Text(
                   "10:00 AM",
-                  style: TextStyle(color:  Colors.white,fontSize: 14),
+                  style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
                 ),
                 SizedBox(width: 20),
-                Icon(Icons.group_outlined, color:  Colors.white,size: 24,),
+                Icon(
+                  Icons.group_outlined,
+                  color: AppColors.textGreen,
+                  size: 24,
+                ),
+                SizedBox(width: 3),
                 Text(
                   "6 Students",
-                  style: TextStyle(color: Colors.white,fontSize: 14),
+                  style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
                 ),
               ],
             ),

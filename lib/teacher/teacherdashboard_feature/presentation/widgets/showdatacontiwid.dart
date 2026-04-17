@@ -22,7 +22,8 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.group_outlined,
                 "Total Students",
                 "48",
-                AppColors.topmiddle,AppColors.bottommiddle,
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
                 "+5",
               ),
               deisgndata(
@@ -31,8 +32,9 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.videocam_outlined,
                 "Classes Today",
                 "3",
-                
-                AppColors.topmiddle,AppColors.bottommiddle,
+
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
               ),
             ],
           ),
@@ -48,8 +50,9 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.attach_money_outlined,
                 "The Month ",
                 "2,450",
-                
-                AppColors.topmiddle,AppColors.bottommiddle,
+
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
                 "+12 %",
               ),
               deisgndata(
@@ -58,7 +61,8 @@ class Showdatacontiwid extends StatelessWidget {
                 Icons.star_outline,
                 "Rating",
                 "4.9",
-                AppColors.topmiddle,AppColors.bottommiddle,
+                AppColors.topmiddle,
+                AppColors.bottommiddle,
                 "+0.2 ",
               ),
             ],
@@ -82,7 +86,8 @@ class Showdatacontiwid extends StatelessWidget {
       height: height,
       width: width,
       child: Card(
-        elevation: 4,
+        elevation: 7,
+        shadowColor: AppColors.bottommaingreen,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
         ),
@@ -90,6 +95,9 @@ class Showdatacontiwid extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.textWhite,
             borderRadius: BorderRadius.circular(20),
+            border: Border(
+              bottom: BorderSide(color: AppColors.bottommaingreen, width: 4),
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 20, top: 7),

@@ -85,7 +85,7 @@ class Studentapprovaldetail extends StatelessWidget {
                               "Pending",
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                color: AppColors.toplast
+                                color: AppColors.toplast,
                               ),
                             ),
                           ),
@@ -129,27 +129,27 @@ class Studentapprovaldetail extends StatelessWidget {
                 ),
                 const SizedBox(height: 25),
                 // Action Buttons
-                Row(
-                  children: [
-                    Expanded(
-                      child: _buildButton(
-                        "Approve",
-                        Icons.check_circle,
-                        AppColors.toplast,
-                        context,
-                      ),
-                    ),
-                    const SizedBox(width: 15),
-                    Expanded(
-                      child: _buildButton(
-                        "Reject",
-                        Icons.cancel_outlined,
-                        AppColors.toplast,
-                        context,
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     Expanded(
+                //       child: _buildButton(
+                //         "Approve",
+                //         Icons.check_circle,
+                //         AppColors.toplast,
+                //         context,
+                //       ),
+                //     ),
+                //     const SizedBox(width: 15),
+                //     Expanded(
+                //       child: _buildButton(
+                //         "Reject",
+                //         Icons.cancel_outlined,
+                //         AppColors.toplast,
+                //         context,
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 const SizedBox(height: 20),
               ],
             ),
@@ -182,11 +182,7 @@ class Studentapprovaldetail extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             details,
-            style: TextStyle(
-              fontSize: 16,
-              height: 1.5,
-              color: Colors.black,
-            ),
+            style: TextStyle(fontSize: 16, height: 1.5, color: Colors.black),
           ),
         ],
       ),
@@ -204,7 +200,10 @@ class Studentapprovaldetail extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         gradient: LinearGradient(
-          colors: [AppColors.toplast.withOpacity(0.25),AppColors.toplast.withOpacity(0.25)],
+          colors: [
+            AppColors.toplast.withOpacity(0.25),
+            AppColors.toplast.withOpacity(0.25),
+          ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

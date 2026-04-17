@@ -242,6 +242,12 @@ class Teacherapproval extends StatelessWidget {
                                     "Are you sure you want to reject this teacher?",
                                 firstbutton: "Cancel",
                                 secondbutton: "Reject",
+                                secondbuttoncolor: Color.fromARGB(
+                                  199,
+                                  239,
+                                  68,
+                                  68,
+                                ),
                               );
                             },
                             child: Container(
@@ -249,10 +255,10 @@ class Teacherapproval extends StatelessWidget {
                               height: height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: AppColors.toplast.withOpacity(0.25),
+                                color: const Color.fromARGB(199, 239, 68, 68),
                                 border: Border.all(
                                   width: 2,
-                                  color: AppColors.toplast,
+                                  color: const Color.fromARGB(199, 239, 68, 68),
                                 ),
                               ),
                               child: Center(
@@ -265,7 +271,7 @@ class Teacherapproval extends StatelessWidget {
                                       SizedBox(width: 10),
                                       Icon(
                                         Icons.cancel_outlined,
-                                        color: AppColors.toplast,
+                                        color: AppColors.textWhite,
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
@@ -273,7 +279,7 @@ class Teacherapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
-                                          color: AppColors.toplast,
+                                          color: AppColors.textWhite,
                                         ),
                                       ),
                                     ],

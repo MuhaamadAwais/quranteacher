@@ -67,7 +67,7 @@ class Recenttranstion extends StatelessWidget {
                               style: TextStyle(
                                 color: AppColors.toplast,
                                 fontWeight: FontWeight.bold,
-                               fontSize: 16
+                                fontSize: 16,
                               ),
                             ),
                           ],
@@ -79,6 +79,7 @@ class Recenttranstion extends StatelessWidget {
 
                 Expanded(
                   child: ListView(
+                    shrinkWrap: false,
                     children: [
                       transactiondesign(
                         width,
@@ -163,7 +164,7 @@ class Recenttranstion extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: AppColors.toplast.withOpacity(0.25),
-          border: Border.all(color: AppColors.toplast,width: 2)
+          border: Border.all(color: AppColors.toplast, width: 2),
         ),
         child: Row(
           children: [
@@ -212,7 +213,7 @@ class Recenttranstion extends StatelessWidget {
                   ),
                   Text(
                     date,
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: Colors.black, fontSize: 14),
                   ),
                 ],
               ),
@@ -234,7 +235,7 @@ class Recenttranstion extends StatelessWidget {
 
                   Text(
                     "Completed",
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: Colors.black, fontSize: 14),
                   ),
                 ],
               ),

@@ -4,7 +4,7 @@ import 'package:quranteacher/forgetpassword_feature/presentation/widgets/verific
 
 class Verificationpage extends StatelessWidget {
   final String role;
-  const Verificationpage({super.key,required this.role});
+  const Verificationpage({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +19,12 @@ class Verificationpage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                SizedBox(height: 30),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      width: width * 0.3,
+                      width: width * 0.25,
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
@@ -32,16 +32,16 @@ class Verificationpage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: width * 0.3,
+                      width: width * 0.25,
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: AppColors.toplast,
                       ),
                     ),
-            
+
                     Container(
-                      width: width * 0.3,
+                      width: width * 0.25,
                       height: height * 0.02,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
@@ -50,9 +50,9 @@ class Verificationpage extends StatelessWidget {
                     ),
                   ],
                 ),
-            
+
                 SizedBox(height: 30),
-                Verificationcontiwidget(role: role,),
+                Verificationcontiwidget(role: role),
               ],
             ),
           ),

@@ -13,8 +13,9 @@ class Newpasswordcontiwidget extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       elevation: 15,
+      shadowColor: AppColors.greenDark,
       child: Container(
-        width: width,
+        width: width * 0.9,
         height: height * 0.85,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -36,7 +37,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Text(
               "Create New Password",
               style: TextStyle(
@@ -46,7 +47,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 5),
             Text(
               "Your new password  must be different",
               style: TextStyle(
@@ -71,63 +72,67 @@ class Newpasswordcontiwidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "New Password",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                  Container(
-                    width: width,
-                    height: height * 0.07,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: AppColors.switchBackground.withOpacity(0.25),
-                      border: Border.all(
-                        width: 1.5,
-                        color: AppColors.switchBackground,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "New Password",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
-                    child: Center(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(
-                            Icons.lock_outline,
-                            color: AppColors.switchBackground,
-                            size: 28,
+                  ),
+                  SizedBox(height: 8),
+                  // Container(
+                  //   width: width * 0.88,
+                  //   height: height * 0.07,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(20),
+                  //     color: AppColors.switchBackground.withOpacity(0.25),
+                  //     border: Border.all(
+                  //       width: 2,
+                  //       color: AppColors.switchBackground,
+                  //     ),
+                  //   ),
+                  //   child: Center(
+                  // child:
+                  SizedBox(
+                    width: width * 0.87,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.lock_outline,
+                          color: AppColors.greenDark,
+                          size: 24,
+                        ),
+
+                        hintText: "........",
+
+                        filled: true,
+                        fillColor: Colors.white,
+
+                        // contentPadding: EdgeInsets.symmetric(
+                        //   vertical: 18,
+                        //   horizontal: 16,
+                        // ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(
+                            color: AppColors.toplast,
+                            width: 2,
                           ),
+                        ),
 
-                          hintText: "........",
-
-                          filled: true,
-                          fillColor: Colors.white,
-
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 18,
-                            horizontal: 16,
-                          ),
-
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide.none,
-                          ),
-
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(
-                              color: AppColors.toplast,
-                              width: 2,
-                            ),
-                          ),
-
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(
-                              color: Colors.grey.shade300,
-                              width: 1,
-                            ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          borderSide: BorderSide(
+                            color: Colors.grey.shade200,
+                            width: 2,
                           ),
                         ),
                       ),
@@ -138,35 +143,35 @@ class Newpasswordcontiwidget extends StatelessWidget {
             ),
 
             // confirm password
-            SizedBox(height: 10),
+            SizedBox(height: 2),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 0.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Confirm Password",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "Confirm Password",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
-                  Container(
-                    width: width,
+                  SizedBox(height: 8),
+
+                  SizedBox(
+                    width: width * 0.85,
                     height: height * 0.07,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: AppColors.switchBackground.withOpacity(0.25),
-                      border: Border.all(color: AppColors.switchBackground),
-                    ),
                     child: Center(
                       child: TextField(
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.lock_outlined,
-                            color: AppColors.switchBackground,
-                            size: 28,
+                            color: AppColors.greenDark,
+                            size: 24,
                           ),
 
                           hintText: "........",
@@ -174,18 +179,16 @@ class Newpasswordcontiwidget extends StatelessWidget {
                           filled: true,
                           fillColor: Colors.white,
 
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 18,
-                            horizontal: 16,
-                          ),
-
+                          // contentPadding: EdgeInsets.symmetric(
+                          //   vertical: 18,
+                          //   horizontal: 16,
+                          // ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(25),
                           ),
 
                           focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(25),
                             borderSide: BorderSide(
                               color: AppColors.toplast,
                               width: 2,
@@ -193,7 +196,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
                           ),
 
                           enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(25),
                             borderSide: BorderSide(
                               color: Colors.grey.shade300,
                               width: 1,
@@ -206,13 +209,13 @@ class Newpasswordcontiwidget extends StatelessWidget {
                 ],
               ),
             ),
-
+            SizedBox(height: 10),
             // conditions
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 height: height * 0.14,
-                width: width,
+                width: width * 0.9,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: AppColors.switchBackground.withOpacity(0.25),
@@ -312,7 +315,7 @@ class Newpasswordcontiwidget extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  width: width,
+                  width: width * 0.8,
                   height: height * 0.07,
                   decoration: BoxDecoration(
                     color: AppColors.toplast,

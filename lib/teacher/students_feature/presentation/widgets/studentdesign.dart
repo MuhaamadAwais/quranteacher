@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/students/studentdashboard_feature/presentation/widgets/chatmessage.dart';
 import 'package:quranteacher/teacher/students_feature/presentation/pages/studentmodelprogress.dart';
+import 'package:quranteacher/teacher/teacherdashboard_feature/presentation/widgets/teacherchatscreen.dart';
 
 class Studentdesign extends StatelessWidget {
   final Studentmodelprogress studentmodelprogress;
@@ -63,12 +65,16 @@ class Studentdesign extends StatelessWidget {
                             Text(studentmodelprogress.studentName),
                             Row(
                               children: [
-                                Icon(Icons.trending_up,size: 24,),
+                                Icon(Icons.trending_up, size: 24),
                                 Text(
                                   "${studentmodelprogress.totalClassess} Classes",
                                 ),
                                 SizedBox(width: 10),
-                                Icon(Icons.star,size: 24, color: AppColors.accent),
+                                Icon(
+                                  Icons.star,
+                                  size: 24,
+                                  color: AppColors.accent,
+                                ),
                                 Text(
                                   studentmodelprogress.teacherRating.toString(),
                                 ),
@@ -79,17 +85,27 @@ class Studentdesign extends StatelessWidget {
                       ),
 
                       Expanded(
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: AppColors.toplast.withOpacity(0.25),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.chat_bubble_outline,
-                              color: AppColors.toplast,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TeacherChatScreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: AppColors.toplast.withOpacity(0.25),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.chat_bubble_outline,
+                                color: AppColors.toplast,
+                              ),
                             ),
                           ),
                         ),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/commonbottomsheet.dart';
+import 'package:quranteacher/students/topcommon_container.dart';
 import 'package:quranteacher/teacher/content_feature/presentation/pages/addhadiescontentpage.dart';
 import 'package:quranteacher/teacher/content_feature/presentation/pages/addlessoncontentpage.dart';
 import 'package:quranteacher/teacher/content_feature/presentation/pages/addqurancontentpage.dart';
+import 'package:quranteacher/teacher/content_feature/presentation/widgets/publishcontent.dart';
 import 'package:quranteacher/teacher/content_feature/presentation/widgets/topcontent.dart';
 
 class Contentpages extends StatefulWidget {
@@ -25,7 +28,11 @@ class _ContentpagesState extends State<Contentpages> {
         body: SafeArea(
           child: Column(
             children: [
-              Topcontent(),
+              // Topcontent(),
+              TopcommonContainer(
+                title: "Content Management",
+                heights: height * 0.12,
+              ),
               SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -48,6 +55,7 @@ class _ContentpagesState extends State<Contentpages> {
                         color: Colors.white, // Selected tab background
                         borderRadius: BorderRadius.circular(20),
                       ),
+                      indicatorPadding: EdgeInsetsGeometry.all(4),
                       labelColor: Colors.black, // Selected text color
                       unselectedLabelColor:
                           Colors.white, // Unselected text color
@@ -379,41 +387,55 @@ class _ContentpagesState extends State<Contentpages> {
                           ),
                         ),
                         Spacer(),
-                        Container(
-                          width: 65,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: AppColors.islamicNavy700.withOpacity(0.15),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Edit",
-                              style: TextStyle(
-                                color: AppColors.islamicNavy700,
-                                fontSize: 10,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
 
+                        //work here
+                        // Container(
+                        //   width: 65,
+                        //   height: 25,
+                        //   decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(20),
+                        //     color: AppColors.textGreen,
+                        //   ),
+                        //   child: Center(
+                        //     child: Text(
+                        //       "Edit",
+                        //       style: TextStyle(
+                        //         color: AppColors.textWhite,
+                        //         fontSize: 10,
+                        //         fontWeight: FontWeight.bold,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                         SizedBox(width: 5),
 
-                        Container(
-                          width: 65,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: AppColors.switchBackground.withOpacity(0.15),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Delete",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 10,
-                                fontWeight: FontWeight.bold,
+                        GestureDetector(
+                          onTap: () {
+                            bottomsheet(
+                              context,
+                              secondbuttoncolor: const Color.fromARGB(
+                                255,
+                                227,
+                                88,
+                                88,
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 65,
+                            height: 25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color.fromARGB(255, 227, 88, 88),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Delete",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),

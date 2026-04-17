@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quranteacher/admin/bottomnavigationadmin.dart';
-import 'package:quranteacher/admin/user_feature/presentation/widgets/topcontiwid.dart';
 import 'package:quranteacher/admin/user_feature/presentation/widgets/toprolewid.dart';
 import 'package:quranteacher/commonbottomsheet.dart';
-import 'package:quranteacher/admin/user_feature/presentation/widgets/searchuserswid.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/students/topcommon_container.dart';
+import 'package:quranteacher/newcolors.dart';
 
 class Useradminpage extends StatefulWidget {
   const Useradminpage({super.key});
@@ -81,7 +78,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-                
+
                           contstdtea(
                             width,
                             height * 0.25,
@@ -89,7 +86,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-                
+
                           contstdtea(
                             width,
                             height * 0.25,
@@ -97,7 +94,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-                
+
                           contstdtea(
                             width,
                             height * 0.25,
@@ -108,7 +105,7 @@ class _UseradminpageState extends State<Useradminpage> {
                         ],
                       ),
                     ),
-                
+
                     SingleChildScrollView(
                       child: Column(
                         children: [
@@ -119,7 +116,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-                
+
                           contstdtea(
                             width,
                             height * 0.25,
@@ -127,7 +124,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-                
+
                           contstdtea(
                             width,
                             height * 0.25,
@@ -135,7 +132,7 @@ class _UseradminpageState extends State<Useradminpage> {
                             height * 0.06,
                           ),
                           SizedBox(height: height * 0.015),
-                
+
                           contstdtea(
                             width,
                             height * 0.25,
@@ -223,7 +220,7 @@ class _UseradminpageState extends State<Useradminpage> {
                         width: 55,
                         height: 20,
                         decoration: BoxDecoration(
-                          color: AppColors.toplast,
+                          color: Newcolors.green500,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Center(
@@ -314,14 +311,17 @@ class _UseradminpageState extends State<Useradminpage> {
                       SizedBox(width: width * 0.05),
                       GestureDetector(
                         onTap: () {
-                          bottomsheet(context);
+                          bottomsheet(
+                            context,
+                            secondbuttoncolor: Color.fromARGB(255, 212, 49, 49),
+                          );
                         },
                         child: Container(
                           width: widthmin,
                           height: heightmin,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: AppColors.toplast,
+                            color: const Color.fromARGB(255, 212, 49, 49),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),

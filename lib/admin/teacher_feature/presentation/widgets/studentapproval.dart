@@ -29,10 +29,7 @@ class Studentapproval extends StatelessWidget {
                 height: height * 0.1,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                      AppColors.topmiddle,
-                      AppColors.bottommiddle,
-                    ],
+                    colors: [AppColors.topmiddle, AppColors.bottommiddle],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomCenter,
                   ),
@@ -52,7 +49,11 @@ class Studentapproval extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: AppColors.toplast.withOpacity(0.25),
                         ),
-                        child: Icon(Icons.person, color: AppColors.textWhite,size: 24,),
+                        child: Icon(
+                          Icons.person,
+                          color: AppColors.textWhite,
+                          size: 24,
+                        ),
                       ),
 
                       Column(
@@ -245,6 +246,12 @@ class Studentapproval extends StatelessWidget {
                                     "Are you sure you want to reject this Student?",
                                 firstbutton: "Cancel",
                                 secondbutton: "Reject",
+                                secondbuttoncolor: Color.fromARGB(
+                                  199,
+                                  239,
+                                  68,
+                                  68,
+                                ),
                               );
                             },
                             child: Container(
@@ -252,10 +259,10 @@ class Studentapproval extends StatelessWidget {
                               height: height * 0.06,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: AppColors.toplast.withOpacity(0.25),
+                                color: const Color.fromARGB(199, 239, 68, 68),
                                 border: Border.all(
                                   width: 2,
-                                  color: AppColors.toplast,
+                                  color: const Color.fromARGB(199, 239, 68, 68),
                                 ),
                               ),
                               child: Center(
@@ -269,7 +276,7 @@ class Studentapproval extends StatelessWidget {
                                       SizedBox(width: 10),
                                       Icon(
                                         Icons.cancel_outlined,
-                                        color: AppColors.toplast,
+                                        color: AppColors.whiteBackground,
                                       ),
                                       const SizedBox(width: 10),
                                       const Text(
@@ -277,7 +284,7 @@ class Studentapproval extends StatelessWidget {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
-                                          color: AppColors.toplast,
+                                          color: AppColors.textWhite,
                                         ),
                                       ),
                                     ],
@@ -313,10 +320,7 @@ class Studentapproval extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             gradient: LinearGradient(
-                              colors: [
-                                AppColors.toplast,
-                                AppColors.toplast,
-                              ],
+                              colors: [AppColors.toplast, AppColors.toplast],
                             ),
                           ),
                           child: const Center(

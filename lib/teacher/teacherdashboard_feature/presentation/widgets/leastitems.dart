@@ -81,7 +81,7 @@ class _LeastitemsState extends State<Leastitems> {
                 AppColors.bottomlast,
                 () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) =>Contentpages(),)
+                    MaterialPageRoute(builder: (context) => Contentpages()),
                   );
                 },
               ),
@@ -112,7 +112,7 @@ class _LeastitemsState extends State<Leastitems> {
                 width * 0.43,
                 height * 0.22,
                 Icons.group_outlined,
-                "Student Requests",
+                "Student Request",
                 "All students",
                 AppColors.toplast,
                 AppColors.bottomlast,
@@ -189,7 +189,7 @@ class _LeastitemsState extends State<Leastitems> {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(14),
           gradient: LinearGradient(
             colors: [topcolor, bottomcolor],
             begin: Alignment.topLeft,
@@ -202,6 +202,12 @@ class _LeastitemsState extends State<Leastitems> {
               offset: Offset(0, isPressed ? 10 : 5),
             ),
           ],
+          border: Border(
+            bottom: BorderSide(
+              color: const Color.fromARGB(132, 211, 221, 212),
+              width: 8,
+            ),
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(12.0),

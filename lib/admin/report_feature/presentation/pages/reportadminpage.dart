@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/pages/dashboardadmin.dart';
+import 'package:quranteacher/admin/dashboard_feature/presentation/widgets/adminoperationwid.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/backstackreport.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/fullexportreport.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/growthchart.dart';
@@ -7,6 +9,7 @@ import 'package:quranteacher/admin/report_feature/presentation/widgets/maincontI
 import 'package:quranteacher/admin/report_feature/presentation/widgets/platformprofence.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/revenuebreakout.dart';
 import 'package:quranteacher/admin/report_feature/presentation/widgets/stacktextreport.dart';
+import 'package:quranteacher/admin/report_feature/presentation/widgets/topbackcontainer.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class Reportadminpage extends StatefulWidget {
@@ -25,19 +28,8 @@ class _ReportadminpageState extends State<Reportadminpage> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Stack(
-                children: [
-                  Backstackreport(),
-
-                  Positioned(
-                    top: 20,
-                    left: 20,
-                    right: 20,
-                    child: Stacktextreport(),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10),
+              TopcommonContainer(title: "Reports & Analytics", heights: 111),
+              SizedBox(height: 20),
               Fullexportreport(),
               SizedBox(height: 10),
               Maincontinerreport(),
