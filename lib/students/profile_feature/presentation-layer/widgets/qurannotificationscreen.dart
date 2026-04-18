@@ -92,94 +92,96 @@ class _QuranNotificationScreenState extends State<QuranNotificationScreen>
     final unreadCount = notifications.where((n) => !n['isRead']).length;
 
     return Scaffold(
-      backgroundColor: Color(0xFFF5F7FA),
-      body: FadeTransition(
-        opacity: _fadeAnimation,
-        child: SlideTransition(
-          position: _slideAnimation,
-          child: Column(
-            children: [
-              TopcommonContainer(
-                title: "Notifications",
-                subTitle: "Update Notifications: $unreadCount",
-              ),
-              SizedBox(height: 20),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: FadeTransition(
+          opacity: _fadeAnimation,
+          child: SlideTransition(
+            position: _slideAnimation,
+            child: Column(
+              children: [
+                TopcommonContainer(
+                  title: "Notifications",
+                  subTitle: "Update Notifications: $unreadCount",
+                ),
+                SizedBox(height: 20),
 
-              Expanded(
-                child: ListView(
-                  // 🔥 SINGLE ListView - سب scrollable
-                  physics: BouncingScrollPhysics(),
-                  padding: EdgeInsets.all(16),
-                  children: [
-                    // 1. Top Container
+                Expanded(
+                  child: ListView(
+                    // 🔥 SINGLE ListView - سب scrollable
+                    //physics: BouncingScrollPhysics(),
+                    padding: EdgeInsets.all(16),
+                    children: [
+                      // 1. Top Container
 
-                    // 2. Quick Actions (400ms animation)
-                    TweenAnimationBuilder<double>(
-                      duration: Duration(milliseconds: 400),
-                      tween: Tween(begin: 0, end: 1),
-                      curve: Curves.easeOut,
-                      builder: (context, value, child) {
-                        return Opacity(
-                          opacity: value,
-                          child: Transform.translate(
-                            offset: Offset(0, 20 * (1 - value)),
-                            child: child,
-                          ),
-                        );
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(16),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: _buildActionButton(
-                                icon: Icons.play_lesson,
-                                label: 'Continue Learning',
-                                color: Color(0xFF4CAF50),
-                              ),
-                            ),
-                            SizedBox(width: 12),
-                            Expanded(
-                              child: _buildActionButton(
-                                icon: Icons.quiz,
-                                label: 'Take Quiz',
-                                color: Newcolors.green400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-
-                    // 3. Notifications List (staggered 150ms)
-                    ...List.generate(
-                      notifications.length,
-                      (index) => TweenAnimationBuilder<double>(
-                        duration: Duration(milliseconds: 400 + (index * 150)),
+                      // 2. Quick Actions (400ms animation)
+                      TweenAnimationBuilder<double>(
+                        duration: Duration(milliseconds: 400),
                         tween: Tween(begin: 0, end: 1),
                         curve: Curves.easeOut,
                         builder: (context, value, child) {
-                          return Padding(
-                            padding: EdgeInsets.only(bottom: 12),
-                            child: Opacity(
-                              opacity: value,
-                              child: Transform.translate(
-                                offset: Offset(0, 20 * (1 - value)),
-                                child: child,
-                              ),
+                          return Opacity(
+                            opacity: value,
+                            child: Transform.translate(
+                              offset: Offset(0, 20 * (1 - value)),
+                              child: child,
                             ),
                           );
                         },
-                        child: _buildQuranNotification(notifications[index]),
+                        child: Container(
+                          padding: EdgeInsets.all(16),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: _buildActionButton(
+                                  icon: Icons.play_lesson,
+                                  label: 'Continue Learning',
+                                  color: Color(0xFF4CAF50),
+                                ),
+                              ),
+                              SizedBox(width: 12),
+                              Expanded(
+                                child: _buildActionButton(
+                                  icon: Icons.quiz,
+                                  label: 'Take Quiz',
+                                  color: Newcolors.green400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(height: 20),
 
-                    SizedBox(height: 20), // bottom padding
-                  ],
+                      // 3. Notifications List (staggered 150ms)
+                      ...List.generate(
+                        notifications.length,
+                        (index) => TweenAnimationBuilder<double>(
+                          duration: Duration(milliseconds: 400 + (index * 150)),
+                          tween: Tween(begin: 0, end: 1),
+                          curve: Curves.easeOut,
+                          builder: (context, value, child) {
+                            return Padding(
+                              padding: EdgeInsets.only(bottom: 12),
+                              child: Opacity(
+                                opacity: value,
+                                child: Transform.translate(
+                                  offset: Offset(0, 20 * (1 - value)),
+                                  child: child,
+                                ),
+                              ),
+                            );
+                          },
+                          child: _buildQuranNotification(notifications[index]),
+                        ),
+                      ),
+
+                      SizedBox(height: 20), // bottom padding
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

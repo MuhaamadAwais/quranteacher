@@ -82,20 +82,20 @@ class _RoleselectorState extends State<Roleselector>
           height: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
               colors: [
-                AppColors.topmaingreen,
                 AppColors.bottommaingreen,
+                const Color.fromARGB(255, 63, 142, 35),
                 // AppColors.backgroundEnd,
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(height: height * 0.08),
-            
+
                 // ✨ Premium Title Section
                 ScaleTransition(
                   scale: _headerAnimation,
@@ -103,18 +103,24 @@ class _RoleselectorState extends State<Roleselector>
                     opacity: _headerAnimation,
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 24),
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 24),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 30,
+                        vertical: 24,
+                      ),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            AppColors.toplast.withOpacity(0.25),
-                            AppColors.toplast.withOpacity(0.15),
+                            AppColors.topmaingreen,
+                            AppColors.bottommaingreen,
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(32),
-                        border: Border.all(color: AppColors.glowBorder, width: 1),
+                        border: Border.all(
+                          color: AppColors.glowBorder,
+                          width: 1,
+                        ),
                         // boxShadow: [
                         //   BoxShadow(
                         //     color: AppColors.islamicEmerald.withOpacity(0.4),
@@ -156,9 +162,9 @@ class _RoleselectorState extends State<Roleselector>
                     ),
                   ),
                 ),
-            
+
                 SizedBox(height: height * 0.06),
-            
+
                 // 🎓 Student Card
                 ScaleTransition(
                   scale: _studentcontainerAnimation,
@@ -169,27 +175,27 @@ class _RoleselectorState extends State<Roleselector>
                       width: width * 0.92,
                       height: height * 0.18,
                       isPressed: isstudentpressed,
-                      gradientColors: [
-                        AppColors.toplast,
-                        AppColors.toplast,
-                      ],
+                      gradientColors: [AppColors.toplast, AppColors.toplast],
                       iconColor: AppColors.textWhite,
                       icon: Icons.school_outlined,
                       title: "Student",
                       subtitle: "Learn Quran with expert teacher",
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => Login(role: "student")),
+                        MaterialPageRoute(
+                          builder: (_) => Login(role: "student"),
+                        ),
                       ),
                       onTapDown: () => setState(() => isstudentpressed = true),
                       onTapUp: () => setState(() => isstudentpressed = false),
-                      onTapCancel: () => setState(() => isstudentpressed = false),
+                      onTapCancel: () =>
+                          setState(() => isstudentpressed = false),
                     ),
                   ),
                 ),
-            
+
                 SizedBox(height: height * 0.025),
-            
+
                 // 👨‍🏫 Teacher Card
                 FadeTransition(
                   opacity: _teachercontainerAnimation,
@@ -202,10 +208,7 @@ class _RoleselectorState extends State<Roleselector>
                         width: width * 0.92,
                         height: height * 0.18,
                         isPressed: isteacherpressed,
-                        gradientColors: [
-                          AppColors.toplast,
-                          AppColors.toplast,
-                        ],
+                        gradientColors: [AppColors.toplast, AppColors.toplast],
                         iconBgColor: AppColors.islamicNavy700,
                         iconColor: AppColors.textWhite,
                         icon: Icons.supervisor_account_outlined,
@@ -213,9 +216,12 @@ class _RoleselectorState extends State<Roleselector>
                         subtitle: "Teach and inspire students",
                         onTap: () => Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => Login(role:"teacher")),
+                          MaterialPageRoute(
+                            builder: (_) => Login(role: "teacher"),
+                          ),
                         ),
-                        onTapDown: () => setState(() => isteacherpressed = true),
+                        onTapDown: () =>
+                            setState(() => isteacherpressed = true),
                         onTapUp: () => setState(() => isteacherpressed = false),
                         onTapCancel: () =>
                             setState(() => isteacherpressed = false),
@@ -223,13 +229,13 @@ class _RoleselectorState extends State<Roleselector>
                     ),
                   ),
                 ),
-            
+
                 SizedBox(height: height * 0.025),
-            
+
                 // ⚙️ Admin Card
                 ScaleTransition(
                   scale: _admincontainerAnimation,
-            
+
                   child: FadeTransition(
                     opacity: _admincontainerAnimation,
                     child: _buildRoleCard(
@@ -245,9 +251,7 @@ class _RoleselectorState extends State<Roleselector>
                       subtitle: "Manage platform and users",
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (_) => Login(role: "admin"),
-                        ),
+                        MaterialPageRoute(builder: (_) => Login(role: "admin")),
                       ),
                       onTapDown: () => setState(() => isadminpressed = true),
                       onTapUp: () => setState(() => isadminpressed = false),
@@ -255,7 +259,7 @@ class _RoleselectorState extends State<Roleselector>
                     ),
                   ),
                 ),
-            
+
                 SizedBox(height: height * 0.08),
               ],
             ),

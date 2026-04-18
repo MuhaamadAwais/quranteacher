@@ -52,109 +52,122 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: SlideTransition(
-            position: _slideAnimation,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      Topcontistd(),
-                      Positioned(
-                        top: 10,
-                        left: 10,
-                        right: 10,
-                        child: Namestd(),
-                      ),
-                      Positioned(
-                        top: 120,
-                        left: 10,
-                        right: 10,
-                        child: Maincontstd(),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-            
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(milliseconds: 400 + (0 * 150)),
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.translate(
-                          offset: Offset(0, 20 * (1 - value)),
-                          child: child,
-                        ),
-                      );
-                    },
-                    child: Progessstd(),
-                  ),
-            
-                  SizedBox(height: 10),
-            
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(milliseconds: 400 + (1 * 150)),
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.translate(
-                          offset: Offset(0, 20 * (1 - value)),
-                          child: child,
-                        ),
-                      );
-                    },
-                    child: Currentsurah(),
-                  ),
-                  SizedBox(height: 12),
-                  // 4. Text Access (450ms delay)
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(milliseconds: 400 + (2 * 150)),
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.translate(
-                          offset: Offset(0, 20 * (1 - value)),
-                          child: child,
-                        ),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 152),
-                      child: SizedBox(
-                        width: size.width * 0.45,
-                        child: Textacces(),
+        top: true,
+        bottom: false,
+        child: SingleChildScrollView(
+          // Move up
+          child: FadeTransition(
+            opacity: _fadeAnimation,
+            child: SlideTransition(
+              position: _slideAnimation,
+              child: Padding(
+                // ADD YE PADDING
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).padding.top * 0.5,
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 330, // Fixed height
+                      //color: Colors.transparent,
+                      child: Stack(
+                        children: [
+                          Topcontistd(),
+                          Positioned(
+                            top: 10,
+                            left: 10,
+                            right: 10,
+                            child: Namestd(),
+                          ),
+                          Positioned(
+                            top: 120,
+                            left: 10,
+                            right: 10,
+                            child: Maincontstd(),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-            
-                  TweenAnimationBuilder<double>(
-                    duration: const Duration(
-                      milliseconds: 700,
-                    ), // Same as Lastcontainer
-                    tween: Tween(begin: 0, end: 1),
-                    curve: Curves.easeOut,
-                    builder: (context, value, child) {
-                      return Opacity(
-                        opacity: value,
-                        child: Transform.scale(
-                          scale: 0.95 + (0.05 * value), // Same scale effect
-                          child: child,
+                    SizedBox(height: 10),
+
+                    TweenAnimationBuilder<double>(
+                      duration: const Duration(milliseconds: 400 + (0 * 150)),
+                      tween: Tween(begin: 0, end: 1),
+                      curve: Curves.easeOut,
+                      builder: (context, value, child) {
+                        return Opacity(
+                          opacity: value,
+                          child: Transform.translate(
+                            offset: Offset(0, 20 * (1 - value)),
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: Progessstd(),
+                    ),
+
+                    SizedBox(height: 10),
+
+                    TweenAnimationBuilder<double>(
+                      duration: const Duration(milliseconds: 400 + (1 * 150)),
+                      tween: Tween(begin: 0, end: 1),
+                      curve: Curves.easeOut,
+                      builder: (context, value, child) {
+                        return Opacity(
+                          opacity: value,
+                          child: Transform.translate(
+                            offset: Offset(0, 20 * (1 - value)),
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: Currentsurah(),
+                    ),
+                    SizedBox(height: 12),
+                    // 4. Text Access (450ms delay)
+                    TweenAnimationBuilder<double>(
+                      duration: const Duration(milliseconds: 400 + (2 * 150)),
+                      tween: Tween(begin: 0, end: 1),
+                      curve: Curves.easeOut,
+                      builder: (context, value, child) {
+                        return Opacity(
+                          opacity: value,
+                          child: Transform.translate(
+                            offset: Offset(0, 20 * (1 - value)),
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 152),
+                        child: SizedBox(
+                          width: size.width * 0.45,
+                          child: Textacces(),
                         ),
-                      );
-                    },
-                    child: Quickaccesconti(),
-                  ),
-            
-                  SizedBox(height: 30),
-                ],
+                      ),
+                    ),
+
+                    TweenAnimationBuilder<double>(
+                      duration: const Duration(
+                        milliseconds: 700,
+                      ), // Same as Lastcontainer
+                      tween: Tween(begin: 0, end: 1),
+                      curve: Curves.easeOut,
+                      builder: (context, value, child) {
+                        return Opacity(
+                          opacity: value,
+                          child: Transform.scale(
+                            scale: 0.95 + (0.05 * value), // Same scale effect
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: Quickaccesconti(),
+                    ),
+
+                    SizedBox(height: 30),
+                  ],
+                ),
               ),
             ),
           ),
@@ -163,4 +176,3 @@ class _StudentdashboardpageState extends State<Studentdashboardpage>
     );
   }
 }
-

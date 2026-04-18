@@ -40,8 +40,7 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
-      // appBar: AppBar(
+      backgroundColor: Colors.white, // appBar: AppBar(
       //   leading: IconButton(
       //     icon: const Icon(Icons.arrow_back, color: Colors.white),
       //     onPressed: () => Navigator.pop(context),
@@ -63,122 +62,124 @@ class _PrivacySecurityScreenState extends State<PrivacySecurityScreen>
       //   backgroundColor: const Color(0xFF40C4FF),
       //   elevation: 0,
       // ),
-      body: FadeTransition(
-        opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
-        child: SlideTransition(
-          position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TopcommonContainer(title: "Privacy & Security"),
-                const SizedBox(height: 24),
-                // 🔥 1. Header Card (400ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 400),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.translate(
-                        offset: Offset(0, 20 * (1 - value)),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: _buildHeaderCard(),
+      body: SafeArea(
+        child: FadeTransition(
+          opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
+          child: SlideTransition(
+            position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TopcommonContainer(title: "Privacy & Security"),
+                  const SizedBox(height: 24),
+                  // 🔥 1. Header Card (400ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 400),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.translate(
+                          offset: Offset(0, 20 * (1 - value)),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: _buildHeaderCard(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
-                // 🔥 2. Security Status (550ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 550),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.translate(
-                        offset: Offset(0, 20 * (1 - value)),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: _buildSecurityStatus(),
+                  // 🔥 2. Security Status (550ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 550),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.translate(
+                          offset: Offset(0, 20 * (1 - value)),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: _buildSecurityStatus(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
-                // 🔥 3. Privacy Section Title (700ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 700),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.translate(
-                        offset: Offset(0, 20 * (1 - value)),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: _buildPrivacySection(),
+                  // 🔥 3. Privacy Section Title (700ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 700),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.translate(
+                          offset: Offset(0, 20 * (1 - value)),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: _buildPrivacySection(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
-                // 🔥 4. Data Usage Section (850ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 850),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.scale(
-                        scale: 0.95 + (0.05 * value),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: _buildDataUsageSection(),
+                  // 🔥 4. Data Usage Section (850ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 850),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.scale(
+                          scale: 0.95 + (0.05 * value),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: _buildDataUsageSection(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
-                // 🔥 5. Legal Links (1000ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 1000),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.translate(
-                        offset: Offset(0, 20 * (1 - value)),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: _buildLegalLinks(),
+                  // 🔥 5. Legal Links (1000ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 1000),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.translate(
+                          offset: Offset(0, 20 * (1 - value)),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      child: _buildLegalLinks(),
+                    ),
                   ),
-                ),
-                SizedBox(height: 30),
-              ],
+                  SizedBox(height: 30),
+                ],
+              ),
             ),
           ),
         ),

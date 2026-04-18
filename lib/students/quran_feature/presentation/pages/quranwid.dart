@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranapimodel.dart';
+import 'package:quranteacher/students/quran_feature/presentation/widget/quranHadithcard.dart';
 import 'package:quranteacher/students/quran_feature/presentation/widget/quranlist.dart';
 import 'package:quranteacher/students/quran_feature/presentation/widget/qurantex.dart';
 import 'package:quranteacher/students/quran_feature/presentation/widget/qurantopconti.dart';
@@ -94,17 +95,23 @@ class _QuranwidState extends State<Quranwid>
               Stack(
                 children: [
                   Qurantopconti(),
-                  Positioned(top: 40, left: 20, child: Qurantex()),
+                  Positioned(top: 20, left: 20, child: Qurantex()),
+                  Positioned(
+                    top: 80,
+                    left: 20,
+                    right: 20,
+                    child: Quranhadithcard(),
+                  ),
                 ],
               ),
-            
+
               SizedBox(height: 10),
               Searchquran(),
               SizedBox(height: 10),
-            
+
               // 🔥 2. Quran List - Staggered Animation (index * 150ms)
               Quranlist(quranapimodel: quranapimodel),
-            
+
               SizedBox(height: 20),
             ],
           ),

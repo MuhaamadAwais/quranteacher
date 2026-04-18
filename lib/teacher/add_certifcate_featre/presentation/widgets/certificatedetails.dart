@@ -12,11 +12,8 @@ class Certificatedetails extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         width: width,
-<<<<<<< HEAD
-        height: height * 0.72,
-=======
+
         height: height * 0.73,
->>>>>>> 47e56893d6ed97fbddbd3943018d66fad7435912
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(20),

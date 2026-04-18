@@ -38,7 +38,7 @@ class _SucessfullyypageState extends State<Sucessfullyypage> {
                         height: height * 0.6,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.textWhite,
+                          color: const Color.fromARGB(255, 200, 230, 201),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,

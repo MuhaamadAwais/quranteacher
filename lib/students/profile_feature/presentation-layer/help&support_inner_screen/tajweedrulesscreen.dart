@@ -10,7 +10,7 @@ class TajweedRulesScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xFFF8FAFC),
+      backgroundColor: Colors.white,
       // appBar: AppBar(
       //   title: Text('Tajweed Rules', style: TextStyle(color: Colors.white)),
       //   backgroundColor: Color(0xFFE91E63),

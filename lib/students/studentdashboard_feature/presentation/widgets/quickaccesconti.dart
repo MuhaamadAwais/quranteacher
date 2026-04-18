@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/hadits/presentation/pages/haditspage.dart';
 import 'package:quranteacher/students/lesson_feature/presentation_layer/screens/lessonscreen.dart';
 import 'package:quranteacher/students/quran_feature/presentation/pages/quranwid.dart';
@@ -116,7 +115,7 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => StudentAttendanceScreen(),
+                      builder: (context) => TeacherRequestScreen(),
                     ),
                   );
                 },
@@ -133,7 +132,7 @@ class _QuickaccescontiState extends State<Quickaccesconti> {
                 () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => TeacherRequestScreen(),
+                      builder: (context) => StudentAttendanceScreen(),
                     ),
                   );
                 },

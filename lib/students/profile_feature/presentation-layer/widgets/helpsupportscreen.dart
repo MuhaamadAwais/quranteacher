@@ -43,7 +43,7 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
+      backgroundColor: Colors.white,
       // // appBar: AppBar(
       // //   leading: IconButton(
       // //     icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -66,80 +66,82 @@ class _HelpSupportScreenState extends State<HelpSupportScreen>
       // //   backgroundColor: const Color(0xFF40C4FF),
       //   elevation: 0,
       // ),
-      body: FadeTransition(
-        opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
-        child: SlideTransition(
-          position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TopcommonContainer(title: "Help & Support"),
+      body: SafeArea(
+        child: FadeTransition(
+          opacity: _fadeAnimation, // 🔥 MAIN FADE (LessonScreen exact)
+          child: SlideTransition(
+            position: _slideAnimation, // 🔥 MAIN SLIDE (LessonScreen exact)
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TopcommonContainer(title: "Help & Support"),
 
-                const SizedBox(height: 30),
-                // 🔥 1. Welcome Card (400ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 400),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.translate(
-                        offset: Offset(0, 20 * (1 - value)),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 24, right: 24),
-                    child: _buildWelcomeCard(),
+                  const SizedBox(height: 30),
+                  // 🔥 1. Welcome Card (400ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 400),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.translate(
+                          offset: Offset(0, 20 * (1 - value)),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 24, right: 24),
+                      child: _buildWelcomeCard(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
-                // 🔥 2. Quick Help Section (550ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 550),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.translate(
-                        offset: Offset(0, 20 * (1 - value)),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 24, right: 24),
-                    child: _buildQuickHelpSection(context),
+                  // 🔥 2. Quick Help Section (550ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 550),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.translate(
+                          offset: Offset(0, 20 * (1 - value)),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 24, right: 24),
+                      child: _buildQuickHelpSection(context),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
-                // 🔥 3. FAQ Section (700ms)
-                TweenAnimationBuilder<double>(
-                  duration: const Duration(milliseconds: 700),
-                  tween: Tween(begin: 0, end: 1),
-                  curve: Curves.easeOut,
-                  builder: (context, value, child) {
-                    return Opacity(
-                      opacity: value,
-                      child: Transform.scale(
-                        scale: 0.95 + (0.05 * value),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 24, right: 24),
-                    child: _buildFaqSection(),
+                  // 🔥 3. FAQ Section (700ms)
+                  TweenAnimationBuilder<double>(
+                    duration: const Duration(milliseconds: 700),
+                    tween: Tween(begin: 0, end: 1),
+                    curve: Curves.easeOut,
+                    builder: (context, value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.scale(
+                          scale: 0.95 + (0.05 * value),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 24, right: 24),
+                      child: _buildFaqSection(),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

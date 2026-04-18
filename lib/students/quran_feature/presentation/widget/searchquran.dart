@@ -25,11 +25,11 @@ class Searchquran extends StatelessWidget {
               //border: InputBorder.none,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: Newcolors.green500),
+                borderSide: BorderSide(color: Colors.grey.shade300, width: 2),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: Newcolors.green300),
+                borderSide: BorderSide(color: Newcolors.green600, width: 2),
               ),
               hint: Text(
                 "Search Surah...",

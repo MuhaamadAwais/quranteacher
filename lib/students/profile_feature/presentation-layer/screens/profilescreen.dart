@@ -54,64 +54,66 @@ class _ProfilescreenState extends State<Profilescreen> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Topcontainer(size: size),
-            SizedBox(height: height * 0.02),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Topcontainer(size: size),
+              SizedBox(height: height * 0.02),
 
-            // Profile Cards - NO ANIMATION
-            _buildCard(
-              icon: Icons.person_2_outlined,
-              title: "Edit Profile",
-              color: null,
-              onTap: openBottomSheet,
-            ),
-            SizedBox(height: height * 0.01),
-            _buildCard(
-              icon: Icons.notifications_none,
-              title: "Notification",
-              color: AppColors.bottommaingreen,
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => QuranNotificationScreen(),
+              // Profile Cards - NO ANIMATION
+              _buildCard(
+                icon: Icons.person_2_outlined,
+                title: "Edit Profile",
+                color: null,
+                onTap: openBottomSheet,
+              ),
+              SizedBox(height: height * 0.01),
+              _buildCard(
+                icon: Icons.notifications_none,
+                title: "Notification",
+                color: AppColors.bottommaingreen,
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => QuranNotificationScreen(),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: height * 0.01),
-            _buildCard(
-              icon: Icons.privacy_tip_sharp,
-              title: "Privacy & Security",
-              color: Colors.deepPurpleAccent,
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PrivacySecurityScreen(),
+              SizedBox(height: height * 0.01),
+              _buildCard(
+                icon: Icons.privacy_tip_sharp,
+                title: "Privacy & Security",
+                color: Colors.deepPurpleAccent,
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PrivacySecurityScreen(),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: height * 0.01),
-            _buildCard(
-              icon: Icons.help_outline_outlined,
-              title: "Help & Support",
-              color: Colors.deepOrangeAccent,
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => HelpSupportScreen()),
+              SizedBox(height: height * 0.01),
+              _buildCard(
+                icon: Icons.help_outline_outlined,
+                title: "Help & Support",
+                color: Colors.deepOrangeAccent,
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => HelpSupportScreen()),
+                ),
               ),
-            ),
 
-            SizedBox(height: height * 0.04),
+              SizedBox(height: height * 0.04),
 
-            // Profile Stats Section
-            _buildProfileStatsSection(context, size),
-            SizedBox(height: height * 0.03),
+              // Profile Stats Section
+              _buildProfileStatsSection(context, size),
+              SizedBox(height: height * 0.03),
 
-            // Logout Button - NO ANIMATION
-            _buildLogoutButton(size),
-            SizedBox(height: height * 0.05),
-          ],
+              // Logout Button - NO ANIMATION
+              _buildLogoutButton(size),
+              SizedBox(height: height * 0.05),
+            ],
+          ),
         ),
       ),
     );

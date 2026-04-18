@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/newcolors.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class StudentHomeworkScreen extends StatefulWidget {
@@ -82,7 +84,10 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
             child: Column(
               children: [
                 // SizedBox(height: height * 0.05),
-                TopcommonContainer(title: "📚 My Homework"),
+                TopcommonContainer(
+                  title: "📚 My Homework",
+                  heights: height * 0.13,
+                ),
                 // 🔥 1. Stats Header (400ms)
                 TweenAnimationBuilder<double>(
                   duration: Duration(milliseconds: 400),
@@ -99,19 +104,11 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                     padding: const EdgeInsets.all(16.0),
                     child: Container(
                       width: double.infinity,
-        
+
                       padding: EdgeInsets.all(24),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.blue[400]!,
-                            Colors.blue[300]!,
-                            Colors.blue[100]!,
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
+                        gradient: AppColors.icongradient,
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -120,7 +117,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                             'Pending',
                             '$pendingCount',
                             Icons.pending_actions,
-                            Colors.orange,
+                            Colors.green,
                           ),
                           _buildStatCard(
                             'Completed',
@@ -133,7 +130,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                     ),
                   ),
                 ),
-        
+
                 // 🔥 2. Homework List (staggered index * 150ms)
                 Expanded(
                   child: TweenAnimationBuilder<double>(
@@ -150,7 +147,8 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                     child: ListView.separated(
                       padding: EdgeInsets.all(20),
                       itemCount: homework.length,
-                      separatorBuilder: (context, index) => SizedBox(height: 12),
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 12),
                       itemBuilder: (context, index) {
                         final task = homework[index];
                         return TweenAnimationBuilder<double>(
@@ -190,7 +188,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
         ),
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.blue[600],
+            gradient: AppColors.icongradient,
             borderRadius: BorderRadius.circular(30),
           ),
           child: FloatingActionButton.extended(
@@ -227,7 +225,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color.fromARGB(97, 129, 181, 118),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -236,6 +234,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
             offset: Offset(0, 4),
           ),
         ],
+        border: Border.all(color: Colors.white54, width: 1.2),
       ),
       child: Column(
         children: [
@@ -246,14 +245,14 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.black87,
+              color: Colors.white70,
             ),
           ),
           Text(
             label,
             style: TextStyle(
               fontSize: 14,
-              color: Colors.grey[600],
+              color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -289,8 +288,8 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                   height: 50,
                   decoration: BoxDecoration(
                     color: task['completed']
-                        ? Colors.green[50]
-                        : Colors.orange[50],
+                        ? Colors.lightGreen
+                        : AppColors.textGreen,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Center(
@@ -301,7 +300,7 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                         fontWeight: FontWeight.bold,
                         color: task['completed']
                             ? Colors.green[700]
-                            : Colors.orange[700],
+                            : AppColors.textWhite,
                       ),
                     ),
                   ),
@@ -341,13 +340,13 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                           Icon(
                             Icons.schedule,
                             size: 16,
-                            color: Colors.red[400],
+                            color: Newcolors.green900,
                           ),
                           SizedBox(width: 4),
                           Text(
                             'Due: ${task['due']}',
                             style: TextStyle(
-                              color: Colors.red[600],
+                              color: Newcolors.green500,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -360,7 +359,9 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                           value: task['progress'] / 100,
                           backgroundColor: Colors.grey[200],
                           valueColor: AlwaysStoppedAnimation<Color>(
-                            task['completed'] ? Colors.green : Colors.blue,
+                            task['completed']
+                                ? Colors.green
+                                : AppColors.bottomlast,
                           ),
                         ),
                       ),
@@ -382,13 +383,13 @@ class _StudentHomeworkScreenState extends State<StudentHomeworkScreen>
                                 vertical: 6,
                               ),
                               decoration: BoxDecoration(
-                                color: Colors.blue[50],
+                                color: const Color.fromARGB(172, 24, 99, 28),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
                                 'Mark Complete',
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: Newcolors.white,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 12,
                                 ),

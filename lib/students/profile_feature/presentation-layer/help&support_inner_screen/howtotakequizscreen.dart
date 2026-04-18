@@ -10,93 +10,95 @@ class HowToTakeQuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xFFF8FAFC),
+      backgroundColor: Colors.white,
       // appBar: AppBar(
       //   title: Text('Learn Quran Guide', style: TextStyle(color: Colors.white)),
       //   backgroundColor: Color(0xFF4CAF50),
       //   elevation: 0,
       // ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(0),
-        child: Column(
-          children: [
-            TopcommonContainer(title: 'Learn Quran Guide'),
-            SizedBox(height: 24),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(0),
+          child: Column(
+            children: [
+              TopcommonContainer(title: 'Learn Quran Guide'),
+              SizedBox(height: 24),
 
-            /// Header
-            Container(
-              padding: EdgeInsets.all(40),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    const Color.fromARGB(255, 13, 56, 16),
-                    Newcolors.green800,
-                    const Color.fromARGB(255, 81, 136, 85),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                children: [
-                  Icon(Icons.menu_book, color: Colors.white, size: 64),
-                  SizedBox(height: 16),
-                  Text(
-                    'Learn Quran Guide',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+              /// Header
+              Container(
+                padding: EdgeInsets.all(40),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color.fromARGB(255, 13, 56, 16),
+                      Newcolors.green800,
+                      const Color.fromARGB(255, 81, 136, 85),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
-                ],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    Icon(Icons.menu_book, color: Colors.white, size: 64),
+                    SizedBox(height: 16),
+                    Text(
+                      'Learn Quran Guide',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 24),
+              SizedBox(height: 24),
 
-            /// Steps
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: _buildStepCard(
-                Icons.timer,
-                '1. Start with Intention',
-                'Start with Intention & Focus and applying it in life.',
-                size,
+              /// Steps
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: _buildStepCard(
+                  Icons.timer,
+                  '1. Start with Intention',
+                  'Start with Intention & Focus and applying it in life.',
+                  size,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: _buildStepCard(
-                Icons.check_circle,
-                '2. and applying it in life.',
-                'Even 5-10 minutes a day consistently is better than long',
-                size,
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: _buildStepCard(
+                  Icons.check_circle,
+                  '2. and applying it in life.',
+                  'Even 5-10 minutes a day consistently is better than long',
+                  size,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: _buildStepCard(
-                Icons.stars,
-                '3. Understand the Meaning ',
-                'Learn the translation of verses in your language.',
-                size,
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: _buildStepCard(
+                  Icons.stars,
+                  '3. Understand the Meaning ',
+                  'Learn the translation of verses in your language.',
+                  size,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: _buildStepCard(
-                Icons.repeat,
-                '4. Repeat and Revise',
-                'Repeat what you’ve learned every day.',
-                size,
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: _buildStepCard(
+                  Icons.repeat,
+                  '4. Repeat and Revise',
+                  'Repeat what you’ve learned every day.',
+                  size,
+                ),
               ),
-            ),
 
-            SizedBox(height: 24),
+              SizedBox(height: 24),
 
-            /// Start Practice Button
-          ],
+              /// Start Practice Button
+            ],
+          ),
         ),
       ),
     );
