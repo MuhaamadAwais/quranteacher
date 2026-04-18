@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "478781953349",
+    "project_id": "islamic-learning-project",
+    "storage_bucket": "islamic-learning-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478781953349:android:524f25a32d422b5e05da2c",
+        "android_client_info": {
+          "package_name": "com.example.quranteacher"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCp0eR6q9UFt6VJlG3dK40fMbXjvX-tSyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
