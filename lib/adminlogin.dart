@@ -1,28 +1,27 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/admindetailpage.dart';
-import 'package:quranteacher/admin/bottomnavigationadmin.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/pages/forgotpasswordpage.dart';
 import 'package:quranteacher/newcolors.dart';
-import 'package:quranteacher/register.dart';
 import 'package:quranteacher/students/appanimations.dart';
-import 'package:quranteacher/students/studentdetailform.dart';
-import 'package:quranteacher/teacher/teacherdet_features/presentation/pages/teacherdetailspage.dart';
 
-class Login extends StatefulWidget {
+class Adminlogin extends StatefulWidget {
   final String role;
-  const Login({super.key, required this.role});
+  const Adminlogin({super.key, required this.role});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Adminlogin> createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> with TickerProviderStateMixin {
+class _LoginState extends State<Adminlogin> with TickerProviderStateMixin {
+  //textfiled controller
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   late AnimationController _controller;
   late Animation<double> loginAnimation;
   late Animation<Offset> scale;
-  bool isvisible = false;
+  bool isvisible = true;
 
   @override
   void initState() {
@@ -153,6 +152,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 ),
                                 child: Center(
                                   child: TextField(
+                                    controller: emailController,
                                     // autofocus: true,
                                     keyboardType: TextInputType.emailAddress,
                                     keyboardAppearance: Brightness.light,
@@ -189,6 +189,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                                 ),
                                 child: Center(
                                   child: TextField(
+                                    controller: passwordController,
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
                                       prefixIcon: Icon(Icons.lock_outline),
@@ -246,33 +247,13 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
 
                             GestureDetector(
                               onTap: () {
-                                if (widget.role == "student") {
-                                  Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => StudentDetailForm(),
-                                    ),
-                                    (route) => false,
-                                  );
-                                } else if (widget.role == "teacher") {
-                                  Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          Teacherdetailspage(),
-                                    ),
-                                    (route) => false,
-                                  );
-                                } else if (widget.role == "admin") {
-                                  Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          Admindetailpage(),
-                                    ),
-                                    (route) => false,
-                                  );
-                                }
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Admindetailpage(),
+                                  ),
+                                  (route) => false,
+                                );
                               },
                               child: Card(
                                 elevation: 80,
@@ -387,40 +368,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                     ),
                   ),
 
-                  SizedBox(height: height * 0.03),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "Don't have an account?",
-                          style: TextStyle(
-                            color: AppColors.textWhite,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-
-                        TextSpan(
-                          text: " register now",
-                          style: TextStyle(
-                            color: Colors.grey[400],
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      Register(role: widget.role),
-                                ),
-                              );
-                            },
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: height * 0.05),
+                  SizedBox(height: height * 0.04),
                 ],
               ),
             ),

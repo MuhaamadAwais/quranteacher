@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:quranteacher/appcolors.dart';
 
-class Profileditbottomsheet extends StatelessWidget {
+class Profileditbottomsheet extends StatefulWidget {
   final TextEditingController usernameController;
   final TextEditingController addressController;
   final String imageUrl;
+  final ValueChanged<XFile> onImagePicked;
   final VoidCallback? onSave;
 
   const Profileditbottomsheet({
@@ -13,8 +17,14 @@ class Profileditbottomsheet extends StatelessWidget {
     required this.addressController,
     required this.imageUrl,
     this.onSave,
+    required this.onImagePicked,
   });
 
+  @override
+  State<Profileditbottomsheet> createState() => _ProfileditbottomsheetState();
+}
+
+class _ProfileditbottomsheetState extends State<Profileditbottomsheet> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -112,10 +122,10 @@ class Profileditbottomsheet extends StatelessWidget {
                       child: CircleAvatar(
                         radius: 36,
                         backgroundColor: Colors.white,
-                        backgroundImage: imageUrl.isNotEmpty
-                            ? NetworkImage(imageUrl)
+                        backgroundImage: widget.imageUrl.isNotEmpty
+                            ? FileImage(File(widget.imageUrl))
                             : null,
-                        child: imageUrl.isEmpty
+                        child: widget.imageUrl.isEmpty
                             ? Icon(
                                 Icons.person_2_outlined,
                                 size: 36,
@@ -131,9 +141,12 @@ class Profileditbottomsheet extends StatelessWidget {
                     bottom: -8,
                     right: -8,
                     child: GestureDetector(
-                      onTap: () {
-                        print("Camera tapped!");
-                        // Add image picker here
+                      onTap: () async {
+                        final picker = ImagePicker();
+                        final image = await picker.pickImage(
+                          source: ImageSource.gallery,
+                        );
+                        widget.onImagePicked(image ?? XFile(''));
                       },
                       child: Container(
                         padding: EdgeInsets.all(8),
@@ -165,7 +178,7 @@ class Profileditbottomsheet extends StatelessWidget {
 
             /// Text Fields
             _buildGlassTextField(
-              controller: usernameController,
+              controller: widget.usernameController,
               labelText: "Username",
               prefixIcon: Icons.person_outline,
               color: Color(0xFF667eea),
@@ -174,7 +187,7 @@ class Profileditbottomsheet extends StatelessWidget {
             SizedBox(height: 16),
 
             _buildGlassTextField(
-              controller: addressController,
+              controller: widget.addressController,
               labelText: "Address",
               prefixIcon: Icons.location_on_outlined,
               color: Color(0xFF764ba2),
@@ -198,7 +211,7 @@ class Profileditbottomsheet extends StatelessWidget {
                 ],
               ),
               child: ElevatedButton(
-                onPressed: onSave,
+                onPressed: widget.onSave,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
@@ -208,7 +221,7 @@ class Profileditbottomsheet extends StatelessWidget {
                   elevation: 0,
                 ),
                 child: Text(
-                  "Save Changes",
+                  "Save ",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,

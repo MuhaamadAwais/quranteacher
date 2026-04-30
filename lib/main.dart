@@ -1,8 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quranteacher/appcolors.dart';
+import 'package:quranteacher/auth_login_feature/bloc/auth_repository.dart';
+import 'package:quranteacher/auth_login_feature/bloc/authenticator_bloc.dart';
 import 'package:quranteacher/firebase_options.dart';
 import 'package:quranteacher/splashscreenapp.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/bloc/ProfileRepository.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/bloc/profile_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,14 +22,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => AuthenticatorBloc(AuthRepository())),
+        BlocProvider(create: (context) => ProfileBloc(ProfileRepository())),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
 
-      home: Splashscreenapp(),
+        home: Splashscreenapp(),
+      ),
     );
   }
 }

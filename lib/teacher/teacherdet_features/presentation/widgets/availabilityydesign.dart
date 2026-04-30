@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 
 class Availabilityydesign extends StatefulWidget {
-  const Availabilityydesign({super.key});
+  //final String title;
+  final Function(String) onTimeSlotSelected;
+
+  const Availabilityydesign({super.key, required this.onTimeSlotSelected});
 
   @override
   State<Availabilityydesign> createState() => _AvailabilityydesignState();
@@ -19,12 +22,13 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
     // Helper to create each time slot container
     Widget timeContainer(String label) {
       bool isSelected = selectedTime == label;
-
+      //print(selectedTime);
       return GestureDetector(
         onTap: () {
           setState(() {
             selectedTime = label;
           });
+          widget.onTimeSlotSelected(selectedTime);
         },
         child: Container(
           width: width * 0.38,
@@ -53,8 +57,7 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         elevation: 5,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
@@ -72,7 +75,7 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color:AppColors.toplast.withOpacity(0.25),
+                        color: AppColors.toplast.withOpacity(0.25),
                       ),
                       child: Center(
                         child: Icon(
@@ -108,10 +111,7 @@ class _AvailabilityydesignState extends State<Availabilityydesign> {
                 // Second row: Evening & Night
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    timeContainer("Evening"),
-                    timeContainer("Night"),
-                  ],
+                  children: [timeContainer("Evening"), timeContainer("Night")],
                 ),
                 const SizedBox(height: 10),
               ],

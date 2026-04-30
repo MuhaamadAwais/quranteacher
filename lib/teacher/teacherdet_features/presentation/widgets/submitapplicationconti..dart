@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Submitapplicationconti extends StatelessWidget {
   final VoidCallback ontabs;
-  const Submitapplicationconti({super.key,required this.ontabs});
+  const Submitapplicationconti({super.key, required this.ontabs});
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -19,7 +18,7 @@ class Submitapplicationconti extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
-              colors: [AppColors.toplast,AppColors.toplast],
+              colors: [AppColors.toplast, AppColors.toplast],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -30,7 +29,7 @@ class Submitapplicationconti extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                  fontSize: 18
+                fontSize: 18,
               ),
             ),
           ),

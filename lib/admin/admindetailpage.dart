@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/admin/bottomnavigationadmin.dart';
-import 'package:quranteacher/admin/dashboard_feature/presentation/pages/dashboardadmin.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/widgets/designscontitextfiled.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/widgets/iconcontidesign.dart';
 import 'package:quranteacher/teacher/teacherdet_features/presentation/widgets/submitapplicationconti..dart';
@@ -13,6 +12,10 @@ class Admindetailpage extends StatefulWidget {
 }
 
 class _AdmindetailpageState extends State<Admindetailpage> {
+  final TextEditingController fullNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -31,6 +34,7 @@ class _AdmindetailpageState extends State<Admindetailpage> {
 
               /// Name
               DesignsContiTextField(
+                controller: fullNameController,
                 height: height * 0.2,
                 title: "Full Name",
                 hint: "Enter your name",
@@ -39,6 +43,7 @@ class _AdmindetailpageState extends State<Admindetailpage> {
 
               /// Age
               DesignsContiTextField(
+                controller: emailController,
                 height: height * 0.2,
                 title: "Email",
                 hint: "exampe@gmail.com",
@@ -47,6 +52,7 @@ class _AdmindetailpageState extends State<Admindetailpage> {
 
               /// Learning Type
               DesignsContiTextField(
+                controller: passwordController,
                 height: height * 0.2,
                 title: "password",
                 hint: "unique password",
@@ -56,7 +62,9 @@ class _AdmindetailpageState extends State<Admindetailpage> {
               Submitapplicationconti(
                 ontabs: () {
                   Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => Bottomnavigationadmin()),
+                    MaterialPageRoute(
+                      builder: (context) => Bottomnavigationadmin(),
+                    ),
                     (route) => false,
                   );
                 },

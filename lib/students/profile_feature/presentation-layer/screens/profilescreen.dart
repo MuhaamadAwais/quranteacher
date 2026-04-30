@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/login.dart';
+import 'package:quranteacher/auth_login_feature/screen/login.dart';
 import 'package:quranteacher/newcolors.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/bloc/profile_bloc.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/bloc/profile_state.dart';
+import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/LogoutDialog.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/helpsupportscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/privacysecurityscreen.dart';
 import 'package:quranteacher/students/profile_feature/presentation-layer/widgets/profilecateg.dart';
@@ -19,6 +24,7 @@ class Profilescreen extends StatefulWidget {
 class _ProfilescreenState extends State<Profilescreen> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
+  XFile? selectedImage;
 
   @override
   void dispose() {
@@ -27,20 +33,47 @@ class _ProfilescreenState extends State<Profilescreen> {
     super.dispose();
   }
 
+  // Future<void> pickProfileImage() async {
+  //   final picker = ImagePicker();
+  //   final image = await picker.pickImage(source: ImageSource.gallery);
+
+  //   if (image != null) {
+  //     setState(() {
+  //       selectedImage = image;
+  //     });
+
+  //     context.read<ProfileBloc>().add(
+  //       GetProfileImageEvent(imagepath: image.path),
+  //     );
+  //   }
+  // }
+
   void openBottomSheet() {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (_) => Profileditbottomsheet(
+      builder: (sheetContext) => Profileditbottomsheet(
+        onImagePicked: (value) {
+          setState(() {
+            selectedImage = value;
+          });
+        },
         usernameController: usernameController,
         addressController: addressController,
-        imageUrl:
-            "https://www.alamy.com/arabic-muslim-student-studying-online-image414993841.html",
+        imageUrl: selectedImage?.path ?? "",
+        // onImagePicked: () async {
+        //   await pickProfileImage();
+        // },
         onSave: () {
-          print(usernameController.text);
-          print(addressController.text);
-          Navigator.pop(context);
+          context.read<ProfileBloc>().add(
+            SaveProfileEvent(
+              name: usernameController.text,
+              address: addressController.text,
+              imagePath: selectedImage?.path,
+            ),
+          );
+          Navigator.pop(sheetContext);
         },
       ),
     );
@@ -58,7 +91,25 @@ class _ProfilescreenState extends State<Profilescreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Topcontainer(size: size),
+              SizedBox(height: height * 0.0),
+              BlocBuilder<ProfileBloc, ProfileState>(
+                builder: (context, state) {
+                  if (state is ProfileLoaded) {
+                    return Topcontainer(
+                      size: size,
+                      name: state.profile.name,
+                      address: state.profile.address,
+                      imagePath: state.profile.imagepath,
+                    );
+                  }
+                  return Topcontainer(
+                    size: size,
+                    name: "",
+                    address: "",
+                    imagePath: "",
+                  );
+                },
+              ),
               SizedBox(height: height * 0.02),
 
               // Profile Cards - NO ANIMATION
@@ -471,11 +522,7 @@ class _ProfilescreenState extends State<Profilescreen> {
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => Login(role: "student")),
-            (route) => false,
-          );
+          showLogoutDialog(context);
         },
         child: Container(
           height: size.height * 0.06,

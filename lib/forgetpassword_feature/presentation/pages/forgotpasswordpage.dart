@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/forgetpassword_feature/presentation/widgets/forgotpass.dart';
-import 'package:quranteacher/login.dart';
+import 'package:quranteacher/auth_login_feature/screen/login.dart';
 import 'package:quranteacher/students/topcommon_container.dart';
 
 class Forgotpasswordpage extends StatefulWidget {

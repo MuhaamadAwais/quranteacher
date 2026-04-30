@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quranteacher/adminlogin.dart';
 import 'package:quranteacher/appcolors.dart';
-import 'package:quranteacher/login.dart';
+import 'package:quranteacher/auth_login_feature/screen/login.dart';
 
 class Roleselector extends StatefulWidget {
   const Roleselector({super.key});
@@ -251,7 +252,9 @@ class _RoleselectorState extends State<Roleselector>
                       subtitle: "Manage platform and users",
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => Login(role: "admin")),
+                        MaterialPageRoute(
+                          builder: (context) => Adminlogin(role: "admin"),
+                        ),
                       ),
                       onTapDown: () => setState(() => isadminpressed = true),
                       onTapUp: () => setState(() => isadminpressed = false),

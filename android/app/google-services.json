@@ -12,7 +12,20 @@
           "package_name": "com.example.quranteacher"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "478781953349-9k73pc40s3445emce9e6onnr5krb2nlo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quranteacher",
+            "certificate_hash": "c45361619eaa726326265155279fc6e51028314c"
+          }
+        },
+        {
+          "client_id": "478781953349-c31ibc193b70j5doatkm9dokkro3qdpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCp0eR6q9UFt6VJlG3dK40fMbXjvX-tSyQ"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478781953349-c31ibc193b70j5doatkm9dokkro3qdpc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "478781953349-p4n2opcsqdmqniqvcl4vk7da7e8a9i6m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quranteacher"
+              }
+            }
+          ]
         }
       }
     }

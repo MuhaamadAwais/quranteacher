@@ -6,6 +6,7 @@ class DesignsContiTextField extends StatefulWidget {
   final String title;
   final String hint;
   final IconData icon;
+  final TextEditingController controller;
 
   const DesignsContiTextField({
     super.key,
@@ -13,6 +14,7 @@ class DesignsContiTextField extends StatefulWidget {
     required this.title,
     required this.hint,
     required this.icon,
+    required this.controller,
   });
 
   @override
@@ -22,7 +24,6 @@ class DesignsContiTextField extends StatefulWidget {
 class _DesignsContiTextFieldState extends State<DesignsContiTextField> {
   late FocusNode focusNode;
   bool isFocused = false;
-
   @override
   void initState() {
     super.initState();
@@ -84,26 +85,33 @@ class _DesignsContiTextFieldState extends State<DesignsContiTextField> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color:  AppColors.toplast.withOpacity(0.25),
+                        color: AppColors.toplast.withOpacity(0.25),
                       ),
-                      child: Icon(widget.icon,color: AppColors.toplast,size: 24,),
+                      child: Icon(
+                        widget.icon,
+                        color: AppColors.toplast,
+                        size: 24,
+                      ),
                     ),
                     const SizedBox(width: 10),
                     Text(
                       widget.title,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black, fontSize: 18),
+                        color: Colors.black,
+                        fontSize: 18,
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 5),
                 TextField(
+                  controller: widget.controller,
                   focusNode: focusNode,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: widget.hint,
-                    hintStyle: TextStyle(fontSize: 16)
+                    hintStyle: TextStyle(fontSize: 16),
                   ),
                 ),
               ],

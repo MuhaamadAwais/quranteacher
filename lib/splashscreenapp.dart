@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:quranteacher/appcolors.dart';
 import 'package:quranteacher/roleselector.dart';
+import 'package:quranteacher/students/bottomnavi.dart';
+import 'package:quranteacher/teacher/bottomnaviteacher.dart';
 
 class Splashscreenapp extends StatefulWidget {
   const Splashscreenapp({super.key});
@@ -17,6 +21,7 @@ class _SplashscreenappState extends State<Splashscreenapp>
   late Animation<double> dot1;
   late Animation<double> dot2;
   late Animation<double> dot3;
+  @override
   @override
   void initState() {
     super.initState();
@@ -54,11 +59,49 @@ class _SplashscreenappState extends State<Splashscreenapp>
     );
 
     _animationControllerdots.repeat(reverse: true);
-    Future.delayed(Duration(seconds: 2), () {
-      if (mounted) {
+
+    Future.delayed(Duration(seconds: 2), () async {
+      if (!mounted) return;
+
+      final user = FirebaseAuth.instance.currentUser;
+
+      if (user == null) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => Roleselector()),
+          MaterialPageRoute(builder: (_) => Roleselector()),
+        );
+        return;
+      }
+
+      final snap = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .get();
+
+      if (!snap.exists) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => Roleselector()),
+        );
+        return;
+      }
+
+      final role = snap['role'];
+
+      if (role == 'teacher') {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => Bottomnaviteacher()),
+        );
+      } else if (role == 'student') {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => Bottomnavi()),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => Roleselector()),
         );
       }
     });
@@ -111,7 +154,7 @@ class _SplashscreenappState extends State<Splashscreenapp>
                       child: Image.asset("assets/images/iconapp.png"),
                     ),
                   ),
-      
+
                   // Sparkles
                   Positioned(
                     top: 10,
@@ -123,7 +166,11 @@ class _SplashscreenappState extends State<Splashscreenapp>
                     right: -10,
                     child: FadeTransition(
                       opacity: _infadAnimation,
-                      child: Icon(Icons.star, color: AppColors.accent, size: 30),
+                      child: Icon(
+                        Icons.star,
+                        color: AppColors.accent,
+                        size: 30,
+                      ),
                     ),
                   ),
                   Positioned(
@@ -131,12 +178,16 @@ class _SplashscreenappState extends State<Splashscreenapp>
                     left: 0,
                     child: FadeTransition(
                       opacity: _infadAnimation,
-                      child: Icon(Icons.star, color: AppColors.accent, size: 15),
+                      child: Icon(
+                        Icons.star,
+                        color: AppColors.accent,
+                        size: 15,
+                      ),
                     ),
                   ),
                 ],
               ),
-      
+
               SizedBox(height: height * 0.02),
               Text(
                 "Quran Connect",
@@ -155,13 +206,13 @@ class _SplashscreenappState extends State<Splashscreenapp>
                   fontSize: 15,
                 ),
               ),
-      
+
               SizedBox(height: height * 0.05),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [_buildDot(dot1), _buildDot(dot2), _buildDot(dot3)],
               ),
-      
+
               SizedBox(height: height * 0.05),
               Text(
                 "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ",
